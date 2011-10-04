@@ -72,8 +72,8 @@
     </build>    
 
   <scm>
-    <connection>scm:svn:https://sbforge.org/svn/sbforge-parent/tags/bitrepository-message-xml-0.3.2</connection>
-    <developerConnection>scm:svn:https://sbforge.org/svn/sbforge-parent/tags/bitrepository-message-xml-0.3.2</developerConnection>
+    <connection>scm:svn:https://sbforge.org/svn/bitrepository/bitrepository-message-xml/tags/bitrepository-message-xml-0.3.2</connection>
+    <developerConnection>scm:svn:https://sbforge.org/svn/bitrepository/bitrepository-message-xml/tags/bitrepository-message-xml-0.3.2</developerConnection>
     <url>https://sbforge.org/fisheye/browse/Bitmagasinet/bitrepository-message-xml/tags/bitrepository-message-xml-0.3.2</url>
   </scm>
 </project>
