@@ -35,10 +35,16 @@
             </plugin>
         </plugins>
     </build>    
-
   <scm>
     <connection>scm:svn:https://sbforge.org/svn/bitrepository/bitrepository-message-xml/trunk/</connection>
     <developerConnection>scm:svn:https://sbforge.org/svn/bitrepository/bitrepository-message-xml/</developerConnection>
     <url>https://sbforge.org/fisheye/browse/Bitmagasinet/bitrepository-message-xml/trunk/</url>
   </scm>
+  
+  <distributionManagement>
+    <site>
+      <id>sbforge-nexus</id>
+      <url>dav:https://sbforge.org/maven/bitrepository/sites/message-xml/${project.version}</url>
+    </site>
+  </distributionManagement>
 </project>
