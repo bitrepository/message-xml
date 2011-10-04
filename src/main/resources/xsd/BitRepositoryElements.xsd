@@ -241,28 +241,11 @@
     The file is new to the bit repository.
     </xs:documentation></xs:annotation>
       <xs:sequence>
-        <xs:element name="FileID" type="FileID_TYPE" >
-          <xs:annotation><xs:documentation xml:lang="en">
-          Identifier of data the checksum is for
-          </xs:documentation></xs:annotation>
-        </xs:element>
 
-        <xs:element ref="NoOfItems" minOccurs="0" maxOccurs="1" >
+        <xs:element name="ChecksumDataItem" type="ChecksumDataForFile_TYPE" minOccurs="0" maxOccurs="1">
           <xs:annotation><xs:documentation xml:lang="en">
-          The number of checksums included
+          Data for checksum
           </xs:documentation></xs:annotation>
-        </xs:element>
-
-        <xs:element name="ChecksumDataItems">
-          <xs:annotation><xs:documentation xml:lang="en">
-          List of data for checksums
-          </xs:documentation></xs:annotation>
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="ChecksumDataForFile"
-                          type="ChecksumDataForFile_TYPE" minOccurs="0" maxOccurs="unbounded" />
-            </xs:sequence>
-          </xs:complexType>
         </xs:element>
       </xs:sequence>
 
@@ -688,10 +671,16 @@
           </xs:documentation></xs:annotation>
         </xs:element>
 
-        <xs:element ref="ChecksumsDataGroupedByChecksumSpec">
+        <xs:element name="ChecksumDataItems">
           <xs:annotation><xs:documentation xml:lang="en">
-          List of data for checksums in result, if given in this message instead of via data transfer
+          List of data for checksums
           </xs:documentation></xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ChecksumDataForChecksumSpec"
+                          type="ChecksumDataForChecksumSpec_TYPE" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+          </xs:complexType>
         </xs:element>
       </xs:choice>
     </xs:complexType>

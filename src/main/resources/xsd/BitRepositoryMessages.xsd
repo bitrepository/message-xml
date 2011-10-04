@@ -373,8 +373,8 @@
           This can be used in checks of correct receival.
           </xs:documentation></xs:annotation>
         </xs:element>
-
-        <xs:element ref="bre:ChecksumSpecs">
+        
+        <xs:element ref="bre:FileChecksumSpec" minOccurs="0" maxOccurs="1" >
           <xs:annotation><xs:documentation xml:lang="en">
           Optionally salt and/or type of checksum for extra checksumscheck of file at
           completion to of put file. The result can be given in PutFileFinalResponse
@@ -606,10 +606,10 @@
           </xs:documentation></xs:annotation>
         </xs:element>
 
-        <xs:element ref="bre:ChecksumSpecs" minOccurs="0" maxOccurs="1">
+        <xs:element ref="bre:FileChecksumSpec" minOccurs="0" maxOccurs="1" >
           <xs:annotation><xs:documentation xml:lang="en">
-          Optionally salt and/or type of checksum for extra checksumscheck at
-          completion of delete file. The result can be given in DeleteFileFinalResponse
+          Optionally salt and/or type of checksum for extra checksumscheck of file at
+          completion to of put file. The result can be given in DeleteFileFinalResponse
           </xs:documentation></xs:annotation>
         </xs:element>
       </xs:sequence>
@@ -832,11 +832,11 @@
           This can be used in checks of correct receival.
           </xs:documentation></xs:annotation>
         </xs:element>
-
-        <xs:element ref="bre:ChecksumSpecs" minOccurs="0" maxOccurs="1">
+        
+        <xs:element ref="bre:FileChecksumSpec" minOccurs="0" maxOccurs="1" >
           <xs:annotation><xs:documentation xml:lang="en">
-          Optionally salt and/or type of checksum for extra checksumscheck of new file at
-          completion of replace file. The result can be given in ReplaceFileFinalResponse
+          Optionally salt and/or type of checksum for extra checksumscheck of file at
+          completion to of put file. The result can be given in ReplaceFileFinalResponse
           </xs:documentation></xs:annotation>
         </xs:element>
       </xs:sequence>
@@ -1150,13 +1150,6 @@
           <xs:annotation><xs:documentation xml:lang="en">
           Identifier of responding pillar, which can be used for possible checks
           (otherwise it is known via CorrelationID and ReplyTo)
-          </xs:documentation></xs:annotation>
-        </xs:element>
-
-        <xs:element ref="bre:FileIDs" minOccurs="0" maxOccurs="1" >
-          <xs:annotation><xs:documentation xml:lang="en">
-          FileIDs uniquely identifies the files in given bit repository collection which the checksums are requested for
-          (Also in result, and traceable via CorrelationID)
           </xs:documentation></xs:annotation>
         </xs:element>
 
