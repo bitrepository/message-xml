@@ -671,16 +671,10 @@
           </xs:documentation></xs:annotation>
         </xs:element>
 
-        <xs:element name="ChecksumDataItems">
+        <xs:element name="ChecksumDataItems" type="ChecksumDataForChecksumSpec_TYPE" minOccurs="0" maxOccurs="unbounded">
           <xs:annotation><xs:documentation xml:lang="en">
           List of data for checksums
           </xs:documentation></xs:annotation>
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="ChecksumDataForChecksumSpec"
-                          type="ChecksumDataForChecksumSpec_TYPE" minOccurs="0" maxOccurs="unbounded" />
-            </xs:sequence>
-          </xs:complexType>
         </xs:element>
       </xs:choice>
     </xs:complexType>
