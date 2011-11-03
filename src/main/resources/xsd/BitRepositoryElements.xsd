@@ -125,23 +125,7 @@
         </xs:documentation></xs:annotation>
         <xs:complexType>
           <xs:sequence>
-
-            <xs:element ref="NoOfItems" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              The number of audit trail data items included for the specified FileID
-              </xs:documentation></xs:annotation>
-            </xs:element>
-
-            <xs:element name="AuditTrailDataItems" >
-              <xs:annotation><xs:documentation xml:lang="en" >
-              List of audit trail data items in result
-              </xs:documentation></xs:annotation>
-              <xs:complexType>
-                <xs:sequence>
-                  <xs:element ref="AuditTrailDataItem" minOccurs="0" maxOccurs="unbounded" />
-                </xs:sequence>
-              </xs:complexType>
-            </xs:element>
+			<xs:element ref="AuditTrailDataItem" minOccurs="0" maxOccurs="unbounded" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -206,26 +190,9 @@
           Identifier of data the checksum is for
           </xs:documentation></xs:annotation>
         </xs:element>
-
-        <xs:element ref="NoOfItems" minOccurs="0" maxOccurs="1" >
-          <xs:annotation><xs:documentation xml:lang="en">
-          The number of checksums included
-          </xs:documentation></xs:annotation>
-        </xs:element>
-
-        <xs:element name="ChecksumDataItems">
-          <xs:annotation><xs:documentation xml:lang="en">
-          List of data for checksums
-          </xs:documentation></xs:annotation>
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="ChecksumDataForFile"
+        <xs:element name="ChecksumDataForFile"
                           type="ChecksumDataForFile_TYPE" minOccurs="0" maxOccurs="unbounded" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
       </xs:sequence>
-
       <xs:attribute name="ParameterSpecification" type="xs:string" fixed="BitRepositoryFile">
         <xs:annotation><xs:documentation xml:lang="en">
           File parameter specification of bit repository file
@@ -268,24 +235,8 @@
           The type and possible salt for calculation of the checksums
           </xs:documentation></xs:annotation>
         </xs:element>
-
-        <xs:element ref="NoOfItems">
-          <xs:annotation><xs:documentation xml:lang="en">
-          The number of checksums included
-          </xs:documentation></xs:annotation>
-        </xs:element>
-
-        <xs:element name="ChecksumDataItems">
-          <xs:annotation><xs:documentation xml:lang="en">
-          List of data for checksums
-          </xs:documentation></xs:annotation>
-          <xs:complexType>
-            <xs:sequence>
               <xs:element name="ChecksumDataForChecksumSpec"
                           type="ChecksumDataForChecksumSpec_TYPE" minOccurs="0" maxOccurs="unbounded" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
       </xs:sequence>
 
     </xs:complexType>
@@ -294,11 +245,6 @@
   <xs:element name="ChecksumSpecs">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="NoOfItems" minOccurs="0" maxOccurs="1" >
-          <xs:annotation><xs:documentation xml:lang="en">
-          The number of checksums included
-          </xs:documentation></xs:annotation>
-        </xs:element>
         <xs:element name="ChecksumSpecsItems">
           <xs:annotation><xs:documentation xml:lang="en">
           List of data for checksums
@@ -436,11 +382,6 @@
     </xs:documentation></xs:annotation>
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="NoOfItems" minOccurs="0" maxOccurs="1" >
-          <xs:annotation><xs:documentation xml:lang="en">
-          The number of data IDs included
-          </xs:documentation></xs:annotation>
-        </xs:element>
 
         <xs:element name="FileIDsDataItems" >
           <xs:annotation><xs:documentation xml:lang="en" >
@@ -485,11 +426,11 @@
     </xs:documentation></xs:annotation>
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="NoOfItems" minOccurs="0" maxOccurs="1" >
+        <!-- <xs:element ref="NoOfItems" minOccurs="0" maxOccurs="1" >
           <xs:annotation><xs:documentation xml:lang="en">
           The number of data IDs included
           </xs:documentation></xs:annotation>
-        </xs:element>
+        </xs:element> -->
 
         <xs:element name="FileIDsItems" >
           <xs:annotation><xs:documentation xml:lang="en" >
@@ -581,12 +522,12 @@
     </xs:complexType>
   </xs:element>
 
-  <xs:element name="NoOfItems" type="xs:nonNegativeInteger">
+  <!-- <xs:element name="NoOfItems" type="xs:nonNegativeInteger">
     <xs:annotation><xs:documentation xml:lang="en">
     The number of results given in a delivered result
     e.g. number of checksums in result given in a data transmitted file or in a message
     </xs:documentation></xs:annotation>
-  </xs:element>
+  </xs:element> -->
 
   <xs:element name="ParameterAddress" type="Address_TYPE">
     <xs:annotation><xs:documentation xml:lang="en">
@@ -1186,7 +1127,6 @@
       <xs:element name="ContributorStatusElements">
         <xs:complexType>
           <xs:sequence>
-            <xs:element ref="NoOfItems" />
             <xs:element name="ContributorStatusElement" type="ContributorStatusElement_TYPE" minOccurs="1" maxOccurs="unbounded"/>
           </xs:sequence>
         </xs:complexType>
