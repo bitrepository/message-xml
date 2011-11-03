@@ -971,6 +971,48 @@
         Unknown user access
         </xs:documentation></xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="700">
+        <xs:annotation><xs:documentation xml:lang="en">
+        Component failure, something fatal or irrecoverable has happened. 
+        Code error, segmentation fault, missing backend etc. 
+        </xs:documentation></xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="701">
+        <xs:annotation><xs:documentation xml:lang="en">
+        Inconsistent request, the request is inconsistent with the file state in the pillar.
+        E.g.a is user trying to get a file that does not exist, or put a file with an ID alrealdy on store. 
+        </xs:documentation></xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="702">
+        <xs:annotation><xs:documentation xml:lang="en">
+        Checksum alarm, Problems with a checksum. 
+        </xs:documentation></xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="703">
+        <xs:annotation><xs:documentation xml:lang="en">
+        Failed transfer, file up or download failed. 
+        </xs:documentation></xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="704">
+        <xs:annotation><xs:documentation xml:lang="en">
+        Failed operation, a non-critical operation failuire.  
+        </xs:documentation></xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="705">
+        <xs:annotation><xs:documentation xml:lang="en">
+        Invalid message, a component has received an invalid message.  
+        </xs:documentation></xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="706">
+        <xs:annotation><xs:documentation xml:lang="en">
+        Invalid message version, a component has received a message of an invalid version. 
+        </xs:documentation></xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="707">
+        <xs:annotation><xs:documentation xml:lang="en">
+        Timeout, a timeout has occured.  
+        </xs:documentation></xs:annotation>
+      </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
 
