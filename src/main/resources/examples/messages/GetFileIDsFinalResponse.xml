@@ -43,7 +43,6 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   </FinalResponseInfo>
   <ResultingFileIDs>
     <FileIDsData>
-      <NoOfItems>2</NoOfItems>
     <FileIDsDataItems>
       <FileIDsDataItem>
         <FileID>MydataId1</FileID>

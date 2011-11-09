@@ -45,9 +45,7 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   </ProgressResponseInfo>
   <FileSize>90</FileSize>
   <ChecksumsDataForBitRepositoryFile>
-    <NoOfItems>2</NoOfItems>
     <FileID>MyDataID</FileID>
-    <ChecksumDataItems>
       <ChecksumDataForFile>
         <ChecksumSpec>
           <ChecksumType>MD5</ChecksumType>
@@ -64,6 +62,5 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
         <ChecksumValue>ABCDEF1234</ChecksumValue>
         <CalculationTimestamp>2011-02-17T09:47:00</CalculationTimestamp>
       </ChecksumDataForFile>
-    </ChecksumDataItems>
   </ChecksumsDataForBitRepositoryFile>
 </bro:GetFileProgressResponse>

@@ -32,5 +32,7 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <To>ToQueueOrTopic</To>
   <ReplyTo>MyQueueOrTopic</ReplyTo>
   <AuditTrailInformation>User: Name, Institution: Place</AuditTrailInformation>
-  <FileID>MyDataID</FileID>
+  <FileIDs>
+  	<FileID>MyDataID</FileID>
+  </FileIDs>
 </bro:IdentifyContributorsForGetAuditTrailsRequest>

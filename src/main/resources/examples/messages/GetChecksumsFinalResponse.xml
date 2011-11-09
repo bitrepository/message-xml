@@ -33,10 +33,6 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <ReplyTo>MyQueueOrTopic</ReplyTo>
   <AuditTrailInformation>User: Name, Institution: Place</AuditTrailInformation>
   <PillarID>MyPillar</PillarID>
-  <FileIDs>
-    <FileID>MyDataID1</FileID>
-    <FileID>MyDataID2</FileID>
-  </FileIDs>
   <FileChecksumSpec>
     <ChecksumType>MD5</ChecksumType>
     <ChecksumSalt>X</ChecksumSalt>
@@ -46,24 +42,15 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
     <FinalResponseText>successfull completion</FinalResponseText>
   </FinalResponseInfo>
   <ResultingChecksums>
-    <ChecksumsDataGroupedByChecksumSpec>
-      <ChecksumSpec>
-        <ChecksumType>MD5</ChecksumType>
-        <ChecksumSalt>X</ChecksumSalt>
-      </ChecksumSpec>
-      <NoOfItems>2</NoOfItems>
       <ChecksumDataItems>
-        <ChecksumDataForChecksumSpec>
           <FileID>MyDataId1</FileID>
           <ChecksumValue>MyChecksum1</ChecksumValue>
           <CalculationTimestamp>2011-02-17T09:47:00</CalculationTimestamp>
-        </ChecksumDataForChecksumSpec>
-        <ChecksumDataForChecksumSpec>
+      </ChecksumDataItems>
+      <ChecksumDataItems>
           <FileID>MyDataId2</FileID>
           <ChecksumValue>MyChecksum2</ChecksumValue>
           <CalculationTimestamp>2011-02-17T09:47:00</CalculationTimestamp>
-        </ChecksumDataForChecksumSpec>
       </ChecksumDataItems>
-    </ChecksumsDataGroupedByChecksumSpec>
   </ResultingChecksums>
 </bro:GetChecksumsFinalResponse>

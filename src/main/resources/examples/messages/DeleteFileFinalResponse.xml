@@ -40,7 +40,6 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   </FinalResponseInfo>
   <ChecksumsDataForBitRepositoryFile>
     <FileID>MyDataID</FileID>
-    <ChecksumDataItems>
       <ChecksumDataForFile>
         <ChecksumSpec>
           <ChecksumType>MD5</ChecksumType>
@@ -48,6 +47,5 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
         <ChecksumValue>6f78ed9c9dd86fe9d</ChecksumValue>
         <CalculationTimestamp>2011-08-16T11:17:00</CalculationTimestamp>
       </ChecksumDataForFile>
-    </ChecksumDataItems>
   </ChecksumsDataForBitRepositoryFile>
 </bro:DeleteFileFinalResponse>

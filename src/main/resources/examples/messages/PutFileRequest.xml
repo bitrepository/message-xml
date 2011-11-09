@@ -37,38 +37,17 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <FileAddress>http://myServer/myPlace/Myfile</FileAddress>
   <FileSize>10000</FileSize>
   <ChecksumsDataForNewFile>
-    <FileID>MyDataID</FileID>
-    <NoOfItems>2</NoOfItems>
-    <ChecksumDataItems>
-      <ChecksumDataForFile>
+    <ChecksumDataItem>
         <ChecksumSpec>
           <ChecksumType>MD5</ChecksumType>
           <ChecksumSalt>A</ChecksumSalt>
         </ChecksumSpec>
         <ChecksumValue>135F21564</ChecksumValue>
         <CalculationTimestamp>2011-02-17T09:47:00</CalculationTimestamp>
-      </ChecksumDataForFile>
-      <ChecksumDataForFile>
-        <ChecksumSpec>
-          <ChecksumType>MD5</ChecksumType>
-          <ChecksumSalt>A</ChecksumSalt>
-        </ChecksumSpec>
-        <ChecksumValue>135F21564</ChecksumValue>
-        <CalculationTimestamp>2011-02-17T09:47:00</CalculationTimestamp>
-      </ChecksumDataForFile>
-    </ChecksumDataItems>
+    </ChecksumDataItem>
   </ChecksumsDataForNewFile>
-  <ChecksumSpecs>
-    <NoOfItems>2</NoOfItems>
-    <ChecksumSpecsItems>
-      <ChecksumSpecsItem>
+  	  <FileChecksumSpec>
         <ChecksumType>MD5</ChecksumType>
         <ChecksumSalt>A</ChecksumSalt>
-      </ChecksumSpecsItem>
-      <ChecksumSpecsItem>
-        <ChecksumType>MD5</ChecksumType>
-        <ChecksumSalt>A</ChecksumSalt>
-      </ChecksumSpecsItem>
-    </ChecksumSpecsItems>
-  </ChecksumSpecs>
+      </FileChecksumSpec>
 </bro:PutFileRequest>

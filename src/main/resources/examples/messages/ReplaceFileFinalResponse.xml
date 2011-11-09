@@ -45,7 +45,7 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   </FinalResponseInfo>
   <ChecksumsDataForBitRepositoryFile>
     <FileID>MyDataID</FileID>
-    <ChecksumDataItems>
+    <!--<ChecksumDataItems>-->
       <ChecksumDataForFile>
         <ChecksumSpec>
           <ChecksumType>MD5</ChecksumType>
@@ -53,7 +53,7 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
         <ChecksumValue>6f78ed9c9dd86fe9d</ChecksumValue>
         <CalculationTimestamp>2011-08-16T11:17:00</CalculationTimestamp>
       </ChecksumDataForFile>
-      <ChecksumDataForFile>
+      <!--<ChecksumDataForFile>
         <ChecksumSpec>
           <ChecksumType>MD5</ChecksumType>
           <ChecksumSalt>A</ChecksumSalt>
@@ -61,6 +61,6 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
         <ChecksumValue>6f78ce7d941ed9c9d9d</ChecksumValue>
         <CalculationTimestamp>2011-08-16T11:51:00</CalculationTimestamp>
       </ChecksumDataForFile>
-    </ChecksumDataItems>
+    </ChecksumDataItems>-->
   </ChecksumsDataForBitRepositoryFile>
 </bro:ReplaceFileFinalResponse>

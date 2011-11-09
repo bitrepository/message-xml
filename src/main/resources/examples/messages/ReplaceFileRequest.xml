@@ -36,8 +36,6 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <FileID>MyDataID</FileID>
   <ChecksumsDataForBitRepositoryFile ParameterSpecification="BitRepositoryFile">
     <FileID>MyDataID</FileID>
-    <NoOfItems>2</NoOfItems>
-    <ChecksumDataItems>
       <ChecksumDataForFile>
         <ChecksumSpec>
           <ChecksumType>MD5</ChecksumType>
@@ -46,49 +44,20 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
         <ChecksumValue>135F21564</ChecksumValue>
         <CalculationTimestamp>2011-02-17T09:47:00</CalculationTimestamp>
       </ChecksumDataForFile>
-      <ChecksumDataForFile>
-        <ChecksumSpec>
-          <ChecksumType>MD5</ChecksumType>
-          <ChecksumSalt>A</ChecksumSalt>
-        </ChecksumSpec>
-        <ChecksumValue>135F21564</ChecksumValue>
-        <CalculationTimestamp>2011-02-17T09:47:00</CalculationTimestamp>
-      </ChecksumDataForFile>
-    </ChecksumDataItems>
   </ChecksumsDataForBitRepositoryFile>
   <FileAddress>http://myServer/myPlace/Myfile</FileAddress>
   <FileSize>1000</FileSize>
   <ChecksumsDataForNewFile>
-    <FileID>MyDataID</FileID>
-    <NoOfItems>2</NoOfItems>
-    <ChecksumDataItems>
-      <ChecksumDataForFile>
+    <ChecksumDataItem>
         <ChecksumSpec>
           <ChecksumType>MD5</ChecksumType>
         </ChecksumSpec>
         <ChecksumValue>6f78ed9c9dd86fe9d</ChecksumValue>
         <CalculationTimestamp>2011-08-16T11:17:00</CalculationTimestamp>
-      </ChecksumDataForFile>
-      <ChecksumDataForFile>
-        <ChecksumSpec>
-          <ChecksumType>MD5</ChecksumType>
-          <ChecksumSalt>A</ChecksumSalt>
-        </ChecksumSpec>
-        <ChecksumValue>6f78ce7d941ed9c9d9d</ChecksumValue>
-        <CalculationTimestamp>2011-08-16T11:51:00</CalculationTimestamp>
-      </ChecksumDataForFile>
-    </ChecksumDataItems>
+    </ChecksumDataItem>
   </ChecksumsDataForNewFile>
-  <ChecksumSpecs>
-    <NoOfItems>2</NoOfItems>
-    <ChecksumSpecsItems>
-      <ChecksumSpecsItem>
-        <ChecksumType>MD5</ChecksumType>
-      </ChecksumSpecsItem>
-      <ChecksumSpecsItem>
+  <FileChecksumSpec>
         <ChecksumType>MD5</ChecksumType>
         <ChecksumSalt>A</ChecksumSalt>
-      </ChecksumSpecsItem>
-    </ChecksumSpecsItems>
-  </ChecksumSpecs>
+  </FileChecksumSpec>
 </bro:ReplaceFileRequest>

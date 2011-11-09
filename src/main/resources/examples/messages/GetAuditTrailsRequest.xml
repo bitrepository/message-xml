@@ -36,5 +36,7 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
       <ComponentID>MyPillar</ComponentID>
       <ComponentType>PILLAR</ComponentType>
   </Contributor>
-  <FileID>MyDataID</FileID>
+  <FileIDs>
+  	<FileID>MyDataID</FileID>
+  </FileIDs>
 </bro:GetAuditTrailsRequest>

@@ -45,8 +45,8 @@
   </FinalResponseInfo>
   <ResultingAuditTrails>
     <AuditTrailData>
-      <NoOfItems>2</NoOfItems>
-      <AuditTrailDataItems>
+      <!--<NoOfItems>2</NoOfItems>-->
+      <!--<AuditTrailDataItems>-->
         <AuditTrailDataItem>
           <FileID>MyFile</FileID>
           <ReportingComponent>
@@ -77,7 +77,7 @@
           </ActionOnFile>
           <ActionDateTime>2011-04-15T13:20:00</ActionDateTime>
         </AuditTrailDataItem>
-      </AuditTrailDataItems>
+      <!--</AuditTrailDataItems>-->
     </AuditTrailData>
   </ResultingAuditTrails>
 </bro:GetAuditTrailsFinalResponse>
