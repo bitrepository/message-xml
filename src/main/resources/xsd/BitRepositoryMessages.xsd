@@ -30,7 +30,7 @@
         </xs:documentation></xs:annotation>
       </xs:element>
 
-      <xs:element ref="bre:BitRepositoryCollectionID">
+      <xs:element ref="bre:CollectionID">
         <xs:annotation><xs:documentation xml:lang="en">
         BitRepositoryCollectionID is a unique identifier for bit repository collection
         which data belongs to.
@@ -100,7 +100,7 @@
       indicated file should respond.
       </xs:documentation></xs:annotation>
       <xs:complexContent>
-        <xs:extension base="tn:Message">
+        <xs:extension base="tn:MessageRequest">
           <xs:sequence>
             <xs:element ref="bre:FileID">
               <xs:annotation>
@@ -247,7 +247,7 @@
               </xs:documentation></xs:annotation>
             </xs:element>
     
-            <xs:element ref="bre:ChecksumsDataForBitRepositoryFile">
+            <xs:element ref="bre:ChecksumsDataForFile">
               <xs:annotation><xs:documentation xml:lang="en">
               Different Checksums of the file to be sent.
               This can be used in checks of correct receival.
@@ -616,7 +616,7 @@
               </xs:documentation></xs:annotation>
             </xs:element>
     
-            <xs:element ref="bre:ChecksumsDataForBitRepositoryFile">
+            <xs:element ref="bre:ChecksumsDataForFile">
               <xs:annotation><xs:documentation xml:lang="en">
               Checksums (and type and possibly salt) of file to be deleted.
               This should be used in checks on pillar to ensure the correct file is deleted.
@@ -695,7 +695,7 @@
               </xs:documentation></xs:annotation>
             </xs:element>
     
-            <xs:element ref="bre:ChecksumsDataForBitRepositoryFile" minOccurs="0" maxOccurs="1">
+            <xs:element ref="bre:ChecksumsDataForFile" minOccurs="0" maxOccurs="1">
               <xs:annotation><xs:documentation xml:lang="en">
               Checksum calculated as specified in DeleteFileRequest, if specified
               </xs:documentation></xs:annotation>
@@ -715,7 +715,7 @@
       REQUEST in IdentifyPillarsForReplaceFile primitive
       </xs:documentation></xs:annotation>
       <xs:complexContent>
-        <xs:extension base="MessageResponse">
+        <xs:extension base="MessageRequest">
           <xs:sequence>
             <xs:element ref="bre:FileID" >
               <xs:annotation><xs:documentation xml:lang="en">
@@ -798,7 +798,7 @@
               </xs:documentation></xs:annotation>
             </xs:element>
     
-            <xs:element ref="bre:ChecksumsDataForBitRepositoryFile">
+            <xs:element ref="bre:ChecksumsDataForFile">
               <xs:annotation><xs:documentation xml:lang="en">
               Checksums (and type and possibly salt) of file to be replaced; that is the _old_ file.
               This should be used in checks on pillar to ensure the correct file is deleted.
@@ -922,7 +922,7 @@
             </xs:documentation></xs:annotation>
           </xs:element>
   
-          <xs:element ref="bre:ChecksumsDataForBitRepositoryFile" minOccurs="0" maxOccurs="1">
+          <xs:element ref="bre:ChecksumsDataForFile" minOccurs="0" maxOccurs="1">
             <xs:annotation><xs:documentation xml:lang="en">
             Checksum of replaced file calculated as specified in ReplaceFileRequest, if specified
             </xs:documentation></xs:annotation>

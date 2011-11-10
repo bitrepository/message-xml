@@ -28,10 +28,9 @@
 xmlns:bro='http://bitrepository.org/BitRepositoryMessages.xsd'
 xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <CorrelationID>12345</CorrelationID>
-  <BitRepositoryCollectionID>MySla</BitRepositoryCollectionID>
+  <CollectionID>MySla</CollectionID>
   <To>ToQueueOrTopic</To>
   <ReplyTo>MyQueueOrTopic</ReplyTo>
-  <AuditTrailInformation>User: Name, Institution: Place</AuditTrailInformation>
   <AlarmRaiser>
     <ComponentID>MyPillar</ComponentID>
     <ComponentType>PILLAR</ComponentType>
@@ -60,9 +59,6 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
       </Contributor>
       <DataTransmission>todo</DataTransmission>
     </Components>
-    <BitRepositoryCollections>
-      <BitRepositoryCollectionID>MyBitRepositoryCollection</BitRepositoryCollectionID>
-    </BitRepositoryCollections>
     <Messages>todo</Messages>
   </AlarmConcerning>
 </bro:Alarm>

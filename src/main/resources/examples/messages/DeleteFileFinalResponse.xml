@@ -28,17 +28,16 @@
 xmlns:bro='http://bitrepository.org/BitRepositoryMessages.xsd'
 xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <CorrelationID>12345</CorrelationID>
-  <BitRepositoryCollectionID>MySla</BitRepositoryCollectionID>
+  <CollectionID>MySla</CollectionID>
   <To>ToQueueOrTopic</To>
   <ReplyTo>MyQueueOrTopic</ReplyTo>
-  <AuditTrailInformation/>
   <PillarID>MyPillar</PillarID>
   <FileID>MyDataID</FileID>
   <FinalResponseInfo>
     <FinalResponseCode>480</FinalResponseCode>
     <FinalResponseText>successfull completion</FinalResponseText>
   </FinalResponseInfo>
-  <ChecksumsDataForBitRepositoryFile>
+  <ChecksumsDataForFile>
     <FileID>MyDataID</FileID>
       <ChecksumDataForFile>
         <ChecksumSpec>
@@ -47,5 +46,5 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
         <ChecksumValue>6f78ed9c9dd86fe9d</ChecksumValue>
         <CalculationTimestamp>2011-08-16T11:17:00</CalculationTimestamp>
       </ChecksumDataForFile>
-  </ChecksumsDataForBitRepositoryFile>
+  </ChecksumsDataForFile>
 </bro:DeleteFileFinalResponse>

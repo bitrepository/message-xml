@@ -28,10 +28,9 @@
 xmlns:bro='http://bitrepository.org/BitRepositoryMessages.xsd'
 xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <CorrelationID>12345</CorrelationID>
-  <BitRepositoryCollectionID>MySla</BitRepositoryCollectionID>
+  <CollectionID>MySla</CollectionID>
   <To>ToQueueOrTopic</To>
   <ReplyTo>MyQueueOrTopic</ReplyTo>
-  <AuditTrailInformation>User: Name, Institution: Place</AuditTrailInformation>
   <PillarID>MyPillar</PillarID>
   <PillarChecksumSpec>
     <ChecksumType>MD5</ChecksumType>
@@ -43,7 +42,7 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
     <FinalResponseCode>480</FinalResponseCode>
     <FinalResponseText>successfull completion</FinalResponseText>
   </FinalResponseInfo>
-  <ChecksumsDataForBitRepositoryFile>
+  <ChecksumsDataForFile>
     <FileID>MyDataID</FileID>
     <!--<ChecksumDataItems>-->
       <ChecksumDataForFile>
@@ -62,5 +61,5 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
         <CalculationTimestamp>2011-08-16T11:51:00</CalculationTimestamp>
       </ChecksumDataForFile>
     </ChecksumDataItems>-->
-  </ChecksumsDataForBitRepositoryFile>
+  </ChecksumsDataForFile>
 </bro:ReplaceFileFinalResponse>

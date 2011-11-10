@@ -162,7 +162,7 @@
     </xs:complexType>
   </xs:element>
 
-  <xs:element name="ChecksumsDataForBitRepositoryFile">
+  <xs:element name="ChecksumsDataForFile">
     <!-- TODO common ChecksumsDataGroupedByFile_TYPE; two restrictions on ParameterSpecification -->
     <xs:complexType>
     <xs:annotation><xs:documentation xml:lang="en">
@@ -270,10 +270,10 @@
   </xs:annotation>
 </xs:element>
 
-  <xs:element name="BitRepositoryCollectionID" type="BitRepositoryCollectionID_TYPE">
+  <xs:element name="CollectionID" type="CollectionID_TYPE">
     <xs:annotation>
       <xs:documentation xml:lang="en">
-        BitRepositoryCollectionID is a unique identifier for bit repository collection which data belongs to.
+        CollectionID is a unique identifier for bit repository collection which data belongs to.
         This is also the identification of decryption and keys for contents of message, and it is part of unique
          identification of files together with a file id.
       </xs:documentation>
@@ -1001,7 +1001,7 @@
     <xs:restriction base="xs:string"/>
   </xs:simpleType>
 
-  <xs:simpleType name="BitRepositoryCollectionID_TYPE">
+  <xs:simpleType name="CollectionID_TYPE">
     <xs:annotation><xs:documentation xml:lang="en">
     A unique identifier for bit repository collection which data belongs to.
     </xs:documentation></xs:annotation>

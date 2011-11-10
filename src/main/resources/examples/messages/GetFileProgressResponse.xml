@@ -28,10 +28,9 @@
 xmlns:bro='http://bitrepository.org/BitRepositoryMessages.xsd'
 xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <CorrelationID>12345</CorrelationID>
-  <BitRepositoryCollectionID>MySla</BitRepositoryCollectionID>
+  <CollectionID>MySla</CollectionID>
   <To>ToQueueOrTopic</To>
   <ReplyTo>MyQueueOrTopic</ReplyTo>
-  <AuditTrailInformation>User: Name, Institution: Place</AuditTrailInformation>
   <PillarID>MyPillar</PillarID>
   <FileID>MyDataID</FileID>
   <FilePart>
@@ -44,7 +43,7 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
     <ProgressResponseText>Message request has been received and is expected to be met successfully</ProgressResponseText>
   </ProgressResponseInfo>
   <FileSize>90</FileSize>
-  <ChecksumsDataForBitRepositoryFile>
+  <ChecksumsDataForFile>
     <FileID>MyDataID</FileID>
       <ChecksumDataForFile>
         <ChecksumSpec>
@@ -62,5 +61,5 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
         <ChecksumValue>ABCDEF1234</ChecksumValue>
         <CalculationTimestamp>2011-02-17T09:47:00</CalculationTimestamp>
       </ChecksumDataForFile>
-  </ChecksumsDataForBitRepositoryFile>
+  </ChecksumsDataForFile>
 </bro:GetFileProgressResponse>
