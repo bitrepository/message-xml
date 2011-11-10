@@ -4,6 +4,7 @@
 <xs:schema
   targetNamespace="http://bitrepository.org/BitRepositoryElements.xsd"
   elementFormDefault="qualified"
+  attributeFormDefault="unqualified"
 
   xmlns="http://bitrepository.org/BitRepositoryElements.xsd"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
@@ -19,6 +20,7 @@
     </xs:documentation></xs:annotation>
     <xs:complexType>
       <xs:sequence>
+      
         <xs:element name="FileInformation">
           <xs:annotation><xs:documentation xml:lang="en">
             Identifies which objects the alarm concerns
@@ -44,17 +46,6 @@
             <xs:sequence>
               <xs:element ref="Contributor" minOccurs="0" maxOccurs="unbounded"/>
               <xs:element name="DataTransmission" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-
-        <xs:element name="BitRepositoryCollections">
-          <xs:annotation><xs:documentation xml:lang="en">
-          Identifies the bit repository collections which the alarm concerns
-          </xs:documentation></xs:annotation>
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element ref="BitRepositoryCollectionID" minOccurs="0" maxOccurs="unbounded" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -171,12 +162,6 @@
     </xs:complexType>
   </xs:element>
 
-  <xs:element name="BitRepositoryCollectionID" type="BitRepositoryCollectionID_TYPE">
-    <xs:annotation><xs:documentation xml:lang="en">
-    A unique identifier for bit repository collection which data belongs to.
-    </xs:documentation></xs:annotation>
-  </xs:element>
-
   <xs:element name="ChecksumsDataForBitRepositoryFile">
     <!-- TODO common ChecksumsDataGroupedByFile_TYPE; two restrictions on ParameterSpecification -->
     <xs:complexType>
@@ -276,102 +261,50 @@
     </xs:documentation></xs:annotation>
   </xs:element>
 
-  <xs:group name="Core">
-    <xs:annotation><xs:documentation xml:lang="en">
-    Includes elements that all protocol messages must include.
-    The core part will NOT be included in specific bit repository collection related encryption
-    </xs:documentation></xs:annotation>
-
-    <xs:sequence>
-      <xs:element name="CorrelationID" type="CorrelationID_TYPE">
-        <xs:annotation><xs:documentation xml:lang="en">
-        CorrelationID is a unique identifier for communication usually on primitive level,
-        e.g the IdentifyPillarsForGet part of a get operation
-        </xs:documentation></xs:annotation>
-      </xs:element>
-
-      <xs:element name="BitRepositoryCollectionID" type="BitRepositoryCollectionID_TYPE">
-        <xs:annotation><xs:documentation xml:lang="en">
-        BitRepositoryCollectionID is a unique identifier for bit repository collection
-        which data belongs to.
-        This is also the identification of decryption and keys for contents of message,
-        and it is part of unique identification of files together with a file id.
-        </xs:documentation></xs:annotation>
-      </xs:element>
-
-      <xs:element name="To" type="QueueTopicName_TYPE">
-        <xs:annotation><xs:documentation xml:lang="en">
-        Identifies the destination which the message is sent to
-        </xs:documentation></xs:annotation>
-      </xs:element>
-
-      <xs:element name="ReplyTo" type="QueueTopicName_TYPE">
-        <xs:annotation><xs:documentation xml:lang="en">
-        Identifies the destination any responds should be sent to
-        (blank if not relevant, e.g. for alarms)
-        </xs:documentation></xs:annotation>
-      </xs:element>
-
-      <xs:element name="AuditTrailInformation" type="AuditTrailInformation_TYPE">
-        <xs:annotation><xs:documentation xml:lang="en">
-        Audit Trail Information known to sender to be added to receiver audit trail.
-        Usually used by a client who knows a system user and wants this information as part of pillar audit trail.
-        </xs:documentation></xs:annotation>
-      </xs:element>
-    </xs:sequence>
-  </xs:group>
-
- <xs:complexType name="Message">
-    <xs:annotation><xs:documentation xml:lang="en">
-    The Bitrepository message supper class
-    </xs:documentation></xs:annotation>
-   <xs:sequence>
-      <xs:element name="CorrelationID" type="CorrelationID_TYPE">
-        <xs:annotation><xs:documentation xml:lang="en">
-        CorrelationID is a unique identifier for communication usually on primitive level,
-        e.g the IdentifyPillarsForGet part of a get operation
-        </xs:documentation></xs:annotation>
-      </xs:element>
-
-      <xs:element name="BitRepositoryCollectionID" type="BitRepositoryCollectionID_TYPE">
-        <xs:annotation><xs:documentation xml:lang="en">
-        BitRepositoryCollectionID is a unique identifier for bit repository collection
-        which data belongs to.
-        This is also the identification of decryption and keys for contents of message,
-        and it is part of unique identification of files together with a file id.
-        </xs:documentation></xs:annotation>
-      </xs:element>
-
-      <xs:element name="To" type="QueueTopicName_TYPE">
-        <xs:annotation><xs:documentation xml:lang="en">
-        Identifies the destination which the message is sent to
-        </xs:documentation></xs:annotation>
-      </xs:element>
-
-      <xs:element name="ReplyTo" type="QueueTopicName_TYPE">
-        <xs:annotation><xs:documentation xml:lang="en">
-        Identifies the destination any responds should be sent to
-        (blank if not relevant, e.g. for alarms)
-        </xs:documentation></xs:annotation>
-      </xs:element>
-
-      <xs:element name="AuditTrailInformation" type="AuditTrailInformation_TYPE">
-        <xs:annotation><xs:documentation xml:lang="en">
-        Audit Trail Information known to sender to be added to receiver audit trail.
-        Usually used by a client who knows a system user and wants this information as part of pillar audit trail.
-        </xs:documentation></xs:annotation>
-      </xs:element>
-    </xs:sequence>
-    
-    <xs:attributeGroup ref="VersionAttributes"/>
-    </xs:complexType>
-
   <xs:element name="CorrelationID" type="CorrelationID_TYPE">
-    <xs:annotation><xs:documentation xml:lang="en">
-    Identifies a sequence of related messages based on a single operation, typically initiated from a client.
-    </xs:documentation></xs:annotation>
+  <xs:annotation>
+    <xs:documentation xml:lang="en">
+      CorrelationID is a unique identifier for communication usually on primitive level,
+      e.g the IdentifyPillarsForGet part of a get operation
+    </xs:documentation>
+  </xs:annotation>
+</xs:element>
+
+  <xs:element name="BitRepositoryCollectionID" type="BitRepositoryCollectionID_TYPE">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        BitRepositoryCollectionID is a unique identifier for bit repository collection which data belongs to.
+        This is also the identification of decryption and keys for contents of message, and it is part of unique
+         identification of files together with a file id.
+      </xs:documentation>
+    </xs:annotation>
   </xs:element>
 
+  <xs:element name="To" type="QueueTopicName_TYPE">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Identifies the destination which the message is sent to
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:element name="ReplyTo" type="QueueTopicName_TYPE">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Identifies the destination any responds should be sent to (blank if not relevant, e.g. for alarms)
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:element name="AuditTrailInformation" type="AuditTrailInformation_TYPE">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Audit Trail Information known to sender to be added to receiver audit trail.
+        Usually used by a client who knows a system user and wants this information as part of pillar audit trail.
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  
   <xs:element name="FileAddress" type="Address_TYPE">
     <xs:annotation><xs:documentation xml:lang="en">
     Address (e.g. in form of an URL) for where a file can be found
