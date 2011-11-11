@@ -35,6 +35,9 @@
       <action dev="Kim" type="remove">
         Removed old AlarmCodes for "General alarm" and "Unknown user access". 
       </action>
+      <action dev="Kim" type="addition">
+        Added unified ResponseCode type. 
+      </action>
     </release>
   </body>
 </document>

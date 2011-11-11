@@ -1315,6 +1315,90 @@
     </xs:restriction>
   </xs:simpleType>
 
+  <xs:simpleType name="ResponseCode">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        General error codes for response messages
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:positiveInteger">
+      <!-- Positive response codes -->
+      <xs:enumeration value="440">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            Message request has been received and operation request is expected to be successful
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="460">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            Message request has been received and is expected to be met successfully
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="461">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            Data from a PutFile request has been buffered successfully
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="462">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            Data for a FileID has been found for some sort of Get request
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="480">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            Message request has been completed successfully
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <!-- Negative response codes -->
+      <xs:enumeration value="500">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            There are other reasons for failure
+            text following error code must explain reason.
+            This code should rarely be used, and use indicates that this type should be updated
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="501">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            File with given FileID has NOT been found for a read request
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="502">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            Duplicate FileID in write request
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="561">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            Request was not understood
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="581">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            Operation was not completed for unknown reason
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
   <xs:complexType name="Risk_TYPE">
     <xs:annotation><xs:documentation xml:lang="en">
       Indicates Risk and Risk Area for Alarm if not treated
