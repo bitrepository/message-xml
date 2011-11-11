@@ -6,13 +6,13 @@
     <author email="mss@statsbiblioteket.dk">Mikis Seth Sørensen</author>
   </properties>
   <body>
-    <release version="0.4.0" date="2011-10-26" description="Major xsd updates. See liste below">
+    <release version="0.4.0" date="2011-11-XX" description="Major xsd updates. See liste below">
       <action dev="Mikis" type="add">
         All messages now extend the either the MessageResponse or the MessageRequest super types which again
         extend the general Message type. Alarms extend the Message type directly.  
       </action>
       <action dev="Mikis" type="update">
-        AuditTrailInformation has been removed from response type messages.
+        AuditTrailInformation has been removed from response type messages and made optional on requests.
       </action>
       <action dev="Mikis" type="remove">
         The BitRepositoryCollections element has been removed from alarms (as alarms are local to a collection).
