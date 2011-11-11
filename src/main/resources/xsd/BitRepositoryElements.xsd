@@ -404,11 +404,6 @@
     </xs:documentation></xs:annotation>
     <xs:complexType>
       <xs:sequence>
-        <!-- <xs:element ref="NoOfItems" minOccurs="0" maxOccurs="1" >
-          <xs:annotation><xs:documentation xml:lang="en">
-          The number of data IDs included
-          </xs:documentation></xs:annotation>
-        </xs:element> -->
 
         <xs:element name="FileIDsItems" >
           <xs:annotation><xs:documentation xml:lang="en" >
@@ -453,60 +448,6 @@
     </xs:documentation></xs:annotation>
   </xs:element>
 
-  <xs:element name="FinalResponseInfo">
-    <xs:annotation><xs:documentation xml:lang="en">
-    Information of completion
-    </xs:documentation></xs:annotation>
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element name="FinalResponseCode" type="FinalResponseCode_TYPE">
-          <xs:annotation><xs:documentation xml:lang="en">
-          FinalResponseCode is a code for the type of completion given
-          The actual codes are specified later, e.g. IoError, DataNotFound, AccessDenied, OK
-          </xs:documentation></xs:annotation>
-        </xs:element>
-
-        <xs:element name="FinalResponseText" type="xs:string">
-          <xs:annotation><xs:documentation xml:lang="en">
-          FinalResponseText is a text for logging in the completion
-          It does not have a semantic meaning, but contributes to a more readable log
-          </xs:documentation></xs:annotation>
-        </xs:element>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-
-  <xs:element name="IdentifyResponseInfo">
-    <xs:annotation><xs:documentation xml:lang="en">
-    Response information telling that the Identify request has been received and
-    if an operation request can be met. This response info can be used to send 'negative' Identify responses.
-    </xs:documentation></xs:annotation>
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element name="IdentifyResponseCode" type="IdentifyResponseCode_TYPE">
-          <xs:annotation><xs:documentation xml:lang="en">
-          IdentifyResponseCode is a code for the type of identify response given, such as AccessDenied or OK.
-          Note that if the pillar does not know this collection ID, no identify response should be sent.
-          </xs:documentation></xs:annotation>
-        </xs:element>
-
-        <xs:element name="IdentifyResponseText" type="xs:string">
-          <xs:annotation><xs:documentation xml:lang="en">
-          IdentifyResponseText is a text for logging the type of identify response given.
-          It does not have a semantic meaning, but contributes to a more readable log.
-          </xs:documentation></xs:annotation>
-        </xs:element>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-
-  <!-- <xs:element name="NoOfItems" type="xs:nonNegativeInteger">
-    <xs:annotation><xs:documentation xml:lang="en">
-    The number of results given in a delivered result
-    e.g. number of checksums in result given in a data transmitted file or in a message
-    </xs:documentation></xs:annotation>
-  </xs:element> -->
-
   <xs:element name="ParameterAddress" type="Address_TYPE">
     <xs:annotation><xs:documentation xml:lang="en">
     Address where parameter can be found
@@ -528,46 +469,29 @@
     </xs:documentation></xs:annotation>
   </xs:element>
 
-  <xs:element name="ProgressResponseInfo">
-    <xs:annotation><xs:documentation xml:lang="en">
-    Information of reponse
-    </xs:documentation></xs:annotation>
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element name="ProgressResponseCode" type="ProgressResponseCode_TYPE">
-          <xs:annotation><xs:documentation xml:lang="en">
-          A code for the type of progress response given
-          The actual codes are specified later, e.g. UnknownFileId, OK
-          </xs:documentation></xs:annotation>
-        </xs:element>
-
-        <xs:element name="ProgressResponseText" type="xs:string" minOccurs="0" maxOccurs="1" >
-          <xs:annotation><xs:documentation xml:lang="en">
-          A text for logging in the progress response.
-          It does not have a semantic meaning, but contributes to a more readable log
-          </xs:documentation></xs:annotation>
-        </xs:element>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  
-    <xs:element name="ResponseInfo">
-    <xs:annotation><xs:documentation xml:lang="en">
-    Information of completion
-    </xs:documentation></xs:annotation>
+  <xs:element name="ResponseInfo">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Information of completion
+      </xs:documentation>
+    </xs:annotation>
     <xs:complexType>
       <xs:sequence>
         <xs:element name="ResponseCode" type="ResponseCode_TYPE">
-          <xs:annotation><xs:documentation xml:lang="en">
-            ResponseCode is machine readable code to indicate whether the status of 
-            the request that the response is about
-          </xs:documentation></xs:annotation>
+          <xs:annotation>
+            <xs:documentation xml:lang="en">
+              ResponseCode is machine readable code to indicate whether the status of
+              the request that the response is about
+            </xs:documentation>
+          </xs:annotation>
         </xs:element>
 
         <xs:element name="ResponseText" type="xs:string">
-          <xs:annotation><xs:documentation xml:lang="en">
-            ReponseText is a textual description for logging, in a human readable form.
-          </xs:documentation></xs:annotation>
+          <xs:annotation>
+            <xs:documentation xml:lang="en">
+              ReponseText is a textual description for logging, in a human readable form.
+            </xs:documentation>
+          </xs:annotation>
         </xs:element>
       </xs:sequence>
     </xs:complexType>
@@ -1187,50 +1111,6 @@
     </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="ERRORCODE_FINALRESPONSE_TYPE">
-    <xs:annotation><xs:documentation xml:lang="en">
-    Error codes that are specific for FinalResponse messages
-    Numbers may later be adjusted to fit a standard
-    </xs:documentation></xs:annotation>
-    <xs:restriction base="xs:positiveInteger">
-      <xs:enumeration value="581">
-        <xs:annotation><xs:documentation xml:lang="en">
-        Operation was not completed for unknown reason
-        </xs:documentation></xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-
-  <xs:simpleType name="ERRORCODE_GENERAL_TYPE">
-    <xs:annotation><xs:documentation xml:lang="en">
-    General error codes for response messages
-    </xs:documentation></xs:annotation>
-    <xs:restriction base="xs:positiveInteger">
-      <xs:enumeration value="501">
-        <xs:annotation><xs:documentation xml:lang="en">
-        File with given FileID has NOT been found for a read request
-        </xs:documentation></xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="502">
-        <xs:annotation><xs:documentation xml:lang="en">
-        Duplicate FileID in write request
-        </xs:documentation></xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="561">
-        <xs:annotation><xs:documentation xml:lang="en">
-        Request was not understood
-        </xs:documentation></xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="500">
-        <xs:annotation><xs:documentation xml:lang="en">
-        There are other reasons for failure
-        text following error code must explain reason.
-        This code should rarely be used, and use indicates that this type should be updated
-        </xs:documentation></xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-
   <xs:simpleType name="FileID_TYPE">
     <xs:annotation><xs:documentation xml:lang="en">
     Unique identifiers for data in given service level agreement
@@ -1238,40 +1118,6 @@
     In a Put operation this will be the identifier the data for later request of the data
     </xs:documentation></xs:annotation>
     <xs:restriction base="xs:string">
-    </xs:restriction>
-  </xs:simpleType>
-
-  <xs:simpleType name="FinalResponseCode_TYPE">
-    <xs:annotation><xs:documentation xml:lang="en">
-    Type with all final response codes for final response messages in the bit repository protocol
-    </xs:documentation></xs:annotation>
-    <xs:union memberTypes="FinalResponseCodePositive_TYPE ERRORCODE_GENERAL_TYPE ERRORCODE_FINALRESPONSE_TYPE"/>
-  </xs:simpleType>
-
-  <xs:simpleType name="FinalResponseCodePositive_TYPE">
-    <xs:restriction base="xs:positiveInteger">
-      <xs:enumeration value="480">
-        <xs:annotation><xs:documentation xml:lang="en">
-        Message request has been completed successfully
-        </xs:documentation></xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-
-  <xs:simpleType name="IdentifyResponseCode_TYPE">
-    <xs:annotation><xs:documentation xml:lang="en">
-    Type of all codes for Identify Response messages.
-    </xs:documentation></xs:annotation>
-    <xs:union memberTypes="IdentifyResponseCodePositive_TYPE ERRORCODE_GENERAL_TYPE"/>
-  </xs:simpleType>
-
-  <xs:simpleType name="IdentifyResponseCodePositive_TYPE">
-    <xs:restriction base="xs:positiveInteger">
-      <xs:enumeration value="440">
-        <xs:annotation><xs:documentation xml:lang="en">
-        Message request has been received and operation request is expected to be successful
-        </xs:documentation></xs:annotation>
-      </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
 
@@ -1304,29 +1150,6 @@
         <xs:annotation><xs:documentation xml:lang="en">
         Other. Notification should be sent. Alarmtext should explain what the alarm consists of.
         This code should rarely be used, and use indicates that this type should be updated.
-        </xs:documentation></xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-
-  <xs:simpleType name="ProgressResponseCode_TYPE">
-    <xs:annotation><xs:documentation xml:lang="en">
-    Type with all progress response codes for progress response message in the bit repository protocol
-    </xs:documentation></xs:annotation>
-    <xs:restriction base="xs:positiveInteger">
-      <xs:enumeration value="460">
-        <xs:annotation><xs:documentation xml:lang="en">
-        Message request has been received and is expected to be met successfully
-        </xs:documentation></xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="461">
-        <xs:annotation><xs:documentation xml:lang="en">
-        Data from a PutFile request has been buffered successfully
-        </xs:documentation></xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="462">
-        <xs:annotation><xs:documentation xml:lang="en">
-        Data for a FileID has been found for some sort of Get request
         </xs:documentation></xs:annotation>
       </xs:enumeration>
     </xs:restriction>

@@ -45,6 +45,10 @@
         Updated the various response messages to use the new unified ResponseInfo element.
         Effected example messages have also been updated.
       </action>
+      <action dev="Kim" type="remove">
+        Removed FinalReponseInfo, ProgressResponseInfo, IdentifyResponseInfo elements. 
+        Killed off old response code types (including unions).
+      </action>
     </release>
   </body>
 </document>
