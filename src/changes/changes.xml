@@ -32,6 +32,9 @@
       <action dev="Mikis" type="update">
         Added change notes functionality to Maven site, so we can document the changes found to the protocol.
       </action>
+      <action dev="Kim" type="remove">
+        Removed old AlarmCodes for "General alarm" and "Unknown user access". 
+      </action>
     </release>
   </body>
 </document>

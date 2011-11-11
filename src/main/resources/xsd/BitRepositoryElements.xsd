@@ -939,16 +939,6 @@
     Error codes that are specific for Alarm messages
     </xs:documentation></xs:annotation>
     <xs:restriction base="xs:positiveInteger">
-      <xs:enumeration value="541">
-        <xs:annotation><xs:documentation xml:lang="en">
-        General alarm
-        </xs:documentation></xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="542">
-        <xs:annotation><xs:documentation xml:lang="en">
-        Unknown user access
-        </xs:documentation></xs:annotation>
-      </xs:enumeration>
       <xs:enumeration value="700">
         <xs:annotation><xs:documentation xml:lang="en">
         Component failure, something fatal or irrecoverable has happened. 
