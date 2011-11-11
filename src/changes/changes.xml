@@ -38,6 +38,13 @@
       <action dev="Kim" type="addition">
         Added unified ResponseCode type. 
       </action>
+      <action dev="Kim" type="addition">
+        Added ResponseInfo element. 
+      </action>
+      <action dev="Kim" type="update">
+        Updated the various response messages to use the new unified ResponseInfo element.
+        Effected example messages have also been updated.
+      </action>
     </release>
   </body>
 </document>

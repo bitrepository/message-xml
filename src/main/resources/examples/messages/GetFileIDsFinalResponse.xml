@@ -36,10 +36,10 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
     <FileID>MyDataID1</FileID>
     <FileID>MyDataID2</FileID>
   </FileIDs>
-  <FinalResponseInfo>
-    <FinalResponseCode>480</FinalResponseCode>
-    <FinalResponseText>successfull completion</FinalResponseText>
-  </FinalResponseInfo>
+  <ResponseInfo>
+    <ResponseCode>480</ResponseCode>
+    <ResponseText>successfull completion</ResponseText>
+  </ResponseInfo>
   <ResultingFileIDs>
     <FileIDsData>
     <FileIDsDataItems>

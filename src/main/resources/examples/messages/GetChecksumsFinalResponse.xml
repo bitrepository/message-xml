@@ -36,10 +36,10 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
     <ChecksumType>MD5</ChecksumType>
     <ChecksumSalt>X</ChecksumSalt>
   </FileChecksumSpec>
-  <FinalResponseInfo>
-    <FinalResponseCode>480</FinalResponseCode>
-    <FinalResponseText>successfull completion</FinalResponseText>
-  </FinalResponseInfo>
+  <ResponseInfo>
+    <ResponseCode>480</ResponseCode>
+    <ResponseText>successfull completion</ResponseText>
+  </ResponseInfo>
   <ResultingChecksums>
       <ChecksumDataItems>
           <FileID>MyDataId1</FileID>

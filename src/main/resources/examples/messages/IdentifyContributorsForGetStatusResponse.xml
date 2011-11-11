@@ -35,10 +35,10 @@
       <ComponentID>MyPillar</ComponentID>
       <ComponentType>PILLAR</ComponentType>
   </Contributor>
-  <IdentifyResponseInfo>
-    <IdentifyResponseCode>440</IdentifyResponseCode>
-    <IdentifyResponseText>Request message received and operation request expected to be successful</IdentifyResponseText>
-  </IdentifyResponseInfo>
+  <ResponseInfo>
+    <ResponseCode>440</ResponseCode>
+    <ResponseText>Request message received and operation request expected to be successful</ResponseText>
+  </ResponseInfo>
   <TimeToDeliver>
     <TimeMeasureUnit>MILLISECONDS</TimeMeasureUnit>
     <TimeMeasureValue>1000</TimeMeasureValue>

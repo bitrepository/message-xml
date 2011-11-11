@@ -38,8 +38,8 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
     <PartLength>100</PartLength>
   </FilePart>
   <FileAddress>http://myServer/myPlace/Myfile</FileAddress>
-  <FinalResponseInfo>
-    <FinalResponseCode>480</FinalResponseCode>
-    <FinalResponseText>successfull completion</FinalResponseText>
-  </FinalResponseInfo>
+  <ResponseInfo>
+    <ResponseCode>480</ResponseCode>
+    <ResponseText>successfull completion</ResponseText>
+  </ResponseInfo>
 </bro:GetFileFinalResponse>

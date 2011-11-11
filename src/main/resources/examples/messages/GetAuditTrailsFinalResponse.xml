@@ -38,10 +38,10 @@
   <FileIDs>
     <FileID>MyFile</FileID>
   </FileIDs>
-  <FinalResponseInfo>
-    <FinalResponseCode>480</FinalResponseCode>
-    <FinalResponseText>successfull completion</FinalResponseText>
-  </FinalResponseInfo>
+  <ResponseInfo>
+    <ResponseCode>480</ResponseCode>
+    <ResponseText>successfull completion</ResponseText>
+  </ResponseInfo>
   <ResultingAuditTrails>
     <AuditTrailData>
       <!--<NoOfItems>2</NoOfItems>-->

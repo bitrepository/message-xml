@@ -38,10 +38,10 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
     <PartLength>100</PartLength>
   </FilePart>
   <FileAddress>http://myServer/myPlace/Myfile</FileAddress>
-  <ProgressResponseInfo>
-    <ProgressResponseCode>460</ProgressResponseCode>
-    <ProgressResponseText>Message request has been received and is expected to be met successfully</ProgressResponseText>
-  </ProgressResponseInfo>
+  <ResponseInfo>
+    <ResponseCode>460</ResponseCode>
+    <ResponseText>Message request has been received and is expected to be met successfully</ResponseText>
+  </ResponseInfo>
   <FileSize>90</FileSize>
   <ChecksumsDataForFile>
     <FileID>MyDataID</FileID>

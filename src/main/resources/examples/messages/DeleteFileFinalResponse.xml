@@ -33,10 +33,10 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <ReplyTo>MyQueueOrTopic</ReplyTo>
   <PillarID>MyPillar</PillarID>
   <FileID>MyDataID</FileID>
-  <FinalResponseInfo>
-    <FinalResponseCode>480</FinalResponseCode>
-    <FinalResponseText>successfull completion</FinalResponseText>
-  </FinalResponseInfo>
+  <ResponseInfo>
+    <ResponseCode>480</ResponseCode>
+    <ResponseText>successfull completion</ResponseText>
+  </ResponseInfo>
   <ChecksumsDataForFile>
     <FileID>MyDataID</FileID>
       <ChecksumDataForFile>

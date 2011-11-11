@@ -35,10 +35,10 @@
     <ComponentID>MyPillar</ComponentID>
     <ComponentType>PILLAR</ComponentType>
   </Contributor>
-  <FinalResponseInfo>
-    <FinalResponseCode>480</FinalResponseCode>
-    <FinalResponseText>successful completion</FinalResponseText>
-  </FinalResponseInfo>
+  <ResponseInfo>
+    <ResponseCode>480</ResponseCode>
+    <ResponseText>successful completion</ResponseText>
+  </ResponseInfo>
   <ResultingStatus>
     <ContributorStatus>
       <ContributorStatusElements>

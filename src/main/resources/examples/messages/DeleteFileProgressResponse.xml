@@ -33,8 +33,8 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <ReplyTo>MyQueueOrTopic</ReplyTo>
   <PillarID>MyPillar</PillarID>
   <FileID>MyDataID</FileID>
-  <ProgressResponseInfo>
-    <ProgressResponseCode>460</ProgressResponseCode>
-    <ProgressResponseText>Message request has been received and is expected to be met successfully</ProgressResponseText>
-  </ProgressResponseInfo>
+  <ResponseInfo>
+    <ResponseCode>460</ResponseCode>
+    <ResponseText>Message request has been received and is expected to be met successfully</ResponseText>
+  </ResponseInfo>
 </bro:DeleteFileProgressResponse>

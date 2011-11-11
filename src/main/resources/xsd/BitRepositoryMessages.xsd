@@ -135,7 +135,7 @@
               </xs:documentation></xs:annotation>
             </xs:element>
     
-            <xs:element ref="bre:IdentifyResponseInfo" minOccurs="0" maxOccurs="1" >
+            <xs:element ref="bre:ResponseInfo" minOccurs="0" maxOccurs="1" >
               <xs:annotation><xs:documentation xml:lang="en">
               Response information telling that the Identify request has been received and
               if an operation request can be met. This response info can be used to send 'negative' Identify responses.
@@ -234,7 +234,7 @@
               </xs:documentation></xs:annotation>
             </xs:element>
     
-            <xs:element ref="bre:ProgressResponseInfo" >
+            <xs:element ref="bre:ResponseInfo" >
               <xs:annotation><xs:documentation xml:lang="en">
               ProgressResponse information telling whether GetFileRequest has been received and is expected to be completed
               </xs:documentation></xs:annotation>
@@ -292,7 +292,7 @@
             </xs:documentation></xs:annotation>
           </xs:element>
   
-          <xs:element ref="bre:FinalResponseInfo" >
+          <xs:element ref="bre:ResponseInfo" >
             <xs:annotation><xs:documentation xml:lang="en">
             Information on how Get has been completed
             </xs:documentation></xs:annotation>
@@ -354,7 +354,7 @@
             </xs:documentation></xs:annotation>
           </xs:element>
   
-          <xs:element ref="bre:IdentifyResponseInfo" minOccurs="0" maxOccurs="1" >
+          <xs:element ref="bre:ResponseInfo" minOccurs="0" maxOccurs="1" >
             <xs:annotation><xs:documentation xml:lang="en">
             Response information telling that the Identify request has been received and
             if an operation request can be met. This response info can be used to send 'negative' Identify responses.
@@ -462,7 +462,7 @@
             </xs:documentation></xs:annotation>
           </xs:element>
   
-          <xs:element ref="bre:ProgressResponseInfo" >
+          <xs:element ref="bre:ResponseInfo" >
             <xs:annotation><xs:documentation xml:lang="en">
             ProgressResponse information telling whether PutFileRequest has been received and is expected to be completed
             </xs:documentation></xs:annotation>
@@ -506,7 +506,7 @@
             </xs:documentation></xs:annotation>
           </xs:element>
   
-          <xs:element ref="bre:FinalResponseInfo" >
+          <xs:element ref="bre:ResponseInfo" >
             <xs:annotation><xs:documentation xml:lang="en">
             Information on how PutFile has been completed
             </xs:documentation></xs:annotation>
@@ -574,7 +574,7 @@
             </xs:documentation></xs:annotation>
           </xs:element>
   
-          <xs:element ref="bre:IdentifyResponseInfo" minOccurs="0" maxOccurs="1" >
+          <xs:element ref="bre:ResponseInfo" minOccurs="0" maxOccurs="1" >
             <xs:annotation><xs:documentation xml:lang="en">
             Response information telling that the Identify request has been received and
             if an operation request can be met. This response info can be used to send 'negative' Identify responses.
@@ -656,7 +656,7 @@
               </xs:documentation></xs:annotation>
             </xs:element>
     
-            <xs:element ref="bre:ProgressResponseInfo" >
+            <xs:element ref="bre:ResponseInfo" >
               <xs:annotation><xs:documentation xml:lang="en">
               ProgressResponse information telling whether DeleteFileRequest
               has been received and is expected to be completed
@@ -689,7 +689,7 @@
               </xs:documentation></xs:annotation>
             </xs:element>
     
-            <xs:element ref="bre:FinalResponseInfo" >
+            <xs:element ref="bre:ResponseInfo" >
               <xs:annotation><xs:documentation xml:lang="en">
               Information on how DeleteFile has been completed
               </xs:documentation></xs:annotation>
@@ -757,7 +757,7 @@
               </xs:documentation></xs:annotation>
             </xs:element>
     
-            <xs:element ref="bre:IdentifyResponseInfo" minOccurs="0" maxOccurs="1" >
+            <xs:element ref="bre:ResponseInfo" minOccurs="0" maxOccurs="1" >
               <xs:annotation><xs:documentation xml:lang="en">
               Response information telling that the Identify request has been received and
               if an operation request can be met. This response info can be used to send 'negative' Identify responses.
@@ -872,7 +872,7 @@
               </xs:documentation></xs:annotation>
             </xs:element>
     
-            <xs:element ref="bre:ProgressResponseInfo" >
+            <xs:element ref="bre:ResponseInfo" >
               <xs:annotation><xs:documentation xml:lang="en">
               ProgressResponse information telling whether ReplaceFileRequest has been received and is expected to be completed
               </xs:documentation></xs:annotation>
@@ -916,7 +916,7 @@
             </xs:documentation></xs:annotation>
           </xs:element>
   
-          <xs:element ref="bre:FinalResponseInfo" >
+          <xs:element ref="bre:ResponseInfo" >
             <xs:annotation><xs:documentation xml:lang="en">
             Information on how ReplaceFile has been completed
             </xs:documentation></xs:annotation>
@@ -997,7 +997,7 @@
               </xs:documentation></xs:annotation>
             </xs:element>
     
-            <xs:element ref="bre:IdentifyResponseInfo" minOccurs="0" maxOccurs="1" >
+            <xs:element ref="bre:ResponseInfo" minOccurs="0" maxOccurs="1" >
               <xs:annotation><xs:documentation xml:lang="en">
               Response information telling that the Identify request has been received and
               if an operation request can be met. This response info can be used to send 'negative' Identify responses.
@@ -1089,7 +1089,7 @@
               </xs:documentation></xs:annotation>
             </xs:element>
     
-            <xs:element ref="bre:ProgressResponseInfo" >
+            <xs:element ref="bre:ResponseInfo" >
               <xs:annotation><xs:documentation xml:lang="en">
               ProgressResponse information telling whether GetChecksumsRequest has been received and is expected to be
               completed
@@ -1123,7 +1123,7 @@
               </xs:documentation></xs:annotation>
             </xs:element>
     
-            <xs:element ref="bre:FinalResponseInfo" >
+            <xs:element ref="bre:ResponseInfo" >
               <xs:annotation><xs:documentation xml:lang="en">
               Information on how GetChecksums has been completed
               </xs:documentation></xs:annotation>
@@ -1184,7 +1184,7 @@
               </xs:documentation></xs:annotation>
             </xs:element>
     
-            <xs:element ref="bre:IdentifyResponseInfo" minOccurs="0" maxOccurs="1" >
+            <xs:element ref="bre:ResponseInfo" minOccurs="0" maxOccurs="1" >
               <xs:annotation><xs:documentation xml:lang="en">
               Response information telling that the Identify request has been received and
               if an operation request can be met. This response info can be used to send 'negative' Identify responses.
@@ -1265,7 +1265,7 @@
               </xs:documentation></xs:annotation>
             </xs:element>
     
-            <xs:element ref="bre:ProgressResponseInfo" >
+            <xs:element ref="bre:ResponseInfo" >
               <xs:annotation><xs:documentation xml:lang="en">
               ProgressResponse information telling whether GetFilIDsRequest has been received and is expected to be completed
               </xs:documentation></xs:annotation>
@@ -1298,7 +1298,7 @@
               </xs:documentation></xs:annotation>
             </xs:element>
     
-            <xs:element ref="bre:FinalResponseInfo" >
+            <xs:element ref="bre:ResponseInfo" >
               <xs:annotation><xs:documentation xml:lang="en">
               Information on how GetFileIDs has been completed
               </xs:documentation></xs:annotation>
@@ -1346,7 +1346,7 @@
               </xs:documentation></xs:annotation>
             </xs:element>
     
-            <xs:element ref="bre:IdentifyResponseInfo" minOccurs="0" maxOccurs="1" >
+            <xs:element ref="bre:ResponseInfo" minOccurs="0" maxOccurs="1" >
               <xs:annotation><xs:documentation xml:lang="en">
               Response information telling that the Identify request has been received and
               if an operation request can be met. This response info can be used to send 'negative' Identify responses.
@@ -1414,7 +1414,7 @@
               </xs:documentation></xs:annotation>
             </xs:element>
     
-            <xs:element ref="bre:ProgressResponseInfo" >
+            <xs:element ref="bre:ResponseInfo" >
               <xs:annotation><xs:documentation xml:lang="en">
               ProgressResponse information telling whether GetStatusRequest has been received and is expected to be completed
               </xs:documentation></xs:annotation>
@@ -1440,7 +1440,7 @@
               </xs:documentation></xs:annotation>
             </xs:element>
     
-            <xs:element ref="bre:FinalResponseInfo" >
+            <xs:element ref="bre:ResponseInfo" >
               <xs:annotation><xs:documentation xml:lang="en">
               Information on how GetStatus has been completed
               </xs:documentation></xs:annotation>
@@ -1501,7 +1501,7 @@
               </xs:documentation></xs:annotation>
             </xs:element>
     
-            <xs:element ref="bre:IdentifyResponseInfo" minOccurs="0" maxOccurs="1" >
+            <xs:element ref="bre:ResponseInfo" minOccurs="0" maxOccurs="1" >
               <xs:annotation><xs:documentation xml:lang="en">
               Response information telling that the Identify request has been received and
               if an operation request can be met. This response info can be used to send 'negative' Identify responses.
@@ -1582,7 +1582,7 @@
               </xs:documentation></xs:annotation>
             </xs:element>
     
-            <xs:element ref="bre:ProgressResponseInfo" >
+            <xs:element ref="bre:ResponseInfo" >
               <xs:annotation><xs:documentation xml:lang="en">
               ProgressResponse information telling whether GetAuditTrailsRequest has been received and is expected to be completed
               </xs:documentation></xs:annotation>
@@ -1615,7 +1615,7 @@
               </xs:documentation></xs:annotation>
             </xs:element>
     
-            <xs:element ref="bre:FinalResponseInfo" >
+            <xs:element ref="bre:ResponseInfo" >
               <xs:annotation><xs:documentation xml:lang="en">
               Information on how GetAuditTrails has been completed
               </xs:documentation></xs:annotation>
