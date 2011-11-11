@@ -1,0 +1,37 @@
+<document xmlns="http://maven.apache.org/changes/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 http://maven.apache.org/xsd/changes-1.0.0.xsd">
+  <properties>
+    <title>SBForge parent pom</title>
+    <author email="mss@statsbiblioteket.dk">Mikis Seth Sørensen</author>
+  </properties>
+  <body><release version="0.4.0" date="2011-11-02" description="Introducing the Message super type">
+      <action dev="Mikis" type="remove">
+        Removed the site distribution section of the pom.
+      </action>
+    </release>
+    <release version="0.4.0" date="2011-10-26" description="
+    Note that that from now on the SBForge repository are not defined in the sbforge-parent pom. This means that the 
+    sbforge repositories needs to be defined in project pom itself. An alternativ for Maven2 users are to define 
+    the repositories in the settings.xml. See newest 
+    settings.xml template https://sbforge.org/svn/sbforge-parent/trunk/src/main/resources/settings.xml for example">
+      <action dev="Mikis" type="add">
+        All messages now extend the either the MessageResponse or the MessageRequest super types which again
+        extend the general Message type. Alarms extend the Message type directly.  
+      </action>
+      <action dev="Mikis" type="update">
+        AuditTrailInformation has been removed from response type messages.
+      </action>
+      <action dev="Mikis" type="remove">
+        The BitRepositoryCollections element has been removed from alarms (as alarms are local to a collection).
+      </action>
+      <action dev="Mikis" type="update">
+        The CollectionID and ChecksumsDataForBitRepositoryFile has been renamed to 
+        CollectionID and ChecksumsDataForFile (removed trivial BitRepository).
+      </action>
+      <action dev="Mikis" type="update">
+        Added change notes functionality to Maven site, so we can document the changes found to the protocol.
+      </action>
+    </release>
+  </body>
+</document>
