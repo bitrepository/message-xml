@@ -50,6 +50,7 @@
         Made ChecksumsDataForNewFile optional in PutFileRequest. This is in accordance with the documentation text
         and aligned with the reference clients not delivering checksums at this point. It should be considered 
         whether this is the wanted behavior!
+        Made ChecksumsDataForNewFile optional in PutFileFinalResponse.
       </action>
     </release>
   </body>
