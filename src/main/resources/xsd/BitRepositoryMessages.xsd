@@ -241,14 +241,14 @@
               </xs:documentation></xs:annotation>
             </xs:element>
     
-            <xs:element ref="bre:FileSize" minOccurs="0" maxOccurs="1" >
+            <xs:element ref="bre:FileSize" minOccurs="0" maxOccurs="1">
               <xs:annotation><xs:documentation xml:lang="en">
               Expected size of file to be send, expressed in bytes.
               This can be used in e.g. capacity checks
               </xs:documentation></xs:annotation>
             </xs:element>
     
-            <xs:element ref="bre:ChecksumsDataForFile">
+            <xs:element ref="bre:ChecksumsDataForFile" minOccurs="0" maxOccurs="1">
               <xs:annotation><xs:documentation xml:lang="en">
               Different Checksums of the file to be sent.
               This can be used in checks of correct receival.
@@ -1130,7 +1130,7 @@
               </xs:documentation></xs:annotation>
             </xs:element>
     
-            <xs:element ref="bre:ResultingChecksums">
+            <xs:element ref="bre:ResultingChecksums" minOccurs="0" maxOccurs="1">
               <xs:annotation><xs:documentation xml:lang="en">
               result with requested checksums
               </xs:documentation></xs:annotation>

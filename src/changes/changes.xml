@@ -41,6 +41,10 @@
         Removed FinalReponseInfo, ProgressResponseInfo, IdentifyResponseInfo elements. 
         Killed off old response code types (including unions).
       </action>
+      <action dev="Kim" type="update">
+        Made FileSize and ChecksumDataForFile optional in GetFileProgressResponse.
+        Made ResultingChecksums optional in GetChecksumsFinalResponse. 
+      </action>
     </release>
   </body>
 </document>
