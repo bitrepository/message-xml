@@ -409,7 +409,7 @@
             </xs:documentation></xs:annotation>
           </xs:element>
   
-          <xs:element ref="bre:ChecksumsDataForNewFile">
+          <xs:element ref="bre:ChecksumsDataForNewFile"  minOccurs="0" maxOccurs="1">
             <xs:annotation><xs:documentation xml:lang="en">
             Optionally checksums (and type and possibly salt) of file to be put.
             This can be used in checks of correct receival.
@@ -1305,7 +1305,7 @@
               </xs:documentation></xs:annotation>
             </xs:element>
     
-            <xs:element ref="bre:ResultingFileIDs">
+            <xs:element ref="bre:ResultingFileIDs" minOccurs="0" maxOccurs="1">
               <xs:annotation><xs:documentation xml:lang="en">
               Result with file IDs
               </xs:documentation></xs:annotation>

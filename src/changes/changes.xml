@@ -45,6 +45,12 @@
         Made FileSize and ChecksumDataForFile optional in GetFileProgressResponse.
         Made ResultingChecksums optional in GetChecksumsFinalResponse. 
       </action>
+      <action dev="Kim" type="update">
+        Made ResultingFileIDs optional in GetFileIDsFinalResponse.
+        Made ChecksumsDataForNewFile optional in PutFileRequest. This is in accordance with the documentation text
+        and aligned with the reference clients not delivering checksums at this point. It should be considered 
+        whether this is the wanted behavior!
+      </action>
     </release>
   </body>
 </document>
