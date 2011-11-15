@@ -42,7 +42,7 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
     <ChecksumSalt>X</ChecksumSalt>
   </FileChecksumSpec>
   <FinalResponseInfo>
-    <FinalResponseCode>480</FinalResponseCode>
+    <FinalResponseCode>202</FinalResponseCode>
     <FinalResponseText>successfull completion</FinalResponseText>
   </FinalResponseInfo>
   <ResultingChecksums>

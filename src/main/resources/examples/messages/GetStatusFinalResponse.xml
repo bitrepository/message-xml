@@ -36,7 +36,7 @@
     <ComponentType>PILLAR</ComponentType>
   </Contributor>
   <ResponseInfo>
-    <ResponseCode>480</ResponseCode>
+    <ResponseCode>204</ResponseCode>
     <ResponseText>successful completion</ResponseText>
   </ResponseInfo>
   <ResultingStatus>

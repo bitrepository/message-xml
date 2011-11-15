@@ -39,7 +39,7 @@
     <FileID>MyFile</FileID>
   </FileIDs>
   <ResponseInfo>
-    <ResponseCode>460</ResponseCode>
+    <ResponseCode>202</ResponseCode>
     <ResponseText>Message request has been received and is expected to be met successfully</ResponseText>
   </ResponseInfo>
 </bro:GetAuditTrailsProgressResponse>

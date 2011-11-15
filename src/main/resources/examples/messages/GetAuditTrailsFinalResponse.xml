@@ -39,7 +39,7 @@
     <FileID>MyFile</FileID>
   </FileIDs>
   <ResponseInfo>
-    <ResponseCode>480</ResponseCode>
+    <ResponseCode>204</ResponseCode>
     <ResponseText>successfull completion</ResponseText>
   </ResponseInfo>
   <ResultingAuditTrails>

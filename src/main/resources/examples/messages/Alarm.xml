@@ -37,7 +37,7 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   </AlarmRaiser>
   <AlarmDescription>
     <OrigDateTime>2011-05-03T11:18:00</OrigDateTime>
-    <AlarmCode>700</AlarmCode>
+    <AlarmCode>500</AlarmCode>
     <AlarmText>Component failure</AlarmText>
     <Priority>1</Priority>
     <Risk>

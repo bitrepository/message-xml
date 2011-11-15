@@ -37,7 +37,7 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
     <FileID>MyDataID2</FileID>
   </FileIDs>
   <ResponseInfo>
-    <ResponseCode>480</ResponseCode>
+    <ResponseCode>204</ResponseCode>
     <ResponseText>successfull completion</ResponseText>
   </ResponseInfo>
   <ResultingFileIDs>

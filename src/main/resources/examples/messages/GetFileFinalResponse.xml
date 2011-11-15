@@ -39,7 +39,7 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   </FilePart>
   <FileAddress>http://myServer/myPlace/Myfile</FileAddress>
   <ResponseInfo>
-    <ResponseCode>480</ResponseCode>
+    <ResponseCode>204</ResponseCode>
     <ResponseText>successfull completion</ResponseText>
   </ResponseInfo>
 </bro:GetFileFinalResponse>

@@ -34,7 +34,7 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <PillarID>MyPillar</PillarID>
   <FileID>MyDataID</FileID>
   <ResponseInfo>
-    <ResponseCode>460</ResponseCode>
+    <ResponseCode>202</ResponseCode>
     <ResponseText>Message request has been received and is expected to be met successfully</ResponseText>
   </ResponseInfo>
 </bro:DeleteFileProgressResponse>
