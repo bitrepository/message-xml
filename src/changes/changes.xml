@@ -52,6 +52,9 @@
         whether this is the wanted behavior!
         Made ChecksumsDataForNewFile optional in PutFileFinalResponse.
       </action>
+      <action dev="Kim" type="Update">
+        Updated the values of ResponseCodes and AlarmCodes to 200, 400 and 500 series codes. 
+      </action>
     </release>
   </body>
 </document>

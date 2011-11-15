@@ -885,44 +885,44 @@
     Error codes that are specific for Alarm messages
     </xs:documentation></xs:annotation>
     <xs:restriction base="xs:positiveInteger">
-      <xs:enumeration value="700">
+      <xs:enumeration value="500">
         <xs:annotation><xs:documentation xml:lang="en">
         Component failure, something fatal or irrecoverable has happened. 
         Code error, segmentation fault, missing backend etc. 
         </xs:documentation></xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="701">
+      <xs:enumeration value="501">
         <xs:annotation><xs:documentation xml:lang="en">
         Inconsistent request, the request is inconsistent with the file state in the pillar.
         E.g.a is user trying to get a file that does not exist, or put a file with an ID alrealdy on store. 
         </xs:documentation></xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="702">
+      <xs:enumeration value="502">
         <xs:annotation><xs:documentation xml:lang="en">
         Checksum alarm, Problems with a checksum. 
         </xs:documentation></xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="703">
+      <xs:enumeration value="503">
         <xs:annotation><xs:documentation xml:lang="en">
         Failed transfer, file up or download failed. 
         </xs:documentation></xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="704">
+      <xs:enumeration value="504">
         <xs:annotation><xs:documentation xml:lang="en">
         Failed operation, a non-critical operation failuire.  
         </xs:documentation></xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="705">
+      <xs:enumeration value="505">
         <xs:annotation><xs:documentation xml:lang="en">
         Invalid message, a component has received an invalid message.  
         </xs:documentation></xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="706">
+      <xs:enumeration value="506">
         <xs:annotation><xs:documentation xml:lang="en">
         Invalid message version, a component has received a message of an invalid version. 
         </xs:documentation></xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="707">
+      <xs:enumeration value="507">
         <xs:annotation><xs:documentation xml:lang="en">
         Timeout, a timeout has occured.  
         </xs:documentation></xs:annotation>
@@ -1168,35 +1168,35 @@
     </xs:annotation>
     <xs:restriction base="xs:positiveInteger">
       <!-- Positive response codes -->
-      <xs:enumeration value="440">
+      <xs:enumeration value="200">
         <xs:annotation>
           <xs:documentation xml:lang="en">
             Message request has been received and operation request is expected to be successful
           </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="460">
+      <xs:enumeration value="201">
         <xs:annotation>
           <xs:documentation xml:lang="en">
             Message request has been received and is expected to be met successfully
           </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="461">
+      <xs:enumeration value="202">
         <xs:annotation>
           <xs:documentation xml:lang="en">
             Data from a PutFile request has been buffered successfully
           </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="462">
+      <xs:enumeration value="203">
         <xs:annotation>
           <xs:documentation xml:lang="en">
             Data for a FileID has been found for some sort of Get request
           </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="480">
+      <xs:enumeration value="204">
         <xs:annotation>
           <xs:documentation xml:lang="en">
             Message request has been completed successfully
@@ -1204,7 +1204,7 @@
         </xs:annotation>
       </xs:enumeration>
       <!-- Negative response codes -->
-      <xs:enumeration value="500">
+      <xs:enumeration value="400">
         <xs:annotation>
           <xs:documentation xml:lang="en">
             There are other reasons for failure
@@ -1213,31 +1213,31 @@
           </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="501">
+      <xs:enumeration value="401">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            File with given FileID has NOT been found for a read request
+            Operation was not completed for unknown reason
           </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="502">
+      <xs:enumeration value="402">
         <xs:annotation>
           <xs:documentation xml:lang="en">
             Duplicate FileID in write request
           </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="561">
+      <xs:enumeration value="403">
         <xs:annotation>
           <xs:documentation xml:lang="en">
             Request was not understood
           </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="581">
+      <xs:enumeration value="404">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            Operation was not completed for unknown reason
+            File with given FileID has NOT been found for a read request
           </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
