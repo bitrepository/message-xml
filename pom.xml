@@ -9,7 +9,7 @@
 
   <groupId>org.bitrepository</groupId>
   <artifactId>bitrepository-message-xml</artifactId>
-  <version>0.4.0</version>
+  <version>5-SNAPSHOT</version>
 
   <name>Bitrepository message xml definitions</name>
   <description>Contains the definitions for the Bitrepository message content</description>
@@ -85,9 +85,9 @@
     </pluginManagement>
   </build>
   <scm>
-    <connection>scm:svn:https://sbforge.org/svn/bitrepository/bitrepository-message-xml/tags/bitrepository-message-xml-0.4.0</connection>
-    <developerConnection>scm:svn:https://sbforge.org/svn/bitrepository/bitrepository-message-xml/tags/bitrepository-message-xml-0.4.0</developerConnection>
-    <url>https://sbforge.org/fisheye/browse/Bitmagasinet/bitrepository-message-xml/tags/bitrepository-message-xml-0.4.0</url>
+    <connection>scm:svn:https://sbforge.org/svn/bitrepository/bitrepository-message-xml/trunk/</connection>
+    <developerConnection>scm:svn:https://sbforge.org/svn/bitrepository/bitrepository-message-xml/trunk</developerConnection>
+    <url>https://sbforge.org/fisheye/browse/Bitmagasinet/bitrepository-message-xml/trunk/</url>
   </scm>
 
   <distributionManagement>
