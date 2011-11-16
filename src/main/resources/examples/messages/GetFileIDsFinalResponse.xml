@@ -45,11 +45,11 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
     <FileIDsDataItems>
       <FileIDsDataItem>
         <FileID>MydataId1</FileID>
-        <CalculationTimestamp>2011-02-17T09:47:00</CalculationTimestamp>
+        <CreationTimestamp>2011-02-17T09:47:00</CreationTimestamp>
       </FileIDsDataItem>
       <FileIDsDataItem>
         <FileID>MydataId1</FileID>
-        <CalculationTimestamp>2011-02-17T09:47:00</CalculationTimestamp>
+        <CreationTimestamp>2011-02-17T09:47:00</CreationTimestamp>
       </FileIDsDataItem>
     </FileIDsDataItems>
   </FileIDsData>
