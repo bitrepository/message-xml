@@ -86,7 +86,7 @@
   </build>
   <scm>
     <connection>scm:svn:https://sbforge.org/svn/bitrepository/bitrepository-message-xml/trunk/</connection>
-    <developerConnection>scm:svn:https://sbforge.org/svn/bitrepository/bitrepository-message-xml/</developerConnection>
+    <developerConnection>scm:svn:https://sbforge.org/svn/bitrepository/bitrepository-message-xml/trunk</developerConnection>
     <url>https://sbforge.org/fisheye/browse/Bitmagasinet/bitrepository-message-xml/trunk/</url>
   </scm>
 
