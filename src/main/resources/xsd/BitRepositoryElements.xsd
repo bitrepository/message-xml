@@ -387,11 +387,9 @@
           </xs:documentation></xs:annotation>
         </xs:element>
 
-        <xs:element name="CalculationTimestamp" type="SystemDateTime_TYPE">
+        <xs:element name="CreationTimestamp" type="SystemDateTime_TYPE">
           <xs:annotation><xs:documentation xml:lang="en">
-          The time when the data  was last seen
-          (especially for off-line medias, there can be long intervals between
-          actually seeing the file with the data, - in such cases this information is crucial for alarming)
+            The earliest time which the pillar had the whole file. 
           </xs:documentation></xs:annotation>
         </xs:element>
       </xs:sequence>

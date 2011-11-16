@@ -55,6 +55,9 @@
       <action dev="Kim" type="Update">
         Updated the values of ResponseCodes and AlarmCodes to 200, 400 and 500 series codes. 
       </action>
+      <action dev="Kim" type="Update">
+        Changed "calculationTimestamp" in "FileIDsDataItem" to "creationTimestamp" and updated comments to reflect its semantics.
+      </action>
     </release>
   </body>
 </document>
