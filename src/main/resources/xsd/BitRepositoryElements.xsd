@@ -209,24 +209,6 @@
     </xs:complexType>
   </xs:element>
 
-  <xs:element name="ChecksumsDataGroupedByChecksumSpec">
-    <xs:complexType>
-      <xs:annotation><xs:documentation xml:lang="en">
-      Checksums data using the same checksum specification. Multiple file IDs.
-      </xs:documentation></xs:annotation>
-      <xs:sequence>
-        <xs:element name="ChecksumSpec" type="ChecksumSpec_TYPE">
-          <xs:annotation><xs:documentation xml:lang="en">
-          The type and possible salt for calculation of the checksums
-          </xs:documentation></xs:annotation>
-        </xs:element>
-              <xs:element name="ChecksumDataForChecksumSpec"
-                          type="ChecksumDataForChecksumSpec_TYPE" minOccurs="0" maxOccurs="unbounded" />
-      </xs:sequence>
-
-    </xs:complexType>
-  </xs:element>
-
   <xs:element name="ChecksumSpecs">
     <xs:complexType>
       <xs:sequence>
@@ -522,6 +504,12 @@
     </xs:complexType>
   </xs:element>
 
+  <xs:element name="ChecksumDataItems" type="ChecksumDataForChecksumSpec_TYPE">
+    <xs:annotation><xs:documentation xml:lang="en">
+    Container for data from checksum calculations
+    </xs:documentation></xs:annotation>
+  </xs:element>
+
   <xs:element name="ResultingChecksums">
     <xs:annotation><xs:documentation xml:lang="en">
     result is either given via specified address or directly
@@ -534,7 +522,7 @@
           </xs:documentation></xs:annotation>
         </xs:element>
 
-        <xs:element name="ChecksumDataItems" type="ChecksumDataForChecksumSpec_TYPE" minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ChecksumDataItems" minOccurs="0" maxOccurs="unbounded">
           <xs:annotation><xs:documentation xml:lang="en">
           List of data for checksums
           </xs:documentation></xs:annotation>

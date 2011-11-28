@@ -61,9 +61,9 @@
           </xs:documentation></xs:annotation>
         </xs:element>
 
-        <xs:element ref="bre:ChecksumsDataGroupedByChecksumSpec">
+        <xs:element ref="bre:ChecksumDataItems" minOccurs="0" maxOccurs="unbounded">
           <xs:annotation><xs:documentation xml:lang="en">
-          List of data for checksums in result
+          List of data for checksums
           </xs:documentation></xs:annotation>
         </xs:element>
       </xs:sequence>
