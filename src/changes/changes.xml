@@ -58,5 +58,14 @@
         Changed "calculationTimestamp" in "FileIDsDataItem" to "creationTimestamp" and updated comments to reflect its semantics.
       </action>
     </release>
+    <release version="5" date="2011-11-2X" description="Updates to data message format and example messages updates">
+      <action dev="Kim" type="Update">
+        Synchronize the structure that checksums are delivered as when uploaded so it matches the structure used 
+        in message delivery.
+      </action>
+      <action dev="Kim" type="Update">
+        Update the destination syntax used in example messages.
+      </action>
+    </release>
   </body>
 </document>
