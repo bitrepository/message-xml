@@ -29,8 +29,8 @@ xmlns:bro='http://bitrepository.org/BitRepositoryMessages.xsd'
 xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <CorrelationID>12345</CorrelationID>
   <CollectionID>MySla</CollectionID>
-  <To>ToQueueOrTopic</To>
-  <ReplyTo>MyQueueOrTopic</ReplyTo>
+  <To>topic://collectionTopic</To>
+  <ReplyTo>topic://clientTopic</ReplyTo>
   <AuditTrailInformation>User: Name, Institution: Place</AuditTrailInformation>
   <FileID>MyDataID</FileID>
   <FileSize>10000</FileSize>
