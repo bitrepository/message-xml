@@ -34,6 +34,5 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <AuditTrailInformation>User: Name, Institution: Place</AuditTrailInformation>
   <FileIDs>
     <FileID>MyDataID1</FileID>
-    <FileID>MyDataID2</FileID>
   </FileIDs>
 </bro:IdentifyPillarsForGetFileIDsRequest>

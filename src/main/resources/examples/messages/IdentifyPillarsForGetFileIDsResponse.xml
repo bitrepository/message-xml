@@ -34,7 +34,6 @@
   <PillarID>MyPillar</PillarID>
   <FileIDs>
     <FileID>MyDataID1</FileID>
-    <FileID>MyDataID2</FileID>
   </FileIDs>
   <ResponseInfo>
     <ResponseCode>200</ResponseCode>

@@ -34,7 +34,6 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <PillarID>MyPillar</PillarID>
   <FileIDs>
     <FileID>MyDataID1</FileID>
-    <FileID>MyDataID2</FileID>
   </FileIDs>
   <ResponseInfo>
     <ResponseCode>204</ResponseCode>
@@ -43,10 +42,6 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <ResultingFileIDs>
     <FileIDsData>
     <FileIDsDataItems>
-      <FileIDsDataItem>
-        <FileID>MydataId1</FileID>
-        <CreationTimestamp>2011-02-17T09:47:00</CreationTimestamp>
-      </FileIDsDataItem>
       <FileIDsDataItem>
         <FileID>MydataId1</FileID>
         <CreationTimestamp>2011-02-17T09:47:00</CreationTimestamp>

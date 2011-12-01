@@ -46,10 +46,5 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
           <ChecksumValue>MyChecksum1</ChecksumValue>
           <CalculationTimestamp>2011-02-17T09:47:00</CalculationTimestamp>
       </ChecksumDataItems>
-      <ChecksumDataItems>
-          <FileID>MyDataId2</FileID>
-          <ChecksumValue>MyChecksum2</ChecksumValue>
-          <CalculationTimestamp>2011-02-17T09:47:00</CalculationTimestamp>
-      </ChecksumDataItems>
   </ResultingChecksums>
 </bro:GetChecksumsFinalResponse>

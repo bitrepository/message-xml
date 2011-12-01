@@ -34,7 +34,6 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <PillarID>MyPillar</PillarID>
   <FileIDs>
     <FileID>MyDataID1</FileID>
-    <FileID>MyDataID2</FileID>
   </FileIDs>
   <FileChecksumSpec>
     <ChecksumType>MD5</ChecksumType>

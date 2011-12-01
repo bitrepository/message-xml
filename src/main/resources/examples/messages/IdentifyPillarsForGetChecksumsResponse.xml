@@ -33,7 +33,6 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <ReplyTo>topic://clientTopic</ReplyTo>
   <FileIDs>
     <FileID>MyDataID1</FileID>
-    <FileID>MyDataID2</FileID>
   </FileIDs>
   <FileChecksumSpec>
     <ChecksumType>MD5</ChecksumType>
