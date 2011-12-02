@@ -34,17 +34,14 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <AuditTrailInformation>User: Name, Institution: Place</AuditTrailInformation>
   <PillarID>MyPillar</PillarID>
   <FileID>MyDataID</FileID>
-  <ChecksumsDataForFile ParameterSpecification="BitRepositoryFile">
-    <FileID>MyDataID</FileID>
-      <ChecksumDataForFile>
-        <ChecksumSpec>
-          <ChecksumType>MD5</ChecksumType>
-          <ChecksumSalt>A</ChecksumSalt>
-        </ChecksumSpec>
-        <ChecksumValue>135F21564</ChecksumValue>
-        <CalculationTimestamp>2011-02-17T09:47:00</CalculationTimestamp>
-      </ChecksumDataForFile>
-  </ChecksumsDataForFile>
+  <ChecksumDataForFile>
+    <ChecksumSpec>
+      <ChecksumType>MD5</ChecksumType>
+      <ChecksumSalt>A</ChecksumSalt>
+    </ChecksumSpec>
+    <ChecksumValue>135F21564</ChecksumValue>
+    <CalculationTimestamp>2011-02-17T09:47:00</CalculationTimestamp>
+  </ChecksumDataForFile>
   <FileChecksumSpec>
     <ChecksumType>MD5</ChecksumType>
     <ChecksumSalt>A</ChecksumSalt>
