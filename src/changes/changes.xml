@@ -73,5 +73,13 @@
         Change FileIDs FileID element from list to single element
       </action>
     </release>
+    <release version="5.1" date="2011-12-02" description="Fix of invalid example messages and DeleteRequest updates">
+      <action dev="Jonas" type="Fix">
+        Fix invalid example messages 
+      </action>
+      <action dev="Kim" type="update">
+        Update the way checksums are delivered in DeleteFile request and responses.
+      </action>
+    </release>
   </body>
 </document>
