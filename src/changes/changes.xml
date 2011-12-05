@@ -81,5 +81,10 @@
         Update the way checksums are delivered in DeleteFile request and responses.
       </action>
     </release>
+    <release version="5.2" date="2011-12-xx" description="Minor updates">
+      <action dev="Kim" type="update">
+        Minor updates to ReplaceFile messages.
+      </action>
+    </release>
   </body>
 </document>

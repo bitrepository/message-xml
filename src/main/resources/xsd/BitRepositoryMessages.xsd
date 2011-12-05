@@ -799,7 +799,7 @@
               </xs:documentation></xs:annotation>
             </xs:element>
     
-            <xs:element ref="bre:ChecksumsDataForFile">
+            <xs:element ref="bre:ChecksumDataForFile">
               <xs:annotation><xs:documentation xml:lang="en">
               Checksums (and type and possibly salt) of file to be replaced; that is the _old_ file.
               This should be used in checks on pillar to ensure the correct file is deleted.
@@ -812,14 +812,14 @@
               </xs:documentation></xs:annotation>
             </xs:element>
     
-            <xs:element ref="bre:FileSize" minOccurs="0" maxOccurs="1" >
+            <xs:element ref="bre:FileSize">
               <xs:annotation><xs:documentation xml:lang="en">
               Expected size of file to be put, expressed in bytes.
               This can be used in e.g. capacity checks
               </xs:documentation></xs:annotation>
             </xs:element>
     
-            <xs:element ref="bre:ChecksumsDataForNewFile" minOccurs="0" maxOccurs="1">
+            <xs:element ref="bre:ChecksumDataForNewFile" minOccurs="0" maxOccurs="1">
               <xs:annotation><xs:documentation xml:lang="en">
               Optionally checksums (and type and possibly salt) of new file to be put in replace operation.
               This can be used in checks of correct receival.
@@ -923,7 +923,7 @@
             </xs:documentation></xs:annotation>
           </xs:element>
   
-          <xs:element ref="bre:ChecksumsDataForFile" minOccurs="0" maxOccurs="1">
+          <xs:element ref="bre:ChecksumDataForFile" minOccurs="0" maxOccurs="1">
             <xs:annotation><xs:documentation xml:lang="en">
             Checksum of replaced file calculated as specified in ReplaceFileRequest, if specified
             </xs:documentation></xs:annotation>

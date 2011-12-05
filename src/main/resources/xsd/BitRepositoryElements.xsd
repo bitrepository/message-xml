@@ -163,13 +163,20 @@
   </xs:element>
 
   <xs:element name="ChecksumDataForFile" type="ChecksumDataForFile_TYPE">
-  <xs:annotation>
-    <xs:documentation xml:lang="en">
-        Checksum data for a single file in the BitRepository. 
-    </xs:documentation>
-  </xs:annotation>
-</xs:element>
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Checksum data for a single file in the BitRepository.
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
 
+  <xs:element name="ChecksumDataForNewFile" type="ChecksumDataForFile_TYPE">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Checksum data for a single file in the BitRepository.
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
 
   <xs:element name="ChecksumsDataForFile">
     <!-- TODO common ChecksumsDataGroupedByFile_TYPE; two restrictions on ParameterSpecification -->
