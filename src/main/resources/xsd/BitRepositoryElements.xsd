@@ -591,9 +591,10 @@
 
   <xs:element name="TimeToDeliver" type="TimeMeasure_TYPE">
     <xs:annotation><xs:documentation xml:lang="en">
-    The estimated time before result of request can be delivered
-    In a Get this will be the estimated time before requested data is ready for download
-    In a Put this will be the estimated time before requested data is uploaded
+    The estimated time before data delivery can start. This includes file upload/download and result upload to the
+    file exchange server.
+    In a Put this will be the estimated time before a pillar will start to download the files from the file 
+    exchange server.
     </xs:documentation></xs:annotation>
   </xs:element>
 
