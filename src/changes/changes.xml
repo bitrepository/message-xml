@@ -81,10 +81,18 @@
         Update the way checksums are delivered in DeleteFile request and responses.
       </action>
     </release>
-    <release version="5.2" date="2011-12-xx" description="Minor updates">
+    <release version="6" date="2011-12-xx" description="Minor updates">
       <action dev="Kim" type="update">
         Minor updates to ReplaceFile messages.
       </action>
+    </release>
+    <release version="7" date="2011-12-xx" description="Message cleanups">
+      <action dev="Kim" type="Remove">
+        Remove second checksum specification from deleteFileRequest and the corresponding response. 
+      </action>
+      <action dev="Kim" type="update">
+        Made TimeToDeliver element optional on all Identify* responses.
+      </action> 
     </release>
   </body>
 </document>
