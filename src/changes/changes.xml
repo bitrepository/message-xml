@@ -5,6 +5,39 @@
     <title>Bit Repository Message XML change notes</title>
   </properties>
   <body>
+    <release version="7" date="2011-12-xx" description="Message cleanups">
+      <action dev="Kim" type="update">
+        Made TimeToDeliver element optional on all Identify* responses.
+      </action> 
+    </release>
+    <release version="6" date="2011-12-xx" description="Minor updates">
+      <action dev="Kim" type="update">
+        Minor updates to ReplaceFile messages.
+      </action>
+    </release>
+    <release version="5.1" date="2011-12-02" description="Fix of invalid example messages and DeleteRequest updates">
+      <action dev="Jonas" type="Fix">
+        Fix invalid example messages 
+      </action>
+      <action dev="Kim" type="update">
+        Update the way checksums are delivered in DeleteFile request and responses.
+      </action>
+    </release>
+    <release version="5" date="2011-11-2X" description="Updates to data message format and example messages updates">
+      <action dev="Kim" type="update">
+        Synchronize the structure that checksums are delivered as when uploaded so it matches the structure used 
+        in message delivery.
+      </action>
+      <action dev="Kim" type="update">
+        Update the destination syntax used in example messages.
+      </action>
+      <action dev="Kim" type="remove">
+        Parameter address in FileIDs element removed
+      </action>
+      <action dev="Kim" type="update">
+        Change FileIDs FileID element from list to single element
+      </action>
+    </release>
     <release version="0.4.0" date="2011-11-XX" description="Major xsd updates. See liste below">
       <action dev="Mikis" type="add">
         All messages now extend the either the MessageResponse or the MessageRequest super types which again
@@ -57,39 +90,6 @@
       <action dev="Kim" type="Update">
         Changed "calculationTimestamp" in "FileIDsDataItem" to "creationTimestamp" and updated comments to reflect its semantics.
       </action>
-    </release>
-    <release version="5" date="2011-11-2X" description="Updates to data message format and example messages updates">
-      <action dev="Kim" type="update">
-        Synchronize the structure that checksums are delivered as when uploaded so it matches the structure used 
-        in message delivery.
-      </action>
-      <action dev="Kim" type="update">
-        Update the destination syntax used in example messages.
-      </action>
-      <action dev="Kim" type="remove">
-        Parameter address in FileIDs element removed
-      </action>
-      <action dev="Kim" type="update">
-        Change FileIDs FileID element from list to single element
-      </action>
-    </release>
-    <release version="5.1" date="2011-12-02" description="Fix of invalid example messages and DeleteRequest updates">
-      <action dev="Jonas" type="Fix">
-        Fix invalid example messages 
-      </action>
-      <action dev="Kim" type="update">
-        Update the way checksums are delivered in DeleteFile request and responses.
-      </action>
-    </release>
-    <release version="6" date="2011-12-xx" description="Minor updates">
-      <action dev="Kim" type="update">
-        Minor updates to ReplaceFile messages.
-      </action>
-    </release>
-    <release version="7" date="2011-12-xx" description="Message cleanups">
-      <action dev="Kim" type="update">
-        Made TimeToDeliver element optional on all Identify* responses.
-      </action> 
     </release>
   </body>
 </document>
