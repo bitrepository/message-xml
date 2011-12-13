@@ -16,6 +16,9 @@
       <action dev="Kim" type="Update"> 
         Made ResultingAuditTrails optional in GetAuditTrailsFinalResponse. Allows for a error responses.    
       </action>
+      <action dev="Kim" type="Update">
+        Made ResponseInfo mandatory on MessageResponse messages.
+      </action>
     </release>
     <release version="6" date="2011-12-xx" description="Minor updates">
       <action dev="Kim" type="update">
