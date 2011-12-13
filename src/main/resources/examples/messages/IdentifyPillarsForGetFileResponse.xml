@@ -31,12 +31,12 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <CollectionID>MySla</CollectionID>
   <To>topic://collectionTopic</To>
   <ReplyTo>topic://clientTopic</ReplyTo>
-  <FileID>MyFile</FileID>
-  <PillarID>MyPillar</PillarID>
   <ResponseInfo>
     <ResponseCode>200</ResponseCode>
     <ResponseText>Request message received and operation request expected to be successful</ResponseText>
   </ResponseInfo>
+  <FileID>MyFile</FileID>
+  <PillarID>MyPillar</PillarID>
   <TimeToDeliver>
     <TimeMeasureUnit>MILLISECONDS</TimeMeasureUnit>
     <TimeMeasureValue>1000</TimeMeasureValue>

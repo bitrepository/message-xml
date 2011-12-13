@@ -63,6 +63,14 @@
     <xs:complexContent>
       <xs:extension base="Message">
         <xs:sequence>
+        
+          <xs:element ref="bre:ResponseInfo" minOccurs="0" maxOccurs="1" >
+            <xs:annotation><xs:documentation xml:lang="en">
+              Response information telling that the Identify request has been received and
+              if an operation request can be met. This response info can be used to send 'negative' Identify responses.
+            </xs:documentation></xs:annotation>
+          </xs:element>
+        
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -133,13 +141,6 @@
             <xs:element ref="bre:PillarID" >
               <xs:annotation><xs:documentation xml:lang="en">
               Unique identifier for pillar replying
-              </xs:documentation></xs:annotation>
-            </xs:element>
-    
-            <xs:element ref="bre:ResponseInfo" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Response information telling that the Identify request has been received and
-              if an operation request can be met. This response info can be used to send 'negative' Identify responses.
               </xs:documentation></xs:annotation>
             </xs:element>
     
@@ -235,12 +236,6 @@
               </xs:documentation></xs:annotation>
             </xs:element>
     
-            <xs:element ref="bre:ResponseInfo" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              ProgressResponse information telling whether GetFileRequest has been received and is expected to be completed
-              </xs:documentation></xs:annotation>
-            </xs:element>
-    
             <xs:element ref="bre:FileSize" minOccurs="0" maxOccurs="1">
               <xs:annotation><xs:documentation xml:lang="en">
               Expected size of file to be send, expressed in bytes.
@@ -292,12 +287,7 @@
             Address (e.g. in form of an URL) for where file has been delivered (if completed)
             </xs:documentation></xs:annotation>
           </xs:element>
-  
-          <xs:element ref="bre:ResponseInfo" >
-            <xs:annotation><xs:documentation xml:lang="en">
-            Information on how Get has been completed
-            </xs:documentation></xs:annotation>
-          </xs:element>
+
         </xs:sequence>
         </xs:extension>
       </xs:complexContent>
@@ -352,13 +342,6 @@
             <xs:annotation><xs:documentation xml:lang="en">
             Checksums type in case it is a checksum pillar replying
             It is only informative for possible later checks
-            </xs:documentation></xs:annotation>
-          </xs:element>
-  
-          <xs:element ref="bre:ResponseInfo" minOccurs="0" maxOccurs="1" >
-            <xs:annotation><xs:documentation xml:lang="en">
-            Response information telling that the Identify request has been received and
-            if an operation request can be met. This response info can be used to send 'negative' Identify responses.
             </xs:documentation></xs:annotation>
           </xs:element>
   
@@ -462,12 +445,7 @@
             Address (e.g. in form of an URL) for where file is to be downloaded from
             </xs:documentation></xs:annotation>
           </xs:element>
-  
-          <xs:element ref="bre:ResponseInfo" >
-            <xs:annotation><xs:documentation xml:lang="en">
-            ProgressResponse information telling whether PutFileRequest has been received and is expected to be completed
-            </xs:documentation></xs:annotation>
-          </xs:element>
+
         </xs:sequence>
         </xs:extension>
       </xs:complexContent>
@@ -506,13 +484,7 @@
             Address (e.g. in form of an URL) for where file has been downloaded from (if completed)
             </xs:documentation></xs:annotation>
           </xs:element>
-  
-          <xs:element ref="bre:ResponseInfo" >
-            <xs:annotation><xs:documentation xml:lang="en">
-            Information on how PutFile has been completed
-            </xs:documentation></xs:annotation>
-          </xs:element>
-  
+    
           <xs:element ref="bre:ChecksumsDataForNewFile" minOccurs="0" maxOccurs="1">
             <xs:annotation><xs:documentation xml:lang="en">
             Checksum calculated as specified in PutFileRequest, if specified
@@ -574,14 +546,7 @@
             The element is not required as this information is also part of settings.
             </xs:documentation></xs:annotation>
           </xs:element>
-  
-          <xs:element ref="bre:ResponseInfo" minOccurs="0" maxOccurs="1" >
-            <xs:annotation><xs:documentation xml:lang="en">
-            Response information telling that the Identify request has been received and
-            if an operation request can be met. This response info can be used to send 'negative' Identify responses.
-            </xs:documentation></xs:annotation>
-          </xs:element>
-  
+    
           <xs:element ref="bre:TimeToDeliver" minOccurs="0" maxOccurs="1" >
             <xs:annotation><xs:documentation xml:lang="en">
             Estimated time before file is deleted.
@@ -656,13 +621,7 @@
               Unique identifier for file to be deleted from given bit repository collection
               </xs:documentation></xs:annotation>
             </xs:element>
-    
-            <xs:element ref="bre:ResponseInfo" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              ProgressResponse information telling whether DeleteFileRequest
-              has been received and is expected to be completed
-              </xs:documentation></xs:annotation>
-            </xs:element>
+
           </xs:sequence>
         </xs:extension>
       </xs:complexContent>
@@ -687,12 +646,6 @@
             <xs:element ref="bre:FileID" >
               <xs:annotation><xs:documentation xml:lang="en">
               Unique identifier for file that was to be deleted from given bit repository collection
-              </xs:documentation></xs:annotation>
-            </xs:element>
-    
-            <xs:element ref="bre:ResponseInfo" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Information on how DeleteFile has been completed
               </xs:documentation></xs:annotation>
             </xs:element>
 
@@ -755,13 +708,6 @@
               The checksum type is necessary for sending correct checksum in later replace request,
               as file (or checksum) may only be replaced after checksum check on pillar.
               The element is not required as this information is also part of settings.
-              </xs:documentation></xs:annotation>
-            </xs:element>
-    
-            <xs:element ref="bre:ResponseInfo" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Response information telling that the Identify request has been received and
-              if an operation request can be met. This response info can be used to send 'negative' Identify responses.
               </xs:documentation></xs:annotation>
             </xs:element>
     
@@ -873,11 +819,6 @@
               </xs:documentation></xs:annotation>
             </xs:element>
     
-            <xs:element ref="bre:ResponseInfo" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              ProgressResponse information telling whether ReplaceFileRequest has been received and is expected to be completed
-              </xs:documentation></xs:annotation>
-            </xs:element>
           </xs:sequence>
         </xs:extension>
       </xs:complexContent>
@@ -914,12 +855,6 @@
           <xs:element ref="bre:FileAddress" >
             <xs:annotation><xs:documentation xml:lang="en">
             Address (e.g. in form of an URL) for where new file has been downloaded from (if completed)
-            </xs:documentation></xs:annotation>
-          </xs:element>
-  
-          <xs:element ref="bre:ResponseInfo" >
-            <xs:annotation><xs:documentation xml:lang="en">
-            Information on how ReplaceFile has been completed
             </xs:documentation></xs:annotation>
           </xs:element>
   
@@ -995,13 +930,6 @@
               <xs:annotation><xs:documentation xml:lang="en">
               Checksums type in case it is a checksum pillar replying,
               only used for extra checks
-              </xs:documentation></xs:annotation>
-            </xs:element>
-    
-            <xs:element ref="bre:ResponseInfo" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Response information telling that the Identify request has been received and
-              if an operation request can be met. This response info can be used to send 'negative' Identify responses.
               </xs:documentation></xs:annotation>
             </xs:element>
     
@@ -1090,12 +1018,6 @@
               </xs:documentation></xs:annotation>
             </xs:element>
     
-            <xs:element ref="bre:ResponseInfo" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              ProgressResponse information telling whether GetChecksumsRequest has been received and is expected to be
-              completed
-              </xs:documentation></xs:annotation>
-            </xs:element>
           </xs:sequence>
         </xs:extension>
       </xs:complexContent>
@@ -1121,12 +1043,6 @@
               <xs:annotation><xs:documentation xml:lang="en">
               Checksums type and possible salt requested
               (Also in result, and traceable via CorrelationID)
-              </xs:documentation></xs:annotation>
-            </xs:element>
-    
-            <xs:element ref="bre:ResponseInfo" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Information on how GetChecksums has been completed
               </xs:documentation></xs:annotation>
             </xs:element>
     
@@ -1182,13 +1098,6 @@
               <xs:annotation><xs:documentation xml:lang="en" >
               FileIDs uniquely identifies the files in given bit repository collection which the file ids are requested for
               only to repeat parameter from request.
-              </xs:documentation></xs:annotation>
-            </xs:element>
-    
-            <xs:element ref="bre:ResponseInfo" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Response information telling that the Identify request has been received and
-              if an operation request can be met. This response info can be used to send 'negative' Identify responses.
               </xs:documentation></xs:annotation>
             </xs:element>
     
@@ -1265,12 +1174,7 @@
               Address (e.g. in form of an URL) for where data (file IDs) will be delivered
               </xs:documentation></xs:annotation>
             </xs:element>
-    
-            <xs:element ref="bre:ResponseInfo" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              ProgressResponse information telling whether GetFilIDsRequest has been received and is expected to be completed
-              </xs:documentation></xs:annotation>
-            </xs:element>
+
           </xs:sequence>
         </xs:extension>
       </xs:complexContent>
@@ -1298,13 +1202,7 @@
               it means all the requested files are present on the pillar.
               </xs:documentation></xs:annotation>
             </xs:element>
-    
-            <xs:element ref="bre:ResponseInfo" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Information on how GetFileIDs has been completed
-              </xs:documentation></xs:annotation>
-            </xs:element>
-    
+
             <xs:element ref="bre:ResultingFileIDs" minOccurs="0" maxOccurs="1">
               <xs:annotation><xs:documentation xml:lang="en">
               Result with file IDs
@@ -1344,13 +1242,6 @@
             <xs:element ref="bre:Contributor" >
               <xs:annotation><xs:documentation xml:lang="en">
               Unique identification of contributor replying
-              </xs:documentation></xs:annotation>
-            </xs:element>
-    
-            <xs:element ref="bre:ResponseInfo" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Response information telling that the Identify request has been received and
-              if an operation request can be met. This response info can be used to send 'negative' Identify responses.
               </xs:documentation></xs:annotation>
             </xs:element>
     
@@ -1415,11 +1306,6 @@
               </xs:documentation></xs:annotation>
             </xs:element>
     
-            <xs:element ref="bre:ResponseInfo" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              ProgressResponse information telling whether GetStatusRequest has been received and is expected to be completed
-              </xs:documentation></xs:annotation>
-            </xs:element>
           </xs:sequence>
         </xs:extension>
       </xs:complexContent>
@@ -1438,12 +1324,6 @@
               <xs:annotation><xs:documentation xml:lang="en">
               Identifier of responding contributor, which can be used for possible checks
               (otherwise it is known via CorrelationID and ReplyTo)
-              </xs:documentation></xs:annotation>
-            </xs:element>
-    
-            <xs:element ref="bre:ResponseInfo" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Information on how GetStatus has been completed
               </xs:documentation></xs:annotation>
             </xs:element>
     
@@ -1499,13 +1379,6 @@
               <xs:annotation><xs:documentation xml:lang="en" >
               FileID uniquely identifies the files in given bit repository collection which the audit trails are requested for
               only to repeat parameter from request
-              </xs:documentation></xs:annotation>
-            </xs:element>
-    
-            <xs:element ref="bre:ResponseInfo" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Response information telling that the Identify request has been received and
-              if an operation request can be met. This response info can be used to send 'negative' Identify responses.
               </xs:documentation></xs:annotation>
             </xs:element>
     
@@ -1583,11 +1456,6 @@
               </xs:documentation></xs:annotation>
             </xs:element>
     
-            <xs:element ref="bre:ResponseInfo" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              ProgressResponse information telling whether GetAuditTrailsRequest has been received and is expected to be completed
-              </xs:documentation></xs:annotation>
-            </xs:element>
           </xs:sequence>
         </xs:extension>
       </xs:complexContent>
@@ -1616,13 +1484,7 @@
               </xs:documentation></xs:annotation>
             </xs:element>
     
-            <xs:element ref="bre:ResponseInfo" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Information on how GetAuditTrails has been completed
-              </xs:documentation></xs:annotation>
-            </xs:element>
-    
-            <xs:element ref="bre:ResultingAuditTrails">
+            <xs:element ref="bre:ResultingAuditTrails" minOccurs="0" maxOccurs="1">
               <xs:annotation><xs:documentation xml:lang="en">
               Result with audit trails
               </xs:documentation></xs:annotation>

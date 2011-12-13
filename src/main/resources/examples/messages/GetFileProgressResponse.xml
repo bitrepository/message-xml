@@ -31,6 +31,10 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <CollectionID>MySla</CollectionID>
   <To>topic://clientTopic</To>
   <ReplyTo>queue://pillarQueue</ReplyTo>
+  <ResponseInfo>
+    <ResponseCode>202</ResponseCode>
+    <ResponseText>Message request has been received and is expected to be met successfully</ResponseText>
+  </ResponseInfo>
   <PillarID>MyPillar</PillarID>
   <FileID>MyDataID</FileID>
   <FilePart>
@@ -38,10 +42,6 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
     <PartLength>100</PartLength>
   </FilePart>
   <FileAddress>http://myServer/myPlace/Myfile</FileAddress>
-  <ResponseInfo>
-    <ResponseCode>202</ResponseCode>
-    <ResponseText>Message request has been received and is expected to be met successfully</ResponseText>
-  </ResponseInfo>
   <FileSize>90</FileSize>
   <ChecksumsDataForFile>
     <FileID>MyDataID</FileID>

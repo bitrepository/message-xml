@@ -31,15 +31,15 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <CollectionID>MySla</CollectionID>
   <To>topic://collectionTopic</To>
   <ReplyTo>topic://clientTopic</ReplyTo>
+  <ResponseInfo>
+    <ResponseCode>200</ResponseCode>
+    <ResponseText>Request message received and operation request expected to be successful</ResponseText>
+  </ResponseInfo>
   <PillarID>MyPillar</PillarID>
   <PillarChecksumSpec>
     <ChecksumType>MD5</ChecksumType>
     <ChecksumSalt>X</ChecksumSalt>
   </PillarChecksumSpec>
-  <ResponseInfo>
-    <ResponseCode>200</ResponseCode>
-    <ResponseText>Request message received and operation request expected to be successful</ResponseText>
-  </ResponseInfo>
   <TimeToDeliver>
     <TimeMeasureUnit>MILLISECONDS</TimeMeasureUnit>
     <TimeMeasureValue>1000</TimeMeasureValue>

@@ -31,14 +31,14 @@
   <CollectionID>MySla</CollectionID>
   <To>topic://collectionTopic</To>
   <ReplyTo>topic://clientTopic</ReplyTo>
-  <PillarID>MyPillar</PillarID>
-  <FileIDs>
-    <FileID>MyDataID1</FileID>
-  </FileIDs>
   <ResponseInfo>
     <ResponseCode>200</ResponseCode>
     <ResponseText>Request message received and operation request expected to be successful</ResponseText>
   </ResponseInfo>
+  <PillarID>MyPillar</PillarID>
+  <FileIDs>
+    <FileID>MyDataID1</FileID>
+  </FileIDs>
   <TimeToDeliver>
     <TimeMeasureUnit>MILLISECONDS</TimeMeasureUnit>
     <TimeMeasureValue>1000</TimeMeasureValue>

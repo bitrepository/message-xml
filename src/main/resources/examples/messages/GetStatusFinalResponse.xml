@@ -31,14 +31,14 @@
   <CollectionID>MySla</CollectionID>
   <To>topic://clientTopic</To>
   <ReplyTo>queue://pillarQueue</ReplyTo>
-  <Contributor>
-    <ComponentID>MyPillar</ComponentID>
-    <ComponentType>PILLAR</ComponentType>
-  </Contributor>
   <ResponseInfo>
     <ResponseCode>204</ResponseCode>
     <ResponseText>successful completion</ResponseText>
   </ResponseInfo>
+  <Contributor>
+    <ComponentID>MyPillar</ComponentID>
+    <ComponentType>PILLAR</ComponentType>
+  </Contributor>
   <ResultingStatus>
     <ContributorStatus>
       <ContributorStatusElements>

@@ -31,15 +31,15 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <CollectionID>MySla</CollectionID>
   <To>topic://clientTopic</To>
   <ReplyTo>queue://pillarQueue</ReplyTo>
+  <ResponseInfo>
+    <ResponseCode>204</ResponseCode>
+    <ResponseText>successfull completion</ResponseText>
+  </ResponseInfo>
   <PillarID>MyPillar</PillarID>
   <FileChecksumSpec>
     <ChecksumType>MD5</ChecksumType>
     <ChecksumSalt>X</ChecksumSalt>
   </FileChecksumSpec>
-  <ResponseInfo>
-    <ResponseCode>204</ResponseCode>
-    <ResponseText>successfull completion</ResponseText>
-  </ResponseInfo>
   <ResultingChecksums>
       <ChecksumDataItems>
           <FileID>MyDataId1</FileID>

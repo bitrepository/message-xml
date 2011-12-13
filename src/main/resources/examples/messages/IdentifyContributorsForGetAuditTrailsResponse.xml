@@ -31,6 +31,10 @@
   <CollectionID>MySla</CollectionID>
   <To>topic://collectionTopic</To>
   <ReplyTo>topic://clientTopic</ReplyTo>
+  <ResponseInfo>
+    <ResponseCode>200</ResponseCode>
+    <ResponseText>Request message received and operation request expected to be successful</ResponseText>
+  </ResponseInfo>
   <Contributor>
       <ComponentID>MyPillar</ComponentID>
       <ComponentType>PILLAR</ComponentType>
@@ -38,10 +42,6 @@
   <FileIDs>
     <AllFileIDs/>
   </FileIDs>
-  <ResponseInfo>
-    <ResponseCode>200</ResponseCode>
-    <ResponseText>Request message received and operation request expected to be successful</ResponseText>
-  </ResponseInfo>
   <TimeToDeliver>
     <TimeMeasureUnit>MILLISECONDS</TimeMeasureUnit>
     <TimeMeasureValue>1000</TimeMeasureValue>

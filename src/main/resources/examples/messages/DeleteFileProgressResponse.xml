@@ -31,10 +31,10 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <CollectionID>MySla</CollectionID>
   <To>topic://clientTopic</To>
   <ReplyTo>queue://pillarQueue</ReplyTo>
-  <PillarID>MyPillar</PillarID>
-  <FileID>MyDataID</FileID>
   <ResponseInfo>
     <ResponseCode>202</ResponseCode>
     <ResponseText>Message request has been received and is expected to be met successfully</ResponseText>
   </ResponseInfo>
+  <PillarID>MyPillar</PillarID>
+  <FileID>MyDataID</FileID>
 </bro:DeleteFileProgressResponse>

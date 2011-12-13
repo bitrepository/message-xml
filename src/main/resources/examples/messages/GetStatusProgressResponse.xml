@@ -31,12 +31,12 @@
   <CollectionID>MySla</CollectionID>
   <To>topic://clientTopic</To>
   <ReplyTo>queue://pillarQueue</ReplyTo>
-  <Contributor>
-    <ComponentID>MyPillar</ComponentID>
-    <ComponentType>PILLAR</ComponentType>
-  </Contributor>
   <ResponseInfo>
     <ResponseCode>202</ResponseCode>
     <ResponseText>Message request has been received and is expected to be met successfully</ResponseText>
   </ResponseInfo>
+  <Contributor>
+    <ComponentID>MyPillar</ComponentID>
+    <ComponentType>PILLAR</ComponentType>
+  </Contributor>
 </bro:GetStatusProgressResponse>
