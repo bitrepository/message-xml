@@ -385,14 +385,14 @@
             </xs:documentation></xs:annotation>
           </xs:element>
   
-          <xs:element ref="bre:FileSize">
+          <xs:element ref="bre:FileSize" minOccurs="0" maxOccurs="1">
             <xs:annotation><xs:documentation xml:lang="en">
             Expected size of file to be put, expressed in bytes.
             This can be used in e.g. capacity checks
             </xs:documentation></xs:annotation>
           </xs:element>
   
-          <xs:element ref="bre:ChecksumsDataForNewFile"  minOccurs="0" maxOccurs="1">
+          <xs:element ref="bre:ChecksumsDataForNewFile" minOccurs="0" maxOccurs="1">
             <xs:annotation><xs:documentation xml:lang="en">
             Optionally checksums (and type and possibly salt) of file to be put.
             This can be used in checks of correct receival.
