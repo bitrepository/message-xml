@@ -116,7 +116,7 @@
         </xs:documentation></xs:annotation>
         <xs:complexType>
           <xs:sequence>
-			<xs:element ref="AuditTrailDataItem" minOccurs="0" maxOccurs="unbounded" />
+			<xs:element ref="AuditTrailDataItem" minOccurs="0" maxOccurs="unbounded"/>
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -140,7 +140,7 @@
         </xs:documentation></xs:annotation>
       </xs:element>
 
-      <xs:element name="ActorOnFile" type="Actor_TYPE">
+      <xs:element name="ActorOnFile" type="Actor_TYPE" minOccurs="0" maxOccurs="1" >
         <xs:annotation><xs:documentation xml:lang="en">
         Actor who performed the specified action on FileId object.
         For example specific user or specific process
@@ -156,6 +156,18 @@
       <xs:element name="ActionDateTime" type="SystemDateTime_TYPE">
         <xs:annotation><xs:documentation xml:lang="en">
         Date and time for when action took place
+        </xs:documentation></xs:annotation>
+      </xs:element>
+      
+      <xs:element name="Info" type="xs:string">
+        <xs:annotation> <xs:documentation xml:lang="en">
+          Human readable description of the event.  
+        </xs:documentation></xs:annotation>
+      </xs:element>
+      
+      <xs:element ref="AuditTrailInformation" minOccurs="0" maxOccurs="1">
+        <xs:annotation> <xs:documentation xml:lang="en">
+          Information from the request that caused the event.  
         </xs:documentation></xs:annotation>
       </xs:element>
     </xs:sequence>
