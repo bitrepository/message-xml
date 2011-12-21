@@ -38,7 +38,7 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <PillarID>MyPillar</PillarID>
   <PillarChecksumSpec>
     <ChecksumType>MD5</ChecksumType>
-    <ChecksumSalt>X</ChecksumSalt>
+    <ChecksumSalt>AABB</ChecksumSalt>
   </PillarChecksumSpec>
   <FileID>MyDataID</FileID>
   <FileAddress>http://myServer/myPlace/Myfile</FileAddress>
@@ -46,7 +46,7 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
     <ChecksumSpec>
       <ChecksumType>MD5</ChecksumType>
     </ChecksumSpec>
-    <ChecksumValue>6f78ed9c9dd86fe9d</ChecksumValue>
+    <ChecksumValue>6f78ed9c9dd86fe9</ChecksumValue>
     <CalculationTimestamp>2011-08-16T11:17:00</CalculationTimestamp>
   </ChecksumDataForFile>
 </bro:ReplaceFileFinalResponse>

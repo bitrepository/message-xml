@@ -38,7 +38,7 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <PillarID>MyPillar</PillarID>
   <PillarChecksumSpec>
     <ChecksumType>MD5</ChecksumType>
-    <ChecksumSalt>X</ChecksumSalt>
+    <ChecksumSalt>CCCC</ChecksumSalt>
   </PillarChecksumSpec>
   <FileID>MyDataID</FileID>
   <FileAddress>http://myServer/myPlace/Myfile</FileAddress>

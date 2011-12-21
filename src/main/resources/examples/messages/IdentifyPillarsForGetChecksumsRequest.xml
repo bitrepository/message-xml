@@ -37,6 +37,6 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   </FileIDs>
   <FileChecksumSpec>
     <ChecksumType>MD5</ChecksumType>
-    <ChecksumSalt>X</ChecksumSalt>
+    <ChecksumSalt>FFFF</ChecksumSalt>
   </FileChecksumSpec>
 </bro:IdentifyPillarsForGetChecksumsRequest>

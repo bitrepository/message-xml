@@ -1038,8 +1038,8 @@
     </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="ChecksumValue_TYPE">
-    <xs:restriction base="xs:string">
+  <xs:simpleType name="ChecksumValue_TYPE" >
+    <xs:restriction base="xs:hexBinary">
     </xs:restriction>
   </xs:simpleType>
 
@@ -1391,7 +1391,7 @@
     An extra salt to be added in the checksum calculation.
     If this parameter is given, it follows that the checksum calculation must include the salt
     </xs:documentation></xs:annotation>
-    <xs:restriction base="xs:string">
+    <xs:restriction base="xs:hexBinary">
     </xs:restriction>
   </xs:simpleType>
 

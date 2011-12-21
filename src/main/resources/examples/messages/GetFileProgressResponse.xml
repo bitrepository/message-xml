@@ -48,17 +48,17 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
       <ChecksumDataForFile>
         <ChecksumSpec>
           <ChecksumType>MD5</ChecksumType>
-          <ChecksumSalt>X</ChecksumSalt>
+          <ChecksumSalt>AFAF</ChecksumSalt>
         </ChecksumSpec>
-        <ChecksumValue>ABC423789</ChecksumValue>
+        <ChecksumValue>ABCDEF</ChecksumValue>
         <CalculationTimestamp>2011-02-17T09:47:00</CalculationTimestamp>
       </ChecksumDataForFile>
       <ChecksumDataForFile>
         <ChecksumSpec>
           <ChecksumType>SHA-1</ChecksumType>
-          <ChecksumSalt>X</ChecksumSalt>
+          <ChecksumSalt>AFAF</ChecksumSalt>
         </ChecksumSpec>
-        <ChecksumValue>ABCDEF1234</ChecksumValue>
+        <ChecksumValue>1234567890</ChecksumValue>
         <CalculationTimestamp>2011-02-17T09:47:00</CalculationTimestamp>
       </ChecksumDataForFile>
   </ChecksumsDataForFile>

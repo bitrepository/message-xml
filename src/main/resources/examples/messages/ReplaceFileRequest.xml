@@ -37,9 +37,9 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <ChecksumDataForFile>
     <ChecksumSpec>
       <ChecksumType>MD5</ChecksumType>
-      <ChecksumSalt>A</ChecksumSalt>
+      <ChecksumSalt>ACDA</ChecksumSalt>
     </ChecksumSpec>
-    <ChecksumValue>135F21564</ChecksumValue>
+    <ChecksumValue>135F2156</ChecksumValue>
     <CalculationTimestamp>2011-02-17T09:47:00</CalculationTimestamp>
   </ChecksumDataForFile>
   <FileAddress>http://myServer/myPlace/Myfile</FileAddress>
@@ -48,11 +48,11 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
     <ChecksumSpec>
       <ChecksumType>MD5</ChecksumType>
     </ChecksumSpec>
-    <ChecksumValue>6f78ed9c9dd86fe9d</ChecksumValue>
+    <ChecksumValue>6f78ed9c9dd86fe9</ChecksumValue>
     <CalculationTimestamp>2011-08-16T11:17:00</CalculationTimestamp>
   </ChecksumDataForNewFile>
   <FileChecksumSpec>
     <ChecksumType>MD5</ChecksumType>
-    <ChecksumSalt>A</ChecksumSalt>
+    <ChecksumSalt>ACCD</ChecksumSalt>
   </FileChecksumSpec>
 </bro:ReplaceFileRequest>

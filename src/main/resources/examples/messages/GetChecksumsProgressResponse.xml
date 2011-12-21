@@ -41,7 +41,7 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   </FileIDs>
   <FileChecksumSpec>
     <ChecksumType>MD5</ChecksumType>
-    <ChecksumSalt>X</ChecksumSalt>
+    <ChecksumSalt>ABAB</ChecksumSalt>
   </FileChecksumSpec>
   <ResultAddress>http://myServer/myPlace/Myfile</ResultAddress>
 </bro:GetChecksumsProgressResponse>

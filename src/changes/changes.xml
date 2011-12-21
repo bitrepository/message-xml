@@ -7,6 +7,9 @@
   <body>
     <release version="7" date="2011-12-xx" description="Message cleanups">
       <action dev="Kim" type="Update">
+        Restrict ChecksumValue_TYPE and SaltParameter_TYPE to be hexBinary.
+      </action>
+      <action dev="Kim" type="Update">
         Updated the AuditTrailDataItem specification.
       </action>
       <action dev="Kim" type="update">

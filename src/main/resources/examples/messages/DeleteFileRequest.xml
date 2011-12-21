@@ -37,13 +37,13 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <ChecksumDataForFile>
     <ChecksumSpec>
       <ChecksumType>MD5</ChecksumType>
-      <ChecksumSalt>A</ChecksumSalt>
+      <ChecksumSalt>ABAB</ChecksumSalt>
     </ChecksumSpec>
-    <ChecksumValue>135F21564</ChecksumValue>
+    <ChecksumValue>135F2156</ChecksumValue>
     <CalculationTimestamp>2011-02-17T09:47:00</CalculationTimestamp>
   </ChecksumDataForFile>
   <FileChecksumSpec>
     <ChecksumType>MD5</ChecksumType>
-    <ChecksumSalt>A</ChecksumSalt>
+    <ChecksumSalt>ABCD</ChecksumSalt>
   </FileChecksumSpec>
 </bro:DeleteFileRequest>
