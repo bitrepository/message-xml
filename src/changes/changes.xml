@@ -5,7 +5,7 @@
     <title>Bit Repository Message XML change notes</title>
   </properties>
   <body>
-    <release version="7" date="2011-12-xx" description="Message cleanups">
+    <release version="7" date="2011-12-22" description="Message cleanups">
       <action dev="Kim" type="Update">
         Restrict ChecksumValue_TYPE and SaltParameter_TYPE to be hexBinary.
       </action>
