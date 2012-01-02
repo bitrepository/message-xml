@@ -5,10 +5,10 @@ xmlns='http://bitrepository.org/ProtocolVersionDefinition.xsd'
 xmlns:bre="http://bitrepository.org/BitRepositoryElements.xsd">
   <Overrides>
         <!-- Example data element override
-        <Override name="GetAuditTrailsResults" version="${project.version}" minVersion="5"/>
+        <Override name="GetFile" minVersion="5"/>
          -->
          <!-- Example message element override
-        <Override name="IdentifyPillarsForGetFileRequest" version="${project.version}" minVersion="5"/>
+        <Override name="getAuditTrails" version="${project.version}" minVersion="5"/>
          -->
   </Overrides>
 </ProtocolVersionDefinition>
