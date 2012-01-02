@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema targetNamespace="http://bitrepository.org/ProtocolVersionDefinition.xsd" attributeFormDefault="unqualified"
+  elementFormDefault="qualified" 
+  xmlns:tn="http://bitrepository.org/ProtocolVersionDefinition.xsd" 
+  xmlns="http://bitrepository.org/ProtocolVersionDefinition.xsd"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns:bre="http://bitrepository.org/BitRepositoryElements.xsd">
+
+  <xs:import schemaLocation="BitRepositoryElements.xsd" 
+  namespace="http://bitrepository.org/BitRepositoryElements.xsd" />
+
+  <xs:element name="ProtocolVersionDefinition">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Models the versioning information for all versioned elements in this
+        protocol release. Defines a default version value with the possibility of
+        overriding the version information for
+        individual operations and
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Overrides"/>
+      </xs:sequence>
+
+      <xs:attributeGroup ref="bre:VersionAttributes">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            Defines the general version and min version for this protocol.
+            May
+            be overloaded by operation/data entity specific values.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:attributeGroup>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Overrides">
+    <xs:complexType>
+      <xs:sequence>
+      <xs:element ref="Override" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Override" type="ElementVersion" />
+
+  <xs:complexType name="ElementVersion">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Defines a message types version information
+      </xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="name" type="xs:string" />
+    <xs:attributeGroup ref="bre:VersionAttributes" />
+  </xs:complexType>
+
+</xs:schema>
