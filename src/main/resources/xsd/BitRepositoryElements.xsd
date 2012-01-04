@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<!-- message-xml version: ${project.version} -->
+
 <!-- URLs in schema targetNamespace must be updated later -->
 <xs:schema
   targetNamespace="http://bitrepository.org/BitRepositoryElements.xsd"
@@ -353,12 +355,6 @@
           </xs:documentation></xs:annotation>
         </xs:element>
 
-        <!-- <xs:element name="ParameterAddress" type="Address_TYPE">
-          <xs:annotation><xs:documentation xml:lang="en">
-          Address where File ID list can be found on form FileIDsParameters
-          </xs:documentation></xs:annotation>
-        </xs:element> -->
-
         <!-- To be enhanced with other ways to address chunks of identifiers, e.g. for mass processing -->
       </xs:choice>
     </xs:complexType>
@@ -397,9 +393,15 @@
           </xs:documentation></xs:annotation>
         </xs:element>
 
-        <xs:element name="CreationTimestamp" type="SystemDateTime_TYPE">
+        <xs:element name="LastModificationTime" type="SystemDateTime_TYPE">
           <xs:annotation><xs:documentation xml:lang="en">
             The earliest time which the pillar had the whole file. 
+          </xs:documentation></xs:annotation>
+        </xs:element>
+        
+        <xs:element ref="FileSize" minOccurs="0" maxOccurs="1">
+          <xs:annotation><xs:documentation xml:lang="en">
+            The filesize in bytes. 
           </xs:documentation></xs:annotation>
         </xs:element>
       </xs:sequence>

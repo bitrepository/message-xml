@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<!-- message-xml version: ${project.version} -->
+
 <xs:schema
   targetNamespace="http://bitrepository.org/BitRepositoryMessages.xsd"
   attributeFormDefault="unqualified"
