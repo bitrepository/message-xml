@@ -149,9 +149,9 @@
         </xs:documentation></xs:annotation>
       </xs:element>
 
-      <xs:element name="ActionOnFile" type="Action_TYPE">
+      <xs:element name="ActionOnFile" type="FileAction">
         <xs:annotation><xs:documentation xml:lang="en">
-        Action performed by the actor on FileId object
+        Action performed on a File.
         </xs:documentation></xs:annotation>
       </xs:element>
 
@@ -624,7 +624,7 @@
 <!-- ****** USED TYPES IN ALPHABETIC ORDER                   ****** -->
 <!-- ************************************************************** -->
 
-  <xs:simpleType name="Action_TYPE">
+  <xs:simpleType name="FileAction">
   <xs:restriction base="xs:string">
   
     <!-- Normal protocol operations -->

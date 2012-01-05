@@ -43,9 +43,7 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
           <ActorType>OTHER</ActorType>
           <ActorComment>System trigger of client</ActorComment>
         </ActorOnFile>
-        <ActionOnFile>
-          <IntegrityCheck>CHECKSUMSCHECK</IntegrityCheck>
-        </ActionOnFile>
+        <ActionOnFile>GET_FILE</ActionOnFile>
         <ActionDateTime>2011-02-17T09:47:00</ActionDateTime>
       </AuditTrailDataItem>
       <AuditTrailDataItem>
@@ -61,9 +59,7 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
           <ActorType>OTHER</ActorType>
           <ActorComment>System trigger of client</ActorComment>
         </ActorOnFile>
-        <ActionOnFile>
-          <IntegrityCheck>REPLICACHECK</IntegrityCheck>
-        </ActionOnFile>
+        <ActionOnFile>PUT_FILE</ActionOnFile>
         <ActionDateTime>2011-02-17T09:47:00</ActionDateTime>
       </AuditTrailDataItem>
     </AuditTrailDataItems>

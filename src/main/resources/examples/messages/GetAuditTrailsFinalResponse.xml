@@ -56,9 +56,7 @@
             <ActorID>Actor321</ActorID>
             <ActorType>USER</ActorType>
           </ActorOnFile>
-          <ActionOnFile>
-            <Create>INGEST</Create>
-          </ActionOnFile>
+        <ActionOnFile>GET_FILE</ActionOnFile>
           <ActionDateTime>2011-04-15T12:55:00</ActionDateTime>
         </AuditTrailDataItem>
         <AuditTrailDataItem>
@@ -71,9 +69,7 @@
             <ActorID>Actor321</ActorID>
             <ActorType>USER</ActorType>
           </ActorOnFile>
-          <ActionOnFile>
-            <Access>GET</Access>
-          </ActionOnFile>
+        <ActionOnFile>PUT_FILE</ActionOnFile>
           <ActionDateTime>2011-04-15T13:20:00</ActionDateTime>
         </AuditTrailDataItem>
       <!--</AuditTrailDataItems>-->
