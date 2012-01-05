@@ -118,7 +118,7 @@
         </xs:documentation></xs:annotation>
         <xs:complexType>
           <xs:sequence>
-			<xs:element ref="AuditTrailDataItem" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element ref="AuditTrailDataItem" minOccurs="0" maxOccurs="unbounded" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -621,204 +621,82 @@
   </xs:attributeGroup>
 
 <!-- ************************************************************** -->
-<!-- ****** FUTURE ELEMENTS IN ALPHABETIC ORDER (used later) ****** -->
-<!-- ************************************************************** -->
-
-  <!-- Control sizes -->
-  <!-- .... -->
-  <xs:element name="MaxPackageSize" /> <!-- Unit and measure ... -->
-
-<!-- ************************************************************** -->
 <!-- ****** USED TYPES IN ALPHABETIC ORDER                   ****** -->
 <!-- ************************************************************** -->
 
-  <xs:complexType name="Action_TYPE">
-    <xs:annotation><xs:documentation xml:lang="en">
-    Action that can be made on data in the bit repository
-    </xs:documentation></xs:annotation>
-    <xs:sequence>
-      <xs:choice>
-        <xs:element name="Access">
-          <xs:annotation><xs:documentation xml:lang="en">
-          Access action
-          </xs:documentation></xs:annotation>
-          <xs:simpleType>
-            <xs:restriction base="xs:string">
-              <xs:enumeration value="GET">
-                <xs:annotation><xs:documentation xml:lang="en">
-                Access via GET operation
-                </xs:documentation></xs:annotation>
-              </xs:enumeration>
-              <xs:enumeration value="OTHER">
-                <xs:annotation><xs:documentation xml:lang="en">
-                Other forms of access
-                </xs:documentation></xs:annotation>
-              </xs:enumeration>
-            </xs:restriction>
-          </xs:simpleType>
-        </xs:element>
-        <xs:element name="Create">
-          <xs:annotation><xs:documentation xml:lang="en">
-          Creation action
-          </xs:documentation></xs:annotation>
-          <xs:simpleType>
-            <xs:restriction base="xs:string">
-              <xs:enumeration value="INGEST">
-                <xs:annotation><xs:documentation xml:lang="en">
-                creation done via ingestion
-                </xs:documentation></xs:annotation>
-              </xs:enumeration>
-              <xs:enumeration value="TRANSFER">
-                <xs:annotation><xs:documentation xml:lang="en">
-                creation done via transfer, e.g. after loss of data
-                </xs:documentation></xs:annotation>
-              </xs:enumeration>
-              <xs:enumeration value="CORRECT">
-                <xs:annotation><xs:documentation xml:lang="en">
-                creation done as part of correction of fault data
-                </xs:documentation></xs:annotation>
-              </xs:enumeration>
-              <xs:enumeration value="OTHER">
-                <xs:annotation><xs:documentation xml:lang="en">
-                creation done for other reasons
-                </xs:documentation></xs:annotation>
-              </xs:enumeration>
-            </xs:restriction>
-          </xs:simpleType>
-        </xs:element>
-        <xs:element name="Endanger">
-          <xs:annotation><xs:documentation xml:lang="en">
-          Action possibly endagering the object
-          </xs:documentation></xs:annotation>
-          <xs:simpleType>
-            <xs:restriction base="xs:string">
-              <xs:enumeration value="UNKNOWNACCESS">
-                <xs:annotation><xs:documentation xml:lang="en">
-                Unknown access where object can have been involved
-                </xs:documentation></xs:annotation>
-              </xs:enumeration>
-              <xs:enumeration value="FAILURE">
-                <xs:annotation><xs:documentation xml:lang="en">
-                Failure that can have involved object, e.g. general system failure with recovery actions
-                </xs:documentation></xs:annotation>
-              </xs:enumeration>
-              <xs:enumeration value="OTHER">
-                <xs:annotation><xs:documentation xml:lang="en">
-                Other action that can have endagered object
-                </xs:documentation></xs:annotation>
-              </xs:enumeration>
-            </xs:restriction>
-          </xs:simpleType>
-        </xs:element>
-        <xs:element name="IntegrityCheck">
-          <xs:annotation><xs:documentation xml:lang="en">
-          Action in connection with integrity check
-          </xs:documentation></xs:annotation>
-          <xs:simpleType>
-            <xs:restriction base="xs:string">
-              <xs:enumeration value="CHECKSUMSCHECK">
-                <xs:annotation><xs:documentation xml:lang="en">
-                Checksums check as part of integrity check
-                </xs:documentation></xs:annotation>
-              </xs:enumeration>
-              <xs:enumeration value="REPLICACHECK">
-                <xs:annotation><xs:documentation xml:lang="en">
-                Check whether any/all replica exists as part of integrity check
-                </xs:documentation></xs:annotation>
-              </xs:enumeration>
-              <xs:enumeration value="SALTCHECK">
-                <xs:annotation><xs:documentation xml:lang="en">
-                Check of checksum with salt as part of integrity check
-                </xs:documentation></xs:annotation>
-              </xs:enumeration>
-              <xs:enumeration value="OTHER">
-                <xs:annotation><xs:documentation xml:lang="en">
-                Other checks as part of integrity check
-                </xs:documentation></xs:annotation>
-              </xs:enumeration>
-            </xs:restriction>
-          </xs:simpleType>
-        </xs:element>
-        <xs:element name="Modify">
-          <xs:annotation><xs:documentation xml:lang="en">
-          Modification action
-          </xs:documentation></xs:annotation>
-          <xs:simpleType>
-            <xs:restriction base="xs:string">
-              <xs:enumeration value="COMPRESS">
-                <xs:annotation><xs:documentation xml:lang="en">
-                Modification in connection with compression
-                </xs:documentation></xs:annotation>
-              </xs:enumeration>
-              <xs:enumeration value="CORRECT">
-                <xs:annotation><xs:documentation xml:lang="en">
-                Modification in form of minor internal correction, e.g. via RAID
-                </xs:documentation></xs:annotation>
-              </xs:enumeration>
-              <xs:enumeration value="OTHER">
-                <xs:annotation><xs:documentation xml:lang="en">
-                Modification done for other reasons than the above
-                </xs:documentation></xs:annotation>
-              </xs:enumeration>
-            </xs:restriction>
-          </xs:simpleType>
-        </xs:element>
-        <xs:element name="PhysicalMove">
-          <xs:annotation><xs:documentation xml:lang="en">
-          Physical move action
-          </xs:documentation></xs:annotation>
-          <xs:simpleType>
-            <xs:restriction base="xs:string">
-              <xs:enumeration value="MIGRATION">
-                <xs:annotation><xs:documentation xml:lang="en">
-                Move in connection with media migration
-                </xs:documentation></xs:annotation>
-              </xs:enumeration>
-              <xs:enumeration value="OPERATION">
-                <xs:annotation><xs:documentation xml:lang="en">
-                Move in connection with internal operation, e.g. storage optimisation
-                </xs:documentation></xs:annotation>
-              </xs:enumeration>
-              <xs:enumeration value="OTHER">
-                <xs:annotation><xs:documentation xml:lang="en">
-                Move done for other reasons than the above
-                </xs:documentation></xs:annotation>
-              </xs:enumeration>
-            </xs:restriction>
-          </xs:simpleType>
-        </xs:element>
-        <xs:element name="Remove">
-          <xs:annotation><xs:documentation xml:lang="en">
-          Remove action
-          </xs:documentation></xs:annotation>
-          <xs:simpleType>
-            <xs:restriction base="xs:string">
-              <xs:enumeration value="TERMINATION">
-                <xs:annotation><xs:documentation xml:lang="en">
-                FinalResponse termination in remove of object
-                </xs:documentation></xs:annotation>
-              </xs:enumeration>
-              <xs:enumeration value="PARTIAL">
-                <xs:annotation><xs:documentation xml:lang="en">
-                Partial removal with regret period
-                </xs:documentation></xs:annotation>
-              </xs:enumeration>
-              <xs:enumeration value="OTHER">
-                <xs:annotation><xs:documentation xml:lang="en">
-                Other types of removal action
-                </xs:documentation></xs:annotation>
-              </xs:enumeration>
-            </xs:restriction>
-          </xs:simpleType>
-        </xs:element>
-      </xs:choice>
-      <xs:element name="ActionComment" type="xs:string" minOccurs="0" >
-        <xs:annotation><xs:documentation xml:lang="en">
-        Additional information about the action, e.g. details or specification of 'other' action
-        </xs:documentation></xs:annotation>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
+  <xs:simpleType name="Action_TYPE">
+  <xs:restriction base="xs:string">
+  
+    <!-- Normal protocol operations -->
+    <xs:enumeration value="GET_FILE" >
+      <xs:annotation><xs:documentation xml:lang="en">
+        A get file operation has been performed on the file.
+      </xs:documentation></xs:annotation>
+    </xs:enumeration>
+    <xs:enumeration value="PUT_FILE">
+      <xs:annotation><xs:documentation xml:lang="en">
+        A put file operation has been performed on the file.
+      </xs:documentation></xs:annotation>
+    </xs:enumeration>
+    <xs:enumeration value="DELETE_FILE">
+      <xs:annotation><xs:documentation xml:lang="en">
+        A delete file operation has been performed on the file.
+      </xs:documentation></xs:annotation>
+    </xs:enumeration>
+    <xs:enumeration value="REPLACE_FILE">
+      <xs:annotation><xs:documentation xml:lang="en">
+        A replace file operation has been performed on the file.
+      </xs:documentation></xs:annotation>
+    </xs:enumeration>
+    <xs:enumeration value="GET_CHECKSUMS">
+      <xs:annotation><xs:documentation xml:lang="en">
+        A getChecksums operation has been performed on the file.
+      </xs:documentation></xs:annotation>
+    </xs:enumeration>
+    <xs:enumeration value="GET_FILEID">
+      <xs:annotation><xs:documentation xml:lang="en">
+        A getFileID file operation has been performed on the file.
+      </xs:documentation></xs:annotation>
+    </xs:enumeration>   
+    
+    <!-- Indirect pillar actions -->
+    <xs:enumeration value="CHECKSUM_CALCULATED">
+      <xs:annotation><xs:documentation xml:lang="en">
+        A checksum (re)calculation has been made for the file.
+      </xs:documentation></xs:annotation>
+    </xs:enumeration>
+    <xs:enumeration value="FILE_MOVED">
+      <xs:annotation><xs:documentation xml:lang="en">
+        File has been move on the physical media. 
+      </xs:documentation></xs:annotation>
+    </xs:enumeration>  
+    
+    <!-- Integrity related actions -->
+    <xs:enumeration value="INTEGRITY_CHECK">
+      <xs:annotation><xs:documentation xml:lang="en">
+        And integrity check was performed on a file. 
+      </xs:documentation></xs:annotation>
+    </xs:enumeration>
+    <xs:enumeration value="INCONSISTENCY">
+      <xs:annotation><xs:documentation xml:lang="en">
+        A inconsistency was found, f.ex. checksum - file mismatch. 
+        Can be used by both the pillars and the integrity checker.
+      </xs:documentation></xs:annotation>
+    </xs:enumeration>
+    
+    <!-- The rest -->
+    <xs:enumeration value="FAILURE">
+      <xs:annotation><xs:documentation xml:lang="en">
+        A general problem occured in connection with a file.
+      </xs:documentation></xs:annotation>
+    </xs:enumeration>
+    <xs:enumeration value="OTHER">
+      <xs:annotation><xs:documentation xml:lang="en">
+        General action
+      </xs:documentation></xs:annotation>
+    </xs:enumeration>
+   </xs:restriction>
+  </xs:simpleType>
 
   <xs:complexType name="Actor_TYPE">
     <xs:annotation><xs:documentation xml:lang="en">
