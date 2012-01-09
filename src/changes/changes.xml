@@ -10,6 +10,12 @@
         Added comments to BitRepositoryData, BitRepositoryElements and BitRepositoryMessages 
         containing the project version. 
       </action>
+      <action dev="Kim" type="Add">
+        Added optional filesize element to IdentifyPillarsForReplaceFileRequest
+      </action>
+      <action dev="Kim" type="Update">
+        Updated the way that checksums and checksum specifications are defined and used in the messages. 
+      </action>
     </release>
     <release version="7" date="2011-12-22" description="Message cleanups">
       <action dev="Kim" type="Update">

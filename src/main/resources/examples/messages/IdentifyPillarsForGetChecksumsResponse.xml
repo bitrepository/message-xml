@@ -38,10 +38,10 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <FileIDs>
     <FileID>MyDataID1</FileID>
   </FileIDs>
-  <FileChecksumSpec>
+  <ChecksumRequestForExistingFile>
     <ChecksumType>MD5</ChecksumType>
     <ChecksumSalt>ABAB</ChecksumSalt>
-  </FileChecksumSpec>
+  </ChecksumRequestForExistingFile>
   <PillarID>MyPillar</PillarID>
   <PillarChecksumSpec>
     <ChecksumType>MD5</ChecksumType>

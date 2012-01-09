@@ -37,11 +37,11 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   </ResponseInfo>
   <PillarID>MyPillar</PillarID>
   <FileID>MyDataID</FileID>
-  <ChecksumDataForFile>
+  <ChecksumDataForExistingFile>
     <ChecksumSpec>
       <ChecksumType>MD5</ChecksumType>
     </ChecksumSpec>
     <ChecksumValue>6f78ed9c9dd86fe9</ChecksumValue>
     <CalculationTimestamp>2011-08-16T11:17:00</CalculationTimestamp>
-  </ChecksumDataForFile>
+  </ChecksumDataForExistingFile>
 </bro:DeleteFileFinalResponse>

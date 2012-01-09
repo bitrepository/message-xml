@@ -42,14 +42,12 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   </PillarChecksumSpec>
   <FileID>MyDataID</FileID>
   <FileAddress>http://myServer/myPlace/Myfile</FileAddress>
-  <ChecksumsDataForNewFile>
-    <ChecksumDataItem>
-        <ChecksumSpec>
-          <ChecksumType>MD5</ChecksumType>
-          <ChecksumSalt>ABCD</ChecksumSalt>
-        </ChecksumSpec>
-        <ChecksumValue>135F2156F4</ChecksumValue>
-        <CalculationTimestamp>2011-02-17T09:47:00</CalculationTimestamp>
-    </ChecksumDataItem>
-  </ChecksumsDataForNewFile>
+  <ChecksumDataForNewFile>
+    <ChecksumSpec>
+      <ChecksumType>MD5</ChecksumType>
+      <ChecksumSalt>ABCD</ChecksumSalt>
+    </ChecksumSpec>
+    <ChecksumValue>135F2156F4</ChecksumValue>
+    <CalculationTimestamp>2011-02-17T09:47:00</CalculationTimestamp>
+  </ChecksumDataForNewFile>
 </bro:PutFileFinalResponse>

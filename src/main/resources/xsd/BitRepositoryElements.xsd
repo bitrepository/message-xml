@@ -175,11 +175,11 @@
     </xs:sequence>
     </xs:complexType>
   </xs:element>
-
-  <xs:element name="ChecksumDataForFile" type="ChecksumDataForFile_TYPE">
+  
+  <xs:element name="ChecksumDataForExistingFile" type="ChecksumDataForFile_TYPE">
     <xs:annotation>
       <xs:documentation xml:lang="en">
-        Checksum data for a single file in the BitRepository.
+        Checksum data for a single existing file in the BitRepository.
       </xs:documentation>
     </xs:annotation>
   </xs:element>
@@ -187,80 +187,27 @@
   <xs:element name="ChecksumDataForNewFile" type="ChecksumDataForFile_TYPE">
     <xs:annotation>
       <xs:documentation xml:lang="en">
-        Checksum data for a single file in the BitRepository.
+        Checksum data for a single new/freshly uploaded file in the BitRepository.
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  
+  <xs:element name="ChecksumRequestForExistingFile" type="ChecksumSpec_TYPE">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Checksum request for a single existing file in the BitRepository.
       </xs:documentation>
     </xs:annotation>
   </xs:element>
 
-  <xs:element name="ChecksumsDataForFile">
-    <!-- TODO common ChecksumsDataGroupedByFile_TYPE; two restrictions on ParameterSpecification -->
-    <xs:complexType>
-    <xs:annotation><xs:documentation xml:lang="en">
-    Checksums data for one file. Multiple checksums with different specifications.
-    The file is in the bit repository.
-    </xs:documentation></xs:annotation>
-      <xs:sequence>
-        <xs:element name="FileID" type="FileID_TYPE" >
-          <xs:annotation><xs:documentation xml:lang="en">
-          Identifier of data the checksum is for
-          </xs:documentation></xs:annotation>
-        </xs:element>
-        <xs:element name="ChecksumDataForFile"
-                          type="ChecksumDataForFile_TYPE" minOccurs="0" maxOccurs="unbounded" />
-      </xs:sequence>
-      <xs:attribute name="ParameterSpecification" type="xs:string" fixed="BitRepositoryFile">
-        <xs:annotation><xs:documentation xml:lang="en">
-          File parameter specification of bit repository file
-        </xs:documentation></xs:annotation>
-      </xs:attribute>
-    </xs:complexType>
+  <xs:element name="ChecksumRequestForNewFile" type="ChecksumSpec_TYPE">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Checksum request for a single new/freshly uploaded file in the BitRepository.
+      </xs:documentation>
+    </xs:annotation>
   </xs:element>
-
-  <xs:element name="ChecksumsDataForNewFile">
-    <xs:complexType>
-    <xs:annotation><xs:documentation xml:lang="en">
-    Checksums data for one file. Multiple checksums with different specifications.
-    The file is new to the bit repository.
-    </xs:documentation></xs:annotation>
-      <xs:sequence>
-
-        <xs:element name="ChecksumDataItem" type="ChecksumDataForFile_TYPE" minOccurs="0" maxOccurs="1">
-          <xs:annotation><xs:documentation xml:lang="en">
-          Data for checksum
-          </xs:documentation></xs:annotation>
-        </xs:element>
-      </xs:sequence>
-
-      <xs:attribute name="ParameterSpecification" type="xs:string" fixed="NewFile">
-        <xs:annotation><xs:documentation xml:lang="en">
-          File parameter specification of new file
-        </xs:documentation></xs:annotation>
-      </xs:attribute>
-    </xs:complexType>
-  </xs:element>
-
-  <xs:element name="ChecksumSpecs">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element name="ChecksumSpecsItems">
-          <xs:annotation><xs:documentation xml:lang="en">
-          List of data for checksums
-          </xs:documentation></xs:annotation>
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="ChecksumSpecsItem"  type="ChecksumSpec_TYPE" minOccurs="0" maxOccurs="unbounded" >
-                <xs:annotation><xs:documentation xml:lang="en">
-                Optionally salt and/or type of checksum for extra checksumscheck of data object at
-                completion to of put file. The result can be given in PutFileFinalResponse
-                </xs:documentation></xs:annotation>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-
+  
   <xs:element name="Contributor" type="Component_TYPE" >
     <xs:annotation><xs:documentation xml:lang="en">
     Contributor to audit trails
@@ -320,12 +267,6 @@
   <xs:element name="FileAddress" type="Address_TYPE">
     <xs:annotation><xs:documentation xml:lang="en">
     Address (e.g. in form of an URL) for where a file can be found
-    </xs:documentation></xs:annotation>
-  </xs:element>
-
-  <xs:element name="FileChecksumSpec" type="ChecksumSpec_TYPE">
-    <xs:annotation><xs:documentation xml:lang="en">
-        Defines a checksum specification
     </xs:documentation></xs:annotation>
   </xs:element>
 

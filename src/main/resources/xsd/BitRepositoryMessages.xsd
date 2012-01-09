@@ -245,7 +245,7 @@
               </xs:documentation></xs:annotation>
             </xs:element>
     
-            <xs:element ref="bre:ChecksumsDataForFile" minOccurs="0" maxOccurs="1">
+            <xs:element ref="bre:ChecksumDataForExistingFile" minOccurs="0" maxOccurs="1">
               <xs:annotation><xs:documentation xml:lang="en">
               Different Checksums of the file to be sent.
               This can be used in checks of correct receival.
@@ -394,14 +394,14 @@
             </xs:documentation></xs:annotation>
           </xs:element>
   
-          <xs:element ref="bre:ChecksumsDataForNewFile" minOccurs="0" maxOccurs="1">
+          <xs:element ref="bre:ChecksumDataForNewFile" minOccurs="0" maxOccurs="1">
             <xs:annotation><xs:documentation xml:lang="en">
             Optionally checksums (and type and possibly salt) of file to be put.
             This can be used in checks of correct receival.
             </xs:documentation></xs:annotation>
           </xs:element>
           
-          <xs:element ref="bre:FileChecksumSpec" minOccurs="0" maxOccurs="1" >
+          <xs:element ref="bre:ChecksumRequestForNewFile" minOccurs="0" maxOccurs="1" >
             <xs:annotation><xs:documentation xml:lang="en">
             Optionally salt and/or type of checksum for extra checksumscheck of file at
             completion to of put file. The result can be given in PutFileFinalResponse
@@ -487,7 +487,7 @@
             </xs:documentation></xs:annotation>
           </xs:element>
     
-          <xs:element ref="bre:ChecksumsDataForNewFile" minOccurs="0" maxOccurs="1">
+          <xs:element ref="bre:ChecksumDataForNewFile" minOccurs="0" maxOccurs="1">
             <xs:annotation><xs:documentation xml:lang="en">
             Checksum calculated as specified in PutFileRequest, if specified
             </xs:documentation></xs:annotation>
@@ -584,14 +584,14 @@
               </xs:documentation></xs:annotation>
             </xs:element>
     
-            <xs:element ref="bre:ChecksumDataForFile">
+            <xs:element ref="bre:ChecksumDataForExistingFile">
               <xs:annotation><xs:documentation xml:lang="en">
               Checksums (and type and possibly salt) of file to be deleted.
               This should be used in checks on pillar to ensure the correct file is deleted.
               </xs:documentation></xs:annotation>
             </xs:element>
             
-            <xs:element ref="bre:FileChecksumSpec" minOccurs="0" maxOccurs="1" >
+            <xs:element ref="bre:ChecksumRequestForExistingFile" minOccurs="0" maxOccurs="1" >
               <xs:annotation><xs:documentation xml:lang="en">
               Optionally salt and/or type of checksum for extra checksumscheck of file at
               completion to of put file. The result can be given in DeleteFileFinalResponse
@@ -651,7 +651,7 @@
               </xs:documentation></xs:annotation>
             </xs:element>
 
-            <xs:element ref="bre:ChecksumDataForFile" minOccurs="0" maxOccurs="1">
+            <xs:element ref="bre:ChecksumDataForExistingFile" minOccurs="0" maxOccurs="1">
               <xs:annotation><xs:documentation xml:lang="en">
               Checksum calculated as specified in DeleteFileRequest, if specified
               </xs:documentation></xs:annotation>
@@ -676,6 +676,11 @@
             <xs:element ref="bre:FileID" >
               <xs:annotation><xs:documentation xml:lang="en">
               Unique identifier for file to be replaced in given bit repository collection
+              </xs:documentation></xs:annotation>
+            </xs:element>
+            <xs:element ref="bre:FileSize" minOccurs="0" maxOccurs="1">
+              <xs:annotation><xs:documentation xml:lang="en">
+                Expected size of the new file. The element is optional.
               </xs:documentation></xs:annotation>
             </xs:element>
           </xs:sequence>
@@ -747,10 +752,17 @@
               </xs:documentation></xs:annotation>
             </xs:element>
     
-            <xs:element ref="bre:ChecksumDataForFile">
+            <xs:element ref="bre:ChecksumDataForExistingFile">
               <xs:annotation><xs:documentation xml:lang="en">
               Checksums (and type and possibly salt) of file to be replaced; that is the _old_ file.
               This should be used in checks on pillar to ensure the correct file is deleted.
+              </xs:documentation></xs:annotation>
+            </xs:element>
+            
+            <xs:element ref="bre:ChecksumRequestForExistingFile" minOccurs="0" maxOccurs="1" >
+              <xs:annotation><xs:documentation xml:lang="en">
+              Optionally salt and/or type of checksum for extra checksumscheck of file prior to deletion of
+              the _old_ file. The result can be given in ReplaceFileFinalResponse
               </xs:documentation></xs:annotation>
             </xs:element>
     
@@ -774,7 +786,7 @@
               </xs:documentation></xs:annotation>
             </xs:element>
             
-            <xs:element ref="bre:FileChecksumSpec" minOccurs="0" maxOccurs="1" >
+            <xs:element ref="bre:ChecksumRequestForNewFile" minOccurs="0" maxOccurs="1" >
               <xs:annotation><xs:documentation xml:lang="en">
               Optionally salt and/or type of checksum for extra checksumscheck of file at
               completion to of put file. The result can be given in ReplaceFileFinalResponse
@@ -860,7 +872,13 @@
             </xs:documentation></xs:annotation>
           </xs:element>
   
-          <xs:element ref="bre:ChecksumDataForFile" minOccurs="0" maxOccurs="1">
+         <xs:element ref="bre:ChecksumDataForExistingFile" minOccurs="0" maxOccurs="1">
+            <xs:annotation><xs:documentation xml:lang="en">
+            Checksum of replaced file calculated as specified in ReplaceFileRequest, if specified
+            </xs:documentation></xs:annotation>
+          </xs:element>
+   
+          <xs:element ref="bre:ChecksumDataForNewFile" minOccurs="0" maxOccurs="1">
             <xs:annotation><xs:documentation xml:lang="en">
             Checksum of replaced file calculated as specified in ReplaceFileRequest, if specified
             </xs:documentation></xs:annotation>
@@ -888,7 +906,7 @@
               </xs:documentation></xs:annotation>
             </xs:element>
     
-            <xs:element ref="bre:FileChecksumSpec" minOccurs="0" maxOccurs="1">
+            <xs:element ref="bre:ChecksumRequestForExistingFile" minOccurs="0" maxOccurs="1">
               <xs:annotation><xs:documentation xml:lang="en">
               Optional checksums type and possible salt parameter requested
               (only pillars that can deliver this kind of checksum should reply).
@@ -916,7 +934,7 @@
               </xs:documentation></xs:annotation>
             </xs:element>
     
-            <xs:element ref="bre:FileChecksumSpec" minOccurs="0" maxOccurs="1">
+            <xs:element ref="bre:ChecksumRequestForExistingFile" minOccurs="0" maxOccurs="1">
               <xs:annotation><xs:documentation xml:lang="en">
               Checksums type and possible salt requested
               </xs:documentation></xs:annotation>
@@ -969,7 +987,7 @@
               </xs:documentation></xs:annotation>
             </xs:element>
     
-            <xs:element ref="bre:FileChecksumSpec" minOccurs="0" maxOccurs="1">
+            <xs:element ref="bre:ChecksumRequestForExistingFile" minOccurs="0" maxOccurs="1">
               <xs:annotation><xs:documentation xml:lang="en">
               Checksums type and possible salt requested
               </xs:documentation></xs:annotation>
@@ -1008,7 +1026,7 @@
               </xs:documentation></xs:annotation>
             </xs:element>
     
-            <xs:element ref="bre:FileChecksumSpec" minOccurs="0" maxOccurs="1">
+            <xs:element ref="bre:ChecksumRequestForExistingFile" minOccurs="0" maxOccurs="1">
               <xs:annotation><xs:documentation xml:lang="en">
               Checksums type and possible salt requested
               </xs:documentation></xs:annotation>
@@ -1041,7 +1059,7 @@
               </xs:documentation></xs:annotation>
             </xs:element>
     
-            <xs:element ref="bre:FileChecksumSpec" minOccurs="0" maxOccurs="1" >
+            <xs:element ref="bre:ChecksumRequestForExistingFile" minOccurs="0" maxOccurs="1" >
               <xs:annotation><xs:documentation xml:lang="en">
               Checksums type and possible salt requested
               (Also in result, and traceable via CorrelationID)

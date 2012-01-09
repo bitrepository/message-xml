@@ -43,23 +43,12 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   </FilePart>
   <FileAddress>http://myServer/myPlace/Myfile</FileAddress>
   <FileSize>90</FileSize>
-  <ChecksumsDataForFile>
-    <FileID>MyDataID</FileID>
-      <ChecksumDataForFile>
-        <ChecksumSpec>
-          <ChecksumType>MD5</ChecksumType>
-          <ChecksumSalt>AFAF</ChecksumSalt>
-        </ChecksumSpec>
-        <ChecksumValue>ABCDEF</ChecksumValue>
-        <CalculationTimestamp>2011-02-17T09:47:00</CalculationTimestamp>
-      </ChecksumDataForFile>
-      <ChecksumDataForFile>
-        <ChecksumSpec>
-          <ChecksumType>SHA-1</ChecksumType>
-          <ChecksumSalt>AFAF</ChecksumSalt>
-        </ChecksumSpec>
-        <ChecksumValue>1234567890</ChecksumValue>
-        <CalculationTimestamp>2011-02-17T09:47:00</CalculationTimestamp>
-      </ChecksumDataForFile>
-  </ChecksumsDataForFile>
+  <ChecksumDataForExistingFile>
+    <ChecksumSpec>
+      <ChecksumType>MD5</ChecksumType>
+      <ChecksumSalt>AFAF</ChecksumSalt>
+    </ChecksumSpec>
+    <ChecksumValue>ABCDEF</ChecksumValue>
+    <CalculationTimestamp>2011-02-17T09:47:00</CalculationTimestamp>
+  </ChecksumDataForExistingFile>
 </bro:GetFileProgressResponse>

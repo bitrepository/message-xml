@@ -36,9 +36,9 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <FileIDs>
     <FileID>MyDataID1</FileID>
   </FileIDs>
-  <FileChecksumSpec>
+  <ChecksumRequestForExistingFile>
     <ChecksumType>MD5</ChecksumType>
     <ChecksumSalt>ABCD</ChecksumSalt>
-  </FileChecksumSpec>
+  </ChecksumRequestForExistingFile>
   <ResultAddress>http://myServer/myPlace/Myfile</ResultAddress>
 </bro:GetChecksumsRequest>

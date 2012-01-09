@@ -36,10 +36,10 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
     <ResponseText>successfull completion</ResponseText>
   </ResponseInfo>
   <PillarID>MyPillar</PillarID>
-  <FileChecksumSpec>
+  <ChecksumRequestForExistingFile>
     <ChecksumType>MD5</ChecksumType>
     <ChecksumSalt>ABAB</ChecksumSalt>
-  </FileChecksumSpec>
+  </ChecksumRequestForExistingFile>
   <ResultingChecksums>
       <ChecksumDataItems>
           <FileID>MyDataId1</FileID>
