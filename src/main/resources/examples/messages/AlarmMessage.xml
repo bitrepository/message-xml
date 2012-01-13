@@ -24,18 +24,18 @@
   #L%
   -->
 
-<bro:Alarm version="1" minVersion="1"
+<bro:AlarmMessage version="1" minVersion="1"
 xmlns:bro='http://bitrepository.org/BitRepositoryMessages.xsd'
 xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <CorrelationID>12345</CorrelationID>
   <CollectionID>MySla</CollectionID>
   <To>topic://alarmTopic</To>
   <ReplyTo>queue://MyQueueOrTopic</ReplyTo>
-  <AlarmRaiser>MyPillar</AlarmRaiser>
-  <AlarmDescription>
+  <Alarm>
     <OrigDateTime>2011-05-03T11:18:00</OrigDateTime>
     <AlarmCode>500</AlarmCode>
+    <AlarmRaiser>MyPillar</AlarmRaiser>
     <AlarmText>Component failure</AlarmText>
     <FileID>MydataId1</FileID>
-  </AlarmDescription>
-</bro:Alarm>
+  </Alarm>
+</bro:AlarmMessage>
