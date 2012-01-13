@@ -31,34 +31,11 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <CollectionID>MySla</CollectionID>
   <To>topic://alarmTopic</To>
   <ReplyTo>queue://MyQueueOrTopic</ReplyTo>
-  <AlarmRaiser>
-    <ComponentID>MyPillar</ComponentID>
-    <ComponentType>PILLAR</ComponentType>
-  </AlarmRaiser>
+  <AlarmRaiser>MyPillar</AlarmRaiser>
   <AlarmDescription>
     <OrigDateTime>2011-05-03T11:18:00</OrigDateTime>
     <AlarmCode>500</AlarmCode>
     <AlarmText>Component failure</AlarmText>
-    <Priority>1</Priority>
-    <Risk>
-      <RiskProbabilityScore>4</RiskProbabilityScore>
-      <RiskImpactScore>0</RiskImpactScore>
-      <RiskArea>1</RiskArea>
-    </Risk>
+    <FileID>MydataId1</FileID>
   </AlarmDescription>
-  <AlarmConcerning>
-    <FileInformation>
-      <FileIDs>
-        <FileID>MydataId1</FileID>
-      </FileIDs>
-    </FileInformation>
-    <Components>
-      <Contributor>
-        <ComponentID>MyPillar</ComponentID>
-        <ComponentType>PILLAR</ComponentType>
-      </Contributor>
-      <DataTransmission>todo</DataTransmission>
-    </Components>
-    <Messages>todo</Messages>
-  </AlarmConcerning>
 </bro:Alarm>

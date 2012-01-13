@@ -35,10 +35,7 @@
     <ResponseCode>200</ResponseCode>
     <ResponseText>Request message received and operation request expected to be successful</ResponseText>
   </ResponseInfo>
-  <Contributor>
-      <ComponentID>MyPillar</ComponentID>
-      <ComponentType>PILLAR</ComponentType>
-  </Contributor>
+  <Contributor>MyPillar</Contributor>
   <TimeToDeliver>
     <TimeMeasureUnit>MILLISECONDS</TimeMeasureUnit>
     <TimeMeasureValue>1000</TimeMeasureValue>

@@ -16,54 +16,7 @@
 <!-- ****** USED ELEMENTS AND GROUPS IN ALPHABETIC ORDER     ****** -->
 <!-- ************************************************************** -->
 
-  <xs:element name="AlarmConcerning">
-    <xs:annotation><xs:documentation xml:lang="en">
-      Data format for information on which components the alarm concern
-    </xs:documentation></xs:annotation>
-    <xs:complexType>
-      <xs:sequence>
-      
-        <xs:element name="FileInformation">
-          <xs:annotation><xs:documentation xml:lang="en">
-            Identifies which objects the alarm concerns
-            (dataIds, dataIdPattern, dataTimeInterval, dataSizeInterval, checksumsType)
-          </xs:documentation></xs:annotation>
-          <xs:complexType>
-            <xs:choice>
-              <xs:element ref="FileIDs">
-                <xs:annotation><xs:documentation xml:lang="en">
-                Identifiers that uniquely identifies the data in given bit repository collection
-                </xs:documentation></xs:annotation>
-              </xs:element>
-              <!-- todo To be extended with more ways to identify the files concerned -->
-            </xs:choice>
-          </xs:complexType>
-        </xs:element>
-
-        <xs:element name="Components">
-          <xs:annotation><xs:documentation xml:lang="en">
-            Identifies the pillars, clients and data transmission(s) which the alarm concerns
-          </xs:documentation></xs:annotation>
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element ref="Contributor" minOccurs="0" maxOccurs="unbounded"/>
-              <xs:element name="DataTransmission" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-
-        <xs:element name="Messages" type="xs:string">
-          <xs:annotation><xs:documentation xml:lang="en">
-            Inclusion of message(s) which the alarm concerns
-          </xs:documentation></xs:annotation>
-          <!-- todo Work in progress -->
-        </xs:element>
-
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-
-  <xs:element name="AlarmDescription">
+  <xs:element name="Alarm">
     <xs:annotation><xs:documentation xml:lang="en">
       Data format for elements in the description of the alarm
     </xs:documentation></xs:annotation>
@@ -81,6 +34,12 @@
             The actual codes are specified later, e.g. IoError, DataNotFound, AccessDenied, OK
           </xs:documentation></xs:annotation>
         </xs:element>
+        
+        <xs:element name="AlarmRaiser" type="ComponentID" >
+          <xs:annotation><xs:documentation xml:lang="en">
+          Component responsible for raising an alarm
+          </xs:documentation></xs:annotation>
+        </xs:element>
 
         <xs:element name="AlarmText" type="xs:string">
           <xs:annotation><xs:documentation xml:lang="en">
@@ -89,60 +48,57 @@
             and possible notifications
           </xs:documentation></xs:annotation>
         </xs:element>
-
-        <xs:element name="Priority" type="PriorityCode_TYPE" minOccurs="0" maxOccurs="1">
+        
+        <xs:element ref="FileID"  minOccurs="0" maxOccurs="1">
           <xs:annotation><xs:documentation xml:lang="en">
-            Global priority code for the system, which indicates e.g. how and how fast the alarm must be treated
+            Indicates which alarm this concerns (if any). 
           </xs:documentation></xs:annotation>
         </xs:element>
-
-        <xs:element name="Risk" type="Risk_TYPE" minOccurs="0" maxOccurs="1">
-          <xs:annotation><xs:documentation xml:lang="en">
-            Risk of specified scenario becoming reality, if alarm is not treated.
-          </xs:documentation></xs:annotation>
-        </xs:element>
-
+        
       </xs:sequence>
     </xs:complexType>
   </xs:element>
 
-  <xs:element name="AlarmRaiser" type="Component_TYPE" >
+  <xs:element name="AuditTrailEvents">
     <xs:annotation><xs:documentation xml:lang="en">
-    Component responsible for raising an alarm
+      Data format for items in an audit trail
     </xs:documentation></xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="AuditTrailEvent" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:complexType>
   </xs:element>
 
-  <xs:element name="AuditTrailData">
-        <xs:annotation><xs:documentation xml:lang="en">
-        Data format for items in an audit trail
-        </xs:documentation></xs:annotation>
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element ref="AuditTrailDataItem" minOccurs="0" maxOccurs="unbounded" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-
-    <xs:element name="AuditTrailDataItem">
+    <xs:element name="AuditTrailEvent">
     <xs:annotation><xs:documentation xml:lang="en">
     Data format for elements in an audit trail for a FileID
     </xs:documentation></xs:annotation>
     <xs:complexType>
     <xs:sequence>
+      <xs:element name="SequenceNumber" type="xs:positiveInteger">
+        <xs:annotation><xs:documentation xml:lang="en">
+        A sequence number uniquely identifying the audit trail entry inside of a component. 
+        Sequence numbers indicates the entries sequence in time, eg. event 4 occurred before event 5. 
+        Note that numbering may not be continuous, eg. there might be holes in the sequence.
+        The first audit trail event should be number 1.
+        </xs:documentation></xs:annotation>
+      </xs:element>
+        
       <xs:element name="FileID" type="FileID_TYPE">
         <xs:annotation><xs:documentation xml:lang="en">
         FileID for object which the audit trail concern
         </xs:documentation></xs:annotation>
       </xs:element>
 
-      <xs:element name="ReportingComponent" type="Component_TYPE">
+      <xs:element name="ReportingComponent" type="ComponentID">
         <xs:annotation><xs:documentation xml:lang="en">
         Component of the bit repository which initiated audit trail entry on FileId object.
         For example client, pillar or coordination layer
         </xs:documentation></xs:annotation>
       </xs:element>
 
-      <xs:element name="ActorOnFile" type="Actor_TYPE" minOccurs="0" maxOccurs="1" >
+      <xs:element name="ActorOnFile" type="ActorID" >
         <xs:annotation><xs:documentation xml:lang="en">
         Actor who performed the specified action on FileId object.
         For example specific user or specific process
@@ -169,7 +125,7 @@
       
       <xs:element ref="AuditTrailInformation" minOccurs="0" maxOccurs="1">
         <xs:annotation> <xs:documentation xml:lang="en">
-          Information from the request that caused the event.  
+          Information from the actor that caused the event.  
         </xs:documentation></xs:annotation>
       </xs:element>
     </xs:sequence>
@@ -208,7 +164,7 @@
     </xs:annotation>
   </xs:element>
   
-  <xs:element name="Contributor" type="Component_TYPE" >
+  <xs:element name="Contributor" type="ComponentID" >
     <xs:annotation><xs:documentation xml:lang="en">
     Contributor to audit trails
     </xs:documentation></xs:annotation>
@@ -460,13 +416,13 @@
     </xs:documentation></xs:annotation>
     <xs:complexType>
       <xs:choice>
-        <xs:element ref="ResultAddress" minOccurs="0" maxOccurs="1" >
+        <xs:element ref="ResultAddress" >
           <xs:annotation><xs:documentation xml:lang="en">
           Address (e.g. in form of an URL) for where result data has been delivered (if completed)
           </xs:documentation></xs:annotation>
         </xs:element>
 
-        <xs:element ref="AuditTrailData">
+        <xs:element ref="AuditTrailEvents">
           <xs:annotation><xs:documentation xml:lang="en">
           Audit trail data in result, if given in this message instead of via data transfer
           </xs:documentation></xs:annotation>
@@ -565,6 +521,22 @@
 <!-- ****** USED TYPES IN ALPHABETIC ORDER                   ****** -->
 <!-- ************************************************************** -->
 
+  <xs:simpleType name="ActorID">
+    <xs:annotation><xs:documentation xml:lang="en">
+        Identifies a actor performing a function in the system. The actor can be identified by 
+        a certificate ID, componentID or just free text.
+      </xs:documentation>  </xs:annotation>
+  <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  
+  <xs:simpleType name="ComponentID">
+    <xs:annotation><xs:documentation xml:lang="en">
+        Identifies a actor performing a function in the system. The actor can be identified by 
+        a certificate ID, componentID or just free text.
+      </xs:documentation>  </xs:annotation>
+  <xs:restriction base="xs:string" />
+  </xs:simpleType>
+
   <xs:simpleType name="FileAction">
   <xs:restriction base="xs:string">
   
@@ -638,69 +610,6 @@
     </xs:enumeration>
    </xs:restriction>
   </xs:simpleType>
-
-  <xs:complexType name="Actor_TYPE">
-    <xs:annotation><xs:documentation xml:lang="en">
-    Actor who can perform actions on data in the bit repository
-    </xs:documentation></xs:annotation>
-    <xs:sequence>
-      <xs:element name="ActorID" type="ActorID_TYPE" >
-        <xs:annotation><xs:documentation xml:lang="en">
-        Identifier of the actor in question in the bit repository
-        </xs:documentation></xs:annotation>
-      </xs:element>
-      <xs:element name="ActorName" type="xs:string" minOccurs="0">
-        <xs:annotation><xs:documentation xml:lang="en">
-        Name of the actor in question in the bit repository
-        </xs:documentation></xs:annotation>
-      </xs:element>
-      <xs:element name="ActorType">
-        <xs:annotation><xs:documentation xml:lang="en">
-        Type of actor
-        </xs:documentation></xs:annotation>
-          <xs:simpleType>
-            <xs:restriction base="xs:string">
-              <xs:enumeration value="USER">
-                <xs:annotation><xs:documentation xml:lang="en">
-                User logged on e.g. coordination layer or pillar
-                </xs:documentation></xs:annotation>
-              </xs:enumeration>
-              <xs:enumeration value="INTERNALUSER">
-                <xs:annotation><xs:documentation xml:lang="en">
-                Internal user
-                </xs:documentation></xs:annotation>
-              </xs:enumeration>
-              <xs:enumeration value="INTERNALPROGRAM">
-                <xs:annotation><xs:documentation xml:lang="en">
-                Internal program
-                </xs:documentation></xs:annotation>
-              </xs:enumeration>
-              <xs:enumeration value="PROCESS">
-                <xs:annotation><xs:documentation xml:lang="en">
-                Single File Processing operation
-                </xs:documentation></xs:annotation>
-              </xs:enumeration>
-              <xs:enumeration value="MASSPROCESS">
-                <xs:annotation><xs:documentation xml:lang="en">
-                Mass processing operation
-                </xs:documentation></xs:annotation>
-              </xs:enumeration>
-              <xs:enumeration value="OTHER">
-                <xs:annotation><xs:documentation xml:lang="en">
-                Something that cannot be covered by other alternatives.
-                In this case ActorComment should be filled out
-                </xs:documentation></xs:annotation>
-              </xs:enumeration>
-            </xs:restriction>
-          </xs:simpleType>
-      </xs:element>
-      <xs:element name="ActorComment" type="xs:string" minOccurs="0" >
-        <xs:annotation><xs:documentation xml:lang="en">
-        Additional information about the actor
-        </xs:documentation></xs:annotation>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
 
   <xs:simpleType name="ActorID_TYPE">
     <xs:annotation><xs:documentation xml:lang="en">
@@ -864,48 +773,6 @@
     </xs:restriction>
   </xs:simpleType>
 
-  <xs:complexType name="Component_TYPE">
-    <xs:annotation><xs:documentation xml:lang="en">
-    Component of the bit repository
-    </xs:documentation></xs:annotation>
-    <xs:sequence>
-      <xs:element name="ComponentID" type="ComponentID_TYPE" >
-        <xs:annotation><xs:documentation xml:lang="en">
-        Identifier of the component in question in the bit repository
-        </xs:documentation></xs:annotation>
-      </xs:element>
-      <xs:element name="ComponentType">
-        <xs:annotation><xs:documentation xml:lang="en">
-        Component of the bit repository
-        </xs:documentation></xs:annotation>
-          <xs:simpleType>
-            <xs:restriction base="xs:string">
-              <xs:enumeration value="CLIENT">
-                <xs:annotation><xs:documentation xml:lang="en">
-                A Client component
-                </xs:documentation></xs:annotation>
-              </xs:enumeration>
-              <xs:enumeration value="PILLAR">
-                <xs:annotation><xs:documentation xml:lang="en">
-                A Pillar component
-                </xs:documentation></xs:annotation>
-              </xs:enumeration>
-              <xs:enumeration value="COORLAYER">
-                <xs:annotation><xs:documentation xml:lang="en">
-                A component in the coordination layer
-                </xs:documentation></xs:annotation>
-              </xs:enumeration>
-            </xs:restriction>
-          </xs:simpleType>
-      </xs:element>
-      <xs:element name="ComponentComment" type="xs:string" minOccurs="0" >
-        <xs:annotation><xs:documentation xml:lang="en">
-        Additional information about the component
-        </xs:documentation></xs:annotation>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
-
   <xs:simpleType name="ComponentID_TYPE">
     <xs:annotation><xs:documentation xml:lang="en">
     Unique identifiers for a component in the Bit Repository
@@ -949,9 +816,7 @@
 
   <xs:simpleType name="FileID_TYPE">
     <xs:annotation><xs:documentation xml:lang="en">
-    Unique identifiers for data in given service level agreement
-    In a Get operation this will be the identifier for data requested
-    In a Put operation this will be the identifier the data for later request of the data
+    Unique identifiers for a file in given collection.
     </xs:documentation></xs:annotation>
     <xs:restriction base="xs:string">
     </xs:restriction>
@@ -959,35 +824,6 @@
 
   <xs:simpleType name="PillarID_TYPE">
     <xs:restriction base="xs:string">
-    </xs:restriction>
-  </xs:simpleType>
-
-  <xs:simpleType name="PriorityCode_TYPE">
-    <xs:annotation><xs:documentation xml:lang="en">
-    Global priority codes for the system, which indicate e.g. how and how fast alarms must be treated
-    </xs:documentation></xs:annotation>
-    <xs:restriction base="xs:positiveInteger">
-      <xs:enumeration value="1">
-        <xs:annotation><xs:documentation xml:lang="en">
-        Alarm requires manual checks. Notification should be sent.
-        </xs:documentation></xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="2">
-        <xs:annotation><xs:documentation xml:lang="en">
-        Integrity Client Alarm: Missing IDs.
-        </xs:documentation></xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="3">
-        <xs:annotation><xs:documentation xml:lang="en">
-        Integrity Client Alarm: Checksum errors.
-        </xs:documentation></xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="4">
-        <xs:annotation><xs:documentation xml:lang="en">
-        Other. Notification should be sent. Alarmtext should explain what the alarm consists of.
-        This code should rarely be used, and use indicates that this type should be updated.
-        </xs:documentation></xs:annotation>
-      </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
 
@@ -1076,133 +912,6 @@
             File with given FileID has NOT been found for a read request
           </xs:documentation>
         </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-
-  <xs:complexType name="Risk_TYPE">
-    <xs:annotation><xs:documentation xml:lang="en">
-      Indicates Risk and Risk Area for Alarm if not treated
-    </xs:documentation></xs:annotation>
-    <xs:sequence>
-      <xs:element name="RiskProbabilityScore" type="RiskProbabilityScore_TYPE">
-        <xs:annotation><xs:documentation xml:lang="en">
-          Probability of specified scenario becoming reality, if alarm is not treated.
-        </xs:documentation></xs:annotation>
-      </xs:element>
-
-      <xs:element name="RiskImpactScore" type="RiskImpactScore_TYPE">
-        <xs:annotation><xs:documentation xml:lang="en">
-          Potential impact of specified scenario becoming reality, if alarm is not treated.
-        </xs:documentation></xs:annotation>
-      </xs:element>
-
-      <xs:element name="RiskArea" type="RiskArea_TYPE">
-        <xs:annotation><xs:documentation xml:lang="en">
-          Global risk code for likelyhood for certain risks to become reality, if alarm is not treated.
-          Known risk areas are: availability, bit safety, confidentiality
-        </xs:documentation></xs:annotation>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
-
-  <xs:simpleType name="RiskArea_TYPE">
-    <xs:restriction base="xs:positiveInteger">
-      <xs:enumeration value="1">
-        <xs:annotation><xs:documentation xml:lang="en">
-          Risk Area availability
-        </xs:documentation></xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="2">
-        <xs:annotation><xs:documentation xml:lang="en">
-          Risk Area bit safety
-        </xs:documentation></xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="3">
-        <xs:annotation><xs:documentation xml:lang="en">
-          Risk Area confidentiality
-        </xs:documentation></xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-
-  <xs:simpleType name="RiskImpactScore_TYPE">
-    <xs:restriction base="xs:nonNegativeInteger">
-      <xs:enumeration value="0">
-        <xs:annotation><xs:documentation xml:lang="en">
-          Zero impact, results in zero loss of digital object authenticity and understandability
-        </xs:documentation></xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="1">
-        <xs:annotation><xs:documentation xml:lang="en">
-          Negligible impact, results in isolated but fully recoverable loss of
-          digital object authenticity and understandability
-        </xs:documentation></xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="2">
-        <xs:annotation><xs:documentation xml:lang="en">
-          Superficial impact, results in widespread but fully recoverable
-          loss of digital object authenticity and understandability
-        </xs:documentation></xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="3">
-        <xs:annotation><xs:documentation xml:lang="en">
-          Medium impact, results in total but fully recoverable loss of
-          digital object authenticity and understandability
-        </xs:documentation></xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="4">
-        <xs:annotation><xs:documentation xml:lang="en">
-          High impact, results in isolated loss, including unrecoverable loss
-          of digital object authenticity and understandability
-        </xs:documentation></xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="5">
-        <xs:annotation><xs:documentation xml:lang="en">
-          Considerable impact, results in widespread loss, including unrecoverable loss or loss that is
-          recoverable only by third party of digital object authenticity and understandability
-        </xs:documentation></xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="6">
-        <xs:annotation><xs:documentation xml:lang="en">
-          Cataclysmic impact, results in total and unrecoverable loss of
-          digital object authenticity and understandability
-        </xs:documentation></xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-
-  <xs:simpleType name="RiskProbabilityScore_TYPE">
-    <xs:restriction base="xs:positiveInteger">
-      <xs:enumeration value="1">
-        <xs:annotation><xs:documentation xml:lang="en">
-        Minimal probability, occurs once every 100 years or more
-        </xs:documentation></xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="2">
-        <xs:annotation><xs:documentation xml:lang="en">
-        Very low probability, occurs once every 10 years
-        </xs:documentation></xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="3">
-        <xs:annotation><xs:documentation xml:lang="en">
-        Low probability, occurs once every 5 years
-        </xs:documentation></xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="4">
-        <xs:annotation><xs:documentation xml:lang="en">
-        Medium probability, occurs once every year
-        </xs:documentation></xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="5">
-        <xs:annotation><xs:documentation xml:lang="en">
-        High probability, occurs once every month
-        </xs:documentation></xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="6">
-        <xs:annotation><xs:documentation xml:lang="en">
-        Very high probability, occurs more than once every month
-        </xs:documentation></xs:annotation>
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>

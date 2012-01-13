@@ -35,8 +35,5 @@
     <ResponseCode>202</ResponseCode>
     <ResponseText>Message request has been received and is expected to be met successfully</ResponseText>
   </ResponseInfo>
-  <Contributor>
-    <ComponentID>MyPillar</ComponentID>
-    <ComponentType>PILLAR</ComponentType>
-  </Contributor>
+  <Contributor>MyPillar</Contributor>
 </bro:GetStatusProgressResponse>

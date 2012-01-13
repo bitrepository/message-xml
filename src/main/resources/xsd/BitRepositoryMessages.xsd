@@ -1518,7 +1518,7 @@
 
   <!-- Implements the Alarm functionality as described here: https://sbforge.org/display/BITMAG/Alarms -->
 	
-  <xs:element name="Alarm">
+  <xs:element name="AlarmMessage">
     <xs:complexType>
       <xs:annotation><xs:documentation xml:lang="en">
       Alarm Messages are sent in error situations where the Bit Repository operators should be notified
@@ -1526,23 +1526,13 @@
       <xs:complexContent>
         <xs:extension base="Message">
           <xs:sequence>
-            <xs:element ref="bre:AlarmRaiser" minOccurs="0" maxOccurs="1" >
+    
+            <xs:element ref="bre:Alarm" >
               <xs:annotation><xs:documentation xml:lang="en">
-              Identifier of component who raises the alarm (typically it will be the sender of the message)
+                Defines the Alarm
               </xs:documentation></xs:annotation>
             </xs:element>
     
-            <xs:element ref="bre:AlarmDescription" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Description of what the alarm consist of
-              </xs:documentation></xs:annotation>
-            </xs:element>
-    
-            <xs:element ref="bre:AlarmConcerning" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Contains information on which components the alarm concern
-              </xs:documentation></xs:annotation>
-            </xs:element>
           </xs:sequence>
         </xs:extension>
       </xs:complexContent>

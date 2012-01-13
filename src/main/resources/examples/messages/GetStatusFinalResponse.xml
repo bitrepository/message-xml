@@ -35,10 +35,7 @@
     <ResponseCode>204</ResponseCode>
     <ResponseText>successful completion</ResponseText>
   </ResponseInfo>
-  <Contributor>
-    <ComponentID>MyPillar</ComponentID>
-    <ComponentType>PILLAR</ComponentType>
-  </Contributor>
+  <Contributor>MyPillar</Contributor>
   <ResultingStatus>
     <ContributorStatus>
       <ContributorStatusElements>

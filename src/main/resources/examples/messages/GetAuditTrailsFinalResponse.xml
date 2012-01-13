@@ -35,44 +35,31 @@
     <ResponseCode>204</ResponseCode>
     <ResponseText>successfull completion</ResponseText>
   </ResponseInfo>
-  <Contributor>
-    <ComponentID>MyPillar</ComponentID>
-    <ComponentType>PILLAR</ComponentType>
-  </Contributor>
+  <Contributor>MyPillar</Contributor>
   <FileIDs>
     <FileID>MyFile</FileID>
   </FileIDs>
   <ResultingAuditTrails>
-    <AuditTrailData>
+    <AuditTrailEvents>
       <!--<NoOfItems>2</NoOfItems>-->
       <!--<AuditTrailDataItems>-->
-        <AuditTrailDataItem>
+        <AuditTrailEvent>
+          <SequenceNumber>7</SequenceNumber>
           <FileID>MyFile</FileID>
-          <ReportingComponent>
-            <ComponentID>MyPillar</ComponentID>
-            <ComponentType>PILLAR</ComponentType>
-          </ReportingComponent>
-          <ActorOnFile>
-            <ActorID>Actor321</ActorID>
-            <ActorType>USER</ActorType>
-          </ActorOnFile>
-        <ActionOnFile>GET_FILE</ActionOnFile>
+          <ReportingComponent>MyPillar</ReportingComponent>
+          <ActorOnFile>Actor321</ActorOnFile>
+          <ActionOnFile>GET_FILE</ActionOnFile>
           <ActionDateTime>2011-04-15T12:55:00</ActionDateTime>
-        </AuditTrailDataItem>
-        <AuditTrailDataItem>
+        </AuditTrailEvent>
+        <AuditTrailEvent>
+          <SequenceNumber>8</SequenceNumber>
           <FileID>MyFile</FileID>
-          <ReportingComponent>
-            <ComponentID>MyPillar</ComponentID>
-            <ComponentType>PILLAR</ComponentType>
-          </ReportingComponent>
-          <ActorOnFile>
-            <ActorID>Actor321</ActorID>
-            <ActorType>USER</ActorType>
-          </ActorOnFile>
-        <ActionOnFile>PUT_FILE</ActionOnFile>
+          <ReportingComponent>MyPillar</ReportingComponent>
+          <ActorOnFile>Actor321</ActorOnFile>
+          <ActionOnFile>PUT_FILE</ActionOnFile>
           <ActionDateTime>2011-04-15T13:20:00</ActionDateTime>
-        </AuditTrailDataItem>
+        </AuditTrailEvent>
       <!--</AuditTrailDataItems>-->
-    </AuditTrailData>
+    </AuditTrailEvents>
   </ResultingAuditTrails>
 </bro:GetAuditTrailsFinalResponse>
