@@ -99,9 +99,9 @@
     </pluginManagement>
   </build>
   <scm>
-    <connection>scm:svn:https://sbforge.org/svn/bitrepository/bitrepository-message-xml/trunk/</connection>
-    <developerConnection>scm:svn:https://sbforge.org/svn/bitrepository/bitrepository-message-xml/trunk</developerConnection>
-    <url>https://sbforge.org/fisheye/browse/Bitmagasinet/bitrepository-message-xml/trunk/</url>
+    <connection>scm:git:https://sbforge.org/fisheye/git/bitrepository-message-xml.git</connection>
+    <developerConnection>scm:git:https://sbforge.org/fisheye/git/bitrepository-message-xml.git</developerConnection>
+    <url>https://sbforge.org/fisheye/browse/bitrepository-message-xml/</url>
   </scm>
 
   <distributionManagement>
