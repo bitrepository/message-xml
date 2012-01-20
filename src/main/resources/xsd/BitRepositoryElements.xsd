@@ -28,10 +28,9 @@
           </xs:documentation></xs:annotation>
         </xs:element>
 
-        <xs:element name="AlarmCode" type="ALARMCODE_TYPE">
+        <xs:element name="AlarmCode" type="AlarmCode">
           <xs:annotation><xs:documentation xml:lang="en">
-            Global alarm code for the system which describes what the alarm consist of
-            The actual codes are specified later, e.g. IoError, DataNotFound, AccessDenied, OK
+            Global alarm code for the system which describes alarm type.
           </xs:documentation></xs:annotation>
         </xs:element>
         
@@ -625,49 +624,49 @@
     <xs:restriction base="xs:string"/>
   </xs:simpleType>
 
-  <xs:simpleType name="ALARMCODE_TYPE">
+  <xs:simpleType name="AlarmCode">
     <xs:annotation><xs:documentation xml:lang="en">
     Error codes that are specific for Alarm messages
     </xs:documentation></xs:annotation>
-    <xs:restriction base="xs:positiveInteger">
-      <xs:enumeration value="500">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="COMPONENT_FAILURE">
         <xs:annotation><xs:documentation xml:lang="en">
         Component failure, something fatal or irrecoverable has happened. 
         Code error, segmentation fault, missing backend etc. 
         </xs:documentation></xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="501">
+      <xs:enumeration value="INCONSISTENT_REQUEST">
         <xs:annotation><xs:documentation xml:lang="en">
         Inconsistent request, the request is inconsistent with the file state in the pillar.
-        E.g.a is user trying to get a file that does not exist, or put a file with an ID alrealdy on store. 
+        E.g.a is user trying to get a file that does not exist, or put a file with an ID already on store. 
         </xs:documentation></xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="502">
+      <xs:enumeration value="CHECKSUM_ALARM">
         <xs:annotation><xs:documentation xml:lang="en">
         Checksum alarm, Problems with a checksum. 
         </xs:documentation></xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="503">
+      <xs:enumeration value="FAILED_TRANSFER">
         <xs:annotation><xs:documentation xml:lang="en">
         Failed transfer, file up or download failed. 
         </xs:documentation></xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="504">
+      <xs:enumeration value="FAILED_OPERATION">
         <xs:annotation><xs:documentation xml:lang="en">
         Failed operation, a non-critical operation failuire.  
         </xs:documentation></xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="505">
+      <xs:enumeration value="INVALID_MESSAGE">
         <xs:annotation><xs:documentation xml:lang="en">
         Invalid message, a component has received an invalid message.  
         </xs:documentation></xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="506">
+      <xs:enumeration value="INVALID_MESSAGE_VERSION">
         <xs:annotation><xs:documentation xml:lang="en">
         Invalid message version, a component has received a message of an invalid version. 
         </xs:documentation></xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="507">
+      <xs:enumeration value="TIMEOUT">
         <xs:annotation><xs:documentation xml:lang="en">
         Timeout, a timeout has occured.  
         </xs:documentation></xs:annotation>

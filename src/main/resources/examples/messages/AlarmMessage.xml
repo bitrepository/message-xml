@@ -33,7 +33,7 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <ReplyTo>queue://MyQueueOrTopic</ReplyTo>
   <Alarm>
     <OrigDateTime>2011-05-03T11:18:00</OrigDateTime>
-    <AlarmCode>500</AlarmCode>
+    <AlarmCode>COMPONENT_FAILURE</AlarmCode>
     <AlarmRaiser>MyPillar</AlarmRaiser>
     <AlarmText>Component failure</AlarmText>
     <FileID>MydataId1</FileID>
