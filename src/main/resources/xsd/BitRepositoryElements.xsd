@@ -383,7 +383,7 @@
     </xs:annotation>
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="ResponseCode" type="ResponseCode_TYPE">
+        <xs:element name="ResponseCode" type="ResponseCode">
           <xs:annotation>
             <xs:documentation xml:lang="en">
               ResponseCode is machine readable code to indicate whether the status of
@@ -831,81 +831,88 @@
     </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="ResponseCode_TYPE">
+  <xs:simpleType name="ResponseCode">
     <xs:annotation>
       <xs:documentation xml:lang="en">
-        General error codes for response messages
+        General error codes for response messages.
       </xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:positiveInteger">
+    <xs:restriction base="xs:string">
       <!-- Positive response codes -->
-      <xs:enumeration value="200">
+      <xs:enumeration value="IDENTIFICATION_POSITIVE">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            Message request has been received and operation request is expected to be successful
+            Message identification has been received and operation request is expected to be successful.
           </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="201">
+      <xs:enumeration value="REQUEST_ACCEPTED">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            Message request has been received and is expected to be met successfully
+            Request has been received and the pillar will start handling the request.
           </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="202">
+      <xs:enumeration value="FILE_DOWNLOADED">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            Data from a PutFile request has been buffered successfully
+            Data from request has been successfully download from the File exchange server.
           </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="203">
+      <xs:enumeration value="FILE_UPLOADED">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            Data for a FileID has been found for some sort of Get request
+            The data requested has been successfully uploaded to the file exchange server.
           </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="204">
+      <xs:enumeration value="FILE_FOUND">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            Message request has been completed successfully
+            Data for a FileID has been found for some sort of Get request.
           </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <!-- Negative response codes -->
-      <xs:enumeration value="400">
+      <xs:enumeration value="REQUEST_COMPLETED">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            There are other reasons for failure
-            text following error code must explain reason.
+            Message request has been completed successfully.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <!-- Negative response codes. All negativ responses should be postfixed with '_FAILURE' to allow filtering 
+      based on this. -->
+      <xs:enumeration value="GENERAL_FAILURE">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            There are other reasons for failure text following error code must explain reason.
             This code should rarely be used, and use indicates that this type should be updated
           </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="401">
+      <xs:enumeration value="OPERATION_FAILURE">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            Operation was not completed for unknown reason
+            Operation was not completed for unknown reason.
           </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="402">
+      <xs:enumeration value="DUPLICATE_FILE_FAILURE">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            Duplicate FileID in write request
+            Duplicate FileID in write request.
           </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="403">
+      <xs:enumeration value="REQUEST_READ_FAILURE">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            Request was not understood
+            Request was not understood.
           </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="404">
+      <xs:enumeration value="FILE_NOT_FOUND_FAILURE">
         <xs:annotation>
           <xs:documentation xml:lang="en">
             File with given FileID has NOT been found for a read request
@@ -934,33 +941,27 @@
 
   <xs:complexType name="TimeMeasure_TYPE">
     <xs:annotation><xs:documentation xml:lang="en">
-    Indicates time measure from a point in time to another.
-    In first version this will be in miliseconds, later it will be consisting of time and unit according to a standard
+      Indicates time measure from a point in time to another.
     </xs:documentation></xs:annotation>
     <xs:sequence>
-      <xs:element name="TimeMeasureUnit" >
-        <xs:simpleType>
-          <xs:restriction base="xs:string">
-            <xs:enumeration value="MILLISECONDS">
-              <xs:annotation><xs:documentation xml:lang="en">
-              Measure is specified in milli seconds
-              </xs:documentation></xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="HOURS">
-              <xs:annotation><xs:documentation xml:lang="en">
-              Measure is specified in hours
-              </xs:documentation></xs:annotation>
-            </xs:enumeration>
-          </xs:restriction>
-        </xs:simpleType>
-      </xs:element>
-
-      <xs:element name="TimeMeasureValue" type="xs:nonNegativeInteger" >
-        <xs:annotation><xs:documentation xml:lang="en">
-        number of units
-        </xs:documentation></xs:annotation>
-      </xs:element>
+      <xs:element name="TimeMeasureUnit" type="TimeMeasureUnit" />
+      <xs:element name="TimeMeasureValue" type="xs:nonNegativeInteger" />
     </xs:sequence>
   </xs:complexType>
+
+  <xs:simpleType name="TimeMeasureUnit" >
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MILLISECONDS">
+        <xs:annotation><xs:documentation xml:lang="en">
+          Measure is specified in milli seconds
+          </xs:documentation></xs:annotation>
+        </xs:enumeration>
+     <xs:enumeration value="HOURS">
+       <xs:annotation><xs:documentation xml:lang="en">
+         Measure is specified in hours
+       </xs:documentation></xs:annotation>
+     </xs:enumeration>
+   </xs:restriction>
+ </xs:simpleType>
 
 </xs:schema>

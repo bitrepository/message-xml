@@ -32,8 +32,8 @@
   <To>topic://collectionTopic</To>
   <ReplyTo>topic://clientTopic</ReplyTo>
   <ResponseInfo>
-    <ResponseCode>200</ResponseCode>
-    <ResponseText>Request message received and operation request expected to be successful</ResponseText>
+    <ResponseCode>IDENTIFICATION_POSITIVE</ResponseCode>
+    <ResponseText>Ready to deliver fileIDS.</ResponseText>
   </ResponseInfo>
   <PillarID>MyPillar</PillarID>
   <FileIDs>

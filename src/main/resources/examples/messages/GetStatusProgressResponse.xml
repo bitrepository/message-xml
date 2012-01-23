@@ -32,7 +32,7 @@
   <To>topic://clientTopic</To>
   <ReplyTo>queue://pillarQueue</ReplyTo>
   <ResponseInfo>
-    <ResponseCode>202</ResponseCode>
+    <ResponseCode>REQUEST_ACCEPTED</ResponseCode>
     <ResponseText>Message request has been received and is expected to be met successfully</ResponseText>
   </ResponseInfo>
   <Contributor>MyPillar</Contributor>
