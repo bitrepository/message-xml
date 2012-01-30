@@ -838,42 +838,32 @@
       </xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
-      <!-- Positive response codes -->
+      <!-- Positive response codes in identification response-->
       <xs:enumeration value="IDENTIFICATION_POSITIVE">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            Message identification has been received and operation request is expected to be successful.
+            The indicated operation request can be serviced. This means that the replying component will be 
+            able to respond successfully to any operation request (GetFile, PutFile, GetAuditTrails) for the 
+            indicated data (usually a set of files).
+          </xs:documentation>
+        </xs:annotation>
+      <!-- Positive response codes in progress response-->
+      </xs:enumeration>
+      <xs:enumeration value="OPERATION_PROGRESS">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            The default type used in progress responses.
           </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="REQUEST_ACCEPTED">
+      <xs:enumeration value="REQUEST_ACCEPTED_PROGRESS">
         <xs:annotation>
           <xs:documentation xml:lang="en">
             Request has been received and the pillar will start handling the request.
           </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="FILE_DOWNLOADED">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">
-            Data from request has been successfully download from the File exchange server.
-          </xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="FILE_UPLOADED">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">
-            The data requested has been successfully uploaded to the file exchange server.
-          </xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="FILE_FOUND">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">
-            Data for a FileID has been found for some sort of Get request.
-          </xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
+      <!-- Positive response codes in final response-->
       <xs:enumeration value="REQUEST_COMPLETED">
         <xs:annotation>
           <xs:documentation xml:lang="en">
@@ -883,14 +873,6 @@
       </xs:enumeration>
       <!-- Negative response codes. All negativ responses should be postfixed with '_FAILURE' to allow filtering 
       based on this. -->
-      <xs:enumeration value="GENERAL_FAILURE">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">
-            There are other reasons for failure text following error code must explain reason.
-            This code should rarely be used, and use indicates that this type should be updated
-          </xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
       <xs:enumeration value="OPERATION_FAILURE">
         <xs:annotation>
           <xs:documentation xml:lang="en">
@@ -905,17 +887,10 @@
           </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="REQUEST_READ_FAILURE">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">
-            Request was not understood.
-          </xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
       <xs:enumeration value="FILE_NOT_FOUND_FAILURE">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            File with given FileID has NOT been found for a read request
+            File with given FileID has NOT been found for a request.
           </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
