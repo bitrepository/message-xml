@@ -887,6 +887,13 @@
           </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="REQUEST_READ_FAILURE">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            The request was not understood.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
       <xs:enumeration value="FILE_NOT_FOUND_FAILURE">
         <xs:annotation>
           <xs:documentation xml:lang="en">
