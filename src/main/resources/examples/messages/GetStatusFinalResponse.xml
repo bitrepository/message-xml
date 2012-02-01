@@ -32,7 +32,7 @@
   <To>topic://clientTopic</To>
   <ReplyTo>queue://pillarQueue</ReplyTo>
   <ResponseInfo>
-    <ResponseCode>REQUEST_COMPLETED</ResponseCode>
+    <ResponseCode>OPERATION_COMPLETED</ResponseCode>
     <ResponseText>successful completion</ResponseText>
   </ResponseInfo>
   <Contributor>MyPillar</Contributor>

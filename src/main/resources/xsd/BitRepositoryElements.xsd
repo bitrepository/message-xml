@@ -851,7 +851,7 @@
         <xs:enumeration value="IDENTIFICATION_NEGATIVE">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            The indicated operation request can not be serviced på the responding component. 
+            The indicated operation request can not be serviced on the responding component. 
           </xs:documentation>
         </xs:annotation>
       </xs:enumeration>

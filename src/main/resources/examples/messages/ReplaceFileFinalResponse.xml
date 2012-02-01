@@ -32,7 +32,7 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <To>topic://clientTopic</To>
   <ReplyTo>queue://pillarQueue</ReplyTo>
   <ResponseInfo>
-    <ResponseCode>REQUEST_COMPLETED</ResponseCode>
+    <ResponseCode>OPERATION_COMPLETED</ResponseCode>
     <ResponseText>successfull completion</ResponseText>
   </ResponseInfo>
   <PillarID>MyPillar</PillarID>
