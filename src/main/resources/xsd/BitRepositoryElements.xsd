@@ -838,7 +838,7 @@
       </xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
-      <!-- Positive response codes in identification response-->
+      <!-- Response codes in identification response-->
       <xs:enumeration value="IDENTIFICATION_POSITIVE">
         <xs:annotation>
           <xs:documentation xml:lang="en">
@@ -847,8 +847,15 @@
             indicated data (usually a set of files).
           </xs:documentation>
         </xs:annotation>
-      <!-- Positive response codes in progress response-->
       </xs:enumeration>
+        <xs:enumeration value="IDENTIFICATION_NEGATIVE">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            The indicated operation request can not be serviced på the responding component. 
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <!-- Positive response codes in progress response-->
       <xs:enumeration value="OPERATION_PROGRESS">
         <xs:annotation>
           <xs:documentation xml:lang="en">
@@ -856,7 +863,7 @@
           </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="REQUEST_ACCEPTED_PROGRESS">
+      <xs:enumeration value="OPERATION_ACCEPTED_PROGRESS">
         <xs:annotation>
           <xs:documentation xml:lang="en">
             Request has been received and the pillar will start handling the request.
@@ -864,7 +871,7 @@
         </xs:annotation>
       </xs:enumeration>
       <!-- Positive response codes in final response-->
-      <xs:enumeration value="REQUEST_COMPLETED">
+      <xs:enumeration value="OPERATION_COMPLETED">
         <xs:annotation>
           <xs:documentation xml:lang="en">
             Message request has been completed successfully.
@@ -873,10 +880,10 @@
       </xs:enumeration>
       <!-- Negative response codes. All negativ responses should be postfixed with '_FAILURE' to allow filtering 
       based on this. -->
-      <xs:enumeration value="OPERATION_FAILURE">
+      <xs:enumeration value="FAILURE">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            Operation was not completed for unknown reason.
+            The request could not be completed for unknown reason.
           </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
@@ -887,13 +894,6 @@
           </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="REQUEST_READ_FAILURE">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">
-            The request was not understood.
-          </xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
       <xs:enumeration value="FILE_NOT_FOUND_FAILURE">
         <xs:annotation>
           <xs:documentation xml:lang="en">
@@ -901,6 +901,38 @@
           </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="NEW_FILE_CHECKSUM_FAILURE">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            The supplied checksum didn't correspond to the checksum clculated for a newly received file. The is used
+            in putFile and replaceFile operations to indicated that the downloaded file did't match the expexted 
+            checksum.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EXISTING_FILE_CHECKSUM_FAILURE">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            The checksum for file in a pillar didn't correspond to the checksum supplied in a operation request. This
+            is relevant in replaceFile an Delete file, where the checksum for the existing file is provided.  
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FILE_TRANSFER_FAILURE">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            The filetransfer to or from the pillar could be completed.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="REQUEST_NOT_UNDERSTOOD_FAILURE">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            The component was unable to interprete the received request. This is a serious problem, as this indicates that the request sender 
+            and receiver don't agree on the protocol.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration> 
     </xs:restriction>
   </xs:simpleType>
 
