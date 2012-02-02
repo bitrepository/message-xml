@@ -579,14 +579,14 @@
     </xs:enumeration>
     <xs:enumeration value="FILE_MOVED">
       <xs:annotation><xs:documentation xml:lang="en">
-        File has been move on the physical media. 
+        File has been move on the physical media or has been moved between medias, eg. from a disk to dvd/tape. . 
       </xs:documentation></xs:annotation>
     </xs:enumeration>  
     
     <!-- Integrity related actions -->
     <xs:enumeration value="INTEGRITY_CHECK">
       <xs:annotation><xs:documentation xml:lang="en">
-        And integrity check was performed on a file. 
+        An integrity check was performed on a file. 
       </xs:documentation></xs:annotation>
     </xs:enumeration>
     <xs:enumeration value="INCONSISTENCY">
@@ -604,7 +604,7 @@
     </xs:enumeration>
     <xs:enumeration value="OTHER">
       <xs:annotation><xs:documentation xml:lang="en">
-        General action
+        General action not covered by the previous fields.
       </xs:documentation></xs:annotation>
     </xs:enumeration>
    </xs:restriction>
