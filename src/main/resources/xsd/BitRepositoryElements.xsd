@@ -744,28 +744,25 @@
 
   <xs:complexType name="ChecksumSpec_TYPE">
     <xs:sequence>
-      <xs:element name="ChecksumType" type="ChecksumType_TYPE" >
+      <xs:element name="ChecksumType" type="ChecksumType" >
         <xs:annotation><xs:documentation xml:lang="en">
         The checksum type
         </xs:documentation></xs:annotation>
       </xs:element>
 
-      <xs:element name="ChecksumSalt" type="SaltParameter_TYPE" minOccurs="0" maxOccurs="1" >
+      <xs:element name="ChecksumSalt" type="SaltParameter_TYPE" minOccurs="0">
         <xs:annotation><xs:documentation xml:lang="en">
         Optionally a salt parameter included in the checksum calculation
         </xs:documentation></xs:annotation>
       </xs:element>
+      
+      <xs:element name="CustomChecksumType" type="xs:string" minOccurs="0">
+        <xs:annotation><xs:documentation xml:lang="en">
+         If the ChecksumType is set to 'Other' this element needs to specify the custom checksum type used.
+        </xs:documentation></xs:annotation>
+      </xs:element>
     </xs:sequence>
   </xs:complexType>
-
-  <xs:simpleType name="ChecksumType_TYPE">
-    <xs:annotation><xs:documentation xml:lang="en">
-    Could e.g. be MD5, SHA-1. the protocol, however, does not make restriction of
-    which values that exists
-    </xs:documentation></xs:annotation>
-    <xs:restriction base="xs:string">
-    </xs:restriction>
-  </xs:simpleType>
 
   <xs:simpleType name="ChecksumValue_TYPE" >
     <xs:restriction base="xs:hexBinary">
@@ -928,8 +925,8 @@
       <xs:enumeration value="REQUEST_NOT_UNDERSTOOD_FAILURE">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            The component was unable to interprete the received request. This is a serious problem, as this indicates that the request sender 
-            and receiver don't agree on the protocol.
+            The component was unable to interprete the received request. This is a serious problem, as this indicates 
+            that the request sender and receiver don't agree on the protocol.
           </xs:documentation>
         </xs:annotation>
       </xs:enumeration> 
@@ -942,6 +939,26 @@
     If this parameter is given, it follows that the checksum calculation must include the salt
     </xs:documentation></xs:annotation>
     <xs:restriction base="xs:hexBinary">
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ChecksumType">
+    <xs:annotation><xs:documentation xml:lang="en">
+        Defines a list of the most common checksum types. If type 'OTHER' is used an additional element is needed
+        to define the custom type.
+      </xs:documentation></xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MD5" />
+      <xs:enumeration value="SHA1" />
+      <xs:enumeration value="SHA256" />
+      <xs:enumeration value="SHA384" />
+      <xs:enumeration value="SHA512" />
+      <xs:enumeration value="HMAC_MD5" />
+      <xs:enumeration value="HMAC_SHA1" />
+      <xs:enumeration value="HMAC_SHA256" />
+      <xs:enumeration value="HMAC_SHA384" />
+      <xs:enumeration value="HMAC_SHA512" />
+      <xs:enumeration value="OTHER" />
     </xs:restriction>
   </xs:simpleType>
 
