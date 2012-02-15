@@ -50,7 +50,7 @@
         
         <xs:element ref="FileID"  minOccurs="0" maxOccurs="1">
           <xs:annotation><xs:documentation xml:lang="en">
-            Indicates which alarm this concerns (if any). 
+            Indicates which file this alarm concerns (if any). 
           </xs:documentation></xs:annotation>
         </xs:element>
         
@@ -525,7 +525,7 @@
         Identifies a actor performing a function in the system. The actor can be identified by 
         a certificate ID, componentID or just free text.
       </xs:documentation>  </xs:annotation>
-  <xs:restriction base="xs:string" />
+    <xs:restriction base="xs:string" />
   </xs:simpleType>
   
   <xs:simpleType name="ComponentID">
@@ -533,7 +533,7 @@
         Identifies a actor performing a function in the system. The actor can be identified by 
         a certificate ID, componentID or just free text.
       </xs:documentation>  </xs:annotation>
-  <xs:restriction base="xs:string" />
+    <xs:restriction base="xs:string" />
   </xs:simpleType>
 
   <xs:simpleType name="FileAction">
