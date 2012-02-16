@@ -22,6 +22,13 @@
     </license>
   </licenses>
 
+  <inceptionYear>2010</inceptionYear>
+  
+  <organization>
+    <name>The State and University Library, The Royal Library and The State Archives, Denmark</name>
+    <url>https://sbforge.org/display/BITMAG</url>
+  </organization>
+  
   <repositories>
     <repository>
       <id>sbforge-nexus</id>
@@ -59,6 +66,20 @@
             </goals>
           </execution>
         </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>license-maven-plugin</artifactId>
+        <version>1.0</version>
+        <configuration>
+          <generateBundle>true</generateBundle>
+          <licenseName>lgpl_v2_1</licenseName>
+          <failIfWarning>true</failIfWarning>
+          <useMissingFile>true</useMissingFile>
+          <extraExtensions>
+            <xsd>xml</xsd>
+          </extraExtensions>
+        </configuration>
       </plugin>
     </plugins>
     <pluginManagement>
