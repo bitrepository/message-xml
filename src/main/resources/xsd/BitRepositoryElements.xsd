@@ -756,9 +756,9 @@
         </xs:documentation></xs:annotation>
       </xs:element>
       
-      <xs:element name="CustomChecksumType" type="xs:string" minOccurs="0">
+      <xs:element name="OtherChecksumType" type="xs:string" minOccurs="0">
         <xs:annotation><xs:documentation xml:lang="en">
-         If the ChecksumType is set to 'Other' this element needs to specify the custom checksum type used.
+         If the ChecksumType is set to 'Other' this element needs to specify the checksum type used.
         </xs:documentation></xs:annotation>
       </xs:element>
     </xs:sequence>
