@@ -256,7 +256,7 @@
   <xs:element name="FileIDs">
     <xs:annotation><xs:documentation xml:lang="en">
     Identifiers that uniquely identifies the data in given bit repository collection which are requested for
-    These can be specified in different ways, e.g. a list, an all constant or via an address
+    These can be specified either as a single fileID or by indication all fileIDs should be returned.
     </xs:documentation></xs:annotation>
 
     <xs:complexType>
@@ -850,7 +850,7 @@
     </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="ResponseCode">
+    <xs:simpleType name="ResponseCode">
     <xs:annotation>
       <xs:documentation xml:lang="en">
         General error codes for response messages.
@@ -897,6 +897,13 @@
           </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="OPERATION_COMPLETED_WITH_WARNINGS">
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          Message request has been completed, but not without potential problems.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:enumeration>
       <!-- Negative response codes. All negativ responses should be postfixed with '_FAILURE' to allow filtering 
       based on this. -->
       <xs:enumeration value="FAILURE">

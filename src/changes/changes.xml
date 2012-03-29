@@ -26,6 +26,11 @@
     <title>Bit Repository Message XML change notes</title>
   </properties>
   <body>
+    <release version="14" date="2012-04-XX" description="Status message simplified." >
+      <action dev="Mikis" type="add">
+        Added 'OPERATION_COMPLETED_WITH_WARNINGS' response code.
+      </action>
+    </release>
     <release version="13" date="2012-02-XX" description="Introduced ChecksumType enum." >
       <action dev="Mikis" type="update">
         ChecksumType is now an type safe enum. The previous ChecksumType_TYPE has be replaced by the ChecksumType simple
