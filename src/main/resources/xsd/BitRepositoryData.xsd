@@ -151,7 +151,7 @@
           </xs:documentation></xs:annotation>
         </xs:element>
 
-        <xs:element ref="bre:ContributorStatus">
+        <xs:element ref="bre:ResultingStatus">
           <xs:annotation><xs:documentation xml:lang="en">
           List of status contributed from different components
           </xs:documentation></xs:annotation>
