@@ -26,6 +26,11 @@
     <title>Bit Repository Message XML change notes</title>
   </properties>
   <body>
+    <release version="14" date="2012-04-XX" description="Refactoring of GetStatus">
+      <action dev="Kim" type="update">
+        Refactoring of GetStatus related messages. 
+      </action>
+    </release>
     <release version="13" date="2012-02-XX" description="Introduced ChecksumType enum." >
       <action dev="Mikis" type="update">
         ChecksumType is now an type safe enum. The previous ChecksumType_TYPE has be replaced by the ChecksumType simple
