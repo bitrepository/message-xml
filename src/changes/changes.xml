@@ -27,6 +27,9 @@
   </properties>
   <body>
     <release version="14" date="2012-04-XX" description="Refactoring of GetStatus">
+      <action dev="Mikis" type="add">
+        Added from element to all messages.
+      </action>
       <action dev="Kim" type="update">
         Refactoring of GetStatus related messages. 
       </action>

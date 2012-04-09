@@ -75,6 +75,8 @@
         (blank if not relevant, e.g. for alarms)
         </xs:documentation></xs:annotation>
       </xs:element>
+
+      <xs:element ref="bre:From" minOccurs="0" maxOccurs="1" />
     </xs:sequence>
   
     <xs:attributeGroup ref="bre:VersionAttributes"/>

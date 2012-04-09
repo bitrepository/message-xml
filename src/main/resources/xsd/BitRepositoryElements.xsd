@@ -195,7 +195,7 @@
   <xs:annotation>
     <xs:documentation xml:lang="en">
       CorrelationID is a unique identifier for communication usually on primitive level,
-      e.g the IdentifyPillarsForGet part of a get operation
+      e.g the IdentifyPillarsForGet part of a get operation.
     </xs:documentation>
   </xs:annotation>
 </xs:element>
@@ -222,6 +222,14 @@
     <xs:annotation>
       <xs:documentation xml:lang="en">
         Identifies the destination any responds should be sent to (blank if not relevant, e.g. for alarms)
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:element name="From" type="ComponentID">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        The ID of the component which sent the message.
       </xs:documentation>
     </xs:annotation>
   </xs:element>
