@@ -1043,6 +1043,7 @@
   </xs:simpleType>
 
   <xs:element name="MinSequenceNumber" type="xs:positiveInteger" />
+  <xs:element name="MaxSequenceNumber" type="xs:positiveInteger" />
   <xs:element name="MinTimestamp" type="SystemDateTime_TYPE" />
   <xs:element name="MaxTimestamp" type="SystemDateTime_TYPE" />
 

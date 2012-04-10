@@ -1448,6 +1448,11 @@
                 Only audit trail events equal-to or larger than the minSequenceNumber should be returned.
               </xs:documentation></xs:annotation>
             </xs:element>
+            <xs:element ref="bre:MaxSequenceNumber"  minOccurs="0" >
+              <xs:annotation><xs:documentation xml:lang="en">
+                Only audit trail events equal-to or smaller than the minSequenceNumber should be returned.
+              </xs:documentation></xs:annotation>
+            </xs:element>
             <xs:element ref="bre:MinTimestamp"  minOccurs="0" >
               <xs:annotation><xs:documentation xml:lang="en">
                 Only audit trail events younger than the minTimestamp should be returned.

@@ -28,7 +28,8 @@
   <body>
     <release version="14" date="2012-04-XX" description="Refactoring of GetStatus and GetAuditTrails">
       <action dev="Mikis" type="add">
-        Added 'MinSequenceNumber', 'MinTimestamp' and 'MaxTimestamp' to 'GetAuditTrailsRequest' message.
+        Added 'MinSequenceNumber', 'MaxSequenceNumber', 'MinTimestamp' and 'MaxTimestamp' to
+        'GetAuditTrailsRequest' message.
       </action>
       <action dev="Mikis" type="add">
         Added 'From' element to all messages.
