@@ -1042,6 +1042,10 @@
     </xs:restriction>
   </xs:simpleType>
 
+  <xs:element name="MinSequenceNumber" type="xs:positiveInteger" />
+  <xs:element name="MinTimestamp" type="SystemDateTime_TYPE" />
+  <xs:element name="MaxTimestamp" type="SystemDateTime_TYPE" />
+
   <xs:complexType name="TimeMeasure_TYPE">
     <xs:annotation><xs:documentation xml:lang="en">
       Indicates time measure from a point in time to another.

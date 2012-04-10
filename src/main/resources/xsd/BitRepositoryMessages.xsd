@@ -1431,7 +1431,7 @@
       <xs:complexContent>
         <xs:extension base="MessageRequest">
           <xs:sequence>
-            <xs:element ref="bre:Contributor" minOccurs="0" maxOccurs="1" >
+            <xs:element ref="bre:Contributor" minOccurs="0" >
               <xs:annotation><xs:documentation xml:lang="en">
               Identifier of receiving contributor, which can be used for possible checks
               (IdentifyContributorsForGetAuditTrailsResponse.ReplyTo should ensure that right pillar is reached)
@@ -1443,8 +1443,23 @@
               FileID uniquely identifies the files in given bit repository collection which the audit trails are requested for
               </xs:documentation></xs:annotation>
             </xs:element>
+            <xs:element ref="bre:MinSequenceNumber"  minOccurs="0" >
+              <xs:annotation><xs:documentation xml:lang="en">
+                Only audit trail events equal-to or larger than the minSequenceNumber should be returned.
+              </xs:documentation></xs:annotation>
+            </xs:element>
+            <xs:element ref="bre:MinTimestamp"  minOccurs="0" >
+              <xs:annotation><xs:documentation xml:lang="en">
+                Only audit trail events younger than the minTimestamp should be returned.
+              </xs:documentation></xs:annotation>
+            </xs:element>
+            <xs:element ref="bre:MaxTimestamp"  minOccurs="0" >
+              <xs:annotation><xs:documentation xml:lang="en">
+                Only audit trail older than the maxTimestamp  should be returned.
+              </xs:documentation></xs:annotation>
+            </xs:element>
     
-            <xs:element ref="bre:ResultAddress" minOccurs="0" maxOccurs="1" >
+            <xs:element ref="bre:ResultAddress" minOccurs="0" >
               <xs:annotation><xs:documentation xml:lang="en">
               Address (e.g. in form of an URL) for where audit trails must be delivered via file exchange
               In cases where the address is not given, the result will be given in the GetAuditTrailsFinalResponse message

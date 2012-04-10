@@ -26,9 +26,12 @@
     <title>Bit Repository Message XML change notes</title>
   </properties>
   <body>
-    <release version="14" date="2012-04-XX" description="Refactoring of GetStatus">
+    <release version="14" date="2012-04-XX" description="Refactoring of GetStatus and GetAuditTrails">
       <action dev="Mikis" type="add">
-        Added from element to all messages.
+        Added 'MinSequenceNumber', 'MinTimestamp' and 'MaxTimestamp' to 'GetAuditTrailsRequest' message.
+      </action>
+      <action dev="Mikis" type="add">
+        Added 'From' element to all messages.
       </action>
       <action dev="Kim" type="update">
         Refactoring of GetStatus related messages. 
@@ -48,155 +51,6 @@
       <action dev="Mikis" type="update">
         The _TYPE postfixs has been removed from the enum type name. The previos uppercase ALARMCODE_TYPE has at the 
         same time been change to the normal Camelcasing format used for all other types and elements (AlarmCode).
-      </action>
-    </release>
-    <release version="9" date="2012-01-17" description="Major simplification of Alarm and Audit Trail elements, see">
-      <action dev="Mikis" type="update">
-        Renamed Alarm to AlarmMessage containing a new Alarm type as payload.
-      </action>
-      <action dev="Mikis" type="remove">
-        Removed AlarmConcerning element. Moved fileID to new Alarm element.
-      </action>
-      <action dev="Mikis" type="update">
-        Moved AlarmRaiser element to new Alarm element.
-      </action>
-      <action dev="Mikis" type="remove">
-        Removed Priority and Risk elements.
-      </action>
-      <action dev="Mikis" type="update">
-        Renamed AuditTrailData to AuditTrailEvents and AuditTrailsDataItem to AuditTrailEvent.
-      </action>
-      <action dev="Mikis" type="remove">
-        Removed ActorType element and replaced usage to simple ActorID of type string.
-      </action>
-      <action dev="Mikis" type="remove">
-        Removed ActorID_TYPE element.
-      </action>
-      <action dev="Mikis" type="remove">
-        Removed Component_TYPE element and replaced usage to simple ComponentID of type string.
-      </action>
-      <action dev="Mikis" type="remove">
-        Removed PriorityCode_TYPE, Risk_TYPE, RiskArea_TYPE and RiskProperbilityScore_TYPE elements.
-      </action>
-      <action dev="Mikis" type="update">
-        Renamed Action_TYPE to FileAction.
-      </action>
-      <action dev="Mikis" type="update">
-        Collapsed FileAction to simple string enum. See https://sbforge.org/jira/browse/BITMAG-376.
-      </action>
-    </release>
-    <release version="8" date="2012-01-14" description="Versioning introduction">
-      <action dev="Kim" type="add">
-        Added comments to BitRepositoryData, BitRepositoryElements and BitRepositoryMessages 
-        containing the project version. 
-      </action>
-      <action dev="Kim" type="add">
-        Added optional filesize element to IdentifyPillarsForReplaceFileRequest
-      </action>
-      <action dev="Kim" type="update">
-        Updated the way that checksums and checksum specifications are defined and used in the messages. 
-      </action>
-    </release>
-    <release version="7" date="2011-12-22" description="Message cleanups">
-      <action dev="Kim" type="update">
-        Restrict ChecksumValue_TYPE and SaltParameter_TYPE to be hexBinary.
-      </action>
-      <action dev="Kim" type="update">
-        Updated the AuditTrailDataItem specification.
-      </action>
-      <action dev="Kim" type="update">
-        Made TimeToDeliver element optional on all Identify* responses.
-      </action>
-      <action dev="Kim" type="update">
-        Moved ResponseInfo element to ResponseMessage from the individual *Response messages. 
-        Example messages have been update to reflect the change.
-      </action> 
-      <action dev="Kim" type="update"> 
-        Made ResultingAuditTrails optional in GetAuditTrailsFinalResponse. Allows for a error responses.    
-      </action>
-      <action dev="Kim" type="update">
-        Made ResponseInfo mandatory on MessageResponse messages.
-      </action>
-    </release>
-    <release version="6" date="2011-12-xx" description="Minor updates">
-      <action dev="Kim" type="update">
-        Minor updates to ReplaceFile messages.
-      </action>
-    </release>
-    <release version="5.1" date="2011-12-02" description="Fix of invalid example messages and DeleteRequest updates">
-      <action dev="Jonas" type="Fix">
-        Fix invalid example messages 
-      </action>
-      <action dev="Kim" type="update">
-        Update the way checksums are delivered in DeleteFile request and responses.
-      </action>
-    </release>
-    <release version="5" date="2011-11-2X" description="Updates to data message format and example messages updates">
-      <action dev="Kim" type="update">
-        Synchronize the structure that checksums are delivered as when uploaded so it matches the structure used 
-        in message delivery.
-      </action>
-      <action dev="Kim" type="update">
-        Update the destination syntax used in example messages.
-      </action>
-      <action dev="Kim" type="remove">
-        Parameter address in FileIDs element removed
-      </action>
-      <action dev="Kim" type="update">
-        Change FileIDs FileID element from list to single element
-      </action>
-    </release>
-    <release version="0.4.0" date="2011-11-XX" description="Major xsd updates. See liste below">
-      <action dev="Mikis" type="add">
-        All messages now extend the either the MessageResponse or the MessageRequest super types which again
-        extend the general Message type. Alarms extend the Message type directly.  
-      </action>
-      <action dev="Mikis" type="update">
-        AuditTrailInformation has been removed from response type messages and made optional on requests.
-      </action>
-      <action dev="Mikis" type="remove">
-        The BitRepositoryCollections element has been removed from alarms (as alarms are local to a collection).
-      </action>
-      <action dev="Mikis" type="update">
-        The CollectionID and ChecksumsDataForBitRepositoryFile has been renamed to 
-        CollectionID and ChecksumsDataForFile (removed trivial BitRepository).
-      </action>
-      <action dev="Mikis" type="update">
-        Added change notes functionality to Maven site, so we can document the changes found to the protocol.
-      </action>
-      <action dev="Kim" type="remove">
-        Removed old AlarmCodes for "General alarm" and "Unknown user access". 
-      </action>
-      <action dev="Kim" type="add">
-        Added unified ResponseCode type. 
-      </action>
-      <action dev="Kim" type="add">
-        Added ResponseInfo element. 
-      </action>
-      <action dev="Kim" type="update">
-        Updated the various response messages to use the new unified ResponseInfo element.
-        Effected example messages have also been updated.
-      </action>
-      <action dev="Kim" type="remove">
-        Removed FinalReponseInfo, ProgressResponseInfo, IdentifyResponseInfo elements. 
-        Killed off old response code types (including unions).
-      </action>
-      <action dev="Kim" type="update">
-        Made FileSize and ChecksumDataForFile optional in GetFileProgressResponse.
-        Made ResultingChecksums optional in GetChecksumsFinalResponse. 
-      </action>
-      <action dev="Kim" type="update">
-        Made ResultingFileIDs optional in GetFileIDsFinalResponse.
-        Made ChecksumsDataForNewFile optional in PutFileRequest. This is in accordance with the documentation text
-        and aligned with the reference clients not delivering checksums at this point. It should be considered 
-        whether this is the wanted behavior!
-        Made ChecksumsDataForNewFile optional in PutFileFinalResponse.
-      </action>
-      <action dev="Kim" type="update">
-        Updated the values of ResponseCodes and AlarmCodes to 200, 400 and 500 series codes. 
-      </action>
-      <action dev="Kim" type="update">
-        Changed "calculationTimestamp" in "FileIDsDataItem" to "creationTimestamp" and updated comments to reflect its semantics.
       </action>
     </release>
   </body>
