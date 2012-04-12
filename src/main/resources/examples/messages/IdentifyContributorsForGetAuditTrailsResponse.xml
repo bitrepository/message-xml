@@ -31,16 +31,9 @@
   <CollectionID>MySla</CollectionID>
   <To>topic://collectionTopic</To>
   <ReplyTo>topic://clientTopic</ReplyTo>
+  <From>MyPillar</From>
   <ResponseInfo>
     <ResponseCode>IDENTIFICATION_POSITIVE</ResponseCode>
     <ResponseText>Ready to deliver audit trails.</ResponseText>
   </ResponseInfo>
-  <Contributor>MyPillar</Contributor>
-  <FileIDs>
-    <AllFileIDs/>
-  </FileIDs>
-  <TimeToDeliver>
-    <TimeMeasureUnit>MILLISECONDS</TimeMeasureUnit>
-    <TimeMeasureValue>1000</TimeMeasureValue>
-  </TimeToDeliver>
 </bro:IdentifyContributorsForGetAuditTrailsResponse>

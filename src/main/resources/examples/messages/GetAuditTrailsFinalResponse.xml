@@ -31,14 +31,12 @@
   <CollectionID>MySla</CollectionID>
   <To>topic://clientTopic</To>
   <ReplyTo>queue://pillarQueue</ReplyTo>
+  <From>MyPillar</From>
   <ResponseInfo>
     <ResponseCode>OPERATION_COMPLETED</ResponseCode>
     <ResponseText>successfull completion</ResponseText>
   </ResponseInfo>
   <Contributor>MyPillar</Contributor>
-  <FileIDs>
-    <FileID>MyFile</FileID>
-  </FileIDs>
   <ResultingAuditTrails>
     <AuditTrailEvents>
       <!--<NoOfItems>2</NoOfItems>-->
@@ -59,7 +57,6 @@
           <ActionOnFile>PUT_FILE</ActionOnFile>
           <ActionDateTime>2011-04-15T13:20:00</ActionDateTime>
         </AuditTrailEvent>
-      <!--</AuditTrailDataItems>-->
     </AuditTrailEvents>
   </ResultingAuditTrails>
 </bro:GetAuditTrailsFinalResponse>

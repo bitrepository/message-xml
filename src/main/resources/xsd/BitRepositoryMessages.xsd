@@ -1377,12 +1377,7 @@
       <xs:complexContent>
         <xs:extension base="MessageRequest">
           <xs:sequence>
-            <xs:element ref="bre:FileIDs" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              FileID uniquely identifies the files in given bit repository collection which the audit trails are requested for
-              Given in order to be able to give possible estimate of time to deliver
-              </xs:documentation></xs:annotation>
-            </xs:element>
+
           </xs:sequence>
         </xs:extension>
       </xs:complexContent>
@@ -1397,26 +1392,7 @@
       <xs:complexContent>
         <xs:extension base="MessageResponse">
           <xs:sequence>
-            <xs:element ref="bre:Contributor">
-              <xs:annotation><xs:documentation xml:lang="en">
-              Type and unique identifier for contributor replying
-              </xs:documentation></xs:annotation>
-            </xs:element>
-    
-            <xs:element ref="bre:FileIDs" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en" >
-              FileID uniquely identifies the files in given bit repository collection which the audit trails are requested for
-              only to repeat parameter from request
-              </xs:documentation></xs:annotation>
-            </xs:element>
-    
-            <xs:element ref="bre:TimeToDeliver" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Estimated time before delivery of data requested
-              That means the time from receiving a GetAuditTrailsRequest message to the time
-              when data is delivered.
-              </xs:documentation></xs:annotation>
-            </xs:element>
+
           </xs:sequence>
           </xs:extension>
       </xs:complexContent>
@@ -1438,12 +1414,12 @@
               </xs:documentation></xs:annotation>
             </xs:element>
     
-            <xs:element ref="bre:FileIDs" >
+            <xs:element ref="bre:FileID" minOccurs="0">
               <xs:annotation><xs:documentation xml:lang="en">
-              FileID uniquely identifies the files in given bit repository collection which the audit trails are requested for
+              Can be used to limit the returned audit trails to the events for a single file.
               </xs:documentation></xs:annotation>
             </xs:element>
-            <xs:element ref="bre:MinSequenceNumber"  minOccurs="0" >
+            <xs:element ref="bre:MinSequenceNumber" minOccurs="0" >
               <xs:annotation><xs:documentation xml:lang="en">
                 Only audit trail events equal-to or larger than the minSequenceNumber should be returned.
               </xs:documentation></xs:annotation>
@@ -1490,14 +1466,7 @@
               (otherwise it is known via CorrelationID and ReplyTo)
               </xs:documentation></xs:annotation>
             </xs:element>
-    
-            <xs:element ref="bre:FileIDs" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              FileID uniquely identifies the files in given bit repository collection which the audit trails are requested for
-              (otherwise it is known via CorrelationID)
-              </xs:documentation></xs:annotation>
-            </xs:element>
-    
+
             <xs:element ref="bre:ResultAddress" minOccurs="0" maxOccurs="1" >
               <xs:annotation><xs:documentation xml:lang="en">
               Address (e.g. in form of an URL) for where data will be delivered
@@ -1524,15 +1493,8 @@
               (otherwise it is known via CorrelationID and ReplyTo)
               </xs:documentation></xs:annotation>
             </xs:element>
-    
-            <xs:element ref="bre:FileIDs" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              FileID uniquely identifies the files in given bit repository collection which the audit trails are requested for
-              (otherwise it is known via CorrelationID)
-              </xs:documentation></xs:annotation>
-            </xs:element>
-    
-            <xs:element ref="bre:ResultingAuditTrails" minOccurs="0" maxOccurs="1">
+
+            <xs:element ref="bre:ResultingAuditTrails" minOccurs="0" >
               <xs:annotation><xs:documentation xml:lang="en">
               Result with audit trails
               </xs:documentation></xs:annotation>
@@ -1542,7 +1504,6 @@
       </xs:complexContent>
     </xs:complexType>
   </xs:element>
-
 
   <!-- Implements the Alarm functionality as described here: https://sbforge.org/display/BITMAG/Alarms -->
 	

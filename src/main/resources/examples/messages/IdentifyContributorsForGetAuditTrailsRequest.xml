@@ -31,8 +31,6 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <CollectionID>MySla</CollectionID>
   <To>topic://collectionTopic</To>
   <ReplyTo>topic://clientTopic</ReplyTo>
+  <From>AuditTrailService</From>
   <AuditTrailInformation>User: Name, Institution: Place</AuditTrailInformation>
-  <FileIDs>
-  	<FileID>MyDataID</FileID>
-  </FileIDs>
 </bro:IdentifyContributorsForGetAuditTrailsRequest>

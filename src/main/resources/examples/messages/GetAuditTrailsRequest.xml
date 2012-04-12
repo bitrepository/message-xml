@@ -31,9 +31,8 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <CollectionID>MySla</CollectionID>
   <To>queue://pillarQueue</To>
   <ReplyTo>topic://clientTopic</ReplyTo>
+  <From>AuditTrailService</From>
   <AuditTrailInformation>User: Name, Institution: Place</AuditTrailInformation>
   <Contributor>MyPillar</Contributor>
-  <FileIDs>
-    <FileID>MyDataID</FileID>
-  </FileIDs>
+  <FileID>MyDataID</FileID>
 </bro:GetAuditTrailsRequest>
