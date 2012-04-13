@@ -9,7 +9,7 @@
 
   <groupId>org.bitrepository</groupId>
   <artifactId>bitrepository-message-xml</artifactId>
-  <version>14-SNAPSHOT</version>
+  <version>14</version>
 
   <name>Bitrepository message xml definitions</name>
   <description>Contains the definitions for the Bitrepository message content</description>
