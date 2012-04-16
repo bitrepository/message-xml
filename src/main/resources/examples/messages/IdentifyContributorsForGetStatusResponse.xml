@@ -31,6 +31,7 @@
   <CollectionID>MySla</CollectionID>
   <To>topic://collectionTopic</To>
   <ReplyTo>topic://clientTopic</ReplyTo>
+  <From>MyPillar</From>
   <ResponseInfo>
     <ResponseCode>IDENTIFICATION_POSITIVE</ResponseCode>
     <ResponseText>Ready to deliver status.</ResponseText>

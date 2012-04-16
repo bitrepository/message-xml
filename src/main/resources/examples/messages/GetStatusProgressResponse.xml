@@ -31,6 +31,7 @@
   <CollectionID>MySla</CollectionID>
   <To>topic://clientTopic</To>
   <ReplyTo>queue://pillarQueue</ReplyTo>
+  <From>MyPillar</From>
   <ResponseInfo>
     <ResponseCode>OPERATION_ACCEPTED_PROGRESS</ResponseCode>
     <ResponseText>Message request has been received and is expected to be met successfully</ResponseText>
