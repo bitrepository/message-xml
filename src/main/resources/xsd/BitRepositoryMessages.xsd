@@ -608,7 +608,7 @@
               </xs:documentation></xs:annotation>
             </xs:element>
     
-            <xs:element ref="bre:ChecksumDataForExistingFile">
+            <xs:element ref="bre:ChecksumDataForExistingFile" minOccurs="0" maxOccurs="1">
               <xs:annotation><xs:documentation xml:lang="en">
               Checksums (and type and possibly salt) of file to be deleted.
               This should be used in checks on pillar to ensure the correct file is deleted.
@@ -776,7 +776,7 @@
               </xs:documentation></xs:annotation>
             </xs:element>
     
-            <xs:element ref="bre:ChecksumDataForExistingFile">
+            <xs:element ref="bre:ChecksumDataForExistingFile" minOccurs="0" maxOccurs="1">
               <xs:annotation><xs:documentation xml:lang="en">
               Checksums (and type and possibly salt) of file to be replaced; that is the _old_ file.
               This should be used in checks on pillar to ensure the correct file is deleted.

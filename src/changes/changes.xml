@@ -26,6 +26,7 @@
     <title>Bit Repository Message XML change notes</title>
   </properties>
   <body>
+    <release version="17" date="2012-06-XX" description="Make checksums in descructive requests mandatory"></release>
     <release version="15" date="2012-04-XX" description="Make From element mandatory"></release>
     <release version="14" date="2012-04-XX" description="Refactoring of GetStatus and GetAuditTrails">
       <action dev="Mikis" type="add">
