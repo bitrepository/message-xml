@@ -1044,7 +1044,7 @@
               </xs:documentation></xs:annotation>
             </xs:element>
     
-            <xs:element ref="bre:FileIDs" >
+            <xs:element ref="bre:FileIDs" minOccurs="0" maxOccurs="1">
               <xs:annotation><xs:documentation xml:lang="en">
               FileIDs uniquely identifies the files in given bit repository collection which the checksums are requested for
               </xs:documentation></xs:annotation>
