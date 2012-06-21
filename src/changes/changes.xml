@@ -26,7 +26,13 @@
     <title>Bit Repository Message XML change notes</title>
   </properties>
   <body>
-    <release version="18" date="2012-XX-XX" description=""></release>
+    <release version="18" date="2012-XX-XX" description="">
+      <action dev="Kim" type="add" issue="BITMAG-605">
+        Add optional ChecksumDataForExistingFile element to IdentifyPillarsForPutFileResponse and 
+        PutFileResponse for use in the case that a file with the fileID attempting to be put already 
+        exists in the system.   
+      </action>
+    </release>
     <release version="17" date="2012-06-08" description="Make checksums in descructive requests mandatory"></release>
     <action dev="Kim" type="update" issue="BITMAG-429">
       Checksums are now optional for destructive requests for existing files.

@@ -370,6 +370,13 @@
             It is only informative for possible later checks
             </xs:documentation></xs:annotation>
           </xs:element>
+          
+          <xs:element ref="bre:ChecksumDataForExistingFile" minOccurs="0" maxOccurs="1">
+            <xs:annotation><xs:documentation xml:lang="en">
+              Checksum for the file in case the pillar already has the file requested for a put
+              on store. 
+            </xs:documentation></xs:annotation>
+          </xs:element>
   
           <xs:element ref="bre:TimeToDeliver" minOccurs="0" maxOccurs="1" >
             <xs:annotation><xs:documentation xml:lang="en">
@@ -514,6 +521,13 @@
           <xs:element ref="bre:ChecksumDataForNewFile" minOccurs="0" maxOccurs="1">
             <xs:annotation><xs:documentation xml:lang="en">
             Checksum calculated as specified in PutFileRequest, if specified
+            </xs:documentation></xs:annotation>
+          </xs:element>
+          
+          <xs:element ref="bre:ChecksumDataForExistingFile" minOccurs="0" maxOccurs="1">
+            <xs:annotation><xs:documentation xml:lang="en">
+              Checksum for the file in case the pillar already has the file requested for a put
+              on store.
             </xs:documentation></xs:annotation>
           </xs:element>
         </xs:sequence>
