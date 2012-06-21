@@ -373,8 +373,7 @@
           
           <xs:element ref="bre:ChecksumDataForExistingFile" minOccurs="0" maxOccurs="1">
             <xs:annotation><xs:documentation xml:lang="en">
-              Checksum for the file in case the pillar already has the file requested for a put
-              on store. 
+              Checksum for the file in case a file with the supplied fileID already exists in the pillar.
             </xs:documentation></xs:annotation>
           </xs:element>
   
