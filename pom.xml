@@ -86,6 +86,21 @@
           </extraExtensions>
         </configuration>
       </plugin>
+      <!-- Used for extracting the major version minus snapshot as ${parsedVersion.majorVersion}
+      to use as protocol version (which is of type positiveinteger)-->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <version>1.7</version>
+        <executions>
+          <execution>
+            <id>parse-version</id>
+            <goals>
+              <goal>parse-version</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
   </build>
   <scm>
