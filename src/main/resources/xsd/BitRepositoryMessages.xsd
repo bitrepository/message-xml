@@ -911,7 +911,9 @@
   
          <xs:element ref="bre:ChecksumDataForExistingFile" minOccurs="0" maxOccurs="1">
             <xs:annotation><xs:documentation xml:lang="en">
-            Checksum of replaced file calculated as specified in ReplaceFileRequest, if specified
+            Checksum of replaced file calculated as specified in ReplaceFileRequest, if specified. 
+            Or in the case that the operation fails due to the checksum of the existing file does not match, 
+            include the checksum for the file on disk. 
             </xs:documentation></xs:annotation>
           </xs:element>
    
