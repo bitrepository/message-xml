@@ -26,6 +26,14 @@
     <title>Bit Repository Message XML change notes</title>
   </properties>
   <body>
+    <release version="19" date="2012-08-01" description="Update for versioning support">
+      <action dev="Kim" type="Update">
+        Updated a bit of documentation in relation to ReplaceFileFinalResponse
+      </action>
+      <action dev="Kim" type="Update">
+        Update of packaging, so that versioning related stuff is included    
+      </action>
+    </release>
     <release version="18" date="2012-XX-XX" description="">
       <action dev="Kim" type="add" issue="BITMAG-605">
         Add optional ChecksumDataForExistingFile element to IdentifyPillarsForPutFileResponse and 
