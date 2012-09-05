@@ -366,8 +366,8 @@
   
           <xs:element ref="bre:PillarChecksumSpec" minOccurs="0" maxOccurs="1" >
             <xs:annotation><xs:documentation xml:lang="en">
-            Checksums type in case it is a checksum pillar replying
-            It is only informative for possible later checks
+            Checksums type supported by the pillar. This is used in case it is a checksum pillar replying, informing
+              the requestor that the pillar will not be able to provide calculate non-default checksums to return.
             </xs:documentation></xs:annotation>
           </xs:element>
           
