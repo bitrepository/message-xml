@@ -26,6 +26,11 @@
     <title>Bit Repository Message XML change notes</title>
   </properties>
   <body>
+    <release version="20" date="2012-09-04" description="Minor extension to the AlarmCode">
+      <action dev="JOLF" type="add" issue="BITMAG-702">
+        Added the 'INTEGRITY_ISSUE' AlarmCode to the protocol.
+      </action>
+    </release>
     <release version="19" date="2012-08-01" description="Update for versioning support">
       <action dev="Kim" type="Update">
         Updated a bit of documentation in relation to ReplaceFileFinalResponse

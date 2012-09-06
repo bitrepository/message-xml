@@ -722,6 +722,11 @@
         Timeout, a timeout has occured.  
         </xs:documentation></xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="INTEGRITY_ISSUE">
+        <xs:annotation><xs:documentation xml:lang="en">
+          If the integrity service discovers an issue with the integrity of the data across the pillars.
+        </xs:documentation></xs:annotation>
+    </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
 
