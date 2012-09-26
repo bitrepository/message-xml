@@ -26,17 +26,17 @@
 
 <!-- URLs in schema targetNamespace must be updated later -->
 <xs:schema
-  targetNamespace="http://bitrepository.org/BitRepositoryElements.xsd"
-  elementFormDefault="qualified"
-  attributeFormDefault="unqualified"
+    targetNamespace="http://bitrepository.org/BitRepositoryElements.xsd"
+    elementFormDefault="qualified"
+    attributeFormDefault="unqualified"
 
-  xmlns="http://bitrepository.org/BitRepositoryElements.xsd"
-  xmlns:xs="http://www.w3.org/2001/XMLSchema"
->
+    xmlns="http://bitrepository.org/BitRepositoryElements.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    >
 
-<!-- ************************************************************** -->
-<!-- ****** USED ELEMENTS AND GROUPS IN ALPHABETIC ORDER     ****** -->
-<!-- ************************************************************** -->
+  <!-- ************************************************************** -->
+  <!-- ****** USED ELEMENTS AND GROUPS IN ALPHABETIC ORDER     ****** -->
+  <!-- ************************************************************** -->
 
   <xs:element name="Alarm">
     <xs:annotation><xs:documentation xml:lang="en">
@@ -55,10 +55,10 @@
             Global alarm code for the system which describes alarm type.
           </xs:documentation></xs:annotation>
         </xs:element>
-        
+
         <xs:element name="AlarmRaiser" type="ComponentID" >
           <xs:annotation><xs:documentation xml:lang="en">
-          Component responsible for raising an alarm
+            Component responsible for raising an alarm
           </xs:documentation></xs:annotation>
         </xs:element>
 
@@ -69,13 +69,13 @@
             and possible notifications
           </xs:documentation></xs:annotation>
         </xs:element>
-        
+
         <xs:element ref="FileID"  minOccurs="0" maxOccurs="1">
           <xs:annotation><xs:documentation xml:lang="en">
-            Indicates which file this alarm concerns (if any). 
+            Indicates which file this alarm concerns (if any).
           </xs:documentation></xs:annotation>
         </xs:element>
-        
+
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -91,68 +91,68 @@
     </xs:complexType>
   </xs:element>
 
-    <xs:element name="AuditTrailEvent">
+  <xs:element name="AuditTrailEvent">
     <xs:annotation><xs:documentation xml:lang="en">
-    Data format for elements in an audit trail for a FileID
+      Data format for elements in an audit trail for a FileID
     </xs:documentation></xs:annotation>
     <xs:complexType>
-    <xs:sequence>
-      <xs:element name="SequenceNumber" type="xs:positiveInteger">
-        <xs:annotation><xs:documentation xml:lang="en">
-        A sequence number uniquely identifying the audit trail entry inside of a component. 
-        Sequence numbers indicates the entries sequence in time, eg. event 4 occurred before event 5. 
-        Note that numbering may not be continuous, eg. there might be holes in the sequence.
-        The first audit trail event should be number 1.
-        </xs:documentation></xs:annotation>
-      </xs:element>
-        
-      <xs:element name="FileID" type="FileID_TYPE">
-        <xs:annotation><xs:documentation xml:lang="en">
-        FileID for object which the audit trail concern
-        </xs:documentation></xs:annotation>
-      </xs:element>
+      <xs:sequence>
+        <xs:element name="SequenceNumber" type="xs:positiveInteger">
+          <xs:annotation><xs:documentation xml:lang="en">
+            A sequence number uniquely identifying the audit trail entry inside of a component.
+            Sequence numbers indicates the entries sequence in time, eg. event 4 occurred before event 5.
+            Note that numbering may not be continuous, eg. there might be holes in the sequence.
+            The first audit trail event should be number 1.
+          </xs:documentation></xs:annotation>
+        </xs:element>
 
-      <xs:element name="ReportingComponent" type="ComponentID">
-        <xs:annotation><xs:documentation xml:lang="en">
-        Component of the bit repository which initiated audit trail entry on FileId object.
-        For example client, pillar or coordination layer
-        </xs:documentation></xs:annotation>
-      </xs:element>
+        <xs:element name="FileID" type="FileID_TYPE">
+          <xs:annotation><xs:documentation xml:lang="en">
+            FileID for object which the audit trail concern
+          </xs:documentation></xs:annotation>
+        </xs:element>
 
-      <xs:element name="ActorOnFile" type="ActorID" >
-        <xs:annotation><xs:documentation xml:lang="en">
-        Actor who performed the specified action on FileId object.
-        For example specific user or specific process
-        </xs:documentation></xs:annotation>
-      </xs:element>
+        <xs:element name="ReportingComponent" type="ComponentID">
+          <xs:annotation><xs:documentation xml:lang="en">
+            Component of the bit repository which initiated audit trail entry on FileId object.
+            For example client, pillar or coordination layer
+          </xs:documentation></xs:annotation>
+        </xs:element>
 
-      <xs:element name="ActionOnFile" type="FileAction">
-        <xs:annotation><xs:documentation xml:lang="en">
-        Action performed on a File.
-        </xs:documentation></xs:annotation>
-      </xs:element>
+        <xs:element name="ActorOnFile" type="ActorID" >
+          <xs:annotation><xs:documentation xml:lang="en">
+            Actor who performed the specified action on FileId object.
+            For example specific user or specific process
+          </xs:documentation></xs:annotation>
+        </xs:element>
 
-      <xs:element name="ActionDateTime" type="SystemDateTime_TYPE">
-        <xs:annotation><xs:documentation xml:lang="en">
-        Date and time for when action took place
-        </xs:documentation></xs:annotation>
-      </xs:element>
-      
-      <xs:element name="Info" type="xs:string" minOccurs="0" maxOccurs="1">
-        <xs:annotation> <xs:documentation xml:lang="en">
-          Human readable description of the event.  
-        </xs:documentation></xs:annotation>
-      </xs:element>
-      
-      <xs:element ref="AuditTrailInformation" minOccurs="0" maxOccurs="1">
-        <xs:annotation> <xs:documentation xml:lang="en">
-          Information from the actor that caused the event.  
-        </xs:documentation></xs:annotation>
-      </xs:element>
-    </xs:sequence>
+        <xs:element name="ActionOnFile" type="FileAction">
+          <xs:annotation><xs:documentation xml:lang="en">
+            Action performed on a File.
+          </xs:documentation></xs:annotation>
+        </xs:element>
+
+        <xs:element name="ActionDateTime" type="SystemDateTime_TYPE">
+          <xs:annotation><xs:documentation xml:lang="en">
+            Date and time for when action took place
+          </xs:documentation></xs:annotation>
+        </xs:element>
+
+        <xs:element name="Info" type="xs:string" minOccurs="0" maxOccurs="1">
+          <xs:annotation> <xs:documentation xml:lang="en">
+            Human readable description of the event.
+          </xs:documentation></xs:annotation>
+        </xs:element>
+
+        <xs:element ref="AuditTrailInformation" minOccurs="0" maxOccurs="1">
+          <xs:annotation> <xs:documentation xml:lang="en">
+            Information from the actor that caused the event.
+          </xs:documentation></xs:annotation>
+        </xs:element>
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
-  
+
   <xs:element name="ChecksumDataForExistingFile" type="ChecksumDataForFile_TYPE">
     <xs:annotation>
       <xs:documentation xml:lang="en">
@@ -168,7 +168,7 @@
       </xs:documentation>
     </xs:annotation>
   </xs:element>
-  
+
   <xs:element name="ChecksumRequestForExistingFile" type="ChecksumSpec_TYPE">
     <xs:annotation>
       <xs:documentation xml:lang="en">
@@ -184,28 +184,28 @@
       </xs:documentation>
     </xs:annotation>
   </xs:element>
-  
+
   <xs:element name="Contributor" type="ComponentID" >
     <xs:annotation><xs:documentation xml:lang="en">
-    Contributor to audit trails
+      Contributor to audit trails
     </xs:documentation></xs:annotation>
   </xs:element>
 
   <xs:element name="CorrelationID" type="CorrelationID_TYPE">
-  <xs:annotation>
-    <xs:documentation xml:lang="en">
-      CorrelationID is a unique identifier for communication usually on primitive level,
-      e.g the IdentifyPillarsForGet part of a get operation.
-    </xs:documentation>
-  </xs:annotation>
-</xs:element>
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        CorrelationID is a unique identifier for communication usually on primitive level,
+        e.g the IdentifyPillarsForGet part of a get operation.
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
 
   <xs:element name="CollectionID" type="CollectionID_TYPE">
     <xs:annotation>
       <xs:documentation xml:lang="en">
         CollectionID is a unique identifier for bit repository collection which data belongs to.
         This is also the identification of decryption and keys for contents of message, and it is part of unique
-         identification of files together with a file id.
+        identification of files together with a file id.
       </xs:documentation>
     </xs:annotation>
   </xs:element>
@@ -242,36 +242,36 @@
       </xs:documentation>
     </xs:annotation>
   </xs:element>
-  
+
   <xs:element name="FileAddress" type="Address_TYPE">
     <xs:annotation><xs:documentation xml:lang="en">
-    Address (e.g. in form of an URL) for where a file can be found
+      Address (e.g. in form of an URL) for where a file can be found
     </xs:documentation></xs:annotation>
   </xs:element>
 
   <xs:element name="FileID" type="FileID_TYPE">
     <xs:annotation><xs:documentation xml:lang="en">
-    Unique identifier for a file in a collection
+      Unique identifier for a file in a collection
     </xs:documentation></xs:annotation>
   </xs:element>
 
   <xs:element name="FileIDs">
     <xs:annotation><xs:documentation xml:lang="en">
-    Identifiers that uniquely identifies the data in given bit repository collection which are requested for
-    These can be specified in different ways, e.g. a list, an all constant or via an address
+      Identifiers that uniquely identifies the data in given bit repository collection which are requested for
+      These can be specified in different ways, e.g. a list, an all constant or via an address
     </xs:documentation></xs:annotation>
 
     <xs:complexType>
       <xs:choice>
         <xs:element name="FileID" type="FileID_TYPE" minOccurs="1" maxOccurs="1" >
           <xs:annotation><xs:documentation xml:lang="en">
-          List of file identifiers
+            List of file identifiers
           </xs:documentation></xs:annotation>
         </xs:element>
 
         <xs:element name="AllFileIDs">
           <xs:annotation><xs:documentation xml:lang="en">
-          Specification that all data identifiers in the collection is requested
+            Specification that all data identifiers in the collection is requested
           </xs:documentation></xs:annotation>
         </xs:element>
 
@@ -282,14 +282,14 @@
 
   <xs:element name="FileIDsData">
     <xs:annotation><xs:documentation xml:lang="en">
-    Includes relevant information on data IDs in a result
+      Includes relevant information on data IDs in a result
     </xs:documentation></xs:annotation>
     <xs:complexType>
       <xs:sequence>
 
         <xs:element name="FileIDsDataItems" >
           <xs:annotation><xs:documentation xml:lang="en" >
-          List of data on data identifiers in result
+            List of data on data identifiers in result
           </xs:documentation></xs:annotation>
           <xs:complexType>
             <xs:sequence>
@@ -303,25 +303,25 @@
 
   <xs:element name="FileIDsDataItem">
     <xs:annotation><xs:documentation xml:lang="en">
-    Includes relevant information on a data ID in a result
+      Includes relevant information on a data ID in a result
     </xs:documentation></xs:annotation>
     <xs:complexType>
       <xs:sequence>
         <xs:element name="FileID" type="FileID_TYPE">
           <xs:annotation><xs:documentation xml:lang="en">
-          Identifier of data
+            Identifier of data
           </xs:documentation></xs:annotation>
         </xs:element>
 
         <xs:element name="LastModificationTime" type="SystemDateTime_TYPE">
           <xs:annotation><xs:documentation xml:lang="en">
-            The earliest time which the pillar had the whole file. 
+            The earliest time which the pillar had the whole file.
           </xs:documentation></xs:annotation>
         </xs:element>
-        
+
         <xs:element ref="FileSize" minOccurs="0" maxOccurs="1">
           <xs:annotation><xs:documentation xml:lang="en">
-            The filesize in bytes. 
+            The filesize in bytes.
           </xs:documentation></xs:annotation>
         </xs:element>
       </xs:sequence>
@@ -330,14 +330,14 @@
 
   <xs:element name="FileIDsParameterData">
     <xs:annotation><xs:documentation xml:lang="en">
-    Includes information on data IDs use in parameter
+      Includes information on data IDs use in parameter
     </xs:documentation></xs:annotation>
     <xs:complexType>
       <xs:sequence>
 
         <xs:element name="FileIDsItems" >
           <xs:annotation><xs:documentation xml:lang="en" >
-          List of file identifiers
+            List of file identifiers
           </xs:documentation></xs:annotation>
           <xs:complexType>
             <xs:sequence>
@@ -351,19 +351,19 @@
 
   <xs:element name="FilePart" >
     <xs:annotation><xs:documentation xml:lang="en">
-    Specification of data object part by posion and length after position
+      Specification of data object part by posion and length after position
     </xs:documentation></xs:annotation>
     <xs:complexType>
       <xs:sequence>
         <xs:element name="PartOffSet" type="xs:nonNegativeInteger">
           <xs:annotation><xs:documentation xml:lang="en">
-          Start position of the part of the data object
+            Start position of the part of the data object
           </xs:documentation></xs:annotation>
         </xs:element>
 
         <xs:element name="PartLength" type="xs:nonNegativeInteger">
           <xs:annotation><xs:documentation xml:lang="en">
-          length of the part of the data object
+            length of the part of the data object
           </xs:documentation></xs:annotation>
         </xs:element>
       </xs:sequence>
@@ -372,30 +372,30 @@
 
   <xs:element name="FileSize" type="xs:nonNegativeInteger">
     <xs:annotation><xs:documentation xml:lang="en">
-    The size of data expressed in number of bytes
-    e.g. size of data to be put
-    The type can later be extended to include measure type and measure
+      The size of data expressed in number of bytes
+      e.g. size of data to be put
+      The type can later be extended to include measure type and measure
     </xs:documentation></xs:annotation>
   </xs:element>
 
   <xs:element name="ParameterAddress" type="Address_TYPE">
     <xs:annotation><xs:documentation xml:lang="en">
-    Address where parameter can be found
+      Address where parameter can be found
     </xs:documentation></xs:annotation>
   </xs:element>
 
   <xs:element name="PillarChecksumSpec" type="ChecksumSpec_TYPE">
     <xs:annotation><xs:documentation xml:lang="en">
-    Information about which type of checksum is used for data on checksums pillar (algorith and possible salt)
-    In a Get this information will only be relevant for identification of pillars
-    In a Put this will give input to check if the right put is performed on checksums pillar according to bit repository collection
-    In first version this will be text like MD5, later it will be aligned with a standard
+      Information about which type of checksum is used for data on checksums pillar (algorith and possible salt)
+      In a Get this information will only be relevant for identification of pillars
+      In a Put this will give input to check if the right put is performed on checksums pillar according to bit repository collection
+      In first version this will be text like MD5, later it will be aligned with a standard
     </xs:documentation></xs:annotation>
   </xs:element>
 
   <xs:element name="PillarID" type="PillarID_TYPE">
     <xs:annotation><xs:documentation xml:lang="en">
-    A unique identifier for a specific pillar (covered by the bit repository collection which data belongs to)
+      A unique identifier for a specific pillar (covered by the bit repository collection which data belongs to)
     </xs:documentation></xs:annotation>
   </xs:element>
 
@@ -426,7 +426,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  
+
   <xs:element name="StatusInfo">
     <xs:annotation>
       <xs:documentation xml:lang="en">
@@ -457,25 +457,25 @@
 
   <xs:element name="ResultAddress" type="Address_TYPE">
     <xs:annotation><xs:documentation xml:lang="en">
-    Address (e.g. in form of an URL) for where result data can be found
+      Address (e.g. in form of an URL) for where result data can be found
     </xs:documentation></xs:annotation>
   </xs:element>
 
   <xs:element name="ResultingAuditTrails">
     <xs:annotation><xs:documentation xml:lang="en">
-    result is either given via specified address or directly
+      result is either given via specified address or directly
     </xs:documentation></xs:annotation>
     <xs:complexType>
       <xs:choice>
         <xs:element ref="ResultAddress" >
           <xs:annotation><xs:documentation xml:lang="en">
-          Address (e.g. in form of an URL) for where result data has been delivered (if completed)
+            Address (e.g. in form of an URL) for where result data has been delivered (if completed)
           </xs:documentation></xs:annotation>
         </xs:element>
 
         <xs:element ref="AuditTrailEvents">
           <xs:annotation><xs:documentation xml:lang="en">
-          Audit trail data in result, if given in this message instead of via data transfer
+            Audit trail data in result, if given in this message instead of via data transfer
           </xs:documentation></xs:annotation>
         </xs:element>
       </xs:choice>
@@ -484,25 +484,25 @@
 
   <xs:element name="ChecksumDataItems" type="ChecksumDataForChecksumSpec_TYPE">
     <xs:annotation><xs:documentation xml:lang="en">
-    Container for data from checksum calculations
+      Container for data from checksum calculations
     </xs:documentation></xs:annotation>
   </xs:element>
 
   <xs:element name="ResultingChecksums">
     <xs:annotation><xs:documentation xml:lang="en">
-    result is either given via specified address or directly
+      result is either given via specified address or directly
     </xs:documentation></xs:annotation>
     <xs:complexType>
       <xs:choice>
         <xs:element ref="ResultAddress" minOccurs="0" maxOccurs="1" >
           <xs:annotation><xs:documentation xml:lang="en">
-          Address (e.g. in form of an URL) for where result data has been delivered (if completed)
+            Address (e.g. in form of an URL) for where result data has been delivered (if completed)
           </xs:documentation></xs:annotation>
         </xs:element>
 
         <xs:element ref="ChecksumDataItems" minOccurs="0" maxOccurs="unbounded">
           <xs:annotation><xs:documentation xml:lang="en">
-          List of data for checksums
+            List of data for checksums
           </xs:documentation></xs:annotation>
         </xs:element>
       </xs:choice>
@@ -511,19 +511,19 @@
 
   <xs:element name="ResultingFileIDs">
     <xs:annotation><xs:documentation xml:lang="en">
-    result is either given via specified address or directly
+      result is either given via specified address or directly
     </xs:documentation></xs:annotation>
     <xs:complexType>
       <xs:choice>
         <xs:element ref="ResultAddress" minOccurs="0" maxOccurs="1" >
           <xs:annotation><xs:documentation xml:lang="en">
-          Address (e.g. in form of an URL) for where result data has been delivered (if completed)
+            Address (e.g. in form of an URL) for where result data has been delivered (if completed)
           </xs:documentation></xs:annotation>
         </xs:element>
 
         <xs:element ref="FileIDsData">
           <xs:annotation><xs:documentation xml:lang="en">
-          List of data for file ids in result, if given in this message instead of via data transfer
+            List of data for file ids in result, if given in this message instead of via data transfer
           </xs:documentation></xs:annotation>
         </xs:element>
       </xs:choice>
@@ -532,7 +532,7 @@
 
   <xs:element name="ResultingStatus">
     <xs:annotation><xs:documentation xml:lang="en">
-    result is either given via specified address or directly
+      result is either given via specified address or directly
     </xs:documentation></xs:annotation>
     <xs:complexType>
       <xs:sequence>
@@ -545,227 +545,226 @@
           <xs:annotation><xs:documentation xml:lang="en">
             The time when the status was calculated
           </xs:documentation></xs:annotation>
-      </xs:element>
+        </xs:element>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
 
   <xs:element name="TimeToDeliver" type="TimeMeasure_TYPE">
     <xs:annotation><xs:documentation xml:lang="en">
-    The estimated time before data delivery can start. This includes file upload/download and result upload to the
-    file exchange server.
-    In a Put this will be the estimated time before a pillar will start to download the files from the file 
-    exchange server.
+      The estimated time before data delivery can start. This includes file upload/download and result upload to the
+      file exchange server.
+      In a Put this will be the estimated time before a pillar will start to download the files from the file
+      exchange server.
     </xs:documentation></xs:annotation>
   </xs:element>
 
   <xs:attributeGroup name="VersionAttributes">
     <xs:annotation><xs:documentation xml:lang="en">
-    Attributes with information of message version for version control
+      Attributes with information of message version for version control
     </xs:documentation></xs:annotation>
     <xs:attribute name="version" type="xs:positiveInteger" use="required" />
     <xs:attribute name="minVersion" type="xs:nonNegativeInteger" use="required" />
   </xs:attributeGroup>
 
-<!-- ************************************************************** -->
-<!-- ****** USED TYPES IN ALPHABETIC ORDER                   ****** -->
-<!-- ************************************************************** -->
+  <!-- ************************************************************** -->
+  <!-- ****** USED TYPES IN ALPHABETIC ORDER                   ****** -->
+  <!-- ************************************************************** -->
 
   <xs:simpleType name="ActorID">
     <xs:annotation><xs:documentation xml:lang="en">
-        Identifies a actor performing a function in the system. The actor can be identified by 
-        a certificate ID, componentID or just free text.
-      </xs:documentation>  </xs:annotation>
+      Identifies a actor performing a function in the system. The actor can be identified by
+      a certificate ID, componentID or just free text.
+    </xs:documentation>  </xs:annotation>
     <xs:restriction base="xs:string" />
   </xs:simpleType>
-  
+
   <xs:simpleType name="ComponentID">
     <xs:annotation><xs:documentation xml:lang="en">
-        Identifies a actor performing a function in the system. The actor can be identified by 
-        a certificate ID, componentID or just free text.
-      </xs:documentation>  </xs:annotation>
+      Identifies a actor performing a function in the system. The actor can be identified by
+      a certificate ID, componentID or just free text.
+    </xs:documentation>  </xs:annotation>
     <xs:restriction base="xs:string" />
   </xs:simpleType>
 
   <xs:simpleType name="FileAction">
-  <xs:restriction base="xs:string">
-  
-    <!-- Normal protocol operations -->
-    <xs:enumeration value="GET_FILE" >
-      <xs:annotation><xs:documentation xml:lang="en">
-        A get file operation has been performed on the file.
-      </xs:documentation></xs:annotation>
-    </xs:enumeration>
-    <xs:enumeration value="PUT_FILE">
-      <xs:annotation><xs:documentation xml:lang="en">
-        A put file operation has been performed on the file.
-      </xs:documentation></xs:annotation>
-    </xs:enumeration>
-    <xs:enumeration value="DELETE_FILE">
-      <xs:annotation><xs:documentation xml:lang="en">
-        A delete file operation has been performed on the file.
-      </xs:documentation></xs:annotation>
-    </xs:enumeration>
-    <xs:enumeration value="REPLACE_FILE">
-      <xs:annotation><xs:documentation xml:lang="en">
-        A replace file operation has been performed on the file.
-      </xs:documentation></xs:annotation>
-    </xs:enumeration>
-    <xs:enumeration value="GET_CHECKSUMS">
-      <xs:annotation><xs:documentation xml:lang="en">
-        A getChecksums operation has been performed on the file.
-      </xs:documentation></xs:annotation>
-    </xs:enumeration>
-    <xs:enumeration value="GET_FILEID">
-      <xs:annotation><xs:documentation xml:lang="en">
-        A getFileID file operation has been performed on the file.
-      </xs:documentation></xs:annotation>
-    </xs:enumeration>   
-    
-    <!-- Indirect pillar actions -->
-    <xs:enumeration value="CHECKSUM_CALCULATED">
-      <xs:annotation><xs:documentation xml:lang="en">
-        A checksum (re)calculation has been made for the file.
-      </xs:documentation></xs:annotation>
-    </xs:enumeration>
-    <xs:enumeration value="FILE_MOVED">
-      <xs:annotation><xs:documentation xml:lang="en">
-        File has been move on the physical media or has been moved between medias, eg. from a disk to dvd/tape. . 
-      </xs:documentation></xs:annotation>
-    </xs:enumeration>  
-    
-    <!-- Integrity related actions -->
-    <xs:enumeration value="INTEGRITY_CHECK">
-      <xs:annotation><xs:documentation xml:lang="en">
-        An integrity check was performed on a file. 
-      </xs:documentation></xs:annotation>
-    </xs:enumeration>
-    <xs:enumeration value="INCONSISTENCY">
-      <xs:annotation><xs:documentation xml:lang="en">
-        A inconsistency was found, f.ex. checksum - file mismatch. 
-        Can be used by both the pillars and the integrity checker.
-      </xs:documentation></xs:annotation>
-    </xs:enumeration>
-    
-    <!-- The rest -->
-    <xs:enumeration value="FAILURE">
-      <xs:annotation><xs:documentation xml:lang="en">
-        A general problem occured in connection with a file.
-      </xs:documentation></xs:annotation>
-    </xs:enumeration>
-    <xs:enumeration value="OTHER">
-      <xs:annotation><xs:documentation xml:lang="en">
-        General action not covered by the previous fields.
-      </xs:documentation></xs:annotation>
-    </xs:enumeration>
-   </xs:restriction>
+    <xs:restriction base="xs:string">
+
+      <!-- Normal protocol operations -->
+      <xs:enumeration value="GET_FILE" >
+        <xs:annotation><xs:documentation xml:lang="en">
+          A get file operation has been performed on the file.
+        </xs:documentation></xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PUT_FILE">
+        <xs:annotation><xs:documentation xml:lang="en">
+          A put file operation has been performed on the file.
+        </xs:documentation></xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DELETE_FILE">
+        <xs:annotation><xs:documentation xml:lang="en">
+          A delete file operation has been performed on the file.
+        </xs:documentation></xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="REPLACE_FILE">
+        <xs:annotation><xs:documentation xml:lang="en">
+          A replace file operation has been performed on the file.
+        </xs:documentation></xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GET_CHECKSUMS">
+        <xs:annotation><xs:documentation xml:lang="en">
+          A getChecksums operation has been performed on the file.
+        </xs:documentation></xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GET_FILEID">
+        <xs:annotation><xs:documentation xml:lang="en">
+          A getFileID file operation has been performed on the file.
+        </xs:documentation></xs:annotation>
+      </xs:enumeration>
+
+      <!-- Indirect pillar actions -->
+      <xs:enumeration value="CHECKSUM_CALCULATED">
+        <xs:annotation><xs:documentation xml:lang="en">
+          A checksum (re)calculation has been made for the file.
+        </xs:documentation></xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FILE_MOVED">
+        <xs:annotation><xs:documentation xml:lang="en">
+          File has been move on the physical media or has been moved between medias, eg. from a disk to dvd/tape. .
+        </xs:documentation></xs:annotation>
+      </xs:enumeration>
+
+      <!-- Integrity related actions -->
+      <xs:enumeration value="INTEGRITY_CHECK">
+        <xs:annotation><xs:documentation xml:lang="en">
+          An integrity check was performed on a file.
+        </xs:documentation></xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="INCONSISTENCY">
+        <xs:annotation><xs:documentation xml:lang="en">
+          A inconsistency was found, f.ex. checksum - file mismatch.
+          Can be used by both the pillars and the integrity checker.
+        </xs:documentation></xs:annotation>
+      </xs:enumeration>
+
+      <!-- The rest -->
+      <xs:enumeration value="FAILURE">
+        <xs:annotation><xs:documentation xml:lang="en">
+          A general problem occured in connection with a file.
+        </xs:documentation></xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OTHER">
+        <xs:annotation><xs:documentation xml:lang="en">
+          General action not covered by the previous fields.
+        </xs:documentation></xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
   </xs:simpleType>
 
   <xs:simpleType name="ActorID_TYPE">
     <xs:annotation><xs:documentation xml:lang="en">
-    Unique identifiers for an actor doing actions in the Bit Repository
+      Unique identifiers for an actor doing actions in the Bit Repository
     </xs:documentation></xs:annotation>
     <xs:restriction base="xs:string"/>
   </xs:simpleType>
 
   <xs:simpleType name="Address_TYPE">
     <xs:annotation><xs:documentation xml:lang="en">
-    Address for where data files can be found or placed
+      Address for where data files can be found or placed
     </xs:documentation></xs:annotation>
     <xs:restriction base="xs:string"/>
   </xs:simpleType>
 
   <xs:simpleType name="AlarmCode">
     <xs:annotation><xs:documentation xml:lang="en">
-    Error codes that are specific for Alarm messages
+      Error codes that are specific for Alarm messages
     </xs:documentation></xs:annotation>
     <xs:restriction base="xs:string">
       <xs:enumeration value="COMPONENT_FAILURE">
         <xs:annotation><xs:documentation xml:lang="en">
-        Component failure, something fatal or irrecoverable has happened. 
-        Code error, segmentation fault, missing backend etc. 
+          Component failure, something fatal or irrecoverable has happened.
+          Code error, segmentation fault, missing backend etc.
         </xs:documentation></xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="INCONSISTENT_REQUEST">
         <xs:annotation><xs:documentation xml:lang="en">
-        Inconsistent request, the request is inconsistent with the file state in the pillar.
-        E.g.a is user trying to get a file that does not exist, or put a file with an ID already on store. 
+          Inconsistent request, the request is inconsistent with the file state in the pillar.
+          E.g.a is user trying to get a file that does not exist, or put a file with an ID already on store.
         </xs:documentation></xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="CHECKSUM_ALARM">
         <xs:annotation><xs:documentation xml:lang="en">
-        Checksum alarm, Problems with a checksum. 
+          Checksum alarm, Problems with a checksum.
         </xs:documentation></xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="FAILED_TRANSFER">
         <xs:annotation><xs:documentation xml:lang="en">
-        Failed transfer, file up or download failed. 
+          Failed transfer, file up or download failed.
         </xs:documentation></xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="FAILED_OPERATION">
         <xs:annotation><xs:documentation xml:lang="en">
-        Failed operation, a non-critical operation failuire.  
+          Failed operation, a non-critical operation failuire.
         </xs:documentation></xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="INVALID_MESSAGE">
         <xs:annotation><xs:documentation xml:lang="en">
-        Invalid message, a component has received an invalid message.  
+          Invalid message, a component has received an invalid message.
         </xs:documentation></xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="INVALID_MESSAGE_VERSION">
         <xs:annotation><xs:documentation xml:lang="en">
-        Invalid message version, a component has received a message of an invalid version. 
+          Invalid message version, a component has received a message of an invalid version.
         </xs:documentation></xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="TIMEOUT">
         <xs:annotation><xs:documentation xml:lang="en">
-        Timeout, a timeout has occured.  
+          Timeout, a timeout has occured.
         </xs:documentation></xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="INTEGRITY_ISSUE">
         <xs:annotation><xs:documentation xml:lang="en">
           If the integrity service discovers an issue with the integrity of the data across the pillars.
         </xs:documentation></xs:annotation>
-    </xs:enumeration>
+      </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
 
   <xs:simpleType name="AuditTrailInformation_TYPE">
     <xs:annotation><xs:documentation xml:lang="en">
-    Audit Trail Information known to sender to be added to receiver audit trail.
+      Audit Trail Information known to sender to be added to receiver audit trail.
     </xs:documentation></xs:annotation>
     <xs:restriction base="xs:string"/>
   </xs:simpleType>
 
   <xs:simpleType name="CollectionID_TYPE">
     <xs:annotation><xs:documentation xml:lang="en">
-    A unique identifier for bit repository collection which data belongs to.
+      A unique identifier for bit repository collection which data belongs to.
     </xs:documentation></xs:annotation>
     <xs:restriction base="xs:string"/>
   </xs:simpleType>
 
   <xs:complexType name="ChecksumDataForChecksumSpec_TYPE">
     <xs:annotation><xs:documentation xml:lang="en">
-    Checksum data belonging to certain checksum specification.
+      Checksum data belonging to certain checksum specification.
     </xs:documentation></xs:annotation>
     <xs:sequence>
       <xs:element name="FileID" type="FileID_TYPE" >
         <xs:annotation><xs:documentation xml:lang="en">
-        Identifier of data the checksum is for
+          Identifier of data the checksum is for
         </xs:documentation></xs:annotation>
       </xs:element>
 
       <xs:element name="ChecksumValue" type="ChecksumValue_TYPE" >
         <xs:annotation><xs:documentation xml:lang="en">
-        The value of the checksum
+          The value of the checksum
         </xs:documentation></xs:annotation>
       </xs:element>
 
       <xs:element name="CalculationTimestamp" type="SystemDateTime_TYPE">
         <xs:annotation><xs:documentation xml:lang="en">
-        The time when the checksum was last calculated
-        (especially for ordinary checksums on off-line medias, there can be long intervals between
-        calculations, - in such cases this information is crucial for alarming)
+          The time when the checksum was last calculated (especially for ordinary checksums on off-line medias,
+          there can be long intervals between calculations, - in such cases this information is crucial for alarming)
         </xs:documentation></xs:annotation>
       </xs:element>
     </xs:sequence>
@@ -773,26 +772,26 @@
 
   <xs:complexType name="ChecksumDataForFile_TYPE">
     <xs:annotation><xs:documentation xml:lang="en">
-    Checksum data belonging to a certain file ID.
+      Checksum data belonging to a certain file ID.
     </xs:documentation></xs:annotation>
     <xs:sequence>
       <xs:element name="ChecksumSpec" type="ChecksumSpec_TYPE" >
         <xs:annotation><xs:documentation xml:lang="en">
-        The type and possible salt for calculation of the checksum
+          The type and possible salt for calculation of the checksum
         </xs:documentation></xs:annotation>
       </xs:element>
 
       <xs:element name="ChecksumValue" type="ChecksumValue_TYPE" >
         <xs:annotation><xs:documentation xml:lang="en">
-        The value of the checksum
+          The value of the checksum
         </xs:documentation></xs:annotation>
       </xs:element>
 
       <xs:element name="CalculationTimestamp" type="SystemDateTime_TYPE">
         <xs:annotation><xs:documentation xml:lang="en">
-        The time when the checksum was last calculated
-        (especially for ordinary checksums on off-line medias, there can be long intervals between
-        calculations, - in such cases this information is crucial for alarming)
+          The time when the checksum was last calculated
+          (especially for ordinary checksums on off-line medias, there can be long intervals between
+          calculations, - in such cases this information is crucial for alarming)
         </xs:documentation></xs:annotation>
       </xs:element>
     </xs:sequence>
@@ -802,19 +801,19 @@
     <xs:sequence>
       <xs:element name="ChecksumType" type="ChecksumType" >
         <xs:annotation><xs:documentation xml:lang="en">
-        The checksum type
+          The checksum type
         </xs:documentation></xs:annotation>
       </xs:element>
 
       <xs:element name="ChecksumSalt" type="SaltParameter_TYPE" minOccurs="0">
         <xs:annotation><xs:documentation xml:lang="en">
-        Optionally a salt parameter included in the checksum calculation
+          Optionally a salt parameter included in the checksum calculation
         </xs:documentation></xs:annotation>
       </xs:element>
-      
+
       <xs:element name="OtherChecksumType" type="xs:string" minOccurs="0">
         <xs:annotation><xs:documentation xml:lang="en">
-         If the ChecksumType is set to 'Other' this element needs to specify the checksum type used.
+          If the ChecksumType is set to 'Other' this element needs to specify the checksum type used.
         </xs:documentation></xs:annotation>
       </xs:element>
     </xs:sequence>
@@ -827,29 +826,29 @@
 
   <xs:simpleType name="ComponentID_TYPE">
     <xs:annotation><xs:documentation xml:lang="en">
-    Unique identifiers for a component in the Bit Repository
+      Unique identifiers for a component in the Bit Repository
     </xs:documentation></xs:annotation>
     <xs:restriction base="xs:string">
     </xs:restriction>
   </xs:simpleType>
 
- <!--  <xs:complexType name="ContributorStatus_TYPE">
-    <xs:sequence>
-      <xs:element name="ContributorStatusElements">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element name="ContributorStatusElement" type="ContributorStatusElement_TYPE" minOccurs="1" maxOccurs="unbounded"/>
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
+  <!--  <xs:complexType name="ContributorStatus_TYPE">
+   <xs:sequence>
+     <xs:element name="ContributorStatusElements">
+       <xs:complexType>
+         <xs:sequence>
+           <xs:element name="ContributorStatusElement" type="ContributorStatusElement_TYPE" minOccurs="1" maxOccurs="unbounded"/>
+         </xs:sequence>
+       </xs:complexType>
+     </xs:element>
 
-      <xs:element name="StatusTimestamp" type="SystemDateTime_TYPE">
-        <xs:annotation><xs:documentation xml:lang="en">
-        The time when the status was calculated
-        </xs:documentation></xs:annotation>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType> -->
+     <xs:element name="StatusTimestamp" type="SystemDateTime_TYPE">
+       <xs:annotation><xs:documentation xml:lang="en">
+       The time when the status was calculated
+       </xs:documentation></xs:annotation>
+     </xs:element>
+   </xs:sequence>
+ </xs:complexType> -->
 
   <xs:simpleType name="CorrelationID_TYPE">
     <xs:restriction base="xs:string">
@@ -858,7 +857,7 @@
 
   <xs:simpleType name="FileID_TYPE">
     <xs:annotation><xs:documentation xml:lang="en">
-    Unique identifiers for a file in given collection.
+      Unique identifiers for a file in given collection.
     </xs:documentation></xs:annotation>
     <xs:restriction base="xs:string">
     </xs:restriction>
@@ -888,10 +887,10 @@
           </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-        <xs:enumeration value="WARNING">
+      <xs:enumeration value="WARNING">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            Indication that the component is running and working, but there are some issues that may be a problem. 
+            Indication that the component is running and working, but there are some issues that may be a problem.
           </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
@@ -916,16 +915,16 @@
       <xs:enumeration value="IDENTIFICATION_POSITIVE">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            The indicated operation request can be serviced. This means that the replying component will be 
-            able to respond successfully to any operation request (GetFile, PutFile, GetAuditTrails) for the 
+            The indicated operation request can be serviced. This means that the replying component will be
+            able to respond successfully to any operation request (GetFile, PutFile, GetAuditTrails) for the
             indicated data (usually a set of files).
           </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-        <xs:enumeration value="IDENTIFICATION_NEGATIVE">
+      <xs:enumeration value="IDENTIFICATION_NEGATIVE">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            The indicated operation request can not be serviced on the responding component. 
+            The indicated operation request can not be serviced on the responding component.
           </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
@@ -979,7 +978,7 @@
         <xs:annotation>
           <xs:documentation xml:lang="en">
             The supplied checksum didn't correspond to the checksum clculated for a newly received file. The is used
-            in putFile and replaceFile operations to indicated that the downloaded file did't match the expexted 
+            in putFile and replaceFile operations to indicated that the downloaded file did't match the expexted
             checksum.
           </xs:documentation>
         </xs:annotation>
@@ -988,7 +987,7 @@
         <xs:annotation>
           <xs:documentation xml:lang="en">
             The checksum for file in a pillar didn't correspond to the checksum supplied in a operation request. This
-            is relevant in replaceFile an Delete file, where the checksum for the existing file is provided.  
+            is relevant in replaceFile an Delete file, where the checksum for the existing file is provided.
           </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
@@ -1002,30 +1001,30 @@
       <xs:enumeration value="REQUEST_NOT_UNDERSTOOD_FAILURE">
         <xs:annotation>
           <xs:documentation xml:lang="en">
-            The component was unable to interprete the received request. This is a serious problem, as this indicates 
+            The component was unable to interprete the received request. This is a serious problem, as this indicates
             that the request sender and receiver don't agree on the protocol.
           </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="REQUEST_NOT_SUPPORTED">
-      <xs:annotation>
-        <xs:documentation xml:lang="en">
-          Indicates the component doesn't support the indicated type of request. The response code is typically used
-          during the identification phase to inform a client that the component is available, but can't service the
-          specific type of request.
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            Indicates the component doesn't support the indicated type of request. The response code is typically used
+            during the identification phase to inform a client that the component is available, but can't service the
+            specific type of request.
 
-          Note that the capabilities of components are typically known beforehand, so this is not considered a failure
-          in itself.
-        </xs:documentation>
-      </xs:annotation>
-    </xs:enumeration>
+            Note that the capabilities of components are typically known beforehand, so this is not considered a failure
+            in itself.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
 
   <xs:simpleType name="SaltParameter_TYPE">
     <xs:annotation><xs:documentation xml:lang="en">
-    An extra salt to be added in the checksum calculation.
-    If this parameter is given, it follows that the checksum calculation must include the salt
+      An extra salt to be added in the checksum calculation.
+      If this parameter is given, it follows that the checksum calculation must include the salt
     </xs:documentation></xs:annotation>
     <xs:restriction base="xs:hexBinary">
     </xs:restriction>
@@ -1033,9 +1032,9 @@
 
   <xs:simpleType name="ChecksumType">
     <xs:annotation><xs:documentation xml:lang="en">
-        Defines a list of the most common checksum types. If type 'OTHER' is used an additional element is needed
-        to define the custom type.
-      </xs:documentation></xs:annotation>
+      Defines a list of the most common checksum types. If type 'OTHER' is used an additional element is needed
+      to define the custom type.
+    </xs:documentation></xs:annotation>
     <xs:restriction base="xs:string">
       <xs:enumeration value="MD5" />
       <xs:enumeration value="SHA1" />
@@ -1053,7 +1052,7 @@
 
   <xs:simpleType name="SystemDateTime_TYPE">
     <xs:annotation><xs:documentation xml:lang="en">
-    General type for how date/time is specifed in the bit repository
+      General type for how date/time is specifed in the bit repository
     </xs:documentation></xs:annotation>
     <xs:restriction base="xs:dateTime">
     </xs:restriction>
@@ -1079,14 +1078,14 @@
       <xs:enumeration value="MILLISECONDS">
         <xs:annotation><xs:documentation xml:lang="en">
           Measure is specified in milli seconds
-          </xs:documentation></xs:annotation>
-        </xs:enumeration>
-     <xs:enumeration value="HOURS">
-       <xs:annotation><xs:documentation xml:lang="en">
-         Measure is specified in hours
-       </xs:documentation></xs:annotation>
-     </xs:enumeration>
-   </xs:restriction>
- </xs:simpleType>
+        </xs:documentation></xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HOURS">
+        <xs:annotation><xs:documentation xml:lang="en">
+          Measure is specified in hours
+        </xs:documentation></xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
 
 </xs:schema>

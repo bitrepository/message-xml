@@ -92,7 +92,7 @@
         
           <xs:element ref="bre:ResponseInfo">
             <xs:annotation><xs:documentation xml:lang="en">
-              Response information telling that the Identify request has been received and
+              Response information informing that the Identify request has been received and
               if an operation request can be met. This response info can be used to send 'negative' Identify responses.
             </xs:documentation></xs:annotation>
           </xs:element>
