@@ -26,6 +26,17 @@
     <title>Bit Repository Message XML change notes</title>
   </properties>
   <body>
+    <release version="23" date="2012-10-26" description="Adding paging functionality">
+      <action dev="MSS" type="add" issue="BITMAG-741">
+        Added the paging functionality based on timestamping to the GetAuditTrail, GetChecksum and GetFileID
+        operations.
+      </action>
+    </release>
+    <release version="22" date="2012-10-04" description="Adding paging functionality">
+      <action dev="MSS" type="add" issue="BITMAG-734">
+        Added the 'REQUEST_NOT_UNDERSTOOD' AlarmCode to the protocol.
+      </action>
+    </release>
     <release version="20" date="2012-09-04" description="Minor extension to the AlarmCode">
       <action dev="JOLF" type="add" issue="BITMAG-702">
         Added the 'INTEGRITY_ISSUE' AlarmCode to the protocol.
@@ -37,36 +48,6 @@
       </action>
       <action dev="Kim" type="Update">
         Update of packaging, so that versioning related stuff is included    
-      </action>
-    </release>
-    <release version="18" date="2012-XX-XX" description="">
-      <action dev="Kim" type="add" issue="BITMAG-605">
-        Add optional ChecksumDataForExistingFile element to IdentifyPillarsForPutFileResponse and 
-        PutFileResponse for use in the case that a file with the fileID attempting to be put already 
-        exists in the system.   
-      </action>
-    </release>
-    <release version="17" date="2012-06-08" description="Make checksums in descructive requests mandatory"></release>
-    <action dev="Kim" type="update" issue="BITMAG-429">
-      Checksums are now optional for destructive requests for existing files.
-    </action>
-    <action dev="Kim" type="update">
-      FileIds are now optional in GetChecksumsProgressResponse's.
-    </action>
-    <release version="15" date="2012-04-18" description="Make 'From' element mandatory"></release>
-    <action dev="Mikis" type="update">
-      'From' element is now mandatory on all messages.
-    </action>
-    <release version="14" date="2012-04-13" description="Refactoring of GetStatus and GetAuditTrails">
-      <action dev="Mikis" type="add">
-        Added 'MinSequenceNumber', 'MaxSequenceNumber', 'MinTimestamp' and 'MaxTimestamp' to
-        'GetAuditTrailsRequest' message.
-      </action>
-      <action dev="Mikis" type="add">
-        Added 'From' element to all messages.
-      </action>
-      <action dev="Kim" type="update">
-        Refactoring of GetStatus related messages. 
       </action>
     </release>
   </body>

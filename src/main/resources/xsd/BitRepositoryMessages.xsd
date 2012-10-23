@@ -1025,6 +1025,23 @@
               FileIDs uniquely identifies the files in given bit repository collection which the checksums are requested for
               </xs:documentation></xs:annotation>
             </xs:element>
+
+            <xs:element ref="bre:MinTimestamp"  minOccurs="0" >
+              <xs:annotation><xs:documentation xml:lang="en">
+                Only audit trail events younger than the minTimestamp should be returned.
+              </xs:documentation></xs:annotation>
+            </xs:element>
+            <xs:element ref="bre:MaxTimestamp"  minOccurs="0" >
+              <xs:annotation><xs:documentation xml:lang="en">
+                Only audit trail older than the maxTimestamp  should be returned.
+              </xs:documentation></xs:annotation>
+            </xs:element>
+            <xs:element ref="bre:MaxNumberOfResults"  minOccurs="0" >
+              <xs:annotation><xs:documentation xml:lang="en">
+                Request the contributor to only return 'up-to' MaxNumberOfResults checksum results. This can be
+                used to break a checksum retrieval into small result sets (paging).
+              </xs:documentation></xs:annotation>
+            </xs:element>
     
             <xs:element ref="bre:ChecksumRequestForExistingFile" minOccurs="0" maxOccurs="1">
               <xs:annotation><xs:documentation xml:lang="en">
@@ -1192,6 +1209,23 @@
               <xs:annotation><xs:documentation xml:lang="en">
               FileIDs uniquely identifies the files in given bit repository collection which the file ids are requested for
               </xs:documentation></xs:annotation>
+            </xs:element>
+
+            <xs:element ref="bre:MinTimestamp"  minOccurs="0" >
+              <xs:annotation><xs:documentation xml:lang="en">
+                Only audit trail events younger than the minTimestamp should be returned.
+              </xs:documentation></xs:annotation>
+            </xs:element>
+            <xs:element ref="bre:MaxTimestamp"  minOccurs="0" >
+              <xs:annotation><xs:documentation xml:lang="en">
+                Only audit trail older than the maxTimestamp  should be returned.
+              </xs:documentation></xs:annotation>
+            </xs:element>
+            <xs:element ref="bre:MaxNumberOfResults"  minOccurs="0" >
+            <xs:annotation><xs:documentation xml:lang="en">
+              Request the contributor to only return 'up-to' MaxNumberOfResults fileID results. This can be
+              used to break a fileID retrieval into small result sets (paging).
+            </xs:documentation></xs:annotation>
             </xs:element>
     
             <xs:element ref="bre:ResultAddress" minOccurs="0" maxOccurs="1" >
@@ -1452,6 +1486,12 @@
             <xs:element ref="bre:MaxTimestamp"  minOccurs="0" >
               <xs:annotation><xs:documentation xml:lang="en">
                 Only audit trail older than the maxTimestamp  should be returned.
+              </xs:documentation></xs:annotation>
+            </xs:element>
+            <xs:element ref="bre:MaxNumberOfResults"  minOccurs="0" >
+              <xs:annotation><xs:documentation xml:lang="en">
+                Request the contributor to only return 'up-to' MaxNumberOfResults AuditTrail entries. This can be
+                used to break a AuditTrail retrieval into small result sets (paging).
               </xs:documentation></xs:annotation>
             </xs:element>
     
