@@ -363,6 +363,13 @@
             Unique identifier for pillar replying
             </xs:documentation></xs:annotation>
           </xs:element>
+          
+          <xs:element ref="bre:FileID" minOccurs="0" maxOccurs="1">
+            <xs:annotation><xs:documentation xml:lang="en">
+            Unique identifier for file to be put for given collection.
+            This can be used for duplicate ID check.
+            </xs:documentation></xs:annotation>
+          </xs:element>
   
           <xs:element ref="bre:PillarChecksumSpec" minOccurs="0" maxOccurs="1" >
             <xs:annotation><xs:documentation xml:lang="en">
