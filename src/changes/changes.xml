@@ -37,10 +37,11 @@
         Added FileID element to IdentifyPillarsForPutFileResponse message.
       </action>
     </release>
-    <release version="22" date="2012-10-04" description="Adding paging functionality">
-      <action dev="MSS" type="add" issue="BITMAG-734" />
+    <release version="22" date="2012-10-04" description="Adding 'REQUEST_NOT_UNDERSTOOD' response code ">
+      <action dev="MSS" type="add" issue="BITMAG-734" >
+        Added the 'REQUEST_NOT_UNDERSTOOD' response code to the protocol.
+      </action>
     </release>
-    Added the 'REQUEST_NOT_UNDERSTOOD' AlarmCode to the protocol.
     <release version="20" date="2012-09-04" description="Minor extension to the AlarmCode">
       <action dev="JOLF" type="add" issue="BITMAG-702">
         Added the 'INTEGRITY_ISSUE' AlarmCode to the protocol.

@@ -1063,6 +1063,7 @@
   <xs:element name="MinTimestamp" type="SystemDateTime_TYPE" />
   <xs:element name="MaxTimestamp" type="SystemDateTime_TYPE" />
   <xs:element name="MaxNumberOfResults" type="xs:positiveInteger" />
+  <xs:element name="PartialResult" type="xs:boolean" />
 
   <xs:complexType name="TimeMeasure_TYPE">
     <xs:annotation><xs:documentation xml:lang="en">

@@ -1035,12 +1035,12 @@
 
             <xs:element ref="bre:MinTimestamp"  minOccurs="0" >
               <xs:annotation><xs:documentation xml:lang="en">
-                Only audit trail events younger than the minTimestamp should be returned.
+                Only checksums younger than the minTimestamp should be returned.
               </xs:documentation></xs:annotation>
             </xs:element>
             <xs:element ref="bre:MaxTimestamp"  minOccurs="0" >
               <xs:annotation><xs:documentation xml:lang="en">
-                Only audit trail older than the maxTimestamp  should be returned.
+                Only checksums older than the maxTimestamp  should be returned.
               </xs:documentation></xs:annotation>
             </xs:element>
             <xs:element ref="bre:MaxNumberOfResults"  minOccurs="0" >
@@ -1134,6 +1134,14 @@
               result with requested checksums
               </xs:documentation></xs:annotation>
             </xs:element>
+
+            <xs:element ref="bre:PartialResult" minOccurs="0" maxOccurs="1" >
+              <xs:annotation><xs:documentation xml:lang="en">
+                Indicates whether the list of result were limited for some reason, either a MaxLimit in the request
+                or a limit defined in the contributor.
+              </xs:documentation></xs:annotation>
+            </xs:element>
+
           </xs:sequence>
         </xs:extension>
       </xs:complexContent>
@@ -1220,17 +1228,17 @@
 
             <xs:element ref="bre:MinTimestamp"  minOccurs="0" >
               <xs:annotation><xs:documentation xml:lang="en">
-                Only audit trail events younger than the minTimestamp should be returned.
+                Only fileIDs for files added/updated later than the minTimestamp should be returned.
               </xs:documentation></xs:annotation>
             </xs:element>
             <xs:element ref="bre:MaxTimestamp"  minOccurs="0" >
               <xs:annotation><xs:documentation xml:lang="en">
-                Only audit trail older than the maxTimestamp  should be returned.
+                Only fileIDs for files added/updated before the maxTimestamp  should be returned.
               </xs:documentation></xs:annotation>
             </xs:element>
             <xs:element ref="bre:MaxNumberOfResults"  minOccurs="0" >
             <xs:annotation><xs:documentation xml:lang="en">
-              Request the contributor to only return 'up-to' MaxNumberOfResults fileID results. This can be
+              Request the contributor to only return 'up-to' MaxNumberOfResults of fileID results. This can be
               used to break a fileID retrieval into small result sets (paging).
             </xs:documentation></xs:annotation>
             </xs:element>
@@ -1308,6 +1316,14 @@
               Result with file IDs
               </xs:documentation></xs:annotation>
             </xs:element>
+
+            <xs:element ref="bre:PartialResult" minOccurs="0" maxOccurs="1" >
+              <xs:annotation><xs:documentation xml:lang="en">
+                Indicates whether the list of result were limited for some reason, either a MaxLimit in the request
+                or a limit defined in the contributor.
+              </xs:documentation></xs:annotation>
+            </xs:element>
+
           </xs:sequence>
         </xs:extension>
       </xs:complexContent>
@@ -1561,6 +1577,14 @@
               Result with audit trails
               </xs:documentation></xs:annotation>
             </xs:element>
+
+            <xs:element ref="bre:PartialResult" minOccurs="0" maxOccurs="1" >
+              <xs:annotation><xs:documentation xml:lang="en">
+                Indicates whether the list of result were limited for some reason, either a MaxLimit in the request
+                or a limit defined in the contributor.
+              </xs:documentation></xs:annotation>
+            </xs:element>
+
           </xs:sequence>
         </xs:extension>
       </xs:complexContent>
