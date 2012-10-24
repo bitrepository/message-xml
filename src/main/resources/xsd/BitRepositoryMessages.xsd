@@ -1035,12 +1035,12 @@
 
             <xs:element ref="bre:MinTimestamp"  minOccurs="0" >
               <xs:annotation><xs:documentation xml:lang="en">
-                Only checksums younger than the minTimestamp should be returned.
+                Only checksums younger at the same time as the minTimestamp should be returned.
               </xs:documentation></xs:annotation>
             </xs:element>
             <xs:element ref="bre:MaxTimestamp"  minOccurs="0" >
               <xs:annotation><xs:documentation xml:lang="en">
-                Only checksums older than the maxTimestamp  should be returned.
+                Only checksums older at the same time as the maxTimestamp should be returned.
               </xs:documentation></xs:annotation>
             </xs:element>
             <xs:element ref="bre:MaxNumberOfResults"  minOccurs="0" >
@@ -1228,12 +1228,12 @@
 
             <xs:element ref="bre:MinTimestamp"  minOccurs="0" >
               <xs:annotation><xs:documentation xml:lang="en">
-                Only fileIDs for files added/updated later than the minTimestamp should be returned.
+                Only fileIDs for files added/updated later or at the same time as the minTimestamp should be returned.
               </xs:documentation></xs:annotation>
             </xs:element>
             <xs:element ref="bre:MaxTimestamp"  minOccurs="0" >
               <xs:annotation><xs:documentation xml:lang="en">
-                Only fileIDs for files added/updated before the maxTimestamp  should be returned.
+                Only fileIDs for files added/updated before or at the same time as the maxTimestamp should be returned.
               </xs:documentation></xs:annotation>
             </xs:element>
             <xs:element ref="bre:MaxNumberOfResults"  minOccurs="0" >
@@ -1503,12 +1503,12 @@
             </xs:element>
             <xs:element ref="bre:MinTimestamp"  minOccurs="0" >
               <xs:annotation><xs:documentation xml:lang="en">
-                Only audit trail events younger than the minTimestamp should be returned.
+                Only audit trail events younger or same age as the minTimestamp should be returned.
               </xs:documentation></xs:annotation>
             </xs:element>
             <xs:element ref="bre:MaxTimestamp"  minOccurs="0" >
               <xs:annotation><xs:documentation xml:lang="en">
-                Only audit trail older than the maxTimestamp  should be returned.
+                Only audit trail older or same age as the maxTimestamp  should be returned.
               </xs:documentation></xs:annotation>
             </xs:element>
             <xs:element ref="bre:MaxNumberOfResults"  minOccurs="0" >
