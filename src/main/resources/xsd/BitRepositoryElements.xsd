@@ -833,24 +833,6 @@
     </xs:restriction>
   </xs:simpleType>
 
-  <!--  <xs:complexType name="ContributorStatus_TYPE">
-   <xs:sequence>
-     <xs:element name="ContributorStatusElements">
-       <xs:complexType>
-         <xs:sequence>
-           <xs:element name="ContributorStatusElement" type="ContributorStatusElement_TYPE" minOccurs="1" maxOccurs="unbounded"/>
-         </xs:sequence>
-       </xs:complexType>
-     </xs:element>
-
-     <xs:element name="StatusTimestamp" type="SystemDateTime_TYPE">
-       <xs:annotation><xs:documentation xml:lang="en">
-       The time when the status was calculated
-       </xs:documentation></xs:annotation>
-     </xs:element>
-   </xs:sequence>
- </xs:complexType> -->
-
   <xs:simpleType name="CorrelationID_TYPE">
     <xs:restriction base="xs:string">
     </xs:restriction>

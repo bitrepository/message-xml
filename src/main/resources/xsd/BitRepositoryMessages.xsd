@@ -1137,8 +1137,9 @@
 
             <xs:element ref="bre:PartialResult" minOccurs="0" maxOccurs="1" >
               <xs:annotation><xs:documentation xml:lang="en">
-                Indicates whether the list of result were limited for some reason, either a MaxLimit in the request
-                or a limit defined in the contributor.
+                Indicates whether the list of result were limited for some reason, either a
+                MaxLimit in the request or a limit defined in the contributor. If all results have been returned
+                this should be false or undefined.
               </xs:documentation></xs:annotation>
             </xs:element>
 
@@ -1320,7 +1321,8 @@
             <xs:element ref="bre:PartialResult" minOccurs="0" maxOccurs="1" >
               <xs:annotation><xs:documentation xml:lang="en">
                 Indicates whether the list of result were limited for some reason, either a MaxLimit in the request
-                or a limit defined in the contributor.
+                or a limit defined in the contributor.  If all results have been returned
+                this should be false or undefined.
               </xs:documentation></xs:annotation>
             </xs:element>
 
@@ -1581,7 +1583,8 @@
             <xs:element ref="bre:PartialResult" minOccurs="0" maxOccurs="1" >
               <xs:annotation><xs:documentation xml:lang="en">
                 Indicates whether the list of result were limited for some reason, either a MaxLimit in the request
-                or a limit defined in the contributor.
+                or a limit defined in the contributor. If all results have been returned
+                this should be false or undefined.
               </xs:documentation></xs:annotation>
             </xs:element>
 
