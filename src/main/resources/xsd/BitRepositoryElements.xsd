@@ -416,10 +416,11 @@
           </xs:annotation>
         </xs:element>
 
-        <xs:element name="ResponseText" type="xs:string">
+        <xs:element name="ResponseText" type="xs:string" minOccurs="0" >
           <xs:annotation>
             <xs:documentation xml:lang="en">
-              ReponseText is a textual description for logging, in a human readable form.
+              The optional ReponseText can be used to include additional information in addition to the information found in the
+              other elements. This will typically be relevant to describe details in prolem situations.
             </xs:documentation>
           </xs:annotation>
         </xs:element>
