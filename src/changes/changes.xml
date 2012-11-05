@@ -26,18 +26,16 @@
     <title>Bit Repository Message XML change notes</title>
   </properties>
   <body>
-    <release version="23" date="2012-10-26" description="Adding paging functionality">
+    <release version="23" date="2012-10-26" description="Made response text optiona">
       <action dev="MSS" type="updated" issue="BITMAG-770">
         Made response text optional and change purpose to indicate that the ResponseText element should only
         be used for information not found in other elements.
       </action>
-      <action dev="MSS" type="add" issue="BITMAG-741">
+      <action dev="MSS" type="add" issue="BITMAG-741" description="Adding paging functionality">
         Added the paging functionality based on timestamping to the GetAuditTrail, GetChecksum and GetFileID
         operations.
       </action>
-    </release>
-    <release version="23" date="2012-10-15" description="">
-      <action dev="Kim" type="add">
+      <action dev="Kim" type="add" description="Added FileID element to IdentifyPillarsForPutFileResponse">
         Added FileID element to IdentifyPillarsForPutFileResponse message.
       </action>
     </release>
