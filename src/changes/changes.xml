@@ -26,7 +26,7 @@
     <title>Bit Repository Message XML change notes</title>
   </properties>
   <body>
-    <release version="23" date="2012-10-26" description="Made response text optiona">
+    <release version="23" date="2012-11-05" description="Made response text optiona">
       <action dev="MSS" type="updated" issue="BITMAG-770">
         Made response text optional and change purpose to indicate that the ResponseText element should only
         be used for information not found in other elements.
