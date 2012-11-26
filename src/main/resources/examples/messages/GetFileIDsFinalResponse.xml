@@ -25,8 +25,8 @@
   -->
 
 <bro:GetFileIDsFinalResponse version="1" minVersion="1"
-xmlns:bro='http://bitrepository.org/BitRepositoryMessages.xsd'
-xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
+                             xmlns:bro='http://bitrepository.org/BitRepositoryMessages.xsd'
+                             xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <CorrelationID>12345</CorrelationID>
   <CollectionID>MySla</CollectionID>
   <To>topic://clientTopic</To>
@@ -42,12 +42,12 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   </FileIDs>
   <ResultingFileIDs>
     <FileIDsData>
-    <FileIDsDataItems>
-      <FileIDsDataItem>
-        <FileID>MydataId1</FileID>
-        <LastModificationTime>2011-02-17T09:47:00</LastModificationTime>
-      </FileIDsDataItem>
-    </FileIDsDataItems>
-  </FileIDsData>
+      <FileIDsDataItems>
+        <FileIDsDataItem>
+          <FileID>MydataId1</FileID>
+          <LastModificationTime>2011-02-17T09:47:00</LastModificationTime>
+        </FileIDsDataItem>
+      </FileIDsDataItems>
+    </FileIDsData>
   </ResultingFileIDs>
 </bro:GetFileIDsFinalResponse>
