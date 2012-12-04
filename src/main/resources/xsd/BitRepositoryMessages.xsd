@@ -1040,7 +1040,7 @@
             </xs:element>
             <xs:element ref="bre:MaxTimestamp"  minOccurs="0" >
               <xs:annotation><xs:documentation xml:lang="en">
-                Only checksums older at the same time as the maxTimestamp should be returned.
+                Only checksums with checksumsolder or at the same time as the maxTimestamp should be returned.
               </xs:documentation></xs:annotation>
             </xs:element>
             <xs:element ref="bre:MaxNumberOfResults"  minOccurs="0" >
