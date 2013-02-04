@@ -65,18 +65,28 @@
 
       <xs:element ref="bre:To">
         <xs:annotation><xs:documentation xml:lang="en">
-        Identifies the destination which the message is sent to
+        Identifies the destination which the message is sent to.
         </xs:documentation></xs:annotation>
       </xs:element>
-
       <xs:element ref="bre:ReplyTo">
         <xs:annotation><xs:documentation xml:lang="en">
-        Identifies the destination any responds should be sent to
+        Identifies the destination any responds should be sent to.
         (blank if not relevant, e.g. for alarms)
         </xs:documentation></xs:annotation>
       </xs:element>
 
-      <xs:element ref="bre:From" />
+      <xs:element ref="bre:From" >
+        <xs:annotation><xs:documentation xml:lang="en">
+          The ID of the component responsible for this message.
+          (blank if not relevant, e.g. for alarms)
+        </xs:documentation></xs:annotation>
+      </xs:element>
+      <xs:element ref="bre:Recipient" minOccurs="0" >
+        <xs:annotation><xs:documentation xml:lang="en">
+          The ID of the component which this message is meant for. The element is optional, so if no Recipient is
+          included all component's should handle the message.
+        </xs:documentation></xs:annotation>
+      </xs:element>
     </xs:sequence>
   
     <xs:attributeGroup ref="bre:VersionAttributes"/>
