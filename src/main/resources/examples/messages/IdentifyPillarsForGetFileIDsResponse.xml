@@ -29,7 +29,7 @@
         xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <CorrelationID>12345</CorrelationID>
   <CollectionID>MySla</CollectionID>
-  <To>topic://collectionTopic</To>
+  <Destination>topic://collectionTopic</Destination>
   <ReplyTo>topic://clientTopic</ReplyTo>
   <From>MyPillar</From>
   <ResponseInfo>

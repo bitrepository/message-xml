@@ -63,7 +63,7 @@
         </xs:documentation></xs:annotation>
       </xs:element>
 
-      <xs:element ref="bre:To">
+      <xs:element ref="bre:Destination">
         <xs:annotation><xs:documentation xml:lang="en">
         Identifies the destination which the message is sent to.
         </xs:documentation></xs:annotation>

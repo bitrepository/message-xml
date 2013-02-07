@@ -210,7 +210,7 @@
     </xs:annotation>
   </xs:element>
 
-  <xs:element name="To" type="QueueTopicName_TYPE">
+  <xs:element name="Destination" type="QueueTopicName_TYPE">
     <xs:annotation>
       <xs:documentation xml:lang="en">
         Identifies the destination which the message is sent to
