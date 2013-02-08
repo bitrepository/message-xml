@@ -81,7 +81,7 @@
           (blank if not relevant, e.g. for alarms)
         </xs:documentation></xs:annotation>
       </xs:element>
-      <xs:element ref="bre:Recipient" minOccurs="0" >
+      <xs:element ref="bre:To" minOccurs="0" >
         <xs:annotation><xs:documentation xml:lang="en">
           The ID of the component which this message is meant for. The element is optional, so if no Recipient is
           included all component's should handle the message.
