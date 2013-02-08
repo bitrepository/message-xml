@@ -22,7 +22,9 @@
   -->
 
 
-<ProtocolVersionDefinition version="${parsedVersion.majorVersion}" minVersion="1"
+<ProtocolVersionDefinition
+    version="24"
+    minVersion="24"
 xmlns='http://bitrepository.org/ProtocolVersionDefinition.xsd' 
 xmlns:bre="http://bitrepository.org/BitRepositoryElements.xsd">
   <Overrides>

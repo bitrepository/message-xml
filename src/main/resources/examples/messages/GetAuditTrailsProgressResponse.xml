@@ -25,7 +25,7 @@
   -->
 
 <bro:GetAuditTrailsProgressResponse
-        version="1" minVersion="1" xmlns:bro='http://bitrepository.org/BitRepositoryMessages.xsd'
+        version="24" minVersion="24" xmlns:bro='http://bitrepository.org/BitRepositoryMessages.xsd'
         xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <CorrelationID>12345</CorrelationID>
   <CollectionID>MySla</CollectionID>
