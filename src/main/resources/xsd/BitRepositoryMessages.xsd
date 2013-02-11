@@ -71,14 +71,12 @@
       <xs:element ref="bre:ReplyTo">
         <xs:annotation><xs:documentation xml:lang="en">
         Identifies the destination any responds should be sent to.
-        (blank if not relevant, e.g. for alarms)
         </xs:documentation></xs:annotation>
       </xs:element>
 
       <xs:element ref="bre:From" >
         <xs:annotation><xs:documentation xml:lang="en">
           The ID of the component responsible for this message.
-          (blank if not relevant, e.g. for alarms)
         </xs:documentation></xs:annotation>
       </xs:element>
       <xs:element ref="bre:To" minOccurs="0" >
