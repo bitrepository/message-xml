@@ -54,12 +54,12 @@
         </xs:documentation></xs:annotation>
       </xs:element>
 
-      <xs:element ref="bre:CollectionID">
+      <xs:element ref="bre:CollectionID" minOccurs="0" >
         <xs:annotation><xs:documentation xml:lang="en">
-        BitRepositoryCollectionID is a unique identifier for bit repository collection
+        The CollectionID is a unique identifier for bit repository collection
         which data belongs to.
         This is also the identification of decryption and keys for contents of message,
-        and it is part of unique identification of files together with a file id.
+        and it is part of unique identification of files together with a file id. Note that the
         </xs:documentation></xs:annotation>
       </xs:element>
 
