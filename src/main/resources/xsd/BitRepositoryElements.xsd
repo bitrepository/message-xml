@@ -75,6 +75,12 @@
             Indicates which file this alarm concerns (if any).
           </xs:documentation></xs:annotation>
         </xs:element>
+        
+        <xs:element ref="CollectionID"  minOccurs="0" maxOccurs="1">
+          <xs:annotation><xs:documentation xml:lang="en">
+            Indicates which collection this alarm concerns (if any).
+          </xs:documentation></xs:annotation>
+        </xs:element>
 
       </xs:sequence>
     </xs:complexType>
