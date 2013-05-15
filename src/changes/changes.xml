@@ -29,6 +29,12 @@
     <release version="24" date="2013-02-05" description="Renaming 'To' -> 'Destination">
     <action dev="Mikis" type="updated" issue="BITMAG-835" />
     <action dev="Mikis" type="add" issue="BITMAG-827" />
+    <action dev="Mikis" type="add" issue="BITMAG-872">
+      Add collectionID to integrity service alarm messages.
+    </action>
+    <action dev="Mikis" type="update">
+      CollectionID are now optional to allow StatusMessages without collectionIDs.
+    </action>
   </release>
     <release version="23" date="2012-11-05" description="Made response text optional">
       <action dev="MSS" type="updated" issue="BITMAG-770">
