@@ -26,9 +26,10 @@
     <title>Bit Repository Message XML change notes</title>
   </properties>
   <body>
-    <release version="24" date="2013-02-05" description="Renaming 'To' -> 'Destination">
-    <action dev="Mikis" type="updated" issue="BITMAG-835" />
-    <action dev="Mikis" type="add" issue="BITMAG-827" />
+    <release version="24" date="2013-15-05">
+    <action dev="Mikis" type="updated" issue="BITMAG-835">
+      Rename 'To' to 'Destination' and 'Recipient' to 'To' in messages.
+    </action>
     <action dev="Mikis" type="add" issue="BITMAG-872">
       Add collectionID to integrity service alarm messages.
     </action>
@@ -41,11 +42,11 @@
         Made response text optional and change purpose to indicate that the ResponseText element should only
         be used for information not found in other elements.
       </action>
-      <action dev="MSS" type="add" issue="BITMAG-741" description="Adding paging functionality">
+      <action dev="MSS" type="add" issue="BITMAG-741">
         Added the paging functionality based on timestamping to the GetAuditTrail, GetChecksum and GetFileID
         operations.
       </action>
-      <action dev="Kim" type="add" description="Added FileID element to IdentifyPillarsForPutFileResponse">
+      <action dev="Kim" type="add">
         Added FileID element to IdentifyPillarsForPutFileResponse message.
       </action>
     </release>
