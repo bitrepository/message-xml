@@ -21,22 +21,29 @@
   -->
 <document xmlns="http://maven.apache.org/changes/1.0.0"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 http://maven.apache.org/xsd/changes-1.0.0.xsd">
+          xsi:schemaLocation="http://maven.apache.org/changes/1.0.0
+          http://maven.apache.org/xsd/changes-1.0.0.xsd
+http://maven.apache.org/changes/1.0.0 ">
   <properties>
     <title>Bit Repository Message XML change notes</title>
   </properties>
   <body>
+    <release version="25" date="2013-XX-XX">
+      <action dev="Mikis" type="add" issue="BITMAG-942">
+        Add CertificateID and OperationID to AuditEvents in protocol.
+      </action>
+    </release>
     <release version="24" date="2013-15-05">
-    <action dev="Mikis" type="updated" issue="BITMAG-835">
-      Rename 'To' to 'Destination' and 'Recipient' to 'To' in messages.
-    </action>
-    <action dev="Mikis" type="add" issue="BITMAG-872">
-      Add collectionID to integrity service alarm messages.
-    </action>
-    <action dev="Mikis" type="update">
-      CollectionID are now optional to allow StatusMessages without collectionIDs.
-    </action>
-  </release>
+      <action dev="Mikis" type="updated" issue="BITMAG-835">
+        Rename 'To' to 'Destination' and 'Recipient' to 'To' in messages.
+      </action>
+      <action dev="Mikis" type="add" issue="BITMAG-872">
+        Add collectionID to integrity service alarm messages.
+      </action>
+      <action dev="Mikis" type="update">
+        CollectionID are now optional to allow StatusMessages without collectionIDs.
+      </action>
+    </release>
     <release version="23" date="2012-11-05" description="Made response text optional">
       <action dev="MSS" type="updated" issue="BITMAG-770">
         Made response text optional and change purpose to indicate that the ResponseText element should only
@@ -48,24 +55,6 @@
       </action>
       <action dev="Kim" type="add">
         Added FileID element to IdentifyPillarsForPutFileResponse message.
-      </action>
-    </release>
-    <release version="22" date="2012-10-04" description="Adding 'REQUEST_NOT_UNDERSTOOD' response code ">
-      <action dev="MSS" type="add" issue="BITMAG-734" >
-        Added the 'REQUEST_NOT_UNDERSTOOD' response code to the protocol.
-      </action>
-    </release>
-    <release version="20" date="2012-09-04" description="Minor extension to the AlarmCode">
-      <action dev="JOLF" type="add" issue="BITMAG-702">
-        Added the 'INTEGRITY_ISSUE' AlarmCode to the protocol.
-      </action>
-    </release>
-    <release version="19" date="2012-08-01" description="Update for versioning support">
-      <action dev="Kim" type="Update">
-        Updated a bit of documentation in relation to ReplaceFileFinalResponse
-      </action>
-      <action dev="Kim" type="Update">
-        Update of packaging, so that versioning related stuff is included
       </action>
     </release>
   </body>

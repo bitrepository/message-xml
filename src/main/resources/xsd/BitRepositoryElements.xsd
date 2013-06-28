@@ -150,6 +150,21 @@
           </xs:documentation></xs:annotation>
         </xs:element>
 
+        <xs:element name="OperationID" type="xs:string" minOccurs="0" maxOccurs="1">
+          <xs:annotation> <xs:documentation xml:lang="en">
+            Identifies the operation triggering this event. The value of the OperationID should be
+            the correlationID of the causing request. Will only be relevant for events triggered by a protocol request.
+          </xs:documentation></xs:annotation>
+        </xs:element>
+
+        <xs:element name="CertificateID" type="xs:string" minOccurs="0" maxOccurs="1">
+          <xs:annotation> <xs:documentation xml:lang="en">
+            Identifies the certificate used in the message causing this event. The value of the CertificateID should be
+            the certificates base64 encoded serial number. Will only be relevant for events triggered by a protocol request.
+            initiated events.
+          </xs:documentation></xs:annotation>
+        </xs:element>
+
         <xs:element ref="AuditTrailInformation" minOccurs="0" maxOccurs="1">
           <xs:annotation> <xs:documentation xml:lang="en">
             Information from the actor that caused the event.

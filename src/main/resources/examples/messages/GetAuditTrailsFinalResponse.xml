@@ -39,8 +39,6 @@
   <Contributor>MyPillar</Contributor>
   <ResultingAuditTrails>
     <AuditTrailEvents>
-      <!--<NoOfItems>2</NoOfItems>-->
-      <!--<AuditTrailDataItems>-->
         <AuditTrailEvent>
           <SequenceNumber>7</SequenceNumber>
           <FileID>MyFile</FileID>
@@ -48,6 +46,8 @@
           <ActorOnFile>Actor321</ActorOnFile>
           <ActionOnFile>GET_FILE</ActionOnFile>
           <ActionDateTime>2011-04-15T12:55:00</ActionDateTime>
+          <OperationID>12345</OperationID>
+          <CertificateID>12345</CertificateID>
         </AuditTrailEvent>
         <AuditTrailEvent>
           <SequenceNumber>8</SequenceNumber>
