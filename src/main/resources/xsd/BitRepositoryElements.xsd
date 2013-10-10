@@ -440,7 +440,7 @@
           <xs:annotation>
             <xs:documentation xml:lang="en">
               ResponseCode is machine readable code to indicate whether the status of
-              the request that the response is about
+              the request that the response is about.
             </xs:documentation>
           </xs:annotation>
         </xs:element>
@@ -449,7 +449,7 @@
           <xs:annotation>
             <xs:documentation xml:lang="en">
               The optional ReponseText can be used to include additional information in addition to the information found in the
-              other elements. This will typically be relevant to describe details in prolem situations.
+              other elements. This will typically be relevant to describe details in problem situations.
             </xs:documentation>
           </xs:annotation>
         </xs:element>

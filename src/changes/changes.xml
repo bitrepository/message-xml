@@ -28,7 +28,7 @@ http://maven.apache.org/changes/1.0.0 ">
     <title>Bit Repository Message XML change notes</title>
   </properties>
   <body>
-    <release version="25" date="2013-XX-XX">
+    <release version="25" date="2013-08-07">
       <action dev="Mikis" type="add" issue="BITMAG-942">
         Add CertificateID and OperationID to AuditEvents in protocol.
       </action>

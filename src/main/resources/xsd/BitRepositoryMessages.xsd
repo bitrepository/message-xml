@@ -100,8 +100,8 @@
         
           <xs:element ref="bre:ResponseInfo">
             <xs:annotation><xs:documentation xml:lang="en">
-              Response information informing that the Identify request has been received and
-              if an operation request can be met. This response info can be used to send 'negative' Identify responses.
+              Response information informing that the request has been received and
+              if an operation request can be met. This response info can be used to send 'negative' responses.
             </xs:documentation></xs:annotation>
           </xs:element>
         
