@@ -104,8 +104,8 @@
     </plugins>
   </build>
   <scm>
-    <connection>scm:git:https://sbforge.org/fisheye/git/bitrepository-message-xml.git</connection>
-    <developerConnection>scm:git:https://sbforge.org/fisheye/git/bitrepository-message-xml.git</developerConnection>
+    <connection>scm:git:git@github.com:bitrepository/message-xml.git</connection>
+    <developerConnection>scm:git:git@github.com:bitrepository/message-xml.git</developerConnection>
     <url>https://sbforge.org/fisheye/browse/bitrepository-message-xml/</url>
   </scm>
 
