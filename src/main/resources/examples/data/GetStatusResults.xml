@@ -24,7 +24,7 @@
   #L%
   -->
 
-<bro:GetStatusResults version="24" minVersion="24" xmlns:bro='http://bitrepository.org/BitRepositoryData.xsd'
+<bro:GetStatusResults version="26" minVersion="24" xmlns:bro='http://bitrepository.org/BitRepositoryData.xsd'
 xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <CollectionID>MySla</CollectionID>
   <Contributor>
