@@ -10,9 +10,14 @@
   <groupId>org.bitrepository</groupId>
   <artifactId>bitrepository-message-xml</artifactId>
   <version>27-SNAPSHOT</version>
-
+  <packaging>pom</packaging>
   <name>Bitrepository message xml definitions</name>
   <description>Contains the definitions for the Bitrepository message content</description>
+
+  <modules>
+    <module>message-xml-xsd</module>
+    <module>message-xml-java</module>
+  </modules>
 
   <licenses>
     <license>
@@ -42,67 +47,6 @@
     </repository>
   </repositories>
 
-  <build>
-    <resources>
-      <resource>
-        <directory>src/main/resources</directory>
-        <filtering>true</filtering>
-      </resource>
-    </resources>
-    <plugins>
-      <plugin>
-        <artifactId>maven-release-plugin</artifactId>
-        <version>2.2.2</version>
-      </plugin>
-      <plugin>
-        <artifactId>maven-remote-resources-plugin</artifactId>
-        <version>1.2.1</version>
-        <configuration>
-          <includes>
-            <include>examples/messages/*.xml</include>
-            <include>xsd/*.xsd</include>
-            <include>versioning/*.x*</include>
-          </includes>
-        </configuration>
-        <executions>
-          <execution>
-            <goals>
-              <goal>bundle</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>license-maven-plugin</artifactId>
-        <version>1.0</version>
-        <configuration>
-          <generateBundle>true</generateBundle>
-          <licenseName>lgpl_v2_1</licenseName>
-          <failIfWarning>true</failIfWarning>
-          <useMissingFile>true</useMissingFile>
-          <extraExtensions>
-            <xsd>xml</xsd>
-          </extraExtensions>
-        </configuration>
-      </plugin>
-      <!-- Used for extracting the major version minus snapshot as ${parsedVersion.majorVersion}
-      to use as protocol version (which is of type positiveinteger)-->
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>build-helper-maven-plugin</artifactId>
-        <version>1.8</version>
-        <executions>
-          <execution>
-            <id>parse-version</id>
-            <goals>
-              <goal>parse-version</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
-  </build>
   <scm>
     <connection>scm:git:git@github.com:bitrepository/message-xml.git</connection>
     <developerConnection>scm:git:git@github.com:bitrepository/message-xml.git</developerConnection>

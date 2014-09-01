@@ -1,0 +1,127 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.bitrepository</groupId>
+    <artifactId>bitrepository-message-xml</artifactId>
+    <version>27-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>message-xml-java</artifactId>
+  <name>Bitrepository message xml definitions</name>
+  <description>Contains the definitions for the Bitrepository message content</description>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.jvnet.jaxb2_commons</groupId>
+      <artifactId>jaxb2-basics-runtime</artifactId>
+      <version>0.6.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.bitrepository</groupId>
+      <artifactId>message-xml-xsd</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>Extract xsd files</id>
+            <goals>
+              <goal>unpack-dependencies</goal>
+            </goals>
+            <phase>generate-sources</phase>
+            <configuration>
+              <includeGroupIds>org.bitrepository</includeGroupIds>
+              <includeArtifactIds>message-xml-xsd</includeArtifactIds>
+              <includes>xsd/*.xsd,versioning/*</includes>
+              <outputDirectory>${project.build.directory}/message-xml</outputDirectory>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.jvnet.jaxb2.maven2</groupId>
+        <artifactId>maven-jaxb2-plugin</artifactId>
+        <version>0.8.0</version>
+        <executions>
+          <execution>
+            <id>generate-message-classes</id>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <phase>process-sources</phase>
+            <configuration>
+              <schemaDirectory>${project.build.directory}/message-xml/xsd</schemaDirectory>
+              <generateDirectory>${project.build.directory}/generated-sources/messages</generateDirectory>
+              <extension>true</extension>
+              <plugins>
+                <plugin>
+                  <groupId>org.jvnet.jaxb2_commons</groupId>
+                  <artifactId>jaxb2-basics</artifactId>
+                  <version>0.6.2</version>
+                </plugin>
+                <plugin>
+                  <groupId>org.jvnet.jaxb2_commons</groupId>
+                  <artifactId>jaxb2-basics-annotate</artifactId>
+                  <version>0.6.2</version>
+                </plugin>
+              </plugins>
+            </configuration>
+          </execution>
+          <execution>
+            <id>generate-message-versioning-classes</id>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <phase>process-sources</phase>
+            <configuration>
+              <schemaDirectory>${project.build.directory}/message-xml/versioning</schemaDirectory>
+              <generateDirectory>${project.build.directory}/generated-sources/versioning</generateDirectory>
+              <extension>true</extension>
+              <plugins>
+                <plugin>
+                  <groupId>org.jvnet.jaxb2_commons</groupId>
+                  <artifactId>jaxb2-basics</artifactId>
+                  <version>0.6.2</version>
+                </plugin>
+                <plugin>
+                  <groupId>org.jvnet.jaxb2_commons</groupId>
+                  <artifactId>jaxb2-basics-annotate</artifactId>
+                  <version>0.6.2</version>
+                </plugin>
+              </plugins>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <!-- Copies the jaxb bindings definition to the message xsd dir, 
+          in preparation for the xsd -> java class file generation -->
+        <artifactId>maven-resources-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>copy-resources</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${project.build.directory}/message-xml/xsd</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>src/main/resources/xjb-bindings</directory>
+                  <filtering>true</filtering>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
