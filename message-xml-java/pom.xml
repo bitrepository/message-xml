@@ -59,6 +59,12 @@
               <schemaDirectory>${project.build.directory}/message-xml/xsd</schemaDirectory>
               <generateDirectory>${project.build.directory}/generated-sources/messages</generateDirectory>
               <extension>true</extension>
+              <args>
+                <arg>-XtoString</arg>
+                <arg>-Xequals</arg>
+                <arg>-XhashCode</arg>
+                <arg>-Xannotate</arg>
+              </args>
               <plugins>
                 <plugin>
                   <groupId>org.jvnet.jaxb2_commons</groupId>
@@ -83,6 +89,12 @@
               <schemaDirectory>${project.build.directory}/message-xml/versioning</schemaDirectory>
               <generateDirectory>${project.build.directory}/generated-sources/versioning</generateDirectory>
               <extension>true</extension>
+              <args>
+                <arg>-XtoString</arg>
+                <arg>-Xequals</arg>
+                <arg>-XhashCode</arg>
+                <arg>-Xannotate</arg>
+              </args>
               <plugins>
                 <plugin>
                   <groupId>org.jvnet.jaxb2_commons</groupId>
