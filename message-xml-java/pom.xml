@@ -126,7 +126,8 @@
               <outputDirectory>${project.build.directory}/message-xml/xsd</outputDirectory>
               <resources>
                 <resource>
-                  <directory>src/main/resources/xjb-bindings</directory>
+                  <!-- <directory>src/main/resources/xjb-bindings</directory> -->
+                  <directory>${project.basedir}/src/main/resources/xjb-bindings</directory>
                   <filtering>true</filtering>
                 </resource>
               </resources>
