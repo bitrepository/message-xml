@@ -54,10 +54,4 @@
     <tag>HEAD</tag>
   </scm>
 
-  <distributionManagement>
-    <site>
-      <id>sbforge-nexus</id>
-      <url>dav:https://sbforge.org/maven/bitrepository/sites/message-xml/${project.version}</url>
-    </site>
-  </distributionManagement>
 </project>
