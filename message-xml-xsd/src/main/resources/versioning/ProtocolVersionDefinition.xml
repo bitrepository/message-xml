@@ -23,7 +23,7 @@
 
 
 <ProtocolVersionDefinition
-    version="26"
+    version="${parsedVersion.majorVersion}"
     minVersion="24"
 xmlns='http://bitrepository.org/ProtocolVersionDefinition.xsd' 
 xmlns:bre="http://bitrepository.org/BitRepositoryElements.xsd">
