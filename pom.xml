@@ -9,7 +9,7 @@
 
   <groupId>org.bitrepository</groupId>
   <artifactId>bitrepository-message-xml</artifactId>
-  <version>28</version>
+  <version>29-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Bitrepository message xml definitions</name>
   <description>Contains the definitions for the Bitrepository message content</description>
@@ -51,7 +51,7 @@
     <connection>scm:git:git@github.com:bitrepository/message-xml.git</connection>
     <developerConnection>scm:git:git@github.com:bitrepository/message-xml.git</developerConnection>
     <url>https://sbforge.org/fisheye/browse/bitrepository-message-xml/</url>
-    <tag>bitrepository-message-xml-28</tag>
+    <tag>HEAD</tag>
   </scm>
 
 </project>
