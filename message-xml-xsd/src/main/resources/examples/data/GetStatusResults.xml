@@ -39,6 +39,6 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
         <StatusPing>Alive</StatusPing>
       </ContributorStatusElement>
     </ContributorStatusElements>
-    <StatusTimestamp>2011-02-17T09:47:00</StatusTimestamp>
+    <StatusTimestamp>2011-02-17T09:47:00.000+01:00</StatusTimestamp>
   </ContributorStatus>
 </bro:GetStatusResults>

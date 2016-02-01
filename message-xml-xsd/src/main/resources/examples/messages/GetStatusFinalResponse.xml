@@ -42,6 +42,6 @@
       <StatusCode>OK</StatusCode>
       <StatusText>Everything is fine</StatusText>
     </StatusInfo>
-    <StatusTimestamp>2011-02-17T09:47:00</StatusTimestamp>
+    <StatusTimestamp>2011-02-17T09:47:00.000+01:00</StatusTimestamp>
   </ResultingStatus>
 </bro:GetStatusFinalResponse>

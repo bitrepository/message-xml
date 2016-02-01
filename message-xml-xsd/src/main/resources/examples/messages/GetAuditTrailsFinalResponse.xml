@@ -45,7 +45,7 @@
           <ReportingComponent>MyPillar</ReportingComponent>
           <ActorOnFile>Actor321</ActorOnFile>
           <ActionOnFile>GET_FILE</ActionOnFile>
-          <ActionDateTime>2011-04-15T12:55:00</ActionDateTime>
+          <ActionDateTime>2011-04-15T12:55:00Z</ActionDateTime>
           <OperationID>12345</OperationID>
           <CertificateID>12345</CertificateID>
         </AuditTrailEvent>
@@ -55,7 +55,7 @@
           <ReportingComponent>MyPillar</ReportingComponent>
           <ActorOnFile>Actor321</ActorOnFile>
           <ActionOnFile>PUT_FILE</ActionOnFile>
-          <ActionDateTime>2011-04-15T13:20:00</ActionDateTime>
+          <ActionDateTime>2011-04-15T13:20:00.000+01:00</ActionDateTime>
         </AuditTrailEvent>
     </AuditTrailEvents>
   </ResultingAuditTrails>

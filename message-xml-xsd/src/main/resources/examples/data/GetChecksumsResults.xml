@@ -31,11 +31,11 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <ChecksumDataItems>
     <FileID>MyDataId1</FileID>
     <ChecksumValue>MyChecksum1</ChecksumValue>
-    <CalculationTimestamp>2011-02-17T09:47:00</CalculationTimestamp>
+    <CalculationTimestamp>2011-02-17T09:47:00.000+01:00</CalculationTimestamp>
   </ChecksumDataItems>
   <ChecksumDataItems>
     <FileID>MyDataId2</FileID>
     <ChecksumValue>MyChecksum2</ChecksumValue>
-    <CalculationTimestamp>2011-02-17T09:47:00</CalculationTimestamp>
+    <CalculationTimestamp>2011-02-17T09:47:00.000+01:00</CalculationTimestamp>
   </ChecksumDataItems>
 </bro:GetChecksumsResults>

@@ -45,7 +45,7 @@
       <FileIDsDataItems>
         <FileIDsDataItem>
           <FileID>MydataId1</FileID>
-          <LastModificationTime>2011-02-17T09:47:00</LastModificationTime>
+          <LastModificationTime>2011-02-17T09:47:00.000+01:00</LastModificationTime>
         </FileIDsDataItem>
       </FileIDsDataItems>
     </FileIDsData>

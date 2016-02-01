@@ -41,7 +41,7 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
       <ChecksumSalt>ACDA</ChecksumSalt>
     </ChecksumSpec>
     <ChecksumValue>135F2156</ChecksumValue>
-    <CalculationTimestamp>2011-02-17T09:47:00</CalculationTimestamp>
+    <CalculationTimestamp>2011-02-17T09:47:00.000+01:00</CalculationTimestamp>
   </ChecksumDataForExistingFile>
   <ChecksumRequestForExistingFile>
     <ChecksumType>MD5</ChecksumType>
@@ -54,7 +54,7 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
       <ChecksumType>MD5</ChecksumType>
     </ChecksumSpec>
     <ChecksumValue>6f78ed9c9dd86fe9</ChecksumValue>
-    <CalculationTimestamp>2011-08-16T11:17:00</CalculationTimestamp>
+    <CalculationTimestamp>2011-08-16T11:17:00.000+01:00</CalculationTimestamp>
   </ChecksumDataForNewFile>
   <ChecksumRequestForNewFile>
     <ChecksumType>MD5</ChecksumType>

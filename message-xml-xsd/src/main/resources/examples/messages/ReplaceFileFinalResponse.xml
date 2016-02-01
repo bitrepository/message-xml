@@ -48,13 +48,13 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
       <ChecksumType>MD5</ChecksumType>
     </ChecksumSpec>
     <ChecksumValue>6f78ed9c9dd86fe9</ChecksumValue>
-    <CalculationTimestamp>2011-08-16T11:17:00</CalculationTimestamp>
+    <CalculationTimestamp>2011-08-16T11:17:00.000+01:00</CalculationTimestamp>
   </ChecksumDataForExistingFile>
   <ChecksumDataForNewFile>
     <ChecksumSpec>
       <ChecksumType>MD5</ChecksumType>
     </ChecksumSpec>
     <ChecksumValue>6f78ed9c9ddeefe9</ChecksumValue>
-    <CalculationTimestamp>2011-08-16T11:17:00</CalculationTimestamp>
+    <CalculationTimestamp>2011-08-16T11:17:00.000+01:00</CalculationTimestamp>
   </ChecksumDataForNewFile>
 </bro:ReplaceFileFinalResponse>
