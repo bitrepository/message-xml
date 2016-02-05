@@ -28,6 +28,11 @@ http://maven.apache.org/changes/1.0.0 ">
     <title>Bit Repository Message XML change notes</title>
   </properties>
   <body>
+    <release version="29" date="2016-02-08">
+      <action dev="Kim" type="update">
+        Specify and restrict the allowed date format used in protocol messages
+      </action>
+    </release>
     <release version="28" date="2015-02-10">
       <action dev="Kim" type="update">
         bumped example files version, and added maven substitution for ProtocolVersionDefinition.xml (BITMAG-1072)
