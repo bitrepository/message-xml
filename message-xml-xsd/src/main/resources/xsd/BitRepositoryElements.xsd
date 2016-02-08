@@ -1065,7 +1065,7 @@
   <xs:simpleType name="SystemDateTime_TYPE">
     <xs:annotation><xs:documentation xml:lang="en">
       General type for how date/time is specified in the bit repository. 
-      When specifying a date/time, the timezone must be present.
+      When specifying a date/time, the offset from UTC must be present.
     </xs:documentation></xs:annotation>
     <xs:restriction base="xs:dateTime">
       <xs:pattern value=".+T.+(Z|[+-].+)"/>
