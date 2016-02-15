@@ -24,7 +24,7 @@
   #L%
   -->
 
-<bro:GetAuditTrailsResults version="28" minVersion="24" xmlns:bro='http://bitrepository.org/BitRepositoryData.xsd'
+<bro:GetAuditTrailsResults version="29" minVersion="24" xmlns:bro='http://bitrepository.org/BitRepositoryData.xsd'
 xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <CollectionID>MySla</CollectionID>
   <AuditTrailData> 

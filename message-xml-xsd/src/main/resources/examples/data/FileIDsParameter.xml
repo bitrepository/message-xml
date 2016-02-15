@@ -24,7 +24,7 @@
   #L%
   -->
 
-<bro:FileIDsParameters version="28" minVersion="24" xmlns:bro='http://bitrepository.org/BitRepositoryData.xsd'
+<bro:FileIDsParameters version="29" minVersion="24" xmlns:bro='http://bitrepository.org/BitRepositoryData.xsd'
 xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <CorrelationID>MyCorrelationID</CorrelationID>
   <CollectionID>MySla</CollectionID>

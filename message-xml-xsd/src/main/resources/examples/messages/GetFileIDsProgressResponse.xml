@@ -24,7 +24,7 @@
   #L%
   -->
 
-<bro:GetFileIDsProgressResponse version="28" minVersion="24"
+<bro:GetFileIDsProgressResponse version="29" minVersion="24"
 xmlns:bro='http://bitrepository.org/BitRepositoryMessages.xsd'
 xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <CorrelationID>12345</CorrelationID>
