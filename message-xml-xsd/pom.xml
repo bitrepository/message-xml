@@ -4,7 +4,7 @@
   <parent>
     <groupId>org.bitrepository</groupId>
     <artifactId>bitrepository-message-xml</artifactId>
-    <version>29</version>
+    <version>30-SNAPSHOT</version>
   </parent>
 
   <artifactId>message-xml-xsd</artifactId>
