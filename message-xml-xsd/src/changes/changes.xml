@@ -28,7 +28,7 @@ http://maven.apache.org/changes/1.0.0 ">
     <title>Bit Repository Message XML change notes</title>
   </properties>
   <body>
-    <release version="29" date="2016-02-08">
+    <release version="29" date="2016-02-15">
       <action dev="Kim" type="update">
         Specify and restrict the allowed date format used in protocol messages
       </action>
