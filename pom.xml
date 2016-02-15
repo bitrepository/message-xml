@@ -53,5 +53,9 @@
     <url>https://sbforge.org/fisheye/browse/bitrepository-message-xml/</url>
     <tag>HEAD</tag>
   </scm>
+  
+  <propperties>
+      <additionalparam>-Xdoclint:none</additionalparam>
+  </propperties>
 
 </project>
