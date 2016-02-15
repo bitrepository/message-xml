@@ -54,8 +54,8 @@
     <tag>HEAD</tag>
   </scm>
   
-  <propperties>
+  <properties>
       <additionalparam>-Xdoclint:none</additionalparam>
-  </propperties>
+  </properties>
 
 </project>
