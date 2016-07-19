@@ -8,7 +8,7 @@ Changes prior to version 23 have never been documented in a change log form. For
 - Specify and restrict the allowed date format used in protocol messages @sbktc
 
 
-## [28] - 2015-02-01
+## [28] - 2015-02-20
 ### Changed
 - Bumped example files version, and added maven substitution for ProtocolVersionDefinition.xml (BITMAG-1072) @sbktc
 
@@ -29,13 +29,13 @@ Changes prior to version 23 have never been documented in a change log form. For
 
 ## [25] - 2013-11-19
 ### Added
- - Add CertificateID and OperationID to AuditEvents in protocol. @mikisseth
+ - Add CertificateID and OperationID to AuditEvents in protocol. @mikisseth [BITMAG-942](https://sbforge.org/jira/browse/BITMAG-942)
 
 
-## [24] - 2013-15-05
+## [24] - 2013-05-15
 ### Changed
- - Rename 'To' to 'Destination' and 'Recipient' to 'To' in messages. @mikisseth
- - CollectionID are now optional to allow StatusMessages without collectionIDs. @mikisseth
+ - Rename 'To' to 'Destination' and 'Recipient' to 'To' in messages. @mikisseth [BITMAG-835](https://sbforge.org/jira/browse/BITMAG-835)
+ - CollectionID are now optional to allow StatusMessages without collectionIDs. @mikisseth [BITMAG-872](https://sbforge.org/jira/browse/BITMAG-872)
 
 ### Added
  - Add collectionID to integrity service alarm messages. @mikisseth
@@ -44,9 +44,9 @@ Changes prior to version 23 have never been documented in a change log form. For
 ## [23] - 2012-11-05
 ### Changed
  - Made response text optional and change purpose to indicate that the ResponseText element should only
-        be used for information not found in other elements. @mikisseth
+        be used for information not found in other elements. @mikisseth [BITMAG-770](https://sbforge.org/jira/browse/BITMAG-770)
 
 ### Added
  - Added the paging functionality based on timestamping to the GetAuditTrail, GetChecksum and GetFileID
-        operations. @mikisseth
+        operations. @mikisseth [BITMAG-741](https://sbforge.org/jira/browse/BITMAG-741)
  - Added FileID element to IdentifyPillarsForPutFileResponse message. @sbktc
