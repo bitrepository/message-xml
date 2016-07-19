@@ -10,7 +10,7 @@ Changes prior to version 23 have never been documented in a change log form. For
 
 ## [28] - 2015-02-20
 ### Changed
-- Bumped example files version, and added maven substitution for ProtocolVersionDefinition.xml (BITMAG-1072) @sbktc
+- Bumped example files version, and added maven substitution for ProtocolVersionDefinition.xml @sbktc [BITMAG-1072](https://sbforge.org/jira/browse/BITMAG-1072)
 
 
 ## [27] - 2014-12-17
