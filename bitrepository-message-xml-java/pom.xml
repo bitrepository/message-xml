@@ -54,7 +54,7 @@
             <phase>generate-sources</phase>
             <configuration>
               <includeGroupIds>org.bitrepository</includeGroupIds>
-              <includeArtifactIds>message-xml-xsd</includeArtifactIds>
+              <includeArtifactIds>bitrepository-message-xml-xsd</includeArtifactIds>
               <includes>xsd/*.xsd,versioning/*</includes>
               <outputDirectory>${project.build.directory}/message-xml</outputDirectory>
             </configuration>
