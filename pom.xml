@@ -15,8 +15,8 @@
   <description>Contains the definitions for the Bitrepository message content</description>
 
   <modules>
-    <module>message-xml-xsd</module>
-    <module>message-xml-java</module>
+    <module>bitrepository-message-xml-xsd</module>
+    <module>bitrepository-message-xml-java</module>
   </modules>
 
   <licenses>
