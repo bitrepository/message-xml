@@ -7,7 +7,7 @@
     <version>30-SNAPSHOT</version>
   </parent>
 
-  <artifactId>message-xml-xsd</artifactId>
+  <artifactId>bitrepository-message-xml-xsd</artifactId>
   <name>Bitrepository message xml definitions</name>
   <description>Contains the definitions for the Bitrepository message content</description>
 

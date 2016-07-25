@@ -7,7 +7,7 @@
     <version>30-SNAPSHOT</version>
   </parent>
 
-  <artifactId>message-xml-java</artifactId>
+  <artifactId>bitrepository-message-xml-java</artifactId>
   <name>Bitrepository message xml definitions</name>
   <description>Contains the definitions for the Bitrepository message content</description>
 
