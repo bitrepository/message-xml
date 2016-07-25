@@ -19,7 +19,7 @@
     </dependency>
     <dependency>
       <groupId>org.bitrepository</groupId>
-      <artifactId>message-xml-xsd</artifactId>
+      <artifactId>bitrepository-message-xml-xsd</artifactId>
       <version>${project.version}</version>
     </dependency>
   </dependencies>
