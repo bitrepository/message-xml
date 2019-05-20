@@ -3,7 +3,10 @@ Changes of the Bitrepository.org protocol specification.
 The change log covers changes in the protocol from protocol version 23 and newer. 
 Changes prior to version 23 have never been documented in a change log form. For references of changes prior to that look at the version control history.
 
-## [30] - Not released
+## [31] - Not released
+- Introduce GetFileInfos to replace GetFileIds and GetChecksums
+
+## [30] - 2016-11-11
 ### Changed
 - Move change log from changes.xml to CHANGELOG.md @sbktc [BITMAG-1079](https://sbforge.org/jira/browse/BITMAG-1079)
 - Rename maven modules to be aligned with other bitrepository.org maven artifacts. @sbktc [BITMAG-1094](https://sbforge.org/jira/browse/BITMAG-1094)
