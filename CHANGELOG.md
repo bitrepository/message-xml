@@ -3,6 +3,9 @@ Changes of the Bitrepository.org protocol specification.
 The change log covers changes in the protocol from protocol version 23 and newer. 
 Changes prior to version 23 have never been documented in a change log form. For references of changes prior to that look at the version control history.
 
+## [32] - Not released
+- Introduce GetFileInfos to replace GetFileIds and GetChecksums
+
 ## [31] - 2022-03-09
 ### Changed
 - FileIDs' property allFileIDs is now explicitly a String instead of just Object. 
