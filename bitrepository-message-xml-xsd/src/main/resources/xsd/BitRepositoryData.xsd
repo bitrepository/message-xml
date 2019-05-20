@@ -96,6 +96,38 @@
   </xs:element>
 
   <!-- ***************************** -->
+  <!-- * Results for GetFileInfos  * -->
+  <!-- ***************************** -->
+
+  <xs:element name="GetFileInfosResults">
+    <xs:annotation><xs:documentation xml:lang="en">
+      Data format for delivery of checksums as result of GetFileInfos
+    </xs:documentation></xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="bre:CollectionID" >
+          <xs:annotation><xs:documentation xml:lang="en">
+            A unique identifier for bit repository collection which data belongs to.
+          </xs:documentation></xs:annotation>
+        </xs:element>
+
+        <xs:element ref="bre:PillarID" minOccurs="0" maxOccurs="1" >
+          <xs:annotation><xs:documentation xml:lang="en">
+            Identifier of pillar, that created the result
+          </xs:documentation></xs:annotation>
+        </xs:element>
+
+        <xs:element ref="bre:FileInfosDataItem" minOccurs="0" maxOccurs="unbounded">
+          <xs:annotation><xs:documentation xml:lang="en">
+            List of data for file infos
+          </xs:documentation></xs:annotation>
+        </xs:element>
+      </xs:sequence>
+      <xs:attributeGroup ref="bre:VersionAttributes"/>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- ***************************** -->
   <!-- * Results for GetFileIDs    * -->
   <!-- ***************************** -->
 
