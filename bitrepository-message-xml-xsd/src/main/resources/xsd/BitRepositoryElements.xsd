@@ -613,7 +613,7 @@
           </xs:documentation></xs:annotation>
         </xs:element>
 
-        <xs:element ref="FileIDsData">
+        <xs:element ref="FileIDsData" minOccurs="0" maxOccurs="1">
           <xs:annotation><xs:documentation xml:lang="en">
             List of data for file ids in result, if given in this message instead of via data transfer
           </xs:documentation></xs:annotation>
@@ -634,7 +634,7 @@
           </xs:documentation></xs:annotation>
         </xs:element>
 
-        <xs:element ref="FileInfosData">
+        <xs:element ref="FileInfosData" minOccurs="0" maxOccurs="1">
           <xs:annotation><xs:documentation xml:lang="en">
             List of data for file ids in result, if given in this message instead of via data transfer
           </xs:documentation></xs:annotation>

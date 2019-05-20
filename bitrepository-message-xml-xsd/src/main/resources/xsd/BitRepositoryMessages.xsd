@@ -1430,27 +1430,27 @@
               </xs:documentation></xs:annotation>
             </xs:element>
 
-            <xs:element ref="bre:MinFileTimestamp"  minOccurs="0" >
+            <xs:element ref="bre:MinFileTimestamp"  minOccurs="0" maxOccurs="1" >
               <xs:annotation><xs:documentation xml:lang="en">
                 Only fileInfos for files added/updated later or at the same time as the minFileTimestamp should be returned.
               </xs:documentation></xs:annotation>
             </xs:element>
-            <xs:element ref="bre:MaxFileTimestamp"  minOccurs="0" >
+            <xs:element ref="bre:MaxFileTimestamp"  minOccurs="0" maxOccurs="1" >
               <xs:annotation><xs:documentation xml:lang="en">
                 Only fileInfos for files added/updated before or at the same time as the maxFileTimestamp should be returned.
               </xs:documentation></xs:annotation>
             </xs:element>
-            <xs:element ref="bre:MinChecksumTimestamp"  minOccurs="0" >
+            <xs:element ref="bre:MinChecksumTimestamp"  minOccurs="0" maxOccurs="1" >
               <xs:annotation><xs:documentation xml:lang="en">
                 Only fileInfos for checksums younger or at the same time as the minChecksumTimestamp should be returned.
               </xs:documentation></xs:annotation>
             </xs:element>
-            <xs:element ref="bre:MaxChecksumTimestamp"  minOccurs="0" >
+            <xs:element ref="bre:MaxChecksumTimestamp"  minOccurs="0" maxOccurs="1" >
               <xs:annotation><xs:documentation xml:lang="en">
                 Only fileInfos for checksums with checksums older or at the same time as the maxCheckusumTimestamp should be returned.
               </xs:documentation></xs:annotation>
             </xs:element>
-            <xs:element ref="bre:MaxNumberOfResults"  minOccurs="0" >
+            <xs:element ref="bre:MaxNumberOfResults"  minOccurs="0" maxOccurs="1" >
               <xs:annotation><xs:documentation xml:lang="en">
                 Request the contributor to only return 'up-to' MaxNumberOfResults of fileInfo results. This can be
                 used to break a fileInfo retrieval into small result sets (paging).

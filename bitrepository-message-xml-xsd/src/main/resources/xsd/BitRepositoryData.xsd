@@ -101,7 +101,7 @@
 
   <xs:element name="GetFileInfosResults">
     <xs:annotation><xs:documentation xml:lang="en">
-      Data format for delivery of checksums as result of GetFileInfos
+      Data format for delivery of the results of GetFileInfos
     </xs:documentation></xs:annotation>
     <xs:complexType>
       <xs:sequence>
