@@ -1357,6 +1357,14 @@
                 Given in order to be able to give possible estimate of time to deliver
               </xs:documentation></xs:annotation>
             </xs:element>
+            
+            <xs:element ref="bre:ChecksumRequestForExistingFile" minOccurs="0" maxOccurs="1">
+              <xs:annotation><xs:documentation xml:lang="en">
+              Optional checksums type and possible salt parameter requested
+              (only pillars that can deliver this kind of checksum should reply).
+              If not present pillars should use the default checksumtype specified in RepositorySettings.
+              </xs:documentation></xs:annotation>
+            </xs:element>
           </xs:sequence>
         </xs:extension>
       </xs:complexContent>
