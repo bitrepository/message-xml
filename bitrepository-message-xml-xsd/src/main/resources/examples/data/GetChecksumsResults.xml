@@ -24,7 +24,7 @@
   #L%
   -->
 
-<bro:GetChecksumsResults version="31" minVersion="24" xmlns:bro='http://bitrepository.org/BitRepositoryData.xsd'
+<bro:GetChecksumsResults version="31" minVersion="31" xmlns:bro='http://bitrepository.org/BitRepositoryData.xsd'
 xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <CollectionID>MySla</CollectionID>
   <PillarID>MyPillar</PillarID>

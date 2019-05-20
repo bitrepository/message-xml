@@ -24,7 +24,7 @@
   #L%
   -->
 
-<bro:DeleteFileFinalResponse version="31" minVersion="24"
+<bro:DeleteFileFinalResponse version="31" minVersion="31"
 xmlns:bro='http://bitrepository.org/BitRepositoryMessages.xsd'
 xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <CorrelationID>12345</CorrelationID>
