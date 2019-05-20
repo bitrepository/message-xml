@@ -1839,6 +1839,12 @@
               </xs:documentation></xs:annotation>
             </xs:element>
 
+            <xs:element ref="bre:ChecksumRequestForExistingFile" minOccurs="0" maxOccurs="1">
+              <xs:annotation><xs:documentation xml:lang="en">
+                Checksums type and possible salt requested
+              </xs:documentation></xs:annotation>
+            </xs:element>
+
             <xs:element ref="bre:ResultAddress" minOccurs="0" maxOccurs="1" >
               <xs:annotation><xs:documentation xml:lang="en">
                 Address (e.g. in form of an URL) for where data (file IDs) will be delivered
