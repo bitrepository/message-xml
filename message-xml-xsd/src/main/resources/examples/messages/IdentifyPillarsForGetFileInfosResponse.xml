@@ -37,6 +37,14 @@
     <ResponseText>Ready to deliver fileIDS.</ResponseText>
   </ResponseInfo>
   <PillarID>MyPillar</PillarID>
+  <ChecksumRequestForExistingFile>
+    <ChecksumType>HMAC_SHA384</ChecksumType>
+    <ChecksumSalt>5A17</ChecksumSalt>
+  </ChecksumRequestForExistingFile>
+  <PillarChecksumSpec>
+    <ChecksumType>HMAC_SHA384</ChecksumType>
+    <ChecksumSalt>5A17</ChecksumSalt>
+  </PillarChecksumSpec>
   <FileIDs>
     <FileID>MyDataID1</FileID>
   </FileIDs>
