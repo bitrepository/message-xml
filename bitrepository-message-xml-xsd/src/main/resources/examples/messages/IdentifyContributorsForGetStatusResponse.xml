@@ -25,7 +25,7 @@
   -->
 
 <bro:IdentifyContributorsForGetStatusResponse
-        version="29" minVersion="24" xmlns:bro='http://bitrepository.org/BitRepositoryMessages.xsd'
+        version="31" minVersion="24" xmlns:bro='http://bitrepository.org/BitRepositoryMessages.xsd'
         xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <CorrelationID>12345</CorrelationID>
   <CollectionID>MySla</CollectionID>
