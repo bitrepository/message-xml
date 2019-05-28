@@ -357,28 +357,7 @@
     </xs:complexType>
   </xs:element>
 
-  <xs:element name="FileInfosData">
-    <xs:annotation><xs:documentation xml:lang="en">
-      Includes relevant information on data file Infos in a result
-    </xs:documentation></xs:annotation>
-    <xs:complexType>
-      <xs:sequence>
-
-        <xs:element name="FileInfosDataItems" >
-          <xs:annotation><xs:documentation xml:lang="en" >
-            List of data on data identifiers in result
-          </xs:documentation></xs:annotation>
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element ref="FileInfosDataItem" minOccurs="0" maxOccurs="unbounded" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-
-  <xs:element name="FileInfosDataItem">
+   <xs:element name="FileInfosDataItem">
     <xs:annotation><xs:documentation xml:lang="en">
       Includes relevant information on a data ID in a result
     </xs:documentation></xs:annotation>
@@ -634,7 +613,7 @@
           </xs:documentation></xs:annotation>
         </xs:element>
 
-        <xs:element ref="FileInfosData" minOccurs="0" maxOccurs="1">
+        <xs:element ref="FileInfosDataItem" minOccurs="0" maxOccurs="unbounded">
           <xs:annotation><xs:documentation xml:lang="en">
             List of data for file ids in result, if given in this message instead of via data transfer
           </xs:documentation></xs:annotation>
