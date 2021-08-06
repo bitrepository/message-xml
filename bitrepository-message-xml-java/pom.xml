@@ -45,6 +45,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-source-plugin</artifactId>
+        <version>3.2.1</version>
         <executions>
           <execution>
             <id>attach-sources</id>
@@ -61,6 +62,7 @@
     
       <plugin>
         <artifactId>maven-dependency-plugin</artifactId>
+        <version>3.1.2</version>
         <executions>
           <execution>
             <id>Extract xsd files</id>
@@ -148,7 +150,7 @@
         <!-- Copies the jaxb bindings definition to the message xsd dir, 
           in preparation for the xsd -> java class file generation -->
         <artifactId>maven-resources-plugin</artifactId>
-        <version>3.1.0</version>
+        <version>3.2.0</version>
         <executions>
           <execution>
             <id>copy-resources</id>
@@ -171,8 +173,4 @@
       </plugin>
     </plugins>
   </build>
-  <properties>
-    <maven.compiler.source>11</maven.compiler.source>
-    <maven.compiler.target>11</maven.compiler.target>
-  </properties>
 </project>
