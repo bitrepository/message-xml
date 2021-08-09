@@ -79,74 +79,7 @@
         </executions>
       </plugin>
       <plugin>
-        <groupId>org.jvnet.jaxb2.maven2</groupId>
-        <artifactId>maven-jaxb2-plugin</artifactId>
-        <version>0.14.0</version>
-        <executions>
-          <execution>
-            <id>generate-message-classes</id>
-            <goals>
-              <goal>generate</goal>
-            </goals>
-            <phase>process-sources</phase>
-            <configuration>
-              <schemaDirectory>${project.build.directory}/message-xml/xsd</schemaDirectory>
-              <generateDirectory>${project.build.directory}/generated-sources/messages</generateDirectory>
-              <extension>true</extension>
-              <args>
-                <arg>-XtoString</arg>
-                <arg>-Xequals</arg>
-                <arg>-XhashCode</arg>
-                <arg>-Xannotate</arg>
-              </args>
-              <plugins>
-                <plugin>
-                  <groupId>org.jvnet.jaxb2_commons</groupId>
-                  <artifactId>jaxb2-basics</artifactId>
-                  <version>0.11.1</version>
-                </plugin>
-                <plugin>
-                  <groupId>org.jvnet.jaxb2_commons</groupId>
-                  <artifactId>jaxb2-basics-annotate</artifactId>
-                  <version>1.1.0</version>
-                </plugin>
-              </plugins>
-            </configuration>
-          </execution>
-          <execution>
-            <id>generate-message-versioning-classes</id>
-            <goals>
-              <goal>generate</goal>
-            </goals>
-            <phase>process-sources</phase>
-            <configuration>
-              <schemaDirectory>${project.build.directory}/message-xml/versioning</schemaDirectory>
-              <generateDirectory>${project.build.directory}/generated-sources/versioning</generateDirectory>
-              <extension>true</extension>
-              <args>
-                <arg>-XtoString</arg>
-                <arg>-Xequals</arg>
-                <arg>-XhashCode</arg>
-                <arg>-Xannotate</arg>
-              </args>
-              <plugins>
-                <plugin>
-                  <groupId>org.jvnet.jaxb2_commons</groupId>
-                  <artifactId>jaxb2-basics</artifactId>
-                  <version>0.11.1</version>
-                </plugin>
-                <plugin>
-                  <groupId>org.jvnet.jaxb2_commons</groupId>
-                  <artifactId>jaxb2-basics-annotate</artifactId>
-                  <version>1.1.0</version>
-                </plugin>
-              </plugins>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <!-- Copies the jaxb bindings definition to the message xsd dir, 
+        <!-- Copies the jaxb bindings definition to the message xsd dir,
           in preparation for the xsd -> java class file generation -->
         <artifactId>maven-resources-plugin</artifactId>
         <version>3.2.0</version>
@@ -169,6 +102,73 @@
             </configuration>
           </execution>
         </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>jaxb2-maven-plugin</artifactId>
+        <version>2.5.0</version>
+        <configuration>
+          <!-- Necessary to exclude .xjb and .xml files as long as they share same folder as xsd files
+                - otherwise must specify source-files individually -->
+          <xjcSourceExcludeFilters>
+            <filter implementation="org.codehaus.mojo.jaxb2.shared.filters.pattern.PatternFileFilter">
+              <patterns>
+                <pattern>\.xjb</pattern>
+                <pattern>\.xml</pattern>
+              </patterns>
+            </filter>
+          </xjcSourceExcludeFilters>
+          <extension>true</extension>
+          <arguments>
+            <argument>-XtoString</argument>
+            <argument>-Xequals</argument>
+            <argument>-XhashCode</argument>
+            <argument>-Xannotate</argument>
+          </arguments>
+        </configuration>
+        <executions>
+          <execution>
+            <id>generate-message-classes</id>
+            <goals>
+              <goal>xjc</goal>
+            </goals>
+            <phase>process-sources</phase>
+            <configuration>
+              <outputDirectory>${project.build.directory}/generated-sources/messages</outputDirectory>
+              <sources>
+                <source>${project.build.directory}/message-xml/xsd</source>
+              </sources>
+              <xjbSources>
+                <xjbSource>${project.build.directory}/message-xml/xsd/bindings.xjb</xjbSource>
+              </xjbSources>
+            </configuration>
+          </execution>
+          <execution>
+            <id>generate-message-versioning-classes</id>
+            <goals>
+              <goal>xjc</goal>
+            </goals>
+            <phase>process-sources</phase>
+            <configuration>
+              <outputDirectory>${project.build.directory}/generated-sources/versioning</outputDirectory>
+              <sources>
+                <source>${project.build.directory}/message-xml/versioning</source>
+              </sources>
+            </configuration>
+          </execution>
+        </executions>
+        <dependencies>
+          <dependency>
+            <groupId>org.jvnet.jaxb2_commons</groupId>
+            <artifactId>jaxb2-basics</artifactId>
+            <version>0.11.1</version>
+          </dependency>
+          <dependency>
+            <groupId>org.jvnet.jaxb2_commons</groupId>
+            <artifactId>jaxb2-basics-annotate</artifactId>
+            <version>1.1.0</version>
+          </dependency>
+        </dependencies>
       </plugin>
     </plugins>
   </build>
