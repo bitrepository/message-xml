@@ -1,4 +1,4 @@
-message-xml
+Message-XML
 ===========
 
 Defines the Bit Repository protocol
