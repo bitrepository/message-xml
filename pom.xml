@@ -4,19 +4,19 @@
   <parent>
     <groupId>org.sbforge</groupId>
     <artifactId>sbforge-parent</artifactId>
-    <version>22</version>
+    <version>23</version>
   </parent>
 
-  <groupId>org.bitrepository</groupId>
-  <artifactId>bitrepository-message-xml</artifactId>
+  <groupId>org.bitrepository.message-xml</groupId>
+  <artifactId>message-xml-parent</artifactId>
   <version>32-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Bitrepository message xml definitions</name>
   <description>Contains the definitions for the Bitrepository message content</description>
 
   <modules>
-    <module>bitrepository-message-xml-xsd</module>
-    <module>bitrepository-message-xml-java</module>
+    <module>message-xml-xsd</module>
+    <module>message-xml-java</module>
   </modules>
 
   <licenses>
