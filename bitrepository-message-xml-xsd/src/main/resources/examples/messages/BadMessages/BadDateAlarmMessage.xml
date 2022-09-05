@@ -24,7 +24,7 @@
   #L%
   -->
 
-<bro:AlarmMessage version="28" minVersion="24"
+<bro:AlarmMessage version="31" minVersion="24"
 xmlns:bro='http://bitrepository.org/BitRepositoryMessages.xsd'
 xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <CorrelationID>12345</CorrelationID>
@@ -33,7 +33,7 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <ReplyTo>queue://MyQueueOrTopic</ReplyTo>
   <From>MyPillar</From>
   <Alarm>
-    <OrigDateTime>2011-05-03T11:18:00</OrigDateTime>
+    <OrigDateTime>2011-05-03T11:18:00Z</OrigDateTime>
     <AlarmCode>COMPONENT_FAILURE</AlarmCode>
     <AlarmRaiser>MyPillar</AlarmRaiser>
     <AlarmText>Component failure</AlarmText>
