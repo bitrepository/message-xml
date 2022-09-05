@@ -23,8 +23,7 @@
 
 
 <!-- Empty schema to satisfy the requirement for a configuration definition in each module -->
-<xs:schema 
-	targetNamespace="http://bitrepository.org/protocol/configuration/MessageXmlConfiguration.xsd"
-    elementFormDefault="qualified"
-    xmlns="http://bitrepository.org/protocol/configuration/MessageXmlConfiguration.xsd"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+<xs:schema targetNamespace="http://bitrepository.org/protocol/configuration/MessageXmlConfiguration.xsd"
+           elementFormDefault="qualified"
+           xmlns="http://bitrepository.org/protocol/configuration/MessageXmlConfiguration.xsd"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"/>

@@ -1,12 +1,12 @@
 #!/usr/bin/env groovy
 
-openshift.withCluster() { 
+openshift.withCluster() {
 
     podTemplate(
             inheritFrom: 'maven',
             cloud: 'openshift', //cloud must be openshift
             envVars: [ //This fixes the error with en_US.utf8 not being found
-                    envVar(key:"LC_ALL", value:"C.utf8")
+                       envVar(key:"LC_ALL", value:"C.utf8")
             ],
             volumes: [ //mount the settings.xml
                        secretVolume(mountPath: '/etc/m2', secretName: 'maven-settings')
@@ -30,18 +30,18 @@ openshift.withCluster() {
 
                 stage('Analyze build results') {
                     recordIssues aggregatingResults: true,
-                        tools: [java(),
-                                javaDoc(),
-                                mavenConsole(),
-                                taskScanner(highTags:'FIXME', normalTags:'TODO', includePattern: '**/*.java', excludePattern: 'target/**/*')]
+                            tools: [java(),
+                                    javaDoc(),
+                                    mavenConsole(),
+                                    taskScanner(highTags:'FIXME', normalTags:'TODO', includePattern: '**/*.java', excludePattern: 'target/**/*')]
                 }
 
                 stage('Push to Nexus (if Master)') {
                     echo "Branch name ${env.BRANCH_NAME}"
                     if (env.BRANCH_NAME == 'master') {
-	                    sh "${mvnCmd} clean deploy -DskipTests=true"
+                        sh "${mvnCmd} clean deploy -DskipTests=true"
                     } else {
-	                    echo "Branch ${env.BRANCH_NAME} is not master, so no mvn deploy"
+                        echo "Branch ${env.BRANCH_NAME} is not master, so no mvn deploy"
                     }
                 }
             }

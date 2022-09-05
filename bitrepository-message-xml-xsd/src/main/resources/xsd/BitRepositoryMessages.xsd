@@ -25,123 +25,147 @@
 <!-- message-xml version: ${project.version} -->
 
 <xs:schema
-  targetNamespace="http://bitrepository.org/BitRepositoryMessages.xsd"
-  attributeFormDefault="unqualified"
-  elementFormDefault="qualified"
+        targetNamespace="http://bitrepository.org/BitRepositoryMessages.xsd"
+        attributeFormDefault="unqualified"
+        elementFormDefault="qualified"
 
-  xmlns:tn="http://bitrepository.org/BitRepositoryMessages.xsd"
-  xmlns="http://bitrepository.org/BitRepositoryMessages.xsd"
-  xmlns:xs="http://www.w3.org/2001/XMLSchema"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xmlns:bre="http://bitrepository.org/BitRepositoryElements.xsd"
+        xmlns:tn="http://bitrepository.org/BitRepositoryMessages.xsd"
+        xmlns="http://bitrepository.org/BitRepositoryMessages.xsd"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:bre="http://bitrepository.org/BitRepositoryElements.xsd"
 >
 
-  <xs:import schemaLocation="BitRepositoryElements.xsd" namespace="http://bitrepository.org/BitRepositoryElements.xsd" />
+  <xs:import schemaLocation="BitRepositoryElements.xsd" namespace="http://bitrepository.org/BitRepositoryElements.xsd"/>
 
 
   <!-- Message super type definitions -->
-  
+
   <xs:complexType name="Message">
-    <xs:annotation><xs:documentation xml:lang="en">
-    The Bitrepository message supper class. All message types must extend this
-    type. The type defines all the common message elements 
-    </xs:documentation></xs:annotation>
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        The Bitrepository message supper class. All message types must extend this
+        type. The type defines all the common message elements
+      </xs:documentation>
+    </xs:annotation>
     <xs:sequence>
       <xs:element ref="bre:CorrelationID">
-        <xs:annotation><xs:documentation xml:lang="en">
-        CorrelationID is a unique identifier for communication usually on primitive level,
-        e.g the IdentifyPillarsForGet part of a get operation
-        </xs:documentation></xs:annotation>
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            CorrelationID is a unique identifier for communication usually on primitive level,
+            e.g the IdentifyPillarsForGet part of a get operation
+          </xs:documentation>
+        </xs:annotation>
       </xs:element>
 
-      <xs:element ref="bre:CollectionID" minOccurs="0" >
-        <xs:annotation><xs:documentation xml:lang="en">
-        The CollectionID is a unique identifier for bit repository collection
-        which data belongs to.
-        This is also the identification of decryption and keys for contents of message,
-        and it is part of unique identification of files together with a file id. Note that the
-        </xs:documentation></xs:annotation>
+      <xs:element ref="bre:CollectionID" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            The CollectionID is a unique identifier for bit repository collection
+            which data belongs to.
+            This is also the identification of decryption and keys for contents of message,
+            and it is part of unique identification of files together with a file id. Note that the
+          </xs:documentation>
+        </xs:annotation>
       </xs:element>
 
       <xs:element ref="bre:Destination">
-        <xs:annotation><xs:documentation xml:lang="en">
-        Identifies the destination which the message is sent to.
-        </xs:documentation></xs:annotation>
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            Identifies the destination which the message is sent to.
+          </xs:documentation>
+        </xs:annotation>
       </xs:element>
       <xs:element ref="bre:ReplyTo">
-        <xs:annotation><xs:documentation xml:lang="en">
-        Identifies the destination any responds should be sent to.
-        </xs:documentation></xs:annotation>
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            Identifies the destination any responds should be sent to.
+          </xs:documentation>
+        </xs:annotation>
       </xs:element>
 
-      <xs:element ref="bre:From" >
-        <xs:annotation><xs:documentation xml:lang="en">
-          The ID of the component responsible for this message.
-        </xs:documentation></xs:annotation>
+      <xs:element ref="bre:From">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            The ID of the component responsible for this message.
+          </xs:documentation>
+        </xs:annotation>
       </xs:element>
-      <xs:element ref="bre:To" minOccurs="0" >
-        <xs:annotation><xs:documentation xml:lang="en">
-          The ID of the component which this message is meant for. The element is optional, so if no Recipient is
-          included all component's should handle the message.
-        </xs:documentation></xs:annotation>
+      <xs:element ref="bre:To" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            The ID of the component which this message is meant for. The element is optional, so if no Recipient is
+            included all component's should handle the message.
+          </xs:documentation>
+        </xs:annotation>
       </xs:element>
     </xs:sequence>
-  
+
     <xs:attributeGroup ref="bre:VersionAttributes"/>
   </xs:complexType>
 
   <xs:complexType name="MessageResponse">
-    <xs:annotation><xs:documentation xml:lang="en">
-    Defines the elements common to all requests. All request message types must extend this type.
-    </xs:documentation></xs:annotation>
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Defines the elements common to all requests. All request message types must extend this type.
+      </xs:documentation>
+    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="Message">
         <xs:sequence>
-        
+
           <xs:element ref="bre:ResponseInfo">
-            <xs:annotation><xs:documentation xml:lang="en">
-              Response information informing that the request has been received and
-              if an operation request can be met. This response info can be used to send 'negative' responses.
-            </xs:documentation></xs:annotation>
+            <xs:annotation>
+              <xs:documentation xml:lang="en">
+                Response information informing that the request has been received and
+                if an operation request can be met. This response info can be used to send 'negative' responses.
+              </xs:documentation>
+            </xs:annotation>
           </xs:element>
-        
+
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
 
   <xs:complexType name="MessageRequest">
-    <xs:annotation><xs:documentation xml:lang="en">
-    Defines the elements common to all responses. All response types must extend 
-    this type.
-    </xs:documentation></xs:annotation>
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Defines the elements common to all responses. All response types must extend
+        this type.
+      </xs:documentation>
+    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="Message">
         <xs:sequence>
-     
-        <xs:element ref="bre:AuditTrailInformation" minOccurs="0" maxOccurs="1">
-          <xs:annotation><xs:documentation xml:lang="en">
-          Audit Trail Information known to sender to be added to receiver audit trail.
-          Usually used by a client who knows a system user and wants this information as part of pillar 
-          audit trail.
-          </xs:documentation></xs:annotation>
-        </xs:element>
-        
+
+          <xs:element ref="bre:AuditTrailInformation" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">
+                Audit Trail Information known to sender to be added to receiver audit trail.
+                Usually used by a client who knows a system user and wants this information as part of pillar
+                audit trail.
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <!-- Concrete message definitions -->
 
   <!-- Implements the GetFile functionality as described here: https://sbforge.org/display/BITMAG/Get+File -->
 
   <xs:element name="IdentifyPillarsForGetFileRequest">
     <xs:complexType>
-      <xs:annotation><xs:documentation xml:lang="en">
-      Used for starting a GetFile operation. All pillars able to provide the 
-      indicated file should respond.
-      </xs:documentation></xs:annotation>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          Used for starting a GetFile operation. All pillars able to provide the
+          indicated file should respond.
+        </xs:documentation>
+      </xs:annotation>
       <xs:complexContent>
         <xs:extension base="tn:MessageRequest">
           <xs:sequence>
@@ -159,31 +183,39 @@
   </xs:element>
 
   <xs:element name="IdentifyPillarsForGetFileResponse">
-    <xs:complexType>   
-      <xs:annotation><xs:documentation xml:lang="en">
-      RESPONSE in IdentifyPillarsForGetFile primitive
-      </xs:documentation></xs:annotation>
+    <xs:complexType>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          RESPONSE in IdentifyPillarsForGetFile primitive
+        </xs:documentation>
+      </xs:annotation>
       <xs:complexContent>
         <xs:extension base="MessageResponse">
           <xs:sequence>
-            <xs:element ref="bre:FileID" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Unique identifier for requested file in given bit repository collection
-              </xs:documentation></xs:annotation>
+            <xs:element ref="bre:FileID">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Unique identifier for requested file in given bit repository collection
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-    
-            <xs:element ref="bre:PillarID" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Unique identifier for pillar replying
-              </xs:documentation></xs:annotation>
+
+            <xs:element ref="bre:PillarID">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Unique identifier for pillar replying
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-    
+
             <xs:element ref="bre:TimeToDeliver" minOccurs="0" maxOccurs="1">
-              <xs:annotation><xs:documentation xml:lang="en">
-              Estimated time before delivery of file requested.
-              That means the time from receiving a GetFileRequest message to the time
-              when file is uploaded.
-              </xs:documentation></xs:annotation>
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Estimated time before delivery of file requested.
+                  That means the time from receiving a GetFileRequest message to the time
+                  when file is uploaded.
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
           </xs:sequence>
         </xs:extension>
@@ -193,35 +225,45 @@
 
   <xs:element name="GetFileRequest">
     <xs:complexType>
-      <xs:annotation><xs:documentation xml:lang="en">
-      Request upload of a file from a specific pillar to a file exchange server.
-      </xs:documentation></xs:annotation>
-        <xs:complexContent>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          Request upload of a file from a specific pillar to a file exchange server.
+        </xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
         <xs:extension base="MessageRequest">
           <xs:sequence>
-            <xs:element ref="bre:PillarID" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Identifier of receiving pillar, which can be used for possible checks
-              (IdentifyPillarsForGetFileResponse.ReplyTo should ensure that right pillar is reached)
-              </xs:documentation></xs:annotation>
+            <xs:element ref="bre:PillarID" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Identifier of receiving pillar, which can be used for possible checks
+                  (IdentifyPillarsForGetFileResponse.ReplyTo should ensure that right pillar is reached)
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-    
-            <xs:element ref="bre:FileID" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Unique identifier for requested file in given bit repository collection
-              </xs:documentation></xs:annotation>
+
+            <xs:element ref="bre:FileID">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Unique identifier for requested file in given bit repository collection
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-    
+
             <xs:element ref="bre:FilePart" minOccurs="0" maxOccurs="1">
-              <xs:annotation><xs:documentation xml:lang="en">
-              Specification of part of the file, in case only a part is wanted
-              </xs:documentation></xs:annotation>
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Specification of part of the file, in case only a part is wanted
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-    
-            <xs:element ref="bre:FileAddress" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Address (e.g. in form of an URL) for where file must be delivered
-              </xs:documentation></xs:annotation>
+
+            <xs:element ref="bre:FileAddress">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Address (e.g. in form of an URL) for where file must be delivered
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
           </xs:sequence>
         </xs:extension>
@@ -231,57 +273,72 @@
 
   <xs:element name="GetFileProgressResponse">
     <xs:complexType>
-      <xs:annotation><xs:documentation xml:lang="en">
-      Returns progress info from a pillar regarding a GetFile operation. 
-      
-      Note that there can be more responses to the same GetFileRequest, e.g. if a
-      DVD pillar gives running status of where it is in the get process.
-      
-      Examples of progress info are: <ol>
-      <li>Request accepted</li>
-      <li>File upload started accepted</li>
-      </ol>
-      </xs:documentation></xs:annotation>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          Returns progress info from a pillar regarding a GetFile operation.
+
+          Note that there can be more responses to the same GetFileRequest, e.g. if a
+          DVD pillar gives running status of where it is in the get process.
+
+          Examples of progress info are:
+          <ol>
+            <li>Request accepted</li>
+            <li>File upload started accepted</li>
+          </ol>
+        </xs:documentation>
+      </xs:annotation>
       <xs:complexContent>
         <xs:extension base="MessageResponse">
           <xs:sequence>
-            <xs:element ref="bre:PillarID" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Identifier of replying pillar, which can be used for possible checks
-              (otherwise it is known via CorrelationID and ReplyTo)
-              </xs:documentation></xs:annotation>
+            <xs:element ref="bre:PillarID" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Identifier of replying pillar, which can be used for possible checks
+                  (otherwise it is known via CorrelationID and ReplyTo)
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-    
-            <xs:element ref="bre:FileID" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Unique identifier for requested file in given bit repository collection
-              </xs:documentation></xs:annotation>
+
+            <xs:element ref="bre:FileID">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Unique identifier for requested file in given bit repository collection
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-    
+
             <xs:element ref="bre:FilePart" minOccurs="0" maxOccurs="1">
-              <xs:annotation><xs:documentation xml:lang="en">
-              Specification of part of the file, in case only a part is wanted
-              </xs:documentation></xs:annotation>
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Specification of part of the file, in case only a part is wanted
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-    
-            <xs:element ref="bre:FileAddress" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Address (e.g. in form of an URL) for where file will be delivered
-              </xs:documentation></xs:annotation>
+
+            <xs:element ref="bre:FileAddress">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Address (e.g. in form of an URL) for where file will be delivered
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-    
+
             <xs:element ref="bre:FileSize" minOccurs="0" maxOccurs="1">
-              <xs:annotation><xs:documentation xml:lang="en">
-              Expected size of file to be send, expressed in bytes.
-              This can be used in e.g. capacity checks
-              </xs:documentation></xs:annotation>
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Expected size of file to be send, expressed in bytes.
+                  This can be used in e.g. capacity checks
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-    
+
             <xs:element ref="bre:ChecksumDataForExistingFile" minOccurs="0" maxOccurs="1">
-              <xs:annotation><xs:documentation xml:lang="en">
-              Different Checksums of the file to be sent.
-              This can be used in checks of correct receival.
-              </xs:documentation></xs:annotation>
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Different Checksums of the file to be sent.
+                  This can be used in checks of correct receival.
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
           </xs:sequence>
         </xs:extension>
@@ -291,38 +348,48 @@
 
   <xs:element name="GetFileFinalResponse">
     <xs:complexType>
-      <xs:annotation><xs:documentation xml:lang="en">
-      FINAL RESPONSE in GetFile primitive
-      </xs:documentation></xs:annotation>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          FINAL RESPONSE in GetFile primitive
+        </xs:documentation>
+      </xs:annotation>
       <xs:complexContent>
         <xs:extension base="MessageResponse">
-        <xs:sequence>
-          <xs:element ref="bre:PillarID" minOccurs="0" maxOccurs="1" >
-            <xs:annotation><xs:documentation xml:lang="en">
-            Identifier of replying pillar, which can be used for possible checks
-            (otherwise it is known via CorrelationID and ReplyTo)
-            </xs:documentation></xs:annotation>
-          </xs:element>
-  
-          <xs:element ref="bre:FileID" >
-            <xs:annotation><xs:documentation xml:lang="en">
-            Unique identifier for requested file in given bit repository collection
-            </xs:documentation></xs:annotation>
-          </xs:element>
-  
-          <xs:element ref="bre:FilePart" minOccurs="0" maxOccurs="1">
-            <xs:annotation><xs:documentation xml:lang="en">
-            Specification of part of the file, in case only a part is wanted
-            </xs:documentation></xs:annotation>
-          </xs:element>
-  
-          <xs:element ref="bre:FileAddress" >
-            <xs:annotation><xs:documentation xml:lang="en">
-            Address (e.g. in form of an URL) for where file has been delivered (if completed)
-            </xs:documentation></xs:annotation>
-          </xs:element>
+          <xs:sequence>
+            <xs:element ref="bre:PillarID" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Identifier of replying pillar, which can be used for possible checks
+                  (otherwise it is known via CorrelationID and ReplyTo)
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
 
-        </xs:sequence>
+            <xs:element ref="bre:FileID">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Unique identifier for requested file in given bit repository collection
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element ref="bre:FilePart" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Specification of part of the file, in case only a part is wanted
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element ref="bre:FileAddress">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Address (e.g. in form of an URL) for where file has been delivered (if completed)
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+          </xs:sequence>
         </xs:extension>
       </xs:complexContent>
     </xs:complexType>
@@ -333,26 +400,32 @@
 
   <xs:element name="IdentifyPillarsForPutFileRequest">
     <xs:complexType>
-      <xs:annotation><xs:documentation xml:lang="en">
-      REQUEST in IdentifyPillarsForPutFile primitive
-      </xs:documentation></xs:annotation>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          REQUEST in IdentifyPillarsForPutFile primitive
+        </xs:documentation>
+      </xs:annotation>
       <xs:complexContent>
         <xs:extension base="MessageRequest">
-        <xs:sequence>
-          <xs:element ref="bre:FileID" minOccurs="0" maxOccurs="1">
-            <xs:annotation><xs:documentation xml:lang="en">
-            Unique identifier for file to be put for given collection.
-            This can be used for duplicate ID check.
-            </xs:documentation></xs:annotation>
-          </xs:element>
-  
-          <xs:element ref="bre:FileSize" minOccurs="0" maxOccurs="1">
-            <xs:annotation><xs:documentation xml:lang="en">
-            Expected size of file to be put, expressed in bytes.
-            This can be used in e.g. capacity checks
-            </xs:documentation></xs:annotation>
-          </xs:element>
-        </xs:sequence>
+          <xs:sequence>
+            <xs:element ref="bre:FileID" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Unique identifier for file to be put for given collection.
+                  This can be used for duplicate ID check.
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element ref="bre:FileSize" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Expected size of file to be put, expressed in bytes.
+                  This can be used in e.g. capacity checks
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
         </xs:extension>
       </xs:complexContent>
     </xs:complexType>
@@ -360,99 +433,125 @@
 
   <xs:element name="IdentifyPillarsForPutFileResponse">
     <xs:complexType>
-      <xs:annotation><xs:documentation xml:lang="en">
-      RESPONSE in IdentifyPillarsForPutFile primitive
-      </xs:documentation></xs:annotation>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          RESPONSE in IdentifyPillarsForPutFile primitive
+        </xs:documentation>
+      </xs:annotation>
       <xs:complexContent>
         <xs:extension base="MessageResponse">
-        <xs:sequence>
-          <xs:element ref="bre:PillarID" >
-            <xs:annotation><xs:documentation xml:lang="en">
-            Unique identifier for pillar replying
-            </xs:documentation></xs:annotation>
-          </xs:element>
-          
-          <xs:element ref="bre:FileID" minOccurs="0" maxOccurs="1">
-            <xs:annotation><xs:documentation xml:lang="en">
-            Unique identifier for file to be put for given collection.
-            This can be used for duplicate ID check.
-            </xs:documentation></xs:annotation>
-          </xs:element>
-  
-          <xs:element ref="bre:PillarChecksumSpec" minOccurs="0" maxOccurs="1" >
-            <xs:annotation><xs:documentation xml:lang="en">
-            Checksums type in case it is a checksum pillar replying
-            It is only informative for possible later checks
-            </xs:documentation></xs:annotation>
-          </xs:element>
-          
-          <xs:element ref="bre:ChecksumDataForExistingFile" minOccurs="0" maxOccurs="1">
-            <xs:annotation><xs:documentation xml:lang="en">
-              Checksum for the file in case a file with the supplied fileID already exists in the pillar.
-            </xs:documentation></xs:annotation>
-          </xs:element>
-  
-          <xs:element ref="bre:TimeToDeliver" minOccurs="0" maxOccurs="1" >
-            <xs:annotation><xs:documentation xml:lang="en">
-            Estimated time before file is downloaded
-            That means the time from receiving a PutFileRequest message to the time
-            when file is downloaded at least to a temporary buffer on the pillar.
-            </xs:documentation></xs:annotation>
-          </xs:element>
-        </xs:sequence>
+          <xs:sequence>
+            <xs:element ref="bre:PillarID">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Unique identifier for pillar replying
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element ref="bre:FileID" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Unique identifier for file to be put for given collection.
+                  This can be used for duplicate ID check.
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element ref="bre:PillarChecksumSpec" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Checksums type in case it is a checksum pillar replying
+                  It is only informative for possible later checks
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element ref="bre:ChecksumDataForExistingFile" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Checksum for the file in case a file with the supplied fileID already exists in the pillar.
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element ref="bre:TimeToDeliver" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Estimated time before file is downloaded
+                  That means the time from receiving a PutFileRequest message to the time
+                  when file is downloaded at least to a temporary buffer on the pillar.
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
         </xs:extension>
       </xs:complexContent>
     </xs:complexType>
   </xs:element>
-  
+
   <xs:element name="PutFileRequest">
     <xs:complexType>
-      <xs:annotation><xs:documentation xml:lang="en">
-      REQUEST in PutFile primitive
-      </xs:documentation></xs:annotation>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          REQUEST in PutFile primitive
+        </xs:documentation>
+      </xs:annotation>
       <xs:complexContent>
         <xs:extension base="MessageRequest">
-        <xs:sequence>
-          <xs:element ref="bre:PillarID" minOccurs="0" maxOccurs="1" >
-            <xs:annotation><xs:documentation xml:lang="en">
-            Identifier of receiving pillar, which can be used for possible checks
-            (IdentifyPillarsForPutFileResponse.ReplyTo should ensure that right pillar is reached)
-            </xs:documentation></xs:annotation>
-          </xs:element>
-  
-          <xs:element ref="bre:FileID" >
-            <xs:annotation><xs:documentation xml:lang="en">
-            Unique identifier for file to be put for given collection
-            </xs:documentation></xs:annotation>
-          </xs:element>
-  
-          <xs:element ref="bre:FileAddress" >
-            <xs:annotation><xs:documentation xml:lang="en">
-            Address (e.g. in form of an URL) for where file must be downloaded from
-            </xs:documentation></xs:annotation>
-          </xs:element>
-  
-          <xs:element ref="bre:FileSize" minOccurs="0" maxOccurs="1">
-            <xs:annotation><xs:documentation xml:lang="en">
-            Expected size of file to be put, expressed in bytes.
-            This can be used in e.g. capacity checks
-            </xs:documentation></xs:annotation>
-          </xs:element>
-  
-          <xs:element ref="bre:ChecksumDataForNewFile" minOccurs="0" maxOccurs="1">
-            <xs:annotation><xs:documentation xml:lang="en">
-            Optionally checksums (and type and possibly salt) of file to be put.
-            This can be used in checks of correct receival.
-            </xs:documentation></xs:annotation>
-          </xs:element>
-          
-          <xs:element ref="bre:ChecksumRequestForNewFile" minOccurs="0" maxOccurs="1" >
-            <xs:annotation><xs:documentation xml:lang="en">
-            Optionally salt and/or type of checksum for extra checksumscheck of file at
-            completion to of put file. The result can be given in PutFileFinalResponse
-            </xs:documentation></xs:annotation>
-          </xs:element>
-        </xs:sequence>
+          <xs:sequence>
+            <xs:element ref="bre:PillarID" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Identifier of receiving pillar, which can be used for possible checks
+                  (IdentifyPillarsForPutFileResponse.ReplyTo should ensure that right pillar is reached)
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element ref="bre:FileID">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Unique identifier for file to be put for given collection
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element ref="bre:FileAddress">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Address (e.g. in form of an URL) for where file must be downloaded from
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element ref="bre:FileSize" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Expected size of file to be put, expressed in bytes.
+                  This can be used in e.g. capacity checks
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element ref="bre:ChecksumDataForNewFile" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Optionally checksums (and type and possibly salt) of file to be put.
+                  This can be used in checks of correct receival.
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element ref="bre:ChecksumRequestForNewFile" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Optionally salt and/or type of checksum for extra checksumscheck of file at
+                  completion to of put file. The result can be given in PutFileFinalResponse
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
         </xs:extension>
       </xs:complexContent>
     </xs:complexType>
@@ -460,40 +559,50 @@
 
   <xs:element name="PutFileProgressResponse">
     <xs:complexType>
-      <xs:annotation><xs:documentation xml:lang="en">
-      PROGRESS RESPONSE in PutFile primitive
-      Note that there can be more responses to the same PutFileRequest, e.g. if a
-      DVD pillar gives running status of where it is in the put process.
-      </xs:documentation></xs:annotation>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          PROGRESS RESPONSE in PutFile primitive
+          Note that there can be more responses to the same PutFileRequest, e.g. if a
+          DVD pillar gives running status of where it is in the put process.
+        </xs:documentation>
+      </xs:annotation>
       <xs:complexContent>
         <xs:extension base="MessageResponse">
-        <xs:sequence>
-          <xs:element ref="bre:PillarID" minOccurs="0" maxOccurs="1" >
-            <xs:annotation><xs:documentation xml:lang="en">
-            Identifier of responding pillar, which can be used for possible checks
-            (otherwise it is known via CorrelationID and ReplyTo)
-            </xs:documentation></xs:annotation>
-          </xs:element>
-  
-          <xs:element ref="bre:PillarChecksumSpec" minOccurs="0" maxOccurs="1" >
-            <xs:annotation><xs:documentation xml:lang="en">
-            Checksums specification of responding checksums pillar, which can be used for possible checks
-            </xs:documentation></xs:annotation>
-          </xs:element>
-  
-          <xs:element ref="bre:FileID" >
-            <xs:annotation><xs:documentation xml:lang="en">
-            Unique identifier for file to be put for given bit repository collection
-            </xs:documentation></xs:annotation>
-          </xs:element>
-  
-          <xs:element ref="bre:FileAddress" >
-            <xs:annotation><xs:documentation xml:lang="en">
-            Address (e.g. in form of an URL) for where file is to be downloaded from
-            </xs:documentation></xs:annotation>
-          </xs:element>
+          <xs:sequence>
+            <xs:element ref="bre:PillarID" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Identifier of responding pillar, which can be used for possible checks
+                  (otherwise it is known via CorrelationID and ReplyTo)
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
 
-        </xs:sequence>
+            <xs:element ref="bre:PillarChecksumSpec" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Checksums specification of responding checksums pillar, which can be used for possible checks
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element ref="bre:FileID">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Unique identifier for file to be put for given bit repository collection
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element ref="bre:FileAddress">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Address (e.g. in form of an URL) for where file is to be downloaded from
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+          </xs:sequence>
         </xs:extension>
       </xs:complexContent>
     </xs:complexType>
@@ -501,72 +610,90 @@
 
   <xs:element name="PutFileFinalResponse">
     <xs:complexType>
-      <xs:annotation><xs:documentation xml:lang="en">
-      FINAL RESPONSE in PutFile primitive
-      </xs:documentation></xs:annotation>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          FINAL RESPONSE in PutFile primitive
+        </xs:documentation>
+      </xs:annotation>
       <xs:complexContent>
         <xs:extension base="MessageResponse">
-        <xs:sequence>
-          <xs:element ref="bre:PillarID" minOccurs="0" maxOccurs="1" >
-            <xs:annotation><xs:documentation xml:lang="en">
-            Identifier of responding pillar, which can be used for possible checks
-            (otherwise it is known via CorrelationID and ReplyTo)
-            </xs:documentation></xs:annotation>
-          </xs:element>
-  
-          <xs:element ref="bre:PillarChecksumSpec" minOccurs="0" maxOccurs="1" >
-            <xs:annotation><xs:documentation xml:lang="en">
-            Checksums type of responding checksums pillar, which can be used for possible checks
-            </xs:documentation></xs:annotation>
-          </xs:element>
-  
-          <xs:element ref="bre:FileID" >
-            <xs:annotation><xs:documentation xml:lang="en">
-            Unique identifier for file to be put for given bit repository collection
-            </xs:documentation></xs:annotation>
-          </xs:element>
-  
-          <xs:element ref="bre:FileAddress" >
-            <xs:annotation><xs:documentation xml:lang="en">
-            Address (e.g. in form of an URL) for where file has been downloaded from (if completed)
-            </xs:documentation></xs:annotation>
-          </xs:element>
-    
-          <xs:element ref="bre:ChecksumDataForNewFile" minOccurs="0" maxOccurs="1">
-            <xs:annotation><xs:documentation xml:lang="en">
-            Checksum calculated as specified in PutFileRequest, if specified
-            </xs:documentation></xs:annotation>
-          </xs:element>
-          
-          <xs:element ref="bre:ChecksumDataForExistingFile" minOccurs="0" maxOccurs="1">
-            <xs:annotation><xs:documentation xml:lang="en">
-              Checksum for the file in case the pillar already has the file requested for a put
-              on store.
-            </xs:documentation></xs:annotation>
-          </xs:element>
-        </xs:sequence>
+          <xs:sequence>
+            <xs:element ref="bre:PillarID" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Identifier of responding pillar, which can be used for possible checks
+                  (otherwise it is known via CorrelationID and ReplyTo)
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element ref="bre:PillarChecksumSpec" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Checksums type of responding checksums pillar, which can be used for possible checks
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element ref="bre:FileID">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Unique identifier for file to be put for given bit repository collection
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element ref="bre:FileAddress">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Address (e.g. in form of an URL) for where file has been downloaded from (if completed)
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element ref="bre:ChecksumDataForNewFile" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Checksum calculated as specified in PutFileRequest, if specified
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element ref="bre:ChecksumDataForExistingFile" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Checksum for the file in case the pillar already has the file requested for a put
+                  on store.
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
         </xs:extension>
       </xs:complexContent>
     </xs:complexType>
   </xs:element>
 
 
-   <!-- Implements the DeleteFile functionality as described here: https://sbforge.org/display/BITMAG/Delete+File -->
+  <!-- Implements the DeleteFile functionality as described here: https://sbforge.org/display/BITMAG/Delete+File -->
 
   <xs:element name="IdentifyPillarsForDeleteFileRequest">
     <xs:complexType>
-      <xs:annotation><xs:documentation xml:lang="en">
-      Requests for all pillars to respond which can perform a delete operation on the specified file.
-      </xs:documentation></xs:annotation>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          Requests for all pillars to respond which can perform a delete operation on the specified file.
+        </xs:documentation>
+      </xs:annotation>
       <xs:complexContent>
         <xs:extension base="MessageRequest">
-        <xs:sequence>
-          <xs:element ref="bre:FileID" >
-            <xs:annotation><xs:documentation xml:lang="en">
-            Unique identifier for file to be deleted from given bit repository collection
-            </xs:documentation></xs:annotation>
-          </xs:element>
-        </xs:sequence>
+          <xs:sequence>
+            <xs:element ref="bre:FileID">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Unique identifier for file to be deleted from given bit repository collection
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
         </xs:extension>
       </xs:complexContent>
     </xs:complexType>
@@ -574,80 +701,100 @@
 
   <xs:element name="IdentifyPillarsForDeleteFileResponse">
     <xs:complexType>
-      <xs:annotation><xs:documentation xml:lang="en">
-      RESPONSE in IdentifyPillarsForDeleteFile primitive
-      </xs:documentation></xs:annotation>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          RESPONSE in IdentifyPillarsForDeleteFile primitive
+        </xs:documentation>
+      </xs:annotation>
       <xs:complexContent>
         <xs:extension base="MessageResponse">
-        <xs:sequence>
-          <xs:element ref="bre:FileID" >
-            <xs:annotation><xs:documentation xml:lang="en">
-              Unique identifier for file to be deleted from given bit repository collection
-            </xs:documentation></xs:annotation>
-          </xs:element>
-  
-          <xs:element ref="bre:PillarID" >
-            <xs:annotation><xs:documentation xml:lang="en">
-            Unique identifier for pillar replying
-            </xs:documentation></xs:annotation>
-          </xs:element>
-  
-          <xs:element ref="bre:PillarChecksumSpec" minOccurs="0" maxOccurs="1" >
-            <xs:annotation><xs:documentation xml:lang="en">
-            Checksum type can be given for both regular and checksum pillar.
-            The checksum type is necessary for sending correct checksum in later delete request,
-            as file (or checksum) may only be deleted after checksum check on pillar.
-            The element is not required as this information is also part of settings.
-            </xs:documentation></xs:annotation>
-          </xs:element>
-    
-          <xs:element ref="bre:TimeToDeliver" minOccurs="0" maxOccurs="1" >
-            <xs:annotation><xs:documentation xml:lang="en">
-            Estimated time before file is deleted.
-            That means the time from receiving a DeleteFileRequest message to the time
-            when file is deleted from pillar (or no longer visible).
-            </xs:documentation></xs:annotation>
-          </xs:element>
-        </xs:sequence>
+          <xs:sequence>
+            <xs:element ref="bre:FileID">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Unique identifier for file to be deleted from given bit repository collection
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element ref="bre:PillarID">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Unique identifier for pillar replying
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element ref="bre:PillarChecksumSpec" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Checksum type can be given for both regular and checksum pillar.
+                  The checksum type is necessary for sending correct checksum in later delete request,
+                  as file (or checksum) may only be deleted after checksum check on pillar.
+                  The element is not required as this information is also part of settings.
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element ref="bre:TimeToDeliver" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Estimated time before file is deleted.
+                  That means the time from receiving a DeleteFileRequest message to the time
+                  when file is deleted from pillar (or no longer visible).
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
         </xs:extension>
       </xs:complexContent>
     </xs:complexType>
   </xs:element>
-  
+
   <xs:element name="DeleteFileRequest">
     <xs:complexType>
-      <xs:annotation><xs:documentation xml:lang="en">
-      REQUEST in DeleteFile primitive
-      </xs:documentation></xs:annotation>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          REQUEST in DeleteFile primitive
+        </xs:documentation>
+      </xs:annotation>
       <xs:complexContent>
         <xs:extension base="MessageRequest">
           <xs:sequence>
-    
-            <xs:element ref="bre:PillarID" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Identifier of receiving pillar, which can be used for possible checks
-              (IdentifyPillarsForDeleteFileResponse.ReplyTo should ensure that right pillar is reached)
-              </xs:documentation></xs:annotation>
+
+            <xs:element ref="bre:PillarID" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Identifier of receiving pillar, which can be used for possible checks
+                  (IdentifyPillarsForDeleteFileResponse.ReplyTo should ensure that right pillar is reached)
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-    
-            <xs:element ref="bre:FileID" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Unique identifier for file to be deleted from given collection
-              </xs:documentation></xs:annotation>
+
+            <xs:element ref="bre:FileID">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Unique identifier for file to be deleted from given collection
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-    
+
             <xs:element ref="bre:ChecksumDataForExistingFile" minOccurs="0" maxOccurs="1">
-              <xs:annotation><xs:documentation xml:lang="en">
-              Checksums (and type and possibly salt) of file to be deleted.
-              This should be used in checks on pillar to ensure the correct file is deleted.
-              </xs:documentation></xs:annotation>
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Checksums (and type and possibly salt) of file to be deleted.
+                  This should be used in checks on pillar to ensure the correct file is deleted.
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-            
-            <xs:element ref="bre:ChecksumRequestForExistingFile" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Optionally salt and/or type of checksum for extra checksumscheck of file at
-              completion to of put file. The result can be given in DeleteFileFinalResponse
-              </xs:documentation></xs:annotation>
+
+            <xs:element ref="bre:ChecksumRequestForExistingFile" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Optionally salt and/or type of checksum for extra checksumscheck of file at
+                  completion to of put file. The result can be given in DeleteFileFinalResponse
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
           </xs:sequence>
         </xs:extension>
@@ -657,23 +804,29 @@
 
   <xs:element name="DeleteFileProgressResponse">
     <xs:complexType>
-      <xs:annotation><xs:documentation xml:lang="en">
-      PROGRESS RESPONSE in DeleteFile primitive
-      </xs:documentation></xs:annotation>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          PROGRESS RESPONSE in DeleteFile primitive
+        </xs:documentation>
+      </xs:annotation>
       <xs:complexContent>
         <xs:extension base="MessageResponse">
           <xs:sequence>
             <xs:element ref="bre:PillarID" minOccurs="0" maxOccurs="1">
-              <xs:annotation><xs:documentation xml:lang="en">
-              Identifier of responding pillar, which can be used for possible checks
-              (otherwise it is known via CorrelationID and ReplyTo)
-              </xs:documentation></xs:annotation>
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Identifier of responding pillar, which can be used for possible checks
+                  (otherwise it is known via CorrelationID and ReplyTo)
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-    
-            <xs:element ref="bre:FileID" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Unique identifier for file to be deleted from given bit repository collection
-              </xs:documentation></xs:annotation>
+
+            <xs:element ref="bre:FileID">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Unique identifier for file to be deleted from given bit repository collection
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
 
           </xs:sequence>
@@ -684,29 +837,37 @@
 
   <xs:element name="DeleteFileFinalResponse">
     <xs:complexType>
-      <xs:annotation><xs:documentation xml:lang="en">
-      FINAL RESPONSE in DeleteFile primitive
-      </xs:documentation></xs:annotation>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          FINAL RESPONSE in DeleteFile primitive
+        </xs:documentation>
+      </xs:annotation>
       <xs:complexContent>
         <xs:extension base="MessageResponse">
           <xs:sequence>
-            <xs:element ref="bre:PillarID" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Identifier of responding pillar, which can be used for possible checks
-              (otherwise it is known via CorrelationID and ReplyTo)
-              </xs:documentation></xs:annotation>
+            <xs:element ref="bre:PillarID" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Identifier of responding pillar, which can be used for possible checks
+                  (otherwise it is known via CorrelationID and ReplyTo)
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-    
-            <xs:element ref="bre:FileID" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Unique identifier for file that was to be deleted from given bit repository collection
-              </xs:documentation></xs:annotation>
+
+            <xs:element ref="bre:FileID">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Unique identifier for file that was to be deleted from given bit repository collection
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
 
             <xs:element ref="bre:ChecksumDataForExistingFile" minOccurs="0" maxOccurs="1">
-              <xs:annotation><xs:documentation xml:lang="en">
-              Checksum calculated as specified in DeleteFileRequest, if specified
-              </xs:documentation></xs:annotation>
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Checksum calculated as specified in DeleteFileRequest, if specified
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
           </xs:sequence>
         </xs:extension>
@@ -714,26 +875,32 @@
     </xs:complexType>
   </xs:element>
 
-  
+
   <!-- Implements the ReplaceFile functionality as described here: https://sbforge.org/display/BITMAG/Replace+File -->
 
   <xs:element name="IdentifyPillarsForReplaceFileRequest">
     <xs:complexType>
-      <xs:annotation><xs:documentation xml:lang="en">
-      REQUEST in IdentifyPillarsForReplaceFile primitive
-      </xs:documentation></xs:annotation>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          REQUEST in IdentifyPillarsForReplaceFile primitive
+        </xs:documentation>
+      </xs:annotation>
       <xs:complexContent>
         <xs:extension base="MessageRequest">
           <xs:sequence>
-            <xs:element ref="bre:FileID" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Unique identifier for file to be replaced in given bit repository collection
-              </xs:documentation></xs:annotation>
+            <xs:element ref="bre:FileID">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Unique identifier for file to be replaced in given bit repository collection
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
             <xs:element ref="bre:FileSize" minOccurs="0" maxOccurs="1">
-              <xs:annotation><xs:documentation xml:lang="en">
-                Expected size of the new file. The element is optional.
-              </xs:documentation></xs:annotation>
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Expected size of the new file. The element is optional.
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
           </xs:sequence>
         </xs:extension>
@@ -743,39 +910,49 @@
 
   <xs:element name="IdentifyPillarsForReplaceFileResponse">
     <xs:complexType>
-      <xs:annotation><xs:documentation xml:lang="en">
-      RESPONSE in IdentifyPillarsForReplaceFile primitive
-      </xs:documentation></xs:annotation>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          RESPONSE in IdentifyPillarsForReplaceFile primitive
+        </xs:documentation>
+      </xs:annotation>
       <xs:complexContent>
         <xs:extension base="MessageResponse">
           <xs:sequence>
-            <xs:element ref="bre:FileID" >
-              <xs:annotation><xs:documentation xml:lang="en">
-                Unique identifier for file to be replaced in given bit repository collection
-              </xs:documentation></xs:annotation>
+            <xs:element ref="bre:FileID">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Unique identifier for file to be replaced in given bit repository collection
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-    
-            <xs:element ref="bre:PillarID" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Unique identifier for pillar replying
-              </xs:documentation></xs:annotation>
+
+            <xs:element ref="bre:PillarID">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Unique identifier for pillar replying
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-    
-            <xs:element ref="bre:PillarChecksumSpec" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Checksum type can be given for both regular and checksum pillar.
-              The checksum type is necessary for sending correct checksum in later replace request,
-              as file (or checksum) may only be replaced after checksum check on pillar.
-              The element is not required as this information is also part of settings.
-              </xs:documentation></xs:annotation>
+
+            <xs:element ref="bre:PillarChecksumSpec" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Checksum type can be given for both regular and checksum pillar.
+                  The checksum type is necessary for sending correct checksum in later replace request,
+                  as file (or checksum) may only be replaced after checksum check on pillar.
+                  The element is not required as this information is also part of settings.
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-    
-            <xs:element ref="bre:TimeToDeliver" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Estimated time before file is replaced.
-              That means the time from receiving a ReplaceFileRequest message to the time
-              when file is replaced on pillar.
-              </xs:documentation></xs:annotation>
+
+            <xs:element ref="bre:TimeToDeliver" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Estimated time before file is replaced.
+                  That means the time from receiving a ReplaceFileRequest message to the time
+                  when file is replaced on pillar.
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
           </xs:sequence>
         </xs:extension>
@@ -785,64 +962,82 @@
 
   <xs:element name="ReplaceFileRequest">
     <xs:complexType>
-      <xs:annotation><xs:documentation xml:lang="en">
-      REQUEST in ReplaceFile primitive
-      </xs:documentation></xs:annotation>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          REQUEST in ReplaceFile primitive
+        </xs:documentation>
+      </xs:annotation>
       <xs:complexContent>
         <xs:extension base="MessageRequest">
           <xs:sequence>
-            <xs:element ref="bre:PillarID" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Identifier of receiving pillar, which can be used for possible checks
-              (IdentifyPillarsForReplaceFileResponse.ReplyTo should ensure that right pillar is reached)
-              </xs:documentation></xs:annotation>
+            <xs:element ref="bre:PillarID" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Identifier of receiving pillar, which can be used for possible checks
+                  (IdentifyPillarsForReplaceFileResponse.ReplyTo should ensure that right pillar is reached)
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-    
-            <xs:element ref="bre:FileID" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Unique identifier for file to be replaced in given collection
-              </xs:documentation></xs:annotation>
+
+            <xs:element ref="bre:FileID">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Unique identifier for file to be replaced in given collection
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-    
+
             <xs:element ref="bre:ChecksumDataForExistingFile" minOccurs="0" maxOccurs="1">
-              <xs:annotation><xs:documentation xml:lang="en">
-              Checksums (and type and possibly salt) of file to be replaced; that is the _old_ file.
-              This should be used in checks on pillar to ensure the correct file is deleted.
-              </xs:documentation></xs:annotation>
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Checksums (and type and possibly salt) of file to be replaced; that is the _old_ file.
+                  This should be used in checks on pillar to ensure the correct file is deleted.
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-            
-            <xs:element ref="bre:ChecksumRequestForExistingFile" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Optionally salt and/or type of checksum for extra checksumscheck of file prior to deletion of
-              the _old_ file. The result can be given in ReplaceFileFinalResponse
-              </xs:documentation></xs:annotation>
+
+            <xs:element ref="bre:ChecksumRequestForExistingFile" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Optionally salt and/or type of checksum for extra checksumscheck of file prior to deletion of
+                  the _old_ file. The result can be given in ReplaceFileFinalResponse
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-    
-            <xs:element ref="bre:FileAddress" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Address (e.g. in form of an URL) for where file must be downloaded from
-              </xs:documentation></xs:annotation>
+
+            <xs:element ref="bre:FileAddress">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Address (e.g. in form of an URL) for where file must be downloaded from
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-    
+
             <xs:element ref="bre:FileSize">
-              <xs:annotation><xs:documentation xml:lang="en">
-              Expected size of file to be put, expressed in bytes.
-              This can be used in e.g. capacity checks
-              </xs:documentation></xs:annotation>
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Expected size of file to be put, expressed in bytes.
+                  This can be used in e.g. capacity checks
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-    
+
             <xs:element ref="bre:ChecksumDataForNewFile" minOccurs="0" maxOccurs="1">
-              <xs:annotation><xs:documentation xml:lang="en">
-              Optionally checksums (and type and possibly salt) of new file to be put in replace operation.
-              This can be used in checks of correct receival.
-              </xs:documentation></xs:annotation>
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Optionally checksums (and type and possibly salt) of new file to be put in replace operation.
+                  This can be used in checks of correct receival.
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-            
-            <xs:element ref="bre:ChecksumRequestForNewFile" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Optionally salt and/or type of checksum for extra checksumscheck of file at
-              completion to of put file. The result can be given in ReplaceFileFinalResponse
-              </xs:documentation></xs:annotation>
+
+            <xs:element ref="bre:ChecksumRequestForNewFile" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Optionally salt and/or type of checksum for extra checksumscheck of file at
+                  completion to of put file. The result can be given in ReplaceFileFinalResponse
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
           </xs:sequence>
         </xs:extension>
@@ -852,39 +1047,49 @@
 
   <xs:element name="ReplaceFileProgressResponse">
     <xs:complexType>
-      <xs:annotation><xs:documentation xml:lang="en">
-      PROGRESS RESPONSE in ReplaceFile primitive
-      Note that there can be more responses to the same ReplaceFileRequest, e.g. if a
-      DVD pillar gives running status of where it is in the replace process.
-      </xs:documentation></xs:annotation>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          PROGRESS RESPONSE in ReplaceFile primitive
+          Note that there can be more responses to the same ReplaceFileRequest, e.g. if a
+          DVD pillar gives running status of where it is in the replace process.
+        </xs:documentation>
+      </xs:annotation>
       <xs:complexContent>
         <xs:extension base="MessageResponse">
           <xs:sequence>
-            <xs:element ref="bre:PillarID" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Identifier of responding pillar, which can be used for possible checks
-              (otherwise it is known via CorrelationID and ReplyTo)
-              </xs:documentation></xs:annotation>
+            <xs:element ref="bre:PillarID" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Identifier of responding pillar, which can be used for possible checks
+                  (otherwise it is known via CorrelationID and ReplyTo)
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-    
-            <xs:element ref="bre:PillarChecksumSpec" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Checksums specification of responding checksums pillar, which can be used for possible checks
-              </xs:documentation></xs:annotation>
+
+            <xs:element ref="bre:PillarChecksumSpec" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Checksums specification of responding checksums pillar, which can be used for possible checks
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-    
-            <xs:element ref="bre:FileID" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Unique identifier for file to be replaced in given bit repository collection
-              </xs:documentation></xs:annotation>
+
+            <xs:element ref="bre:FileID">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Unique identifier for file to be replaced in given bit repository collection
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-    
-            <xs:element ref="bre:FileAddress" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Address (e.g. in form of an URL) for where new file is to be downloaded from
-              </xs:documentation></xs:annotation>
+
+            <xs:element ref="bre:FileAddress">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Address (e.g. in form of an URL) for where new file is to be downloaded from
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-    
+
           </xs:sequence>
         </xs:extension>
       </xs:complexContent>
@@ -893,79 +1098,100 @@
 
   <xs:element name="ReplaceFileFinalResponse">
     <xs:complexType>
-      <xs:annotation><xs:documentation xml:lang="en">
-      FINAL RESPONSE in ReplaceFile primitive
-      </xs:documentation></xs:annotation>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          FINAL RESPONSE in ReplaceFile primitive
+        </xs:documentation>
+      </xs:annotation>
       <xs:complexContent>
         <xs:extension base="MessageResponse">
-        <xs:sequence>
-          <xs:element ref="bre:PillarID" minOccurs="0" maxOccurs="1" >
-            <xs:annotation><xs:documentation xml:lang="en">
-            Identifier of responding pillar, which can be used for possible checks
-            (otherwise it is known via CorrelationID and ReplyTo)
-            </xs:documentation></xs:annotation>
-          </xs:element>
-  
-          <xs:element ref="bre:PillarChecksumSpec" minOccurs="0" maxOccurs="1" >
-            <xs:annotation><xs:documentation xml:lang="en">
-            Checksums type of responding checksums pillar, which can be used for possible checks
-            </xs:documentation></xs:annotation>
-          </xs:element>
-  
-          <xs:element ref="bre:FileID" >
-            <xs:annotation><xs:documentation xml:lang="en">
-            Unique identifier for file to be replaced in given bit repository collection
-            </xs:documentation></xs:annotation>
-          </xs:element>
-  
-          <xs:element ref="bre:FileAddress" >
-            <xs:annotation><xs:documentation xml:lang="en">
-            Address (e.g. in form of an URL) for where new file has been downloaded from (if completed)
-            </xs:documentation></xs:annotation>
-          </xs:element>
-  
-         <xs:element ref="bre:ChecksumDataForExistingFile" minOccurs="0" maxOccurs="1">
-            <xs:annotation><xs:documentation xml:lang="en">
-            Checksum of replaced file calculated as specified in ReplaceFileRequest, if specified. 
-            Or in the case that the operation fails due to the checksum of the existing file does not match, 
-            include the checksum for the file on disk. 
-            </xs:documentation></xs:annotation>
-          </xs:element>
-   
-          <xs:element ref="bre:ChecksumDataForNewFile" minOccurs="0" maxOccurs="1">
-            <xs:annotation><xs:documentation xml:lang="en">
-            Checksum of replaced file calculated as specified in ReplaceFileRequest, if specified
-            </xs:documentation></xs:annotation>
-          </xs:element>
-        </xs:sequence>
+          <xs:sequence>
+            <xs:element ref="bre:PillarID" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Identifier of responding pillar, which can be used for possible checks
+                  (otherwise it is known via CorrelationID and ReplyTo)
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element ref="bre:PillarChecksumSpec" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Checksums type of responding checksums pillar, which can be used for possible checks
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element ref="bre:FileID">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Unique identifier for file to be replaced in given bit repository collection
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element ref="bre:FileAddress">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Address (e.g. in form of an URL) for where new file has been downloaded from (if completed)
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element ref="bre:ChecksumDataForExistingFile" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Checksum of replaced file calculated as specified in ReplaceFileRequest, if specified.
+                  Or in the case that the operation fails due to the checksum of the existing file does not match,
+                  include the checksum for the file on disk.
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element ref="bre:ChecksumDataForNewFile" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Checksum of replaced file calculated as specified in ReplaceFileRequest, if specified
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
         </xs:extension>
       </xs:complexContent>
     </xs:complexType>
   </xs:element>
 
 
-    <!-- Implements the GetChecksums functionality as described here: https://sbforge.org/display/BITMAG/Get+Checksums -->
- 
+  <!-- Implements the GetChecksums functionality as described here: https://sbforge.org/display/BITMAG/Get+Checksums -->
+
   <xs:element name="IdentifyPillarsForGetChecksumsRequest">
     <xs:complexType>
-      <xs:annotation><xs:documentation xml:lang="en">
-      REQUEST in IdentifyPillarsForGetChecksums primitive
-      </xs:documentation></xs:annotation>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          REQUEST in IdentifyPillarsForGetChecksums primitive
+        </xs:documentation>
+      </xs:annotation>
       <xs:complexContent>
         <xs:extension base="MessageRequest">
           <xs:sequence>
-            <xs:element ref="bre:FileIDs" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              FileIDs uniquely identifies the files in given bit repository collection which the checksums are requested for
-              </xs:documentation></xs:annotation>
+            <xs:element ref="bre:FileIDs">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  FileIDs uniquely identifies the files in given bit repository collection which the checksums are
+                  requested for
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-    
+
             <xs:element ref="bre:ChecksumRequestForExistingFile" minOccurs="0" maxOccurs="1">
-              <xs:annotation><xs:documentation xml:lang="en">
-              Optional checksums type and possible salt parameter requested
-              (only pillars that can deliver this kind of checksum should reply).
-              If not present pillars should use the default checksumtype specified in CollectionSettings.
-              </xs:documentation></xs:annotation>
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Optional checksums type and possible salt parameter requested
+                  (only pillars that can deliver this kind of checksum should reply).
+                  If not present pillars should use the default checksumtype specified in CollectionSettings.
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
           </xs:sequence>
         </xs:extension>
@@ -975,44 +1201,56 @@
 
   <xs:element name="IdentifyPillarsForGetChecksumsResponse">
     <xs:complexType>
-      <xs:annotation><xs:documentation xml:lang="en">
-      RESPONSE in IdentifyPillarsForGetChecksums primitive
-      </xs:documentation></xs:annotation>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          RESPONSE in IdentifyPillarsForGetChecksums primitive
+        </xs:documentation>
+      </xs:annotation>
       <xs:complexContent>
         <xs:extension base="MessageResponse">
           <xs:sequence>
-    
-            <xs:element ref="bre:FileIDs" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              FileIDs uniquely identifies the files in given collection which the checksums are requested for
-              </xs:documentation></xs:annotation>
+
+            <xs:element ref="bre:FileIDs">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  FileIDs uniquely identifies the files in given collection which the checksums are requested for
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-    
+
             <xs:element ref="bre:ChecksumRequestForExistingFile" minOccurs="0" maxOccurs="1">
-              <xs:annotation><xs:documentation xml:lang="en">
-              Checksums type and possible salt requested
-              </xs:documentation></xs:annotation>
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Checksums type and possible salt requested
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-    
-            <xs:element ref="bre:PillarID" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Unique identifier for the pillar replying
-              </xs:documentation></xs:annotation>
+
+            <xs:element ref="bre:PillarID">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Unique identifier for the pillar replying
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-    
-            <xs:element ref="bre:PillarChecksumSpec" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Checksums type in case it is a checksum pillar replying,
-              only used for extra checks
-              </xs:documentation></xs:annotation>
+
+            <xs:element ref="bre:PillarChecksumSpec" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Checksums type in case it is a checksum pillar replying,
+                  only used for extra checks
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-    
-            <xs:element ref="bre:TimeToDeliver" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Estimated time before delivery of checksums requested
-              That means the time from receiving a GetChecksumsRequest message to the time
-              when checksum data is uploaded.
-              </xs:documentation></xs:annotation>
+
+            <xs:element ref="bre:TimeToDeliver" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Estimated time before delivery of checksums requested
+                  That means the time from receiving a GetChecksumsRequest message to the time
+                  when checksum data is uploaded.
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
           </xs:sequence>
         </xs:extension>
@@ -1022,53 +1260,71 @@
 
   <xs:element name="GetChecksumsRequest">
     <xs:complexType>
-      <xs:annotation><xs:documentation xml:lang="en">
-      REQUEST in GetChecksums primitive
-      </xs:documentation></xs:annotation>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          REQUEST in GetChecksums primitive
+        </xs:documentation>
+      </xs:annotation>
       <xs:complexContent>
         <xs:extension base="MessageRequest">
           <xs:sequence>
-            <xs:element ref="bre:PillarID" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Identifier of receiving pillar, which can be used for possible checks
-              (IdentifyPillarsForGetChecksumsResponse.ReplyTo should ensure that right pillar is reached)
-              </xs:documentation></xs:annotation>
-            </xs:element>
-    
-            <xs:element ref="bre:FileIDs" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              FileIDs uniquely identifies the files in given bit repository collection which the checksums are requested for
-              </xs:documentation></xs:annotation>
+            <xs:element ref="bre:PillarID" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Identifier of receiving pillar, which can be used for possible checks
+                  (IdentifyPillarsForGetChecksumsResponse.ReplyTo should ensure that right pillar is reached)
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
 
-            <xs:element ref="bre:MinTimestamp"  minOccurs="0" >
-              <xs:annotation><xs:documentation xml:lang="en">
-                Only checksums younger at the same time as the minTimestamp should be returned.
-              </xs:documentation></xs:annotation>
+            <xs:element ref="bre:FileIDs">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  FileIDs uniquely identifies the files in given bit repository collection which the checksums are
+                  requested for
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-            <xs:element ref="bre:MaxTimestamp"  minOccurs="0" >
-              <xs:annotation><xs:documentation xml:lang="en">
-                Only checksums with checksumsolder or at the same time as the maxTimestamp should be returned.
-              </xs:documentation></xs:annotation>
+
+            <xs:element ref="bre:MinTimestamp" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Only checksums younger at the same time as the minTimestamp should be returned.
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-            <xs:element ref="bre:MaxNumberOfResults"  minOccurs="0" >
-              <xs:annotation><xs:documentation xml:lang="en">
-                Request the contributor to only return 'up-to' MaxNumberOfResults checksum results. This can be
-                used to break a checksum retrieval into small result sets (paging).
-              </xs:documentation></xs:annotation>
+            <xs:element ref="bre:MaxTimestamp" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Only checksums with checksumsolder or at the same time as the maxTimestamp should be returned.
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-    
+            <xs:element ref="bre:MaxNumberOfResults" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Request the contributor to only return 'up-to' MaxNumberOfResults checksum results. This can be
+                  used to break a checksum retrieval into small result sets (paging).
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
             <xs:element ref="bre:ChecksumRequestForExistingFile" minOccurs="0" maxOccurs="1">
-              <xs:annotation><xs:documentation xml:lang="en">
-              Checksums type and possible salt requested
-              </xs:documentation></xs:annotation>
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Checksums type and possible salt requested
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-    
-            <xs:element ref="bre:ResultAddress" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Address (e.g. in form of an URL) for where checksums must be delivered via file exchange.
-              In cases where the address is not given, the result will be given in the GetChecksumsFinalResponse message
-              </xs:documentation></xs:annotation>
+
+            <xs:element ref="bre:ResultAddress" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Address (e.g. in form of an URL) for where checksums must be delivered via file exchange.
+                  In cases where the address is not given, the result will be given in the GetChecksumsFinalResponse
+                  message
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
           </xs:sequence>
         </xs:extension>
@@ -1078,37 +1334,48 @@
 
   <xs:element name="GetChecksumsProgressResponse">
     <xs:complexType>
-      <xs:annotation><xs:documentation xml:lang="en">
-      PROGRESS RESPONSE in GetChecksums primitive
-      </xs:documentation></xs:annotation>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          PROGRESS RESPONSE in GetChecksums primitive
+        </xs:documentation>
+      </xs:annotation>
       <xs:complexContent>
         <xs:extension base="MessageResponse">
           <xs:sequence>
-            <xs:element ref="bre:PillarID" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Identifier of responding pillar, which can be used for possible checks
-              (otherwise it is known via CorrelationID and ReplyTo)
-              </xs:documentation></xs:annotation>
+            <xs:element ref="bre:PillarID" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Identifier of responding pillar, which can be used for possible checks
+                  (otherwise it is known via CorrelationID and ReplyTo)
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-    
+
             <xs:element ref="bre:FileIDs" minOccurs="0" maxOccurs="1">
-              <xs:annotation><xs:documentation xml:lang="en">
-              FileIDs uniquely identifies the files in given bit repository collection which the checksums are requested for
-              </xs:documentation></xs:annotation>
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  FileIDs uniquely identifies the files in given bit repository collection which the checksums are
+                  requested for
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-    
+
             <xs:element ref="bre:ChecksumRequestForExistingFile" minOccurs="0" maxOccurs="1">
-              <xs:annotation><xs:documentation xml:lang="en">
-              Checksums type and possible salt requested
-              </xs:documentation></xs:annotation>
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Checksums type and possible salt requested
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-    
-            <xs:element ref="bre:ResultAddress" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Address (e.g. in form of an URL) for where checksums will be delivered
-              </xs:documentation></xs:annotation>
+
+            <xs:element ref="bre:ResultAddress" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Address (e.g. in form of an URL) for where checksums will be delivered
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-    
+
           </xs:sequence>
         </xs:extension>
       </xs:complexContent>
@@ -1117,38 +1384,48 @@
 
   <xs:element name="GetChecksumsFinalResponse">
     <xs:complexType>
-      <xs:annotation><xs:documentation xml:lang="en">
-      FINAL RESPONSE in GetChecksums primitive
-      </xs:documentation></xs:annotation>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          FINAL RESPONSE in GetChecksums primitive
+        </xs:documentation>
+      </xs:annotation>
       <xs:complexContent>
         <xs:extension base="MessageResponse">
           <xs:sequence>
-            <xs:element ref="bre:PillarID" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Identifier of responding pillar, which can be used for possible checks
-              (otherwise it is known via CorrelationID and ReplyTo)
-              </xs:documentation></xs:annotation>
-            </xs:element>
-    
-            <xs:element ref="bre:ChecksumRequestForExistingFile" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Checksums type and possible salt requested
-              (Also in result, and traceable via CorrelationID)
-              </xs:documentation></xs:annotation>
-            </xs:element>
-    
-            <xs:element ref="bre:ResultingChecksums" minOccurs="0" maxOccurs="1">
-              <xs:annotation><xs:documentation xml:lang="en">
-              result with requested checksums
-              </xs:documentation></xs:annotation>
+            <xs:element ref="bre:PillarID" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Identifier of responding pillar, which can be used for possible checks
+                  (otherwise it is known via CorrelationID and ReplyTo)
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
 
-            <xs:element ref="bre:PartialResult" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en">
-                Indicates whether the list of result were limited for some reason, either a
-                MaxLimit in the request or a limit defined in the contributor. If all results have been returned
-                this should be false or undefined.
-              </xs:documentation></xs:annotation>
+            <xs:element ref="bre:ChecksumRequestForExistingFile" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Checksums type and possible salt requested
+                  (Also in result, and traceable via CorrelationID)
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element ref="bre:ResultingChecksums" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  result with requested checksums
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element ref="bre:PartialResult" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Indicates whether the list of result were limited for some reason, either a
+                  MaxLimit in the request or a limit defined in the contributor. If all results have been returned
+                  this should be false or undefined.
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
 
           </xs:sequence>
@@ -1157,24 +1434,29 @@
     </xs:complexType>
   </xs:element>
 
-  
+
   <!-- Implements the GetFileIDs functionality as described here: https://sbforge.org/display/BITMAG/Get+FileIDs -->
 
   <xs:element name="IdentifyPillarsForGetFileIDsRequest">
     <xs:complexType>
-      <xs:annotation><xs:documentation xml:lang="en">
-      REQUEST in IdentifyPillarsForGetFileIDs primitive
-      </xs:documentation></xs:annotation>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          REQUEST in IdentifyPillarsForGetFileIDs primitive
+        </xs:documentation>
+      </xs:annotation>
       <xs:complexContent>
         <xs:extension base="MessageRequest">
-        <xs:sequence>
-          <xs:element ref="bre:FileIDs" minOccurs="0" maxOccurs="1" >
-            <xs:annotation><xs:documentation xml:lang="en">
-            FileIDs uniquely identifies the files in given bit repository collection which the file ids are requested for
-            Given in order to be able to give possible estimate of time to deliver
-            </xs:documentation></xs:annotation>
-          </xs:element>
-        </xs:sequence>
+          <xs:sequence>
+            <xs:element ref="bre:FileIDs" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  FileIDs uniquely identifies the files in given bit repository collection which the file ids are
+                  requested for
+                  Given in order to be able to give possible estimate of time to deliver
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
         </xs:extension>
       </xs:complexContent>
     </xs:complexType>
@@ -1182,31 +1464,40 @@
 
   <xs:element name="IdentifyPillarsForGetFileIDsResponse">
     <xs:complexType>
-      <xs:annotation><xs:documentation xml:lang="en">
-      RESPONSE in IdentifyPillarsForGetFileIDs primitive
-      </xs:documentation></xs:annotation>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          RESPONSE in IdentifyPillarsForGetFileIDs primitive
+        </xs:documentation>
+      </xs:annotation>
       <xs:complexContent>
         <xs:extension base="MessageResponse">
           <xs:sequence>
-            <xs:element ref="bre:PillarID" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Unique identifier for pillar replying
-              </xs:documentation></xs:annotation>
+            <xs:element ref="bre:PillarID">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Unique identifier for pillar replying
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-    
-            <xs:element ref="bre:FileIDs" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en" >
-              FileIDs uniquely identifies the files in given bit repository collection which the file ids are requested for
-              only to repeat parameter from request.
-              </xs:documentation></xs:annotation>
+
+            <xs:element ref="bre:FileIDs" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  FileIDs uniquely identifies the files in given bit repository collection which the file ids are
+                  requested for
+                  only to repeat parameter from request.
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-    
-            <xs:element ref="bre:TimeToDeliver" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Estimated time before delivery of data (fileIDs) requested
-              That means the time from receiving a GetFileIDsRequest message to the time
-              when data is uploaded.
-              </xs:documentation></xs:annotation>
+
+            <xs:element ref="bre:TimeToDeliver" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Estimated time before delivery of data (fileIDs) requested
+                  That means the time from receiving a GetFileIDsRequest message to the time
+                  when data is uploaded.
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
           </xs:sequence>
         </xs:extension>
@@ -1216,47 +1507,64 @@
 
   <xs:element name="GetFileIDsRequest">
     <xs:complexType>
-      <xs:annotation><xs:documentation xml:lang="en">
-      REQUEST in GetFileIDs primitive
-      </xs:documentation></xs:annotation>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          REQUEST in GetFileIDs primitive
+        </xs:documentation>
+      </xs:annotation>
       <xs:complexContent>
         <xs:extension base="MessageRequest">
           <xs:sequence>
-            <xs:element ref="bre:PillarID" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Identifier of receiving pillar, which can be used for possible checks
-              (IdentifyPillarsForGetFileIDsResponse.ReplyTo should ensure that right pillar is reached)
-              </xs:documentation></xs:annotation>
-            </xs:element>
-    
-            <xs:element ref="bre:FileIDs" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              FileIDs uniquely identifies the files in given bit repository collection which the file ids are requested for
-              </xs:documentation></xs:annotation>
+            <xs:element ref="bre:PillarID" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Identifier of receiving pillar, which can be used for possible checks
+                  (IdentifyPillarsForGetFileIDsResponse.ReplyTo should ensure that right pillar is reached)
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
 
-            <xs:element ref="bre:MinTimestamp"  minOccurs="0" >
-              <xs:annotation><xs:documentation xml:lang="en">
-                Only fileIDs for files added/updated later or at the same time as the minTimestamp should be returned.
-              </xs:documentation></xs:annotation>
+            <xs:element ref="bre:FileIDs">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  FileIDs uniquely identifies the files in given bit repository collection which the file ids are
+                  requested for
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-            <xs:element ref="bre:MaxTimestamp"  minOccurs="0" >
-              <xs:annotation><xs:documentation xml:lang="en">
-                Only fileIDs for files added/updated before or at the same time as the maxTimestamp should be returned.
-              </xs:documentation></xs:annotation>
+
+            <xs:element ref="bre:MinTimestamp" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Only fileIDs for files added/updated later or at the same time as the minTimestamp should be returned.
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-            <xs:element ref="bre:MaxNumberOfResults"  minOccurs="0" >
-            <xs:annotation><xs:documentation xml:lang="en">
-              Request the contributor to only return 'up-to' MaxNumberOfResults of fileID results. This can be
-              used to break a fileID retrieval into small result sets (paging).
-            </xs:documentation></xs:annotation>
+            <xs:element ref="bre:MaxTimestamp" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Only fileIDs for files added/updated before or at the same time as the maxTimestamp should be
+                  returned.
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-    
-            <xs:element ref="bre:ResultAddress" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Address (e.g. in form of an URL) for where data (file IDs) must be delivered via file exchange
-              In cases where the address is not given, the result will be given in the GetFileIdsFinalResponse message
-              </xs:documentation></xs:annotation>
+            <xs:element ref="bre:MaxNumberOfResults" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Request the contributor to only return 'up-to' MaxNumberOfResults of fileID results. This can be
+                  used to break a fileID retrieval into small result sets (paging).
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element ref="bre:ResultAddress" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Address (e.g. in form of an URL) for where data (file IDs) must be delivered via file exchange
+                  In cases where the address is not given, the result will be given in the GetFileIdsFinalResponse
+                  message
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
           </xs:sequence>
         </xs:extension>
@@ -1266,30 +1574,39 @@
 
   <xs:element name="GetFileIDsProgressResponse">
     <xs:complexType>
-      <xs:annotation><xs:documentation xml:lang="en">
-      PROGRESS RESPONSE in GetFileIDs primitive
-      </xs:documentation></xs:annotation>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          PROGRESS RESPONSE in GetFileIDs primitive
+        </xs:documentation>
+      </xs:annotation>
       <xs:complexContent>
         <xs:extension base="MessageResponse">
           <xs:sequence>
-            <xs:element ref="bre:PillarID" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Identifier of responding pillar, which can be used for possible checks
-              (otherwise it is known via CorrelationID and ReplyTo)
-              </xs:documentation></xs:annotation>
+            <xs:element ref="bre:PillarID" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Identifier of responding pillar, which can be used for possible checks
+                  (otherwise it is known via CorrelationID and ReplyTo)
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-    
-            <xs:element ref="bre:FileIDs" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              FileIDs uniquely identifies the files in given bit repository collection which the file ids are requested for
-              (otherwise it is known via CorrelationID)
-              </xs:documentation></xs:annotation>
+
+            <xs:element ref="bre:FileIDs" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  FileIDs uniquely identifies the files in given bit repository collection which the file ids are
+                  requested for
+                  (otherwise it is known via CorrelationID)
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-    
-            <xs:element ref="bre:ResultAddress" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Address (e.g. in form of an URL) for where data (file IDs) will be delivered
-              </xs:documentation></xs:annotation>
+
+            <xs:element ref="bre:ResultAddress" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Address (e.g. in form of an URL) for where data (file IDs) will be delivered
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
 
           </xs:sequence>
@@ -1300,38 +1617,49 @@
 
   <xs:element name="GetFileIDsFinalResponse">
     <xs:complexType>
-      <xs:annotation><xs:documentation xml:lang="en">
-      FINAL RESPONSE in GetFileIDs primitive
-      </xs:documentation></xs:annotation>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          FINAL RESPONSE in GetFileIDs primitive
+        </xs:documentation>
+      </xs:annotation>
       <xs:complexContent>
         <xs:extension base="MessageResponse">
           <xs:sequence>
-            <xs:element ref="bre:PillarID" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Identifier of responding pillar, which can be used for possible checks
-              (otherwise it is known via CorrelationID and ReplyTo)
-              </xs:documentation></xs:annotation>
+            <xs:element ref="bre:PillarID" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Identifier of responding pillar, which can be used for possible checks
+                  (otherwise it is known via CorrelationID and ReplyTo)
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-    
-            <xs:element ref="bre:FileIDs" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              FileIDs uniquely identifies the files in given collection which the file ids are requested for. If not present
-              it means all the requested files are present on the pillar.
-              </xs:documentation></xs:annotation>
+
+            <xs:element ref="bre:FileIDs" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  FileIDs uniquely identifies the files in given collection which the file ids are requested for. If not
+                  present
+                  it means all the requested files are present on the pillar.
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
 
             <xs:element ref="bre:ResultingFileIDs" minOccurs="0" maxOccurs="1">
-              <xs:annotation><xs:documentation xml:lang="en">
-              Result with file IDs
-              </xs:documentation></xs:annotation>
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Result with file IDs
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
 
-            <xs:element ref="bre:PartialResult" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en">
-                Indicates whether the list of result were limited for some reason, either a MaxLimit in the request
-                or a limit defined in the contributor.  If all results have been returned
-                this should be false or undefined.
-              </xs:documentation></xs:annotation>
+            <xs:element ref="bre:PartialResult" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Indicates whether the list of result were limited for some reason, either a MaxLimit in the request
+                  or a limit defined in the contributor. If all results have been returned
+                  this should be false or undefined.
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
 
           </xs:sequence>
@@ -1345,9 +1673,11 @@
 
   <xs:element name="IdentifyContributorsForGetStatusRequest">
     <xs:complexType>
-      <xs:annotation><xs:documentation xml:lang="en">
-      REQUEST in IdentifyContributorsForGetStatus primitive
-      </xs:documentation></xs:annotation>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          REQUEST in IdentifyContributorsForGetStatus primitive
+        </xs:documentation>
+      </xs:annotation>
       <xs:complexContent>
         <xs:extension base="MessageRequest">
           <xs:sequence>
@@ -1359,24 +1689,30 @@
 
   <xs:element name="IdentifyContributorsForGetStatusResponse">
     <xs:complexType>
-      <xs:annotation><xs:documentation xml:lang="en">
-      RESPONSE in IdentifyContributorsForGetStatus primitive
-      </xs:documentation></xs:annotation>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          RESPONSE in IdentifyContributorsForGetStatus primitive
+        </xs:documentation>
+      </xs:annotation>
       <xs:complexContent>
         <xs:extension base="MessageResponse">
           <xs:sequence>
-            <xs:element ref="bre:Contributor" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Unique identification of contributor replying
-              </xs:documentation></xs:annotation>
+            <xs:element ref="bre:Contributor">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Unique identification of contributor replying
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-    
-            <xs:element ref="bre:TimeToDeliver" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Estimated time before delivery of requested status
-              That means the time from receiving a GetStatusRequest message to the time
-              status response is uploaded.
-              </xs:documentation></xs:annotation>
+
+            <xs:element ref="bre:TimeToDeliver" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Estimated time before delivery of requested status
+                  That means the time from receiving a GetStatusRequest message to the time
+                  status response is uploaded.
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
           </xs:sequence>
         </xs:extension>
@@ -1386,17 +1722,21 @@
 
   <xs:element name="GetStatusRequest">
     <xs:complexType>
-      <xs:annotation><xs:documentation xml:lang="en">
-      REQUEST in GetStatus primitive
-      </xs:documentation></xs:annotation>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          REQUEST in GetStatus primitive
+        </xs:documentation>
+      </xs:annotation>
       <xs:complexContent>
         <xs:extension base="MessageRequest">
           <xs:sequence>
-            <xs:element ref="bre:Contributor" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Identifier of receiving component, which can be used for possible checks
-              (IdentifyContributiorsForGetStatusResponse.ReplyTo should ensure that right component is reached)
-              </xs:documentation></xs:annotation>
+            <xs:element ref="bre:Contributor" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Identifier of receiving component, which can be used for possible checks
+                  (IdentifyContributiorsForGetStatusResponse.ReplyTo should ensure that right component is reached)
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
           </xs:sequence>
         </xs:extension>
@@ -1406,17 +1746,21 @@
 
   <xs:element name="GetStatusProgressResponse">
     <xs:complexType>
-      <xs:annotation><xs:documentation xml:lang="en">
-      PROGRESS RESPONSE in GetStatus primitive
-      </xs:documentation></xs:annotation>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          PROGRESS RESPONSE in GetStatus primitive
+        </xs:documentation>
+      </xs:annotation>
       <xs:complexContent>
         <xs:extension base="MessageResponse">
           <xs:sequence>
-            <xs:element ref="bre:Contributor" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Identifier of responding contributor, which can be used for possible checks
-              (otherwise it is known via CorrelationID and ReplyTo)
-              </xs:documentation></xs:annotation>
+            <xs:element ref="bre:Contributor" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Identifier of responding contributor, which can be used for possible checks
+                  (otherwise it is known via CorrelationID and ReplyTo)
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
           </xs:sequence>
         </xs:extension>
@@ -1426,22 +1770,28 @@
 
   <xs:element name="GetStatusFinalResponse">
     <xs:complexType>
-      <xs:annotation><xs:documentation xml:lang="en">
-      FINAL RESPONSE in GetStatus primitive
-      </xs:documentation></xs:annotation>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          FINAL RESPONSE in GetStatus primitive
+        </xs:documentation>
+      </xs:annotation>
       <xs:complexContent>
         <xs:extension base="MessageResponse">
           <xs:sequence>
-            <xs:element ref="bre:Contributor" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Identifier of responding contributor, which can be used for possible checks
-              (otherwise it is known via CorrelationID and ReplyTo)
-              </xs:documentation></xs:annotation>
+            <xs:element ref="bre:Contributor" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Identifier of responding contributor, which can be used for possible checks
+                  (otherwise it is known via CorrelationID and ReplyTo)
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
             <xs:element ref="bre:ResultingStatus">
-              <xs:annotation><xs:documentation xml:lang="en">
-                The resulting status of the GetStatusRequest.
-              </xs:documentation></xs:annotation>
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  The resulting status of the GetStatusRequest.
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
           </xs:sequence>
         </xs:extension>
@@ -1453,9 +1803,11 @@
 
   <xs:element name="IdentifyContributorsForGetAuditTrailsRequest">
     <xs:complexType>
-      <xs:annotation><xs:documentation xml:lang="en">
-      REQUEST in IdentifyContributorsForGetAuditTrails primitive
-      </xs:documentation></xs:annotation>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          REQUEST in IdentifyContributorsForGetAuditTrails primitive
+        </xs:documentation>
+      </xs:annotation>
       <xs:complexContent>
         <xs:extension base="MessageRequest">
           <xs:sequence>
@@ -1468,71 +1820,92 @@
 
   <xs:element name="IdentifyContributorsForGetAuditTrailsResponse">
     <xs:complexType>
-      <xs:annotation><xs:documentation xml:lang="en">
-      RESPONSE in IdentifyContributorsForGetAuditTrails primitive
-      </xs:documentation></xs:annotation>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          RESPONSE in IdentifyContributorsForGetAuditTrails primitive
+        </xs:documentation>
+      </xs:annotation>
       <xs:complexContent>
         <xs:extension base="MessageResponse">
           <xs:sequence>
 
           </xs:sequence>
-          </xs:extension>
+        </xs:extension>
       </xs:complexContent>
     </xs:complexType>
   </xs:element>
 
   <xs:element name="GetAuditTrailsRequest">
     <xs:complexType>
-      <xs:annotation><xs:documentation xml:lang="en">
-      REQUEST in GetAuditTrails primitive
-      </xs:documentation></xs:annotation>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          REQUEST in GetAuditTrails primitive
+        </xs:documentation>
+      </xs:annotation>
       <xs:complexContent>
         <xs:extension base="MessageRequest">
           <xs:sequence>
-            <xs:element ref="bre:Contributor" minOccurs="0" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Identifier of receiving contributor, which can be used for possible checks
-              (IdentifyContributorsForGetAuditTrailsResponse.ReplyTo should ensure that right pillar is reached)
-              </xs:documentation></xs:annotation>
+            <xs:element ref="bre:Contributor" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Identifier of receiving contributor, which can be used for possible checks
+                  (IdentifyContributorsForGetAuditTrailsResponse.ReplyTo should ensure that right pillar is reached)
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-    
+
             <xs:element ref="bre:FileID" minOccurs="0">
-              <xs:annotation><xs:documentation xml:lang="en">
-              Can be used to limit the returned audit trails to the events for a single file.
-              </xs:documentation></xs:annotation>
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Can be used to limit the returned audit trails to the events for a single file.
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-            <xs:element ref="bre:MinSequenceNumber" minOccurs="0" >
-              <xs:annotation><xs:documentation xml:lang="en">
-                Only audit trail events equal-to or larger than the minSequenceNumber should be returned.
-              </xs:documentation></xs:annotation>
+            <xs:element ref="bre:MinSequenceNumber" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Only audit trail events equal-to or larger than the minSequenceNumber should be returned.
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-            <xs:element ref="bre:MaxSequenceNumber"  minOccurs="0" >
-              <xs:annotation><xs:documentation xml:lang="en">
-                Only audit trail events equal-to or smaller than the minSequenceNumber should be returned.
-              </xs:documentation></xs:annotation>
+            <xs:element ref="bre:MaxSequenceNumber" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Only audit trail events equal-to or smaller than the minSequenceNumber should be returned.
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-            <xs:element ref="bre:MinTimestamp"  minOccurs="0" >
-              <xs:annotation><xs:documentation xml:lang="en">
-                Only audit trail events younger or same age as the minTimestamp should be returned.
-              </xs:documentation></xs:annotation>
+            <xs:element ref="bre:MinTimestamp" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Only audit trail events younger or same age as the minTimestamp should be returned.
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-            <xs:element ref="bre:MaxTimestamp"  minOccurs="0" >
-              <xs:annotation><xs:documentation xml:lang="en">
-                Only audit trail older or same age as the maxTimestamp  should be returned.
-              </xs:documentation></xs:annotation>
+            <xs:element ref="bre:MaxTimestamp" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Only audit trail older or same age as the maxTimestamp should be returned.
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-            <xs:element ref="bre:MaxNumberOfResults"  minOccurs="0" >
-              <xs:annotation><xs:documentation xml:lang="en">
-                Request the contributor to only return 'up-to' MaxNumberOfResults AuditTrail entries. This can be
-                used to break a AuditTrail retrieval into small result sets (paging).
-              </xs:documentation></xs:annotation>
+            <xs:element ref="bre:MaxNumberOfResults" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Request the contributor to only return 'up-to' MaxNumberOfResults AuditTrail entries. This can be
+                  used to break a AuditTrail retrieval into small result sets (paging).
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-    
-            <xs:element ref="bre:ResultAddress" minOccurs="0" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Address (e.g. in form of an URL) for where audit trails must be delivered via file exchange
-              In cases where the address is not given, the result will be given in the GetAuditTrailsFinalResponse message
-              </xs:documentation></xs:annotation>
+
+            <xs:element ref="bre:ResultAddress" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Address (e.g. in form of an URL) for where audit trails must be delivered via file exchange
+                  In cases where the address is not given, the result will be given in the GetAuditTrailsFinalResponse
+                  message
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
           </xs:sequence>
         </xs:extension>
@@ -1542,25 +1915,31 @@
 
   <xs:element name="GetAuditTrailsProgressResponse">
     <xs:complexType>
-      <xs:annotation><xs:documentation xml:lang="en">
-      PROGRESS RESPONSE in GetFileIDs primitive
-      </xs:documentation></xs:annotation>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          PROGRESS RESPONSE in GetFileIDs primitive
+        </xs:documentation>
+      </xs:annotation>
       <xs:complexContent>
         <xs:extension base="MessageResponse">
           <xs:sequence>
-            <xs:element ref="bre:Contributor" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Identifier of responding contributor, which can be used for possible checks
-              (otherwise it is known via CorrelationID and ReplyTo)
-              </xs:documentation></xs:annotation>
+            <xs:element ref="bre:Contributor" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Identifier of responding contributor, which can be used for possible checks
+                  (otherwise it is known via CorrelationID and ReplyTo)
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
 
-            <xs:element ref="bre:ResultAddress" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Address (e.g. in form of an URL) for where data will be delivered
-              </xs:documentation></xs:annotation>
+            <xs:element ref="bre:ResultAddress" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Address (e.g. in form of an URL) for where data will be delivered
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-    
+
           </xs:sequence>
         </xs:extension>
       </xs:complexContent>
@@ -1569,31 +1948,39 @@
 
   <xs:element name="GetAuditTrailsFinalResponse">
     <xs:complexType>
-      <xs:annotation><xs:documentation xml:lang="en">
-      FINAL RESPONSE in GetAuditTrails primitive
-      </xs:documentation></xs:annotation>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          FINAL RESPONSE in GetAuditTrails primitive
+        </xs:documentation>
+      </xs:annotation>
       <xs:complexContent>
         <xs:extension base="MessageResponse">
           <xs:sequence>
-            <xs:element ref="bre:Contributor" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Identifier of responding contributor, which can be used for possible checks
-              (otherwise it is known via CorrelationID and ReplyTo)
-              </xs:documentation></xs:annotation>
+            <xs:element ref="bre:Contributor" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Identifier of responding contributor, which can be used for possible checks
+                  (otherwise it is known via CorrelationID and ReplyTo)
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
 
-            <xs:element ref="bre:ResultingAuditTrails" minOccurs="0" >
-              <xs:annotation><xs:documentation xml:lang="en">
-              Result with audit trails
-              </xs:documentation></xs:annotation>
+            <xs:element ref="bre:ResultingAuditTrails" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Result with audit trails
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
 
-            <xs:element ref="bre:PartialResult" minOccurs="0" maxOccurs="1" >
-              <xs:annotation><xs:documentation xml:lang="en">
-                Indicates whether the list of result were limited for some reason, either a MaxLimit in the request
-                or a limit defined in the contributor. If all results have been returned
-                this should be false or undefined.
-              </xs:documentation></xs:annotation>
+            <xs:element ref="bre:PartialResult" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Indicates whether the list of result were limited for some reason, either a MaxLimit in the request
+                  or a limit defined in the contributor. If all results have been returned
+                  this should be false or undefined.
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
 
           </xs:sequence>
@@ -1603,25 +1990,29 @@
   </xs:element>
 
   <!-- Implements the Alarm functionality as described here: https://sbforge.org/display/BITMAG/Alarms -->
-	
+
   <xs:element name="AlarmMessage">
     <xs:complexType>
-      <xs:annotation><xs:documentation xml:lang="en">
-      Alarm Messages are sent in error situations where the Bit Repository operators should be notified
-      </xs:documentation></xs:annotation>
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          Alarm Messages are sent in error situations where the Bit Repository operators should be notified
+        </xs:documentation>
+      </xs:annotation>
       <xs:complexContent>
         <xs:extension base="Message">
           <xs:sequence>
-    
-            <xs:element ref="bre:Alarm" >
-              <xs:annotation><xs:documentation xml:lang="en">
-                Defines the Alarm
-              </xs:documentation></xs:annotation>
+
+            <xs:element ref="bre:Alarm">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">
+                  Defines the Alarm
+                </xs:documentation>
+              </xs:annotation>
             </xs:element>
-    
+
           </xs:sequence>
         </xs:extension>
       </xs:complexContent>
     </xs:complexType>
-    </xs:element>
+  </xs:element>
 </xs:schema>

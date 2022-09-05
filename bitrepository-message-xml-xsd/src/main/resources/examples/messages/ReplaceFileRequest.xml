@@ -25,14 +25,14 @@
   -->
 
 <bro:ReplaceFileRequest version="31" minVersion="24"
-xmlns:bro='http://bitrepository.org/BitRepositoryMessages.xsd'
-xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
+                        xmlns:bro='http://bitrepository.org/BitRepositoryMessages.xsd'
+                        xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <CorrelationID>12345</CorrelationID>
   <CollectionID>MySla</CollectionID>
   <Destination>queue://pillarQueue</Destination>
   <ReplyTo>topic://clientTopic</ReplyTo>
   <From>ClientPillar</From>
-  <AuditTrailInformation />
+  <AuditTrailInformation/>
   <PillarID>MyPillar</PillarID>
   <FileID>MyDataID</FileID>
   <ChecksumDataForExistingFile>

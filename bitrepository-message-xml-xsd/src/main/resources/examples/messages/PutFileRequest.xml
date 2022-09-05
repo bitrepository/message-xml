@@ -25,8 +25,8 @@
   -->
 
 <bro:PutFileRequest version="31" minVersion="24"
-xmlns:bro='http://bitrepository.org/BitRepositoryMessages.xsd'
-xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
+                    xmlns:bro='http://bitrepository.org/BitRepositoryMessages.xsd'
+                    xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <CorrelationID>12345</CorrelationID>
   <CollectionID>MySla</CollectionID>
   <Destination>queue://pillarQueue</Destination>
@@ -42,8 +42,8 @@ xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
       <ChecksumType>MD5</ChecksumType>
       <ChecksumSalt>AF</ChecksumSalt>
     </ChecksumSpec>
-      <ChecksumValue>135F215624</ChecksumValue>
-      <CalculationTimestamp>2011-02-17T09:47:00.000+01:00</CalculationTimestamp>
+    <ChecksumValue>135F215624</ChecksumValue>
+    <CalculationTimestamp>2011-02-17T09:47:00.000+01:00</CalculationTimestamp>
   </ChecksumDataForNewFile>
   <ChecksumRequestForNewFile>
     <ChecksumType>MD5</ChecksumType>

@@ -25,12 +25,12 @@
   -->
 
 <bro:GetStatusResults version="31" minVersion="24" xmlns:bro='http://bitrepository.org/BitRepositoryData.xsd'
-xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
+                      xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <CollectionID>MySla</CollectionID>
   <Contributor>
-      <ComponentID>MyClientID</ComponentID>
-      <ComponentType>CLIENT</ComponentType>
-      <ComponentComment>Client doing integrity check</ComponentComment>
+    <ComponentID>MyClientID</ComponentID>
+    <ComponentType>CLIENT</ComponentType>
+    <ComponentComment>Client doing integrity check</ComponentComment>
   </Contributor>
   <ContributorStatus>
     <ContributorStatusElements>

@@ -25,7 +25,7 @@
   -->
 
 <bro:GetChecksumsResults version="31" minVersion="24" xmlns:bro='http://bitrepository.org/BitRepositoryData.xsd'
-xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
+                         xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <CollectionID>MySla</CollectionID>
   <PillarID>MyPillar</PillarID>
   <ChecksumDataItems>

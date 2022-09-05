@@ -25,9 +25,9 @@
   -->
 
 <bro:GetAuditTrailsResults version="31" minVersion="24" xmlns:bro='http://bitrepository.org/BitRepositoryData.xsd'
-xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
+                           xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <CollectionID>MySla</CollectionID>
-  <AuditTrailData> 
+  <AuditTrailData>
     <NoOfItems>2</NoOfItems>
     <AuditTrailDataItems>
       <AuditTrailDataItem>

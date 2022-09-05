@@ -28,12 +28,12 @@
   </licenses>
 
   <inceptionYear>2010</inceptionYear>
-  
+
   <organization>
     <name>The State and University Library, The Royal Library and The State Archives, Denmark</name>
     <url>https://sbforge.org/display/BITMAG</url>
   </organization>
-  
+
   <repositories>
     <repository>
       <id>sbforge-nexus</id>
@@ -53,9 +53,9 @@
     <url>https://sbforge.org/fisheye/browse/bitrepository-message-xml/</url>
     <tag>HEAD</tag>
   </scm>
-  
+
   <properties>
-      <additionalparam>-Xdoclint:none</additionalparam>
+    <additionalparam>-Xdoclint:none</additionalparam>
   </properties>
 
 </project>

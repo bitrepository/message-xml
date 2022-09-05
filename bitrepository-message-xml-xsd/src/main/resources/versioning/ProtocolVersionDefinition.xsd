@@ -22,12 +22,12 @@
   -->
 
 
-<xs:schema targetNamespace="http://bitrepository.org/ProtocolVersionDefinition.xsd" 
-attributeFormDefault="unqualified"
-  elementFormDefault="qualified" xmlns:tn="http://bitrepository.org/ProtocolVersionDefinition.xsd" 
-  xmlns="http://bitrepository.org/ProtocolVersionDefinition.xsd"
-  xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<xs:schema targetNamespace="http://bitrepository.org/ProtocolVersionDefinition.xsd"
+           attributeFormDefault="unqualified"
+           elementFormDefault="qualified" xmlns:tn="http://bitrepository.org/ProtocolVersionDefinition.xsd"
+           xmlns="http://bitrepository.org/ProtocolVersionDefinition.xsd"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
   <xs:element name="ProtocolVersionDefinition">
     <xs:annotation>
@@ -40,10 +40,10 @@ attributeFormDefault="unqualified"
     </xs:annotation>
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="Overrides" />
+        <xs:element ref="Overrides"/>
       </xs:sequence>
 
-    <xs:attribute name="version" type="xs:positiveInteger" use="required">
+      <xs:attribute name="version" type="xs:positiveInteger" use="required">
         <xs:annotation>
           <xs:documentation xml:lang="en">
             Defines the general version this protocol.
@@ -51,7 +51,7 @@ attributeFormDefault="unqualified"
           </xs:documentation>
         </xs:annotation>
       </xs:attribute>
-    <xs:attribute name="minVersion" type="xs:positiveInteger" use="required">
+      <xs:attribute name="minVersion" type="xs:positiveInteger" use="required">
         <xs:annotation>
           <xs:documentation xml:lang="en">
             Defines the general version this protocol.
@@ -65,12 +65,12 @@ attributeFormDefault="unqualified"
   <xs:element name="Overrides">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="Operation" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element ref="Operation" minOccurs="0" maxOccurs="unbounded"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
 
-  <xs:element name="Operation" type="OperationVersion" />
+  <xs:element name="Operation" type="OperationVersion"/>
 
   <xs:complexType name="OperationVersion">
     <xs:annotation>
@@ -78,9 +78,9 @@ attributeFormDefault="unqualified"
         Defines a operation version information
       </xs:documentation>
     </xs:annotation>
-    <xs:attribute name="type" type="OperationType" />
-    <xs:attribute name="version" type="xs:positiveInteger" />
-    <xs:attribute name="minVersion" type="xs:positiveInteger" />
+    <xs:attribute name="type" type="OperationType"/>
+    <xs:attribute name="version" type="xs:positiveInteger"/>
+    <xs:attribute name="minVersion" type="xs:positiveInteger"/>
   </xs:complexType>
 
   <xs:simpleType name="OperationType">

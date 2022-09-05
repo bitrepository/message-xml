@@ -39,24 +39,24 @@
   <Contributor>MyPillar</Contributor>
   <ResultingAuditTrails>
     <AuditTrailEvents>
-        <AuditTrailEvent>
-          <SequenceNumber>7</SequenceNumber>
-          <FileID>MyFile</FileID>
-          <ReportingComponent>MyPillar</ReportingComponent>
-          <ActorOnFile>Actor321</ActorOnFile>
-          <ActionOnFile>GET_FILE</ActionOnFile>
-          <ActionDateTime>2011-04-15T12:55:00Z</ActionDateTime>
-          <OperationID>12345</OperationID>
-          <CertificateID>12345</CertificateID>
-        </AuditTrailEvent>
-        <AuditTrailEvent>
-          <SequenceNumber>8</SequenceNumber>
-          <FileID>MyFile</FileID>
-          <ReportingComponent>MyPillar</ReportingComponent>
-          <ActorOnFile>Actor321</ActorOnFile>
-          <ActionOnFile>PUT_FILE</ActionOnFile>
-          <ActionDateTime>2011-04-15T13:20:00.000+01:00</ActionDateTime>
-        </AuditTrailEvent>
+      <AuditTrailEvent>
+        <SequenceNumber>7</SequenceNumber>
+        <FileID>MyFile</FileID>
+        <ReportingComponent>MyPillar</ReportingComponent>
+        <ActorOnFile>Actor321</ActorOnFile>
+        <ActionOnFile>GET_FILE</ActionOnFile>
+        <ActionDateTime>2011-04-15T12:55:00Z</ActionDateTime>
+        <OperationID>12345</OperationID>
+        <CertificateID>12345</CertificateID>
+      </AuditTrailEvent>
+      <AuditTrailEvent>
+        <SequenceNumber>8</SequenceNumber>
+        <FileID>MyFile</FileID>
+        <ReportingComponent>MyPillar</ReportingComponent>
+        <ActorOnFile>Actor321</ActorOnFile>
+        <ActionOnFile>PUT_FILE</ActionOnFile>
+        <ActionDateTime>2011-04-15T13:20:00.000+01:00</ActionDateTime>
+      </AuditTrailEvent>
     </AuditTrailEvents>
   </ResultingAuditTrails>
 </bro:GetAuditTrailsFinalResponse>
