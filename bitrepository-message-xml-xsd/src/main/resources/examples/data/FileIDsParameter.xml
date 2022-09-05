@@ -30,7 +30,6 @@
   <CollectionID>MySla</CollectionID>
   <PillarID>MyPillar</PillarID>
   <FileIDsParameterData>
-    <NoOfItems>2</NoOfItems>
     <FileIDsItems>
       <FileID>MydataId1</FileID>
       <FileID>MydataId2</FileID>

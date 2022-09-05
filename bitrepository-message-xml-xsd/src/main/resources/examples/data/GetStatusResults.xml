@@ -27,18 +27,12 @@
 <bro:GetStatusResults version="31" minVersion="24" xmlns:bro='http://bitrepository.org/BitRepositoryData.xsd'
                       xmlns="http://bitrepository.org/BitRepositoryElements.xsd">
   <CollectionID>MySla</CollectionID>
-  <Contributor>
-    <ComponentID>MyClientID</ComponentID>
-    <ComponentType>CLIENT</ComponentType>
-    <ComponentComment>Client doing integrity check</ComponentComment>
-  </Contributor>
-  <ContributorStatus>
-    <ContributorStatusElements>
-      <NoOfItems>1</NoOfItems>
-      <ContributorStatusElement>
-        <StatusPing>Alive</StatusPing>
-      </ContributorStatusElement>
-    </ContributorStatusElements>
+  <Contributor>MyClientID</Contributor>
+  <ResultingStatus>
+    <StatusInfo>
+      <StatusCode>OK</StatusCode>
+      <StatusText>Everything's fine</StatusText>
+    </StatusInfo>
     <StatusTimestamp>2011-02-17T09:47:00.000+01:00</StatusTimestamp>
-  </ContributorStatus>
+  </ResultingStatus>
 </bro:GetStatusResults>

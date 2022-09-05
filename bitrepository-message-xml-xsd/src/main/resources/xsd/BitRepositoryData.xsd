@@ -24,16 +24,14 @@
 
 <!-- message-xml version: ${project.version} -->
 
-<xs:schema
-        targetNamespace="http://bitrepository.org/BitRepositoryData.xsd"
-        attributeFormDefault="unqualified"
-        elementFormDefault="qualified"
+<xs:schema targetNamespace="http://bitrepository.org/BitRepositoryData.xsd"
+           attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
 
-        xmlns="http://bitrepository.org/BitRepositoryData.xsd"
-        xmlns:xs="http://www.w3.org/2001/XMLSchema"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns:bre="http://bitrepository.org/BitRepositoryElements.xsd"
->
+           xmlns="http://bitrepository.org/BitRepositoryData.xsd"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:bre="http://bitrepository.org/BitRepositoryElements.xsd">
 
   <xs:import schemaLocation="BitRepositoryElements.xsd" namespace="http://bitrepository.org/BitRepositoryElements.xsd"/>
 
@@ -133,7 +131,7 @@
         <xs:element ref="bre:PillarID" minOccurs="0" maxOccurs="1">
           <xs:annotation>
             <xs:documentation xml:lang="en">
-              Identifier of pillar, that created the result
+              Identifier of pillar that created the result
             </xs:documentation>
           </xs:annotation>
         </xs:element>
@@ -157,7 +155,7 @@
   <xs:element name="GetStatusResults">
     <xs:annotation>
       <xs:documentation xml:lang="en">
-        Data format for delivery of data IDs as result of GetFileIDs
+        Data format for delivery of heartbeats as result of GetStatus-operation
       </xs:documentation>
     </xs:annotation>
     <xs:complexType>
@@ -166,7 +164,7 @@
         <xs:element ref="bre:CollectionID">
           <xs:annotation>
             <xs:documentation xml:lang="en">
-              A unique identifier for bit repository collection status is given for.
+              A unique identifier for the bit repository collection on which GetStatus is called.
             </xs:documentation>
           </xs:annotation>
         </xs:element>
@@ -179,7 +177,7 @@
           </xs:annotation>
         </xs:element>
 
-        <xs:element ref="bre:ResultingStatus">
+        <xs:element ref="bre:ResultingStatus" maxOccurs="1">
           <xs:annotation>
             <xs:documentation xml:lang="en">
               List of status contributed from different components
