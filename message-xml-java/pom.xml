@@ -3,12 +3,12 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.bitrepository</groupId>
-    <artifactId>bitrepository-message-xml</artifactId>
+    <groupId>org.bitrepository.message-xml</groupId>
+    <artifactId>message-xml-parent</artifactId>
     <version>32-SNAPSHOT</version>
   </parent>
 
-  <artifactId>bitrepository-message-xml-java</artifactId>
+  <artifactId>message-xml-java</artifactId>
   <name>Bitrepository message xml definitions</name>
   <description>Contains the definitions for the Bitrepository message content</description>
 
@@ -38,8 +38,8 @@
       <scope>runtime</scope>
     </dependency>
     <dependency>
-      <groupId>org.bitrepository</groupId>
-      <artifactId>bitrepository-message-xml-xsd</artifactId>
+      <groupId>org.bitrepository.message-xml</groupId>
+      <artifactId>message-xml-xsd</artifactId>
       <version>${project.version}</version>
     </dependency>
   </dependencies>
@@ -75,8 +75,8 @@
             </goals>
             <phase>generate-sources</phase>
             <configuration>
-              <includeGroupIds>org.bitrepository</includeGroupIds>
-              <includeArtifactIds>bitrepository-message-xml-xsd</includeArtifactIds>
+              <includeGroupIds>org.bitrepository.message-xml</includeGroupIds>
+              <includeArtifactIds>message-xml-xsd</includeArtifactIds>
               <includes>xsd/*.xsd,versioning/*</includes>
               <outputDirectory>${project.build.directory}/message-xml</outputDirectory>
             </configuration>
