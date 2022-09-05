@@ -69,6 +69,9 @@
             <goals>
               <goal>parse-version</goal>
             </goals>
+            <configuration>
+              <propertyPrefix>parsedVersion</propertyPrefix>
+            </configuration>
           </execution>
         </executions>
       </plugin>
