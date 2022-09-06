@@ -422,6 +422,68 @@
     </xs:complexType>
   </xs:element>
 
+  <xs:element name="FileInfosData">
+    <xs:annotation><xs:documentation xml:lang="en">
+      Includes relevant information on data file Infos in a result
+    </xs:documentation></xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+
+        <xs:element name="FileInfosDataItems" >
+          <xs:annotation><xs:documentation xml:lang="en" >
+            List of data on data identifiers in result
+          </xs:documentation></xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="FileInfosDataItem" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="FileInfosDataItem">
+    <xs:annotation><xs:documentation xml:lang="en">
+      Includes relevant information on a data ID in a result
+    </xs:documentation></xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="FileID" type="FileID_TYPE">
+          <xs:annotation><xs:documentation xml:lang="en">
+            Identifier of data
+          </xs:documentation></xs:annotation>
+        </xs:element>
+
+        <xs:element ref="FileSize" minOccurs="0" maxOccurs="1">
+          <xs:annotation><xs:documentation xml:lang="en">
+            The filesize in bytes.
+          </xs:documentation></xs:annotation>
+        </xs:element>
+
+        <xs:element name="LastModificationTime" type="SystemDateTime_TYPE" minOccurs="0" maxOccurs="1">
+          <xs:annotation><xs:documentation xml:lang="en">
+            The last modify timestamp of the file, or the latest time which the pillar had the whole file (especially
+            for off-line media).
+          </xs:documentation></xs:annotation>
+        </xs:element>
+
+        <xs:element name="ChecksumValue" type="ChecksumValue_TYPE" minOccurs="0" maxOccurs="1">
+          <xs:annotation><xs:documentation xml:lang="en">
+            The value of the checksum
+          </xs:documentation></xs:annotation>
+        </xs:element>
+
+        <xs:element name="CalculationTimestamp" type="SystemDateTime_TYPE" minOccurs="0" maxOccurs="1">
+          <xs:annotation><xs:documentation xml:lang="en">
+            The time when the checksum was last calculated (especially for ordinary checksums on off-line medias,
+            there can be long intervals between calculations, - in such cases this information is crucial for alarming)
+          </xs:documentation></xs:annotation>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
   <xs:element name="FileIDsParameterData">
     <xs:annotation>
       <xs:documentation xml:lang="en">
@@ -662,6 +724,27 @@
               List of data for file ids in result, if given in this message instead of via data transfer
             </xs:documentation>
           </xs:annotation>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="ResultingFileInfos">
+    <xs:annotation><xs:documentation xml:lang="en">
+      results for GetFileInfos operaiton which is either given via specified address or directly
+    </xs:documentation></xs:annotation>
+    <xs:complexType>
+      <xs:choice>
+        <xs:element ref="ResultAddress" minOccurs="0" maxOccurs="1" >
+          <xs:annotation><xs:documentation xml:lang="en">
+            Address (e.g. in form of an URL) for where result data has been delivered (if completed)
+          </xs:documentation></xs:annotation>
+        </xs:element>
+
+        <xs:element ref="FileInfosData">
+          <xs:annotation><xs:documentation xml:lang="en">
+            List of data for file ids in result, if given in this message instead of via data transfer
+          </xs:documentation></xs:annotation>
         </xs:element>
       </xs:choice>
     </xs:complexType>
@@ -1281,8 +1364,13 @@
   <xs:element name="MaxSequenceNumber" type="xs:positiveInteger"/>
   <xs:element name="MinTimestamp" type="SystemDateTime_TYPE"/>
   <xs:element name="MaxTimestamp" type="SystemDateTime_TYPE"/>
-  <xs:element name="MaxNumberOfResults" type="xs:positiveInteger"/>
-  <xs:element name="PartialResult" type="xs:boolean"/>
+  <xs:element name="MinChecksumTimestamp" type="SystemDateTime_TYPE" />
+  <xs:element name="MaxChecksumTimestamp" type="SystemDateTime_TYPE" />
+  <xs:element name="MinFileTimestamp" type="SystemDateTime_TYPE" />
+  <xs:element name="MaxFileTimestamp" type="SystemDateTime_TYPE" />
+  <xs:element name="MaxNumberOfResults" type="xs:positiveInteger" />
+  <xs:element name="PartialResult" type="xs:boolean" />
+  <xs:element name="GetFileSize" type="xs:boolean" />
 
   <xs:complexType name="TimeMeasure_TYPE">
     <xs:annotation>
