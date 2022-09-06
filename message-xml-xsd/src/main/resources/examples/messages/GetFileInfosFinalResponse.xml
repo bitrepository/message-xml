@@ -45,16 +45,12 @@
     <ChecksumSalt>5A17</ChecksumSalt>
   </ChecksumRequestForExistingFile>
   <ResultingFileInfos>
-    <FileInfosData>
-      <FileInfosDataItems>
-        <FileInfosDataItem>
-          <FileID>MyDataID1</FileID>
-          <FileSize>1</FileSize>
-          <LastModificationTime>2019-05-20T11:11:11.111+02:00</LastModificationTime>
-          <ChecksumValue>ABCDABCD</ChecksumValue>
-          <CalculationTimestamp>2019-05-20T11:11:11.111+02:00</CalculationTimestamp>
-        </FileInfosDataItem>
-      </FileInfosDataItems>
-    </FileInfosData>
+    <FileInfosDataItem>
+      <FileID>MyDataID1</FileID>
+      <FileSize>1</FileSize>
+      <LastModificationTime>2019-05-20T11:11:11.111+02:00</LastModificationTime>
+      <ChecksumValue>ABCDABCD</ChecksumValue>
+      <CalculationTimestamp>2019-05-20T11:11:11.111+02:00</CalculationTimestamp>
+    </FileInfosDataItem>
   </ResultingFileInfos>
 </bro:GetFileInfosFinalResponse>
