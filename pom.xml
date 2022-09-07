@@ -9,7 +9,7 @@
 
   <groupId>org.bitrepository.message-xml</groupId>
   <artifactId>message-xml-parent</artifactId>
-  <version>33-SNAPSHOT</version>
+  <version>32-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Bitrepository message xml definitions</name>
   <description>Contains the definitions for the Bitrepository message content</description>
