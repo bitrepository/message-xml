@@ -33,7 +33,7 @@
   <ReplyTo>queue://MyQueueOrTopic</ReplyTo>
   <From>MyPillar</From>
   <Alarm>
-    <OrigDateTime>2011-05-03T11:18:00Z</OrigDateTime>
+    <OrigDateTime>2011-05-03T11:18:00</OrigDateTime> <!-- The invalid/bad date -->
     <AlarmCode>COMPONENT_FAILURE</AlarmCode>
     <AlarmRaiser>MyPillar</AlarmRaiser>
     <AlarmText>Component failure</AlarmText>
