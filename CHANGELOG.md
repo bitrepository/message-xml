@@ -3,6 +3,14 @@ Changes of the Bitrepository.org protocol specification.
 The change log covers changes in the protocol from protocol version 23 and newer. 
 Changes prior to version 23 have never been documented in a change log form. For references of changes prior to that look at the version control history.
 
+## [32] - 2022-09-07
+### Changed
+- Project `groupId` updated from `org.bitrepository` to `org.bitrepository.message-xml`
+- Updated project `artifactId` to not have `bitrepository`-prefix
+  - e.g. `bitrepository-message-xml-java` &rarr; `message-xml-java`
+- Parent-pom `artifactId` now has `-parent` appended: `message-xml-parent`
+- Updated old outdated message examples to conform to xsd
+
 ## [31] - 2022-03-09
 ### Changed
 - FileIDs' property allFileIDs is now explicitly a String instead of just Object. 
