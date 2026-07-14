@@ -13,27 +13,26 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.jvnet.jaxb2_commons</groupId>
-      <artifactId>jaxb2-basics-runtime</artifactId>
-      <version>0.11.1</version>
+      <groupId>org.jvnet.jaxb</groupId>
+      <artifactId>jaxb-plugins-runtime</artifactId>
+      <version>4.0.12</version>
     </dependency>
-    <!-- Below jakarta/jaxb dependencies are necessary for jaxb-xml with java 11-->
-    <!-- https://mvnrepository.com/artifact/javax.xml.bind/javax.xml.bind-api -->
     <dependency>
+      <!-- https://mvnrepository.com/artifact/javax.xml.bind/javax.xml.bind-api -->
       <groupId>jakarta.xml.bind</groupId>
       <artifactId>jakarta.xml.bind-api</artifactId>
-      <version>2.3.3</version>
+      <version>4.0.5</version>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/jakarta.activation/jakarta.activation-api -->
     <dependency>
+      <!-- https://mvnrepository.com/artifact/jakarta.activation/jakarta.activation-api -->
       <groupId>jakarta.activation</groupId>
       <artifactId>jakarta.activation-api</artifactId>
-      <version>1.2.2</version>
+      <version>2.1.4</version>
     </dependency>
     <dependency>
       <groupId>org.glassfish.jaxb</groupId>
       <artifactId>jaxb-runtime</artifactId>
-      <version>2.3.6</version>
+      <version>4.0.9</version>
       <scope>runtime</scope>
     </dependency>
     <dependency>
@@ -108,72 +107,54 @@
         </executions>
       </plugin>
       <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>jaxb2-maven-plugin</artifactId>
-        <version>2.5.0</version>
+        <groupId>org.jvnet.jaxb</groupId>
+        <artifactId>jaxb-maven-plugin</artifactId>
+        <version>4.0.12</version>
         <configuration>
-          <!-- Necessary to exclude .xjb and .xml files as long as they share same folder as xsd files
-                - otherwise must specify source-files individually -->
-          <xjcSourceExcludeFilters>
-            <filter implementation="org.codehaus.mojo.jaxb2.shared.filters.pattern.PatternFileFilter">
-              <patterns>
-                <pattern>\.xjb</pattern>
-                <pattern>\.xml</pattern>
-              </patterns>
-            </filter>
-          </xjcSourceExcludeFilters>
+          <schemaDirectory>${project.basedir}/src/main/resources/xsd/</schemaDirectory>
           <extension>true</extension>
-          <arguments>
-            <argument>-XtoString</argument>
-            <argument>-Xequals</argument>
-            <argument>-XhashCode</argument>
-            <argument>-Xannotate</argument>
-          </arguments>
+          <args>
+            <arg>-XtoString</arg>
+            <arg>-XsimpleEquals</arg>
+            <arg>-XsimpleHashCode</arg>
+          </args>
+          <plugins>
+            <plugin>
+              <groupId>org.jvnet.jaxb</groupId>
+              <artifactId>jaxb-plugins</artifactId>
+              <version>4.0.12</version>
+            </plugin>
+          </plugins>
         </configuration>
         <executions>
           <execution>
             <id>generate-message-classes</id>
             <goals>
-              <goal>xjc</goal>
+              <goal>generate</goal>
             </goals>
             <phase>process-sources</phase>
             <configuration>
-              <outputDirectory>${project.build.directory}/generated-sources/messages</outputDirectory>
-              <sources>
-                <source>${project.build.directory}/message-xml/xsd</source>
-              </sources>
-              <xjbSources>
-                <xjbSource>${project.build.directory}/message-xml/xsd/bindings.xjb</xjbSource>
-              </xjbSources>
+              <generateDirectory>${project.build.directory}/generated-sources/messages</generateDirectory>
+              <schemaDirectory>${project.build.directory}/message-xml/xsd</schemaDirectory>
+              <bindingIncludes>bindings.xjb</bindingIncludes>
             </configuration>
           </execution>
           <execution>
             <id>generate-message-versioning-classes</id>
             <goals>
-              <goal>xjc</goal>
+              <goal>generate</goal>
             </goals>
             <phase>process-sources</phase>
             <configuration>
-              <outputDirectory>${project.build.directory}/generated-sources/versioning</outputDirectory>
-              <sources>
-                <source>${project.build.directory}/message-xml/versioning</source>
-              </sources>
+              <generateDirectory>${project.build.directory}/generated-sources/versioning</generateDirectory>
+              <schemaDirectory>${project.build.directory}/message-xml/versioning</schemaDirectory>
             </configuration>
           </execution>
         </executions>
-        <dependencies>
-          <dependency>
-            <groupId>org.jvnet.jaxb2_commons</groupId>
-            <artifactId>jaxb2-basics</artifactId>
-            <version>0.11.1</version>
-          </dependency>
-          <dependency>
-            <groupId>org.jvnet.jaxb2_commons</groupId>
-            <artifactId>jaxb2-basics-annotate</artifactId>
-            <version>1.1.0</version>
-          </dependency>
-        </dependencies>
+
+
       </plugin>
+
     </plugins>
   </build>
 </project>

@@ -3,6 +3,10 @@ Changes of the Bitrepository.org protocol specification.
 The change log covers changes in the protocol from protocol version 23 and newer. 
 Changes prior to version 23 have never been documented in a change log form. For references of changes prior to that look at the version control history.
 
+## [33] - 2026-07-14
+###
+- Updated to use Java 17 and Jakarta
+
 ## [32] - 2022-09-07
 ### Changed
 - Project `groupId` updated from `org.bitrepository` to `org.bitrepository.message-xml`
