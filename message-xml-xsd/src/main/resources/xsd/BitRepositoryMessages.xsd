@@ -1668,6 +1668,244 @@
     </xs:complexType>
   </xs:element>
 
+  <!-- Implements the GetFileInfos functionality as described here: https://sbforge.org/display/BITMAG/Get+FileInfos (TODO: make page) -->
+
+  <xs:element name="IdentifyPillarsForGetFileInfosRequest">
+    <xs:complexType>
+      <xs:annotation><xs:documentation xml:lang="en">
+        REQUEST in IdentifyPillarsForGetFileInfos primitive
+      </xs:documentation></xs:annotation>
+      <xs:complexContent>
+        <xs:extension base="MessageRequest">
+          <xs:sequence>
+            <xs:element ref="bre:FileIDs" minOccurs="0" maxOccurs="1" >
+              <xs:annotation><xs:documentation xml:lang="en">
+                FileIDs uniquely identifies the files in given bit repository collection which the file ids are requested for
+                Given in order to be able to give possible estimate of time to deliver
+              </xs:documentation></xs:annotation>
+            </xs:element>
+
+            <xs:element ref="bre:ChecksumRequestForExistingFile" minOccurs="0" maxOccurs="1">
+              <xs:annotation><xs:documentation xml:lang="en">
+                Optional checksums type and possible salt parameter requested
+                (only pillars that can deliver this kind of checksum should reply).
+                If not present pillars should use the default checksumtype specified in RepositorySettings.
+              </xs:documentation></xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="IdentifyPillarsForGetFileInfosResponse">
+    <xs:complexType>
+      <xs:annotation><xs:documentation xml:lang="en">
+        RESPONSE in IdentifyPillarsForGetFileInfos primitive
+      </xs:documentation></xs:annotation>
+      <xs:complexContent>
+        <xs:extension base="MessageResponse">
+          <xs:sequence>
+            <xs:element ref="bre:PillarID" >
+              <xs:annotation><xs:documentation xml:lang="en">
+                Unique identifier for pillar replying
+              </xs:documentation></xs:annotation>
+            </xs:element>
+
+            <xs:element ref="bre:ChecksumRequestForExistingFile" minOccurs="0" maxOccurs="1">
+              <xs:annotation><xs:documentation xml:lang="en">
+                Checksums type and possible salt requested
+              </xs:documentation></xs:annotation>
+            </xs:element>
+
+            <xs:element ref="bre:PillarChecksumSpec" minOccurs="0" maxOccurs="1" >
+              <xs:annotation><xs:documentation xml:lang="en">
+                Checksums type in case it is a checksum pillar replying,
+                only used for extra checks
+              </xs:documentation></xs:annotation>
+            </xs:element>
+
+            <xs:element ref="bre:FileIDs" minOccurs="0" maxOccurs="1" >
+              <xs:annotation><xs:documentation xml:lang="en" >
+                FileIDs uniquely identifies the files in given bit repository collection which the file ids are requested for
+                only to repeat parameter from request.
+              </xs:documentation></xs:annotation>
+            </xs:element>
+
+            <xs:element ref="bre:TimeToDeliver" minOccurs="0" maxOccurs="1" >
+              <xs:annotation><xs:documentation xml:lang="en">
+                Estimated time before delivery of data (fileInfos) requested.
+                That means the time from receiving a GetFileInfosRequest message to the time
+                when data has been collected and returned in a GetFileInfosFinalResponse message.
+              </xs:documentation></xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="GetFileInfosRequest">
+    <xs:complexType>
+      <xs:annotation><xs:documentation xml:lang="en">
+        REQUEST in GetFileInfos primitive
+      </xs:documentation></xs:annotation>
+      <xs:complexContent>
+        <xs:extension base="MessageRequest">
+          <xs:sequence>
+            <xs:element ref="bre:PillarID" minOccurs="0" maxOccurs="1" >
+              <xs:annotation><xs:documentation xml:lang="en">
+                Identifier of receiving pillar, which can be used for possible checks
+                (IdentifyPillarsForGetFileInfosResponse.ReplyTo should ensure that right pillar is reached)
+              </xs:documentation></xs:annotation>
+            </xs:element>
+
+            <xs:element ref="bre:FileIDs" >
+              <xs:annotation><xs:documentation xml:lang="en">
+                FileIDs uniquely identifies the files in given bit repository collection which the file ids are requested for
+              </xs:documentation></xs:annotation>
+            </xs:element>
+            <xs:element ref="bre:ChecksumRequestForExistingFile" minOccurs="0" maxOccurs="1">
+              <xs:annotation><xs:documentation xml:lang="en">
+                Checksums type and possible salt requested.
+                If this element is missing, then no checksum is requested
+              </xs:documentation></xs:annotation>
+            </xs:element>
+            <xs:element ref="bre:GetFileSize" minOccurs="0" maxOccurs="1">
+              <xs:annotation><xs:documentation xml:lang="en">
+                Whether or not to require the size of the file as part of the response.
+                Defaults to true.
+              </xs:documentation></xs:annotation>
+            </xs:element>
+
+            <xs:element ref="bre:MinFileTimestamp"  minOccurs="0" >
+              <xs:annotation><xs:documentation xml:lang="en">
+                Only fileInfos for files added/updated later or at the same time as the minFileTimestamp should be returned.
+              </xs:documentation></xs:annotation>
+            </xs:element>
+            <xs:element ref="bre:MaxFileTimestamp"  minOccurs="0" >
+              <xs:annotation><xs:documentation xml:lang="en">
+                Only fileInfos for files added/updated before or at the same time as the maxFileTimestamp should be returned.
+              </xs:documentation></xs:annotation>
+            </xs:element>
+            <xs:element ref="bre:MinChecksumTimestamp"  minOccurs="0" >
+              <xs:annotation><xs:documentation xml:lang="en">
+                Only fileInfos for checksums younger or at the same time as the minChecksumTimestamp should be returned.
+              </xs:documentation></xs:annotation>
+            </xs:element>
+            <xs:element ref="bre:MaxChecksumTimestamp"  minOccurs="0" >
+              <xs:annotation><xs:documentation xml:lang="en">
+                Only fileInfos for checksums with checksums older or at the same time as the maxCheckusumTimestamp should be returned.
+              </xs:documentation></xs:annotation>
+            </xs:element>
+            <xs:element ref="bre:MaxNumberOfResults"  minOccurs="0" >
+              <xs:annotation><xs:documentation xml:lang="en">
+                Request the contributor to only return 'up-to' MaxNumberOfResults of fileInfo results. This can be
+                used to break a fileInfo retrieval into small result sets (paging).
+              </xs:documentation></xs:annotation>
+            </xs:element>
+
+            <xs:element ref="bre:ResultAddress" minOccurs="0" maxOccurs="1" >
+              <xs:annotation><xs:documentation xml:lang="en">
+                Address (e.g. in form of an URL) for where data (fileInfos) must be delivered via file exchange
+                In cases where the address is not given, the result will be given in the GetFileIdsFinalResponse message
+              </xs:documentation></xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="GetFileInfosProgressResponse">
+    <xs:complexType>
+      <xs:annotation><xs:documentation xml:lang="en">
+        PROGRESS RESPONSE in GetFileInfos primitive
+      </xs:documentation></xs:annotation>
+      <xs:complexContent>
+        <xs:extension base="MessageResponse">
+          <xs:sequence>
+            <xs:element ref="bre:PillarID" minOccurs="0" maxOccurs="1" >
+              <xs:annotation><xs:documentation xml:lang="en">
+                Identifier of responding pillar, which can be used for possible checks
+                (otherwise it is known via CorrelationID and ReplyTo)
+              </xs:documentation></xs:annotation>
+            </xs:element>
+
+            <xs:element ref="bre:FileIDs" minOccurs="0" maxOccurs="1" >
+              <xs:annotation><xs:documentation xml:lang="en">
+                FileIDs uniquely identifies the files in given bit repository collection which the file ids are requested for
+                (otherwise it is known via CorrelationID)
+              </xs:documentation></xs:annotation>
+            </xs:element>
+
+            <xs:element ref="bre:ChecksumRequestForExistingFile" minOccurs="0" maxOccurs="1">
+              <xs:annotation><xs:documentation xml:lang="en">
+                Checksums type and possible salt requested
+              </xs:documentation></xs:annotation>
+            </xs:element>
+
+            <xs:element ref="bre:ResultAddress" minOccurs="0" maxOccurs="1" >
+              <xs:annotation><xs:documentation xml:lang="en">
+                Address (e.g. in form of an URL) for where data (file IDs) will be delivered
+              </xs:documentation></xs:annotation>
+            </xs:element>
+
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="GetFileInfosFinalResponse">
+    <xs:complexType>
+      <xs:annotation><xs:documentation xml:lang="en">
+        FINAL RESPONSE in GetFileInfos primitive
+      </xs:documentation></xs:annotation>
+      <xs:complexContent>
+        <xs:extension base="MessageResponse">
+          <xs:sequence>
+            <xs:element ref="bre:PillarID" minOccurs="0" maxOccurs="1" >
+              <xs:annotation><xs:documentation xml:lang="en">
+                Identifier of responding pillar, which can be used for possible checks
+                (otherwise it is known via CorrelationID and ReplyTo)
+              </xs:documentation></xs:annotation>
+            </xs:element>
+
+            <xs:element ref="bre:FileIDs" minOccurs="0" maxOccurs="1" >
+              <xs:annotation><xs:documentation xml:lang="en">
+                FileIDs uniquely identifies the files in given collection which the file ids are requested for. If not present
+                it means all the requested files are present on the pillar.
+              </xs:documentation></xs:annotation>
+            </xs:element>
+
+            <xs:element ref="bre:ChecksumRequestForExistingFile" minOccurs="0" maxOccurs="1" >
+              <xs:annotation><xs:documentation xml:lang="en">
+                Checksums type and possible salt requested
+                (Also in result, and traceable via CorrelationID)
+              </xs:documentation></xs:annotation>
+            </xs:element>
+
+            <xs:element ref="bre:ResultingFileInfos" minOccurs="0" maxOccurs="1">
+              <xs:annotation><xs:documentation xml:lang="en">
+                Result with file infos.
+              </xs:documentation></xs:annotation>
+            </xs:element>
+
+            <xs:element ref="bre:PartialResult" minOccurs="0" maxOccurs="1" >
+              <xs:annotation><xs:documentation xml:lang="en">
+                Indicates whether the list of result were limited for some reason, either a MaxLimit in the request
+                or a limit defined in the contributor.  If all results have been returned
+                this should be false or undefined.
+              </xs:documentation></xs:annotation>
+            </xs:element>
+
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+
 
   <!-- Implements the GetStatus functionality as described here: https://sbforge.org/display/BITMAG/Get+Status -->
 
