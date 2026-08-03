@@ -1,5 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
@@ -10,7 +9,7 @@
 
   <groupId>org.bitrepository.message-xml</groupId>
   <artifactId>message-xml-parent</artifactId>
-  <version>33-SNAPSHOT</version>
+  <version>33</version>
   <packaging>pom</packaging>
   <name>Bitrepository message xml definitions</name>
   <description>Contains the definitions for the Bitrepository message content</description>
@@ -52,7 +51,7 @@
     <connection>scm:git:git@github.com:bitrepository/message-xml.git</connection>
     <developerConnection>scm:git:git@github.com:bitrepository/message-xml.git</developerConnection>
     <url>https://sbforge.org/fisheye/browse/bitrepository-message-xml/</url>
-    <tag>HEAD</tag>
+    <tag>message-xml-parent-33</tag>
   </scm>
 
   <properties>
